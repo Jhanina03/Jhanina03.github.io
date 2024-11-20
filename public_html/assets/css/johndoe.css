@@ -16,7 +16,7 @@
 :root {
   --blue: #79A9F5;
   --indigo: #C45F90;
-  --purple: #A16AE8;
+  --purple: #ceb1d0;
   --pink: #FC8BC0;
   --red: #F85C70;
   --orange: #FF8882;
@@ -75,7 +75,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #f2d9ee;
 }
 
 [tabindex="-1"]:focus {
@@ -168,10 +168,11 @@ sup {
 }
 
 a {
-  color: #F85C70;
+  color: #b07bb4;
   text-decoration: none;
   background-color: transparent;
 }
+
 
 a:hover {
   color: #f51330;
@@ -2779,8 +2780,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #F85C70;
-  border-color: #F85C70;
+  background-color: #b07bb4;
+  border-color: #553656;
 }
 
 .btn-primary:hover {
@@ -3210,8 +3211,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-danger {
-  color: #F85C70;
-  border-color: #F85C70;
+  color: #844e87;
+  border-color: #9e68ac;
 }
 
 .btn-outline-danger:hover {
@@ -5828,7 +5829,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #F85C70;
+  background-color: #553656;
   -webkit-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
@@ -7198,7 +7199,7 @@ button.bg-warning:focus {
 }
 
 .bg-danger {
-  background-color: #F85C70 !important;
+  background-color: #b07bb4 !important;
 }
 
 a.bg-danger:hover, a.bg-danger:focus,
@@ -10823,7 +10824,7 @@ a.text-warning:hover, a.text-warning:focus {
 }
 
 .text-danger {
-  color: #F85C70 !important;
+  color: #86388c !important;
 }
 
 a.text-danger:hover, a.text-danger:focus {
@@ -11012,7 +11013,7 @@ p {
   display: block;
   width: 25px;
   height: 1.5px;
-  background-color: #F85C70;
+  background-color: #553656;
 }
 
 .breadcrumb {
@@ -11212,7 +11213,7 @@ p {
 
 .portfolio .filters a.active {
   opacity: 1;
-  background: #F85C70;
+  background: #b07bb4;
   color: #fff;
 }
 
@@ -11416,7 +11417,7 @@ pre .code {
 }
 
 .navbar .nav-link.active {
-  color: #F85C70 !important;
+  color: #b07bb4 !important;
 }
 
 .navbar .brand {
@@ -11510,10 +11511,10 @@ pre .code {
 
 .header {
   position: relative;
-  height: 80vh;
-  min-height: 600px;
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header.jpg);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header.jpg);
+  height: 800px;
+  min-height:500px;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header12.png);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header12.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11547,7 +11548,7 @@ pre .code {
   font-weight: bold;
   line-height: .7;
   margin-bottom: 25px;
-  color: inherit;
+  color: var(--purple);
 }
 
 .header .header-content .header-mono {
