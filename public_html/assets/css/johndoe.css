@@ -16,7 +16,7 @@
 :root {
   --blue: #79A9F5;
   --indigo: #C45F90;
-  --purple: #ceb1d0;
+  --purple: #bba5d0;
   --pink: #FC8BC0;
   --red: #F85C70;
   --orange: #FF8882;
@@ -75,7 +75,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #f2d9ee;
+  background-color: #e4deff;
 }
 
 [tabindex="-1"]:focus {
@@ -168,7 +168,7 @@ sup {
 }
 
 a {
-  color: #b07bb4;
+  color: #744796;
   text-decoration: none;
   background-color: transparent;
 }
@@ -11207,6 +11207,15 @@ p {
   margin-right: 0;
 }
 
+@media (max-width: 991.98px) {
+  /* En pantallas pequeñas, la imagen y el contenido se apilan */
+  .portfolio .portfolio-container .portfolio-item-wrapper {
+      flex-direction: column;
+  }
+  .portfolio .portfolio-container .portfolio-item img {
+      max-width: 100%; /* Las imágenes ocupan todo el ancho en pantallas pequeñas */
+  }
+}
 .portfolio .filters a:hover {
   opacity: .9;
 }
@@ -11216,58 +11225,44 @@ p {
   background: #b07bb4;
   color: #fff;
 }
+.portfolio .portfolio-container {
+  display: flex;
+  flex-direction: column; /* Los proyectos estarán en columna */
+  gap: 10px; /* Espacio entre los proyectos */
+}
 
 .portfolio .portfolio-container .portfolio-item {
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  margin: 10px -5px;
-  overflow: hidden;
-  border-radius: 2px;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  display: flex; /* Para que los elementos dentro se alineen en fila */
+  flex-direction: row; /* Los proyectos tendrán la imagen a la izquierda y la descripción a la derecha */
+  gap: 20px; 
+  margin: auto;
+  width: 100%;
+  /* Espacio entre la imagen y la descripción */
 }
 
 .portfolio .portfolio-container .portfolio-item .content-holder {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background: rgba(248, 92, 112, 0.8);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  padding: 15px; /* Reduce el padding para evitar que el contenedor se haga demasiado grande */
+  background-color:rgb(210 201 237);
+  color: #1d2124; /* Ajusta el color del texto a uno más oscuro para mejor contraste */
+  width: 90%; /* Ajusta el ancho de la descripción */
+  text-align: left; /* Alinea el texto a la izquierda */
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-  color: #fff;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
+  flex-direction: column; /* La descripción se organizará en columna */
+  justify-content: center;
+  align-items: flex-start; /* Alinea la descripción al inicio de la fila */
+  max-height: 300px; /* Limita la altura máxima del contenedor de texto */
+  flex-shrink: 1; /* Permite que el contenedor se encoja si el contenido es pequeño */
+  overflow: hidden; /* Si el contenido es grande, se recorta */
 }
 
 .portfolio .portfolio-container .portfolio-item .content-holder .title {
-  font-size: 22px;
+  font-size: 18px; /* Ajusta el tamaño de la fuente */
   font-weight: 600;
 }
 
 .portfolio .portfolio-container .portfolio-item .content-holder .subtitle {
+  font-size: 14px; /* Ajusta el tamaño de la fuente para los subtítulos */
   font-weight: 500;
-  opacity: 1;
-  color: #fff;
 }
 
 .portfolio .portfolio-container .portfolio-item:hover .content-holder {
@@ -11275,6 +11270,11 @@ p {
   visibility: visible;
 }
 
+.portfolio .portfolio-container .portfolio-item img {
+  width: 50%; /* Asegura que la imagen ocupe el espacio disponible */
+  height: auto;
+  max-width: 300px; /* Limitar el tamaño de la imagen */
+}
 /* blog wrapper */
 .blog-card {
   display: -webkit-box;
