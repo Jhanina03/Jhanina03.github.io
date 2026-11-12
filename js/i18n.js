@@ -4,6 +4,7 @@
    ============================================================ */
 window.I18N = {
   en: {
+    "intro.care": "100% handmade code ✂",
     "studio.no": "No. 05", "studio.title": "The design studio", "studio.note": "a dressmaker mini-game, written in code",
     "studio.s1": "Silhouette", "studio.s2": "Fabric", "studio.s3": "Colour", "studio.s4": "Details",
     "studio.sew": "Sew it", "studio.random": "Surprise me", "studio.download": "Download card",
@@ -89,6 +90,7 @@ window.I18N = {
   },
 
   es: {
+    "intro.care": "100% código hecho a mano ✂",
     "studio.no": "N.º 05", "studio.title": "El estudio de diseño", "studio.note": "un mini-juego de modista, escrito en código",
     "studio.s1": "Silueta", "studio.s2": "Tela", "studio.s3": "Color", "studio.s4": "Detalles",
     "studio.sew": "Coser", "studio.random": "Sorpréndeme", "studio.download": "Descargar tarjeta",

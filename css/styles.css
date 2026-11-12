@@ -91,101 +91,53 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .btn-ghost:hover { background: var(--bg2); }
 .btn.small { padding: .55rem 1rem; font-size: .92rem; }
 
-/* ---------- loader: holographic atelier ----------
-   0.0–1.6s  a laser needle sews the name in neon
-   1.4–2.0s  holographic fill + stitches, ring and % reach 100
-   2.1s      a laser line cuts across the middle
-   2.3–2.9s  the two halves slide apart to reveal the page
-   Everything is CSS, so it never waits on JS timers. */
-@property --pct { syntax: "<integer>"; inherits: false; initial-value: 0; }
-.loader {
-  position: fixed; inset: 0; z-index: 200; display: grid; place-content: center; justify-items: center;
-  color: #EDE6FF; overflow: hidden; pointer-events: none;
-  animation: loader-out .01s linear 2.95s forwards;
-}
+/* ---------- loader: the sewn clothing tag + zipper ----------
+   0.1–1.0s  the tag drops in on its string and swings
+   0.55–1.95s a needle stitches the tag's edge; the name is embroidered
+   1.9s      a button is sewn on (cross stitch)
+   2.0–3.0s  a zipper pull runs down; stitched seams follow it
+   3.0–3.7s  the fabric opens like a jacket and the tag lifts away
+   Everything is CSS/SVG, so it never waits on JS timers. */
+.loader { position: fixed; inset: 0; z-index: 200; overflow: hidden; pointer-events: none; animation: loader-out .01s linear 3.75s forwards; }
 .loaded .loader { visibility: hidden; }
 @keyframes loader-out { to { visibility: hidden; } }
-.loader-half { position: absolute; left: 0; right: 0; height: 50.5%; background: #0E0A1F; z-index: 0; }
-.loader-half.top { top: 0; animation: split-up .7s cubic-bezier(.7, 0, .3, 1) 2.25s forwards; }
-.loader-half.bottom { bottom: 0; animation: split-down .7s cubic-bezier(.7, 0, .3, 1) 2.25s forwards; }
-@keyframes split-up { to { transform: translateY(-101%); } }
-@keyframes split-down { to { transform: translateY(101%); } }
-.loader-fx { position: absolute; inset: 0; z-index: 1; animation: fade-out .5s ease 2.2s forwards; }
-.aurora i { position: absolute; width: 46vmax; height: 46vmax; border-radius: 50%; filter: blur(70px); opacity: .45; mix-blend-mode: screen; }
-.aurora i:nth-child(1) { background: #7B5CD6; left: -10vmax; top: -12vmax; animation: drift 6s ease-in-out infinite alternate; }
-.aurora i:nth-child(2) { background: #3BA7FF; right: -12vmax; top: 10vmax; animation: drift 7s ease-in-out infinite alternate-reverse; }
-.aurora i:nth-child(3) { background: #FF5C9A; left: 20vmax; bottom: -20vmax; animation: drift 5s ease-in-out infinite alternate; }
-@keyframes drift { to { transform: translate(6vmax, 4vmax) scale(1.15); } }
-.neon-floor {
-  position: absolute; left: -50%; right: -50%; bottom: -10%; height: 55%;
-  background-image: linear-gradient(rgba(183, 156, 255, .55) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(127, 227, 255, .45) 1.5px, transparent 1.5px);
-  background-size: 60px 60px; transform: perspective(380px) rotateX(62deg); transform-origin: 50% 0;
-  -webkit-mask-image: linear-gradient(transparent, #000 45%); mask-image: linear-gradient(transparent, #000 45%);
-  animation: floor 1.2s linear infinite;
+.zip-half {
+  position: absolute; top: 0; bottom: 0; width: 50.3%; background-color: #EFE6FA;
+  background-image: repeating-linear-gradient(45deg, rgba(123, 92, 214, .06) 0 2px, transparent 2px 6px), repeating-linear-gradient(-45deg, rgba(255, 154, 203, .09) 0 2px, transparent 2px 6px);
 }
-@keyframes floor { to { background-position: 0 60px, 0 0; } }
-.stars {
-  position: absolute; inset: 0;
-  background-image: radial-gradient(1.5px 1.5px at 12% 18%, #fff, transparent), radial-gradient(1px 1px at 28% 62%, #C9B8FF, transparent),
-    radial-gradient(1.5px 1.5px at 72% 22%, #fff, transparent), radial-gradient(1px 1px at 86% 48%, #7FE3FF, transparent),
-    radial-gradient(1.5px 1.5px at 44% 12%, #FF9ACB, transparent), radial-gradient(1px 1px at 62% 80%, #fff, transparent),
-    radial-gradient(1px 1px at 8% 82%, #7FE3FF, transparent), radial-gradient(1.5px 1.5px at 92% 86%, #C9B8FF, transparent);
-  animation: twinkle 2s ease-in-out infinite;
-}
-.loader-stage { position: relative; z-index: 2; display: grid; justify-items: center; width: min(600px, 92vw); animation: stage-out .45s ease 2.1s forwards; }
-@keyframes stage-out { to { opacity: 0; transform: scale(1.06); filter: blur(6px); } }
-.holo-ring { position: absolute; top: 50%; left: 50%; width: min(420px, 86vw); aspect-ratio: 1; transform: translate(-50%, -58%); pointer-events: none; }
-.holo-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); animation: ring-spin 8s linear infinite; }
-.ring-track { fill: none; stroke: rgba(183, 156, 255, .18); stroke-width: 1; stroke-dasharray: 2 4; }
-.ring-fill { fill: none; stroke: url(#name-fill); stroke: #B79CFF; stroke-width: 1.6; stroke-dasharray: 100; stroke-dashoffset: 100; filter: drop-shadow(0 0 6px #B79CFF); animation: ring-load 1.9s ease-in-out .1s forwards; }
-@keyframes ring-load { to { stroke-dashoffset: 0; } }
-@keyframes ring-spin { to { transform: rotate(270deg); } }
-.loader-art { width: 100%; height: auto; overflow: visible; position: relative; }
-.loader-art text { font-family: var(--hand); font-weight: 700; font-size: 132px; }
-.loader-thread { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.6s ease-in-out .1s forwards; }
-.name-outline { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.5s ease-in-out .15s forwards; }
-.name-fill { opacity: 0; animation: fade-in .5s ease 1.4s forwards; }
-.name-stitch { opacity: 0; animation: fade-in .4s ease 1.7s forwards; }
+.zip-half.l { left: 0; animation: zip-l .8s cubic-bezier(.7, 0, .3, 1) 3.0s forwards; box-shadow: inset -8px 0 12px -8px rgba(59, 42, 107, .3); }
+.zip-half.r { right: 0; animation: zip-r .8s cubic-bezier(.7, 0, .3, 1) 3.0s forwards; box-shadow: inset 8px 0 12px -8px rgba(59, 42, 107, .3); }
+@keyframes zip-l { to { transform: translateX(-102%) rotate(-3deg); } }
+@keyframes zip-r { to { transform: translateX(102%) rotate(3deg); } }
+.seam-line { position: absolute; top: 0; width: 2px; height: 100%; transform: scaleY(0); transform-origin: top;
+  background: repeating-linear-gradient(180deg, #FF5C9A 0 8px, transparent 8px 14px); animation: seam-down 1s cubic-bezier(.6, 0, .4, 1) 2.05s forwards; }
+.zip-half.l .seam-line { right: 18px; } .zip-half.r .seam-line { left: 18px; }
+@keyframes seam-down { to { transform: scaleY(1); } }
+.zip-teeth { position: absolute; top: 0; bottom: 0; left: 50%; width: 14px; margin-left: -7px; z-index: 2;
+  background: repeating-linear-gradient(180deg, #C3C7D2 0 4px, transparent 4px 8px), linear-gradient(90deg, transparent 5px, #B79CFF 5px 9px, transparent 9px);
+  animation: fade-out .3s ease 2.95s forwards; }
+.zip-pull { position: absolute; left: 50%; top: -60px; width: 28px; height: 52px; margin-left: -14px; z-index: 3; border-radius: 6px 6px 14px 14px;
+  background: linear-gradient(#F4F1FF, #B8BCC8); box-shadow: 0 4px 10px rgba(59, 42, 107, .35); animation: zip-pull 1s cubic-bezier(.6, 0, .4, 1) 2.05s forwards; }
+.zip-pull::after { content: ""; position: absolute; left: 8px; top: 18px; width: 12px; height: 22px; border-radius: 6px; background: #EFE6FA; }
+@keyframes zip-pull { 0% { top: -60px; } 12% { top: 8px; } 100% { top: 105%; } }
+.intro-tag { position: absolute; left: 50%; top: 0; z-index: 4; width: min(360px, 80vw); margin-left: calc(min(360px, 80vw) / -2); transform-origin: 50% 0;
+  animation: tag-drop .9s cubic-bezier(.3, 1.4, .5, 1) .1s both, tag-swing 1.6s ease-in-out 1s, tag-out .55s ease-in 2.95s forwards; }
+.tag-string { width: 2px; height: clamp(60px, 16vh, 150px); margin: 0 auto -52px; background: #FF5C9A; position: relative; z-index: 2; }
+.tag-svg { width: 100%; height: auto; display: block; overflow: visible; }
+@keyframes tag-drop { from { transform: translateY(-110%); } to { transform: none; } }
+@keyframes tag-swing { 0% { transform: rotate(0); } 25% { transform: rotate(4deg); } 60% { transform: rotate(-2.5deg); } 100% { transform: rotate(0); } }
+@keyframes tag-out { to { transform: translateY(-120%) rotate(-4deg); } }
+.emb-outline { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.3s ease-in-out .6s forwards; }
+.emb-fill { opacity: 0; animation: fade-in .45s ease 1.55s forwards; }
+.emb-stitch { opacity: 0; animation: fade-in .35s ease 1.85s forwards; }
+.tag-surname, .tag-role, .tag-care { opacity: 0; animation: fade-in .5s ease 1.2s forwards; }
+.tag-role { animation-delay: 1.4s; } .tag-care { animation-delay: 1.6s; }
+.btn-x { stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw .35s ease 1.9s forwards; }
+.tag-button { transform-box: fill-box; transform-origin: center; animation: btn-pop .4s cubic-bezier(.3, 1.8, .5, 1) 1.9s; }
+@keyframes btn-pop { 50% { transform: scale(1.25) rotate(90deg); } }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 @keyframes fade-in { to { opacity: 1; } }
 @keyframes fade-out { to { opacity: 0; } }
-/* laser needle travelling across the letters */
-.laser-needle { position: absolute; top: 2%; left: 8%; width: 0; height: 60%; animation: needle-run 1.5s ease-in-out .15s forwards, fade-out .3s ease 1.65s forwards; }
-@keyframes needle-run { to { left: 90%; } }
-.needle-body { position: absolute; top: 0; left: -3px; width: 6px; height: 34%; border-radius: 3px 3px 50% 50%; background: linear-gradient(#F4F1FF, #9AA0B4); box-shadow: 0 0 10px #C9B8FF; }
-.needle-body::after { content: ""; position: absolute; top: 5px; left: 1.5px; width: 3px; height: 9px; border-radius: 2px; background: #0E0A1F; }
-.beam { position: absolute; top: 33%; left: -1px; width: 2px; height: 70%; background: linear-gradient(#FF5C9A, rgba(127, 227, 255, .9), transparent); box-shadow: 0 0 12px 2px #FF5C9A; animation: beam .12s linear infinite alternate; }
-@keyframes beam { to { opacity: .55; } }
-.laser-needle i { position: absolute; top: 96%; left: 0; width: 4px; height: 4px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px 2px #7FE3FF; animation: spark .6s ease-out infinite; }
-.laser-needle i:nth-of-type(2) { animation-delay: .12s; --dx: -14px; background: #FF9ACB; }
-.laser-needle i:nth-of-type(3) { animation-delay: .24s; --dx: 16px; }
-.laser-needle i:nth-of-type(4) { animation-delay: .36s; --dx: -8px; background: #C9B8FF; }
-.laser-needle i:nth-of-type(5) { animation-delay: .48s; --dx: 10px; background: #FF9ACB; }
-@keyframes spark { from { transform: translate(0, 0) scale(1); opacity: 1; } to { transform: translate(var(--dx, 12px), 22px) scale(0); opacity: 0; } }
-.loader-surname {
-  margin: -18px 0 10px; font-family: var(--pixel); font-size: clamp(.8rem, 2.4vw, 1.1rem); letter-spacing: .3em; color: #7FE3FF;
-  text-shadow: 0 0 10px rgba(127, 227, 255, .8); opacity: 0; animation: glitch-in .6s steps(6) 1.2s forwards;
-}
-@keyframes glitch-in {
-  0% { opacity: 0; transform: translateX(-8px); text-shadow: 3px 0 #FF5C9A, -3px 0 #7FE3FF; }
-  50% { opacity: 1; transform: translateX(4px); text-shadow: -3px 0 #FF5C9A, 3px 0 #7FE3FF; }
-  100% { opacity: 1; transform: none; text-shadow: 0 0 10px rgba(127, 227, 255, .8); }
-}
-.loader-hud { display: flex; align-items: center; gap: 12px; font-family: var(--pixel); font-size: .7rem; letter-spacing: .12em; color: #C9B8FF; }
-.loader-hud .pct { --pct: 0; counter-reset: pct var(--pct); animation: pct 1.9s ease-in-out .1s forwards; min-width: 4ch; text-align: right; color: #fff; }
-.loader-hud .pct::after { content: counter(pct) "%"; }
-@keyframes pct { to { --pct: 100; } }
-.hud-bar { width: 110px; height: 6px; border-radius: 3px; background: rgba(183, 156, 255, .2); overflow: hidden; }
-.hud-bar b { display: block; height: 100%; width: 0; background: repeating-linear-gradient(90deg, #FF5C9A 0 6px, #B79CFF 6px 12px); box-shadow: 0 0 8px #FF5C9A; animation: bar 1.9s ease-in-out .1s forwards; }
-@keyframes bar { to { width: 100%; } }
-.hud-text { opacity: .8; }
-/* the laser that cuts the fabric open */
-.cut-line {
-  position: absolute; top: 50%; left: 0; right: 0; height: 2px; z-index: 3; transform: scaleX(0); transform-origin: 0 50%;
-  background: linear-gradient(90deg, transparent, #FF5C9A 10%, #fff 50%, #7FE3FF 90%, transparent);
-  box-shadow: 0 0 16px 3px #FF5C9A; animation: cut .35s ease-in 1.95s forwards, fade-out .3s ease 2.4s forwards;
-}
-@keyframes cut { to { transform: scaleX(1); } }
 @media (prefers-reduced-motion: reduce) { .loader { display: none; } }
 .spool { width: 64px; height: 70px; position: relative; animation: spin 1.1s linear infinite; }
 .spool::before, .spool::after { content: ""; position: absolute; left: 0; right: 0; height: 12px; border-radius: 50%; background: var(--deep); }

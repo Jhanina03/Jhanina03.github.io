@@ -50,7 +50,8 @@
 
   /* ---------- loader ---------- */
   const done = () => document.body.classList.add("loaded");
-  setTimeout(done, reduced ? 0 : 3000); // matches the CSS intro (laser cut + split)
+  if (new URLSearchParams(location.search).has("nointro")) done(); // ?nointro skips the intro
+  setTimeout(done, reduced ? 0 : 3800); // matches the CSS intro (sewn tag + zipper)
 
   /* ---------- thread progress ---------- */
   const fg = document.querySelector(".thread-fg");
