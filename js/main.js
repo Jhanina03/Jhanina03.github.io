@@ -187,6 +187,7 @@
     $("#tags").innerHTML = CERTS.map((c, i) => `
       <div class="tag-wrap reveal" style="--c:${c.color};--d:${i * 0.07}s">
         <div class="tag">
+          <span class="postmark" aria-hidden="true">✓ VERIFIED</span>
           <span class="tag-year">${esc(c.year)}</span>
           <h3>${esc(pk(c.title))}</h3>
           <p>${esc(pk(c.issuer))}</p>
@@ -262,8 +263,8 @@
   });
 
   /* ---------- sewing buttons on the top thread ---------- */
-  const BTN_COLORS = { about: "#FF9ACB", skills: "#B79CFF", projects: "#7B5CD6", qa: "#8EE3E0", experience: "#5B8DEF", certificates: "#FFB3D9", contact: "#FF5C9A" };
-  const BTN_LABEL = { about: "nav.about", skills: "nav.skills", projects: "nav.projects", qa: "nav.qa", experience: "nav.experience", certificates: "nav.certs", contact: "nav.contact" };
+  const BTN_COLORS = { about: "#FF9ACB", skills: "#B79CFF", projects: "#7B5CD6", qa: "#8EE3E0", studio: "#FF7AB8", experience: "#5B8DEF", certificates: "#FFB3D9", contact: "#FF5C9A" };
+  const BTN_LABEL = { about: "nav.about", skills: "nav.skills", projects: "nav.projects", qa: "nav.qa", studio: "nav.studio", experience: "nav.experience", certificates: "nav.certs", contact: "nav.contact" };
   const btnWrap = $("#thread-buttons");
   const btnSections = [...document.querySelectorAll("section[data-section]")].filter((s) => s.id);
   function renderThreadButtons() {
@@ -294,6 +295,29 @@
   document.addEventListener("threadscroll", sewButtons);
   addEventListener("resize", placeThreadButtons);
   addEventListener("load", placeThreadButtons);
+
+
+  /* ---------- button tin in the footer: click to spill buttons ---------- */
+  const tin = document.querySelector(".button-tin");
+  if (tin) tin.addEventListener("click", () => {
+    tin.classList.remove("open"); void tin.offsetWidth; tin.classList.add("open");
+    if (JC.reduced) return;
+    const r = tin.getBoundingClientRect();
+    const colors = ["#B79CFF", "#7B5CD6", "#8CC8FF", "#5B8DEF", "#FF9ACB", "#FF7AB8", "#FFFFFF"];
+    for (let i = 0; i < 18; i++) {
+      const b = document.createElement("i");
+      b.className = "spill-btn";
+      const size = 12 + Math.random() * 12;
+      b.style.cssText = `left:${r.left + r.width / 2}px;top:${r.top + 10}px;width:${size}px;height:${size}px;--c:${colors[i % colors.length]}`;
+      document.body.appendChild(b);
+      const dx = (Math.random() - .5) * 420, up = 120 + Math.random() * 160, floor = innerHeight - r.top + 40;
+      b.animate([
+        { transform: "translate(-50%,0) rotate(0)", opacity: 1 },
+        { transform: `translate(calc(-50% + ${dx * .5}px), ${-up}px) rotate(${dx}deg)`, opacity: 1, offset: .35 },
+        { transform: `translate(calc(-50% + ${dx}px), ${floor}px) rotate(${dx * 2}deg)`, opacity: .9 },
+      ], { duration: 1300 + Math.random() * 600, easing: "cubic-bezier(.3,.6,.6,1)", fill: "forwards" }).onfinish = () => b.remove();
+    }
+  });
 
   /* ---------- render + re-render on language change ---------- */
   function renderAll() {

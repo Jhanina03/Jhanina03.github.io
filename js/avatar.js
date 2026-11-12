@@ -227,8 +227,65 @@
   };
   const HEART_NECKLACE = ["casual", "blazer", "gala"];
 
-  function avatarSVG(look = "casual", uid = "a") {
-    const L = looks[look] || looks.casual;
+  /* ---------- custom dress from the design-studio mini-game ----------
+     cfg = { silhouette, fabric, color, details[] } — shared by the
+     mannequin view and the avatar ("custom" look). */
+  const DRESS_COLORS = { lilac: "#B79CFF", purple: "#7B5CD6", sky: "#8CC8FF", blue: "#5B8DEF", pink: "#FF9ACB", rose: "#FF7AB8", white: "#F7F3FF" };
+  const SKIRTS = {
+    mini:    "M66 208Q50 234 47 252H153Q150 234 134 208Z",
+    swing:   "M66 208Q34 246 30 272Q100 286 170 272Q166 246 134 208Z",
+    aline:   "M66 208Q48 256 42 296H158Q152 256 134 208Z",
+    ball:    "M66 206Q26 252 18 302H182Q174 252 134 206Z",
+    mermaid: "M66 208Q62 240 73 268Q56 290 46 302H154Q144 290 127 268Q138 240 134 208Z",
+  };
+  const HEMS = { mini: [47, 153, 252], swing: [30, 170, 274], aline: [42, 158, 296], ball: [18, 182, 302], mermaid: [46, 154, 302] };
+  function dressParts(cfg, uid) {
+    const c = DRESS_COLORS[cfg.color] || cfg.color || "#B79CFF";
+    const ink = cfg.color === "white" ? "#B79CFF" : "#FFFFFF";
+    const pat = {
+      solid: "",
+      polka: `<circle cx="4" cy="4" r="2.1" fill="${ink}" opacity=".85"/><circle cx="12" cy="12" r="2.1" fill="${ink}" opacity=".85"/>`,
+      gingham: `<rect width="16" height="5" fill="${ink}" opacity=".35"/><rect width="5" height="16" fill="${ink}" opacity=".35"/>`,
+      floral: `<g fill="${ink}" opacity=".9"><circle cx="5" cy="3.4" r="1.5"/><circle cx="6.8" cy="5" r="1.5"/><circle cx="6" cy="7" r="1.5"/><circle cx="4" cy="7" r="1.5"/><circle cx="3.2" cy="5" r="1.5"/></g><circle cx="5" cy="5.4" r="1.1" fill="#FFD66B"/><circle cx="13" cy="13" r="1.2" fill="${ink}" opacity=".6"/>`,
+      stripes: `<rect width="4" height="16" fill="${ink}" opacity=".45"/>`,
+    }[cfg.fabric] || "";
+    const fill = `url(#fab-${uid})`;
+    const defs = `<pattern id="fab-${uid}" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="${c}"/>${pat}</pattern>
+      <linearGradient id="dshade-${uid}" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#1B1530" stop-opacity=".18"/></linearGradient>`;
+    const sk = SKIRTS[cfg.silhouette] || SKIRTS.aline;
+    const has = (d) => (cfg.details || []).includes(d);
+    const [hx0, hx1, hy] = HEMS[cfg.silhouette] || HEMS.aline;
+    let skirt = "";
+    if (cfg.silhouette === "swing") skirt += `<path d="M40 268Q100 286 160 268L166 278Q100 292 34 278Z" fill="#fff" opacity=".9"/>`; // petticoat
+    skirt += `<path d="${sk}" fill="${fill}"/><path d="${sk}" fill="url(#dshade-${uid})"/>`;
+    if (has("lace")) {
+      const n = Math.round((hx1 - hx0) / 9), w = (hx1 - hx0) / n;
+      let d = `M${hx0} ${hy}`;
+      for (let i = 0; i < n; i++) d += `a${w / 2} ${w / 2.4} 0 0 0 ${w} 0`;
+      skirt += `<path d="${d}" fill="#fff" stroke="#fff" stroke-width="1"/>`;
+      for (let i = 0; i < n; i++) skirt += `<circle cx="${hx0 + w * i + w / 2}" cy="${hy + w / 4.4}" r="1" fill="${c}"/>`;
+    }
+    const bodicePath = "M70 162Q78 154 90 156Q100 162 110 156Q122 154 130 162L134 212H66Z";
+    let bodice = `<path d="${bodicePath}" fill="${fill}"/><path d="${bodicePath}" fill="url(#dshade-${uid})"/>
+      <path d="M70 162Q78 154 90 156Q100 162 110 156Q122 154 130 162" stroke="#fff" stroke-width="1.3" fill="none" opacity=".7"/>`;
+    let front = "";
+    if (has("puff")) front += `<ellipse cx="66" cy="166" rx="11" ry="9" fill="${fill}"/><ellipse cx="134" cy="166" rx="11" ry="9" fill="${fill}"/><path d="M58 170Q66 176 74 170M126 170Q134 176 142 170" stroke="#fff" stroke-width="1" fill="none" opacity=".6"/>`;
+    if (has("belt")) front += `<rect x="65" y="204" width="70" height="8" rx="2" fill="#3B2A6B"/><rect x="95" y="203" width="10" height="10" rx="2" fill="none" stroke="#FFD66B" stroke-width="2"/>`;
+    if (has("buttons")) front += [172, 184, 196].map((y) => `<circle cx="100" cy="${y}" r="2.6" fill="#fff" stroke="${c}" stroke-width=".8"/><path d="M99 ${y - 1}l2 2M101 ${y - 1}l-2 2" stroke="${c}" stroke-width=".6"/>`).join("");
+    if (has("bow")) front += `<path d="M100 210Q87 199 83 208Q86 217 100 211Q114 217 117 208Q113 199 100 210Z" fill="#FF7AB8"/><path d="M98 211L92 226M102 211L108 226" stroke="#FF7AB8" stroke-width="2.4" stroke-linecap="round"/><circle cx="100" cy="210" r="3" fill="#FF5C9A"/>`;
+    const seams = `<path class="seam" d="M66 210H134" pathLength="100"/><path class="seam" d="M70 162Q78 154 90 156Q100 162 110 156Q122 154 130 162" pathLength="100"/><path class="seam" d="M${hx0} ${hy - 2}H${hx1}" pathLength="100"/>`;
+    return { defs, skirt, bodice, front, seams };
+  }
+  window.dressParts = dressParts;
+  window.DRESS_COLORS = DRESS_COLORS;
+
+  function avatarSVG(look = "casual", uid = "a", cfg = null) {
+    let L = looks[look] || looks.casual;
+    if (look === "custom" && cfg) {
+      const D = dressParts(cfg, uid);
+      const long = ["ball", "mermaid"].includes(cfg.silhouette);
+      L = { under: `<defs>${D.defs}</defs>${long ? "" : both(`<path d="M76 291H86Q94 292 95.5 297V300.5H74Q70 300 72 295Z" fill="#7B5CD6"/>`)}${D.skirt}`, torso: D.bodice, over: D.front, sleeve: null, noShade: true };
+    }
     const id = (s) => (s || "").replaceAll("$ID", uid);
     const sleeve = L.sleeve ? { ...L.sleeve, fill: id(L.sleeve.fill) } : null;
     return `
@@ -246,7 +303,7 @@
   <!-- neck -->
   <path d="M92 132H108V156Q100 160 92 156Z" fill="${SKIN_D}"/>
   <!-- outfit -->
-  <g class="av-outfit">${id(L.under)}${id(L.torso)}<path d="${TORSO}" fill="url(#shade-${uid})"/></g>
+  <g class="av-outfit">${id(L.under)}${id(L.torso)}${L.noShade ? "" : `<path d="${TORSO}" fill="url(#shade-${uid})"/>`}</g>
   <!-- arms (sleeves move with them) -->
   <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="${SKIN}"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="${SKIN}"/>${sleeveSVG(sleeve)}${id(L.handL)}</g>
   <g class="av-arm-r"><g ${MIRROR}><rect x="53" y="158" width="13" height="66" rx="6.5" fill="${SKIN}"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="${SKIN}"/>${sleeveSVG(sleeve)}</g>${id(L.handR)}</g>

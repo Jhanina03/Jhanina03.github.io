@@ -671,3 +671,133 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
   html, body { background: #fff !important; background-image: none !important; color: #000; }
   body { font-size: 11pt; }
 }
+
+/* ============================================================
+   Phase 2 · sewing details & the design studio
+   ============================================================ */
+
+/* sewn buttons: every .btn gets a little 4-hole button that is stitched on hover */
+.btn::before {
+  content: ""; width: 15px; height: 15px; flex: none; border-radius: 50%; border: 1.5px solid currentColor;
+  background:
+    radial-gradient(circle at 32% 32%, currentColor 0 1.1px, transparent 1.5px), radial-gradient(circle at 68% 32%, currentColor 0 1.1px, transparent 1.5px),
+    radial-gradient(circle at 32% 68%, currentColor 0 1.1px, transparent 1.5px), radial-gradient(circle at 68% 68%, currentColor 0 1.1px, transparent 1.5px);
+  transition: transform .5s cubic-bezier(.3, 1.6, .5, 1), background .3s;
+}
+.btn-primary::before { background-color: rgba(255, 255, 255, .22); }
+.btn:hover::before {
+  transform: rotate(180deg) scale(1.12);
+  background:
+    linear-gradient(45deg, transparent 43%, #FF5C9A 43% 57%, transparent 57%), linear-gradient(-45deg, transparent 43%, #FF5C9A 43% 57%, transparent 57%),
+    radial-gradient(circle, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5));
+}
+.btn:active { transform: translateY(0) scale(.96); }
+.btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.btn code { font-family: var(--pixel); font-size: .62rem; opacity: .85; background: rgba(255, 255, 255, .18); padding: 2px 6px; border-radius: 6px; }
+
+/* project cards are pinned to the board and swing from the pin */
+.pattern.reveal { transform: translateY(46px) rotate(-5deg) scale(.95); transition-timing-function: cubic-bezier(.3, 1.4, .5, 1); }
+.pattern.reveal.in { transform: none; }
+.pattern { transform-origin: 50% 8px; }
+.pattern:hover { transform: rotate(1.4deg) translateY(-4px); }
+.swatch::after { display: none; }
+.pin { position: absolute; top: 4px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; z-index: 3;
+  background: radial-gradient(circle at 35% 35%, #fff 0 2px, var(--c) 3px); box-shadow: 0 3px 5px -1px rgba(59, 42, 107, .45); }
+.pin::after { content: ""; position: absolute; top: 11px; left: 6px; width: 2px; height: 12px; background: linear-gradient(#C3C7D2, #8C92A6); border-radius: 1px; transform: rotate(18deg); transform-origin: top; z-index: -1; }
+.pattern.reveal .pin { transform: translateY(-40px); opacity: 0; transition: transform .45s cubic-bezier(.3, 1.8, .5, 1) .45s, opacity .2s .45s; }
+.pattern.reveal.in .pin, .pattern.pop .pin { transform: none; opacity: 1; }
+
+/* scissors cut along a dashed line between sections */
+.cut-divider { position: relative; height: 34px; max-width: 1176px; margin: 0 auto; overflow: hidden; }
+.cut-divider.reveal { opacity: 1; transform: none; }
+.cut-divider::before, .cut-divider::after { content: ""; position: absolute; top: 16px; height: 2px; background: repeating-linear-gradient(90deg, var(--lilac) 0 9px, transparent 9px 16px); }
+.cut-divider::before { left: 16px; right: 16px; opacity: .45; }
+.cut-divider::after { left: 16px; width: 0; background: repeating-linear-gradient(90deg, var(--rose) 0 9px, transparent 9px 16px); transition: width 1.6s ease-in-out .2s; }
+.cut-divider.in::after { width: calc(100% - 32px); }
+.cut-scissors { position: absolute; top: 2px; left: 8px; font-size: 22px; color: var(--purple); transition: left 1.6s ease-in-out .2s; z-index: 2; }
+.cut-divider.in .cut-scissors { left: calc(100% - 34px); animation: snip .2s steps(2) 8 .2s; }
+@keyframes snip { 50% { transform: scaleY(.7) rotate(-8deg); } }
+
+/* certificates get a postmark stamp */
+.postmark {
+  position: absolute; top: 16px; right: 12px; font-family: var(--pixel); font-size: .5rem; letter-spacing: .08em; color: var(--rose);
+  border: 1.5px dashed var(--rose); border-radius: 50%; width: 52px; height: 52px; display: grid; place-content: center; text-align: center;
+  transform: rotate(14deg); opacity: .75; line-height: 1.2; padding: 4px;
+}
+.tag-wrap:hover .postmark { animation: stamp .4s ease; }
+@keyframes stamp { 40% { transform: rotate(14deg) scale(1.35); opacity: 1; } }
+
+/* design studio */
+.studio { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(20px, 4vw, 48px); align-items: start; }
+.studio-stage {
+  position: relative; background: var(--paper); border-radius: 26px; border: 1.5px solid var(--line); box-shadow: var(--shadow-lg);
+  padding: 18px 18px 22px; display: grid; justify-items: center; overflow: hidden;
+  background-image: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--lilac) 22%, transparent), transparent 65%);
+}
+.studio-view { width: min(300px, 70vw); aspect-ratio: 200 / 325; display: grid; place-items: end center; }
+.studio-view svg { width: 100%; height: auto; }
+.studio-view.dressing svg { animation: twirl .6s ease; }
+.mannequin-svg .seam { fill: none; stroke: #FF5C9A; stroke-width: 1.6; stroke-dasharray: 100; stroke-dashoffset: 100; opacity: 0; }
+.sewing .mannequin-svg .seam { opacity: 1; animation: draw 1.8s ease-in-out forwards; }
+.sewing .mannequin-svg .tape-measure { opacity: 0; transition: opacity .3s; }
+.sewing-machine { position: absolute; left: 14px; top: 16px; width: 104px; opacity: .95; }
+.sewing .m-wheel { animation: spin .5s linear infinite; }
+.sewing .m-needle { animation: needle-sew .12s linear infinite alternate; }
+@keyframes needle-sew { to { transform: translateY(5px); } }
+.studio-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 12px; position: relative; z-index: 2; }
+.studio-panel { display: grid; gap: 16px; }
+.step h3 { font-family: var(--sans); font-size: 1rem; display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.step h3 span { width: 26px; height: 26px; border-radius: 50%; display: grid; place-content: center; font-family: var(--pixel); font-size: .7rem; color: #fff; background: linear-gradient(135deg, #B79CFF, #FF9ACB); }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { border: 1.5px dashed var(--line); background: var(--paper); color: var(--ink2); padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: .88rem; transition: all .2s; }
+.opt:hover { border-color: var(--purple); color: var(--purple); transform: translateY(-2px); }
+.opt[aria-pressed="true"] { background: var(--purple); border: 1.5px solid var(--purple); color: #fff; }
+.swatch-btn {
+  width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--paper); background: var(--c); box-shadow: 0 0 0 1.5px var(--line), var(--shadow);
+  transition: transform .25s cubic-bezier(.3, 1.6, .5, 1);
+}
+.swatch-btn:hover { transform: scale(1.15); }
+.swatch-btn[aria-pressed="true"] { box-shadow: 0 0 0 2.5px var(--purple), var(--shadow); transform: scale(1.12); }
+.code-panel { background: #1C1530; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); border: 1.5px solid rgba(183, 156, 255, .3); }
+.code-head { display: flex; align-items: center; gap: 6px; padding: 9px 14px; background: #261D40; font-family: var(--pixel); font-size: .66rem; color: #C9B8FF; }
+.code-head i { width: 10px; height: 10px; border-radius: 50%; background: #FF7AB8; }
+.code-head i:nth-child(2) { background: #B79CFF; } .code-head i:nth-child(3) { background: #8CC8FF; }
+.code-head span { margin-left: 8px; }
+.code-panel pre { margin: 0; padding: 14px 16px; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: .82rem; line-height: 1.6; color: #E9E2FF; white-space: pre-wrap; word-break: break-word; }
+.c-kw { color: #FF9ACB; } .c-str { color: #8CE0FF; } .c-type { color: #C9B8FF; } .c-var { color: #FFFFFF; font-weight: 700; }
+.test-out { border-top: 1px dashed rgba(183, 156, 255, .3); display: grid; }
+.test-out:empty { display: none; }
+.test-out span { animation: pop .3s ease; }
+.t-cmd { color: #C9B8FF; } .t-ok { color: #8CE0FF; } .t-sum { color: #FF9ACB; font-weight: 700; margin-top: 4px; }
+
+/* footer: woven label + button tin */
+.footer-art { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px; margin-bottom: 18px; }
+.woven-label {
+  display: grid; gap: 2px; padding: 10px 22px; background: #FBF7FF; color: #3B2A6B; border-radius: 4px; text-align: center;
+  box-shadow: var(--shadow); outline: 1.5px dashed #B79CFF; outline-offset: -6px; transform: rotate(-2deg);
+  background-image: repeating-linear-gradient(90deg, rgba(123, 92, 214, .05) 0 2px, transparent 2px 4px);
+}
+.woven-label b { font-family: var(--serif); letter-spacing: .25em; font-size: .95rem; color: #3B2A6B; }
+.woven-label span { font-family: var(--pixel); font-size: .55rem; letter-spacing: .12em; color: #7B5CD6; }
+.button-tin { width: 74px; border: 0; background: none; padding: 0; transition: transform .2s; }
+.button-tin:hover { transform: rotate(-6deg) scale(1.05); }
+.button-tin svg { width: 100%; overflow: visible; }
+.button-tin .tin-lid { transform-box: fill-box; transform-origin: 10% 50%; }
+.button-tin.open .tin-lid { animation: lid .9s ease; }
+@keyframes lid { 30%, 70% { transform: rotate(-28deg) translateY(-10px); } }
+.spill-btn {
+  position: fixed; z-index: 90; pointer-events: none; border-radius: 50%; background-color: var(--c); box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .12);
+  background-image:
+    radial-gradient(circle at 34% 34%, rgba(43, 33, 64, .55) 0 1.3px, transparent 1.6px), radial-gradient(circle at 66% 34%, rgba(43, 33, 64, .55) 0 1.3px, transparent 1.6px),
+    radial-gradient(circle at 34% 66%, rgba(43, 33, 64, .55) 0 1.3px, transparent 1.6px), radial-gradient(circle at 66% 66%, rgba(43, 33, 64, .55) 0 1.3px, transparent 1.6px);
+}
+
+@media (max-width: 900px) {
+  .studio { grid-template-columns: 1fr; }
+  .sewing-machine { width: 84px; }
+}
+@media (max-width: 600px) {
+  .sewing-machine { display: none; }
+  .code-panel pre { font-size: .74rem; }
+  .postmark { width: 44px; height: 44px; font-size: .45rem; }
+}
