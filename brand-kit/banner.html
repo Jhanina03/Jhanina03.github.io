@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banner Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,500&family=DM+Sans:wght@500;700&family=Caveat:wght@700&family=Silkscreen&display=swap" rel="stylesheet">
+<style>
+  /* Renders social banners: ?type=linkedin (1584x396), og (1200x630), steam (1200x400), square (1080x1080) */
+  :root { --ink: #2B2140; --purple: #7B5CD6; }
+  html, body { margin: 0; overflow: hidden; background: #F8F5FF; }
+  .b {
+    position: relative; overflow: hidden; font-family: "DM Sans", sans-serif; color: var(--ink);
+    background:
+      radial-gradient(circle at 85% 10%, rgba(255,154,203,.55), transparent 40%),
+      radial-gradient(circle at 10% 90%, rgba(168,216,255,.7), transparent 45%),
+      linear-gradient(135deg, #F3ECFF, #E6F2FF);
+  }
+  .b::before { content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(123,92,214,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(123,92,214,.08) 1px, transparent 1px);
+    background-size: 26px 26px; }
+  .seam { position: absolute; inset: 16px; border: 2.5px dashed rgba(123,92,214,.35); border-radius: 22px; }
+  .content { position: absolute; display: flex; align-items: center; gap: 36px; }
+  .avatar { width: 230px; filter: drop-shadow(0 14px 18px rgba(59,42,107,.25)); }
+  .hand { font-family: Caveat, cursive; color: var(--purple); font-size: 34px; margin: 0; }
+  h1 { font-family: Fraunces, serif; font-size: 78px; line-height: .95; margin: 4px 0 10px; letter-spacing: -1px; }
+  h1 em { font-style: italic; font-weight: 500; background: linear-gradient(90deg, #7B5CD6, #5B8DEF, #FF7AB8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .role { font-family: Silkscreen, monospace; font-size: 17px; letter-spacing: .04em; color: #554B70; margin: 0 0 14px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; max-width: 760px; }
+  .chips span { background: #fff; border: 1.5px solid rgba(123,92,214,.25); border-radius: 999px; padding: 5px 14px; font-weight: 700; font-size: 16px; color: #554B70; }
+  .url { position: absolute; font-family: Silkscreen, monospace; font-size: 16px; color: var(--purple); background: #fff; padding: 6px 14px; border-radius: 10px; border: 1.5px dashed var(--purple); }
+  .tape { position: absolute; height: 34px; width: 140%; left: -20%; background: linear-gradient(#FFE8A8, #FFD66B); border-block: 2px solid #E9B949; transform: rotate(-4deg);
+          font-family: Silkscreen, monospace; font-size: 14px; color: #6b4f00; white-space: nowrap; line-height: 34px; word-spacing: 18px; }
+  .spool { position: absolute; width: 54px; height: 70px; }
+  .spool::before, .spool::after { content: ""; position: absolute; left: 0; right: 0; height: 12px; border-radius: 50%; background: #C7A27A; }
+  .spool::before { top: 0 } .spool::after { bottom: 0 }
+  .spool i { position: absolute; inset: 7px 8px; border-radius: 4px; background: repeating-linear-gradient(170deg, var(--c) 0 3px, #fff 3px 5px); }
+</style>
+</head>
+<body>
+<div class="b" id="b">
+  <div class="seam"></div>
+  <div class="tape" id="tape">ANGULAR ✂ TYPESCRIPT ✂ .NET ✂ NESTJS ✂ NEXT.JS ✂ SQL SERVER ✂ POSTGRESQL ✂ MONGODB ✂ QA ✂ TESTING ✂ DOCKER ✂ ODOO ✂ PYTHON ✂ AI ✂ ANGULAR ✂ TYPESCRIPT ✂ .NET ✂ NESTJS ✂ NEXT.JS ✂ SQL SERVER</div>
+  <div class="spool" style="--c:#B79CFF;right:60px;top:40px;transform:rotate(14deg)"><i></i></div>
+  <div class="spool" style="--c:#FF9ACB;right:130px;top:70px;transform:rotate(-10deg) scale(.8)"><i></i></div>
+  <div class="content" id="content">
+    <div class="avatar" id="avatar"></div>
+    <div>
+      <p class="hand" id="hello">Hi! Welcome to my atelier ✂︎</p>
+      <h1>Jhanina <em>Conterón</em></h1>
+      <p class="role">Software Engineer · Frontend · Databases · QA</p>
+      <div class="chips"><span>Angular</span><span>TypeScript</span><span>.NET</span><span>NestJS</span><span>SQL</span><span>MongoDB</span><span>Testing</span></div>
+    </div>
+  </div>
+  <div class="url" id="url">jhanina03.github.io</div>
+</div>
+<script src="../js/avatar.js"></script>
+<script>
+  const p = new URLSearchParams(location.search);
+  const type = p.get("type") || "og";
+  const look = p.get("look") || "sunny";
+  const S = { linkedin: [1584, 396], og: [1200, 630], steam: [1200, 400], square: [1080, 1080] }[type] || [1200, 630];
+  const b = document.getElementById("b"), c = document.getElementById("content"), u = document.getElementById("url"), t = document.getElementById("tape");
+  b.style.width = S[0] + "px"; b.style.height = S[1] + "px";
+  document.getElementById("avatar").innerHTML = avatarSVG(look, "b");
+  if (p.get("lang") === "es") {
+    document.getElementById("hello").textContent = "¡Hola! Bienvenid@ a mi atelier ✂︎";
+    document.querySelector(".role").textContent = "Ingeniera de Software · Frontend · Bases de datos · QA";
+  }
+  if (type === "linkedin") {
+    // LinkedIn's profile photo covers the bottom-left, so content sits to the right
+    c.style.right = "70px"; c.style.top = "34px"; c.style.gap = "26px";
+    document.querySelector(".avatar").style.width = "190px";
+    document.querySelector("h1").style.fontSize = "66px";
+    t.style.bottom = "-6px"; t.style.top = "auto";
+    u.style.right = "40px"; u.style.bottom = "44px"; u.style.display = "none";
+    document.querySelectorAll(".spool").forEach((s) => (s.style.display = "none"));
+  } else if (type === "steam") {
+    c.style.left = "70px"; c.style.top = "40px";
+    document.querySelector(".avatar").style.width = "200px";
+    t.style.bottom = "0"; u.style.right = "40px"; u.style.top = "36px";
+  } else if (type === "square") {
+    c.style.flexDirection = "column"; c.style.textAlign = "center"; c.style.left = "0"; c.style.right = "0"; c.style.top = "90px"; c.style.gap = "10px";
+    document.querySelector(".avatar").style.width = "380px";
+    document.querySelector(".chips").style.justifyContent = "center";
+    t.style.bottom = "70px"; u.style.left = "50%"; u.style.transform = "translateX(-50%)"; u.style.bottom = "24px";
+  } else {
+    c.style.left = "70px"; c.style.top = "120px";
+    t.style.bottom = "40px"; u.style.right = "48px"; u.style.top = "40px";
+    document.querySelector(".chips").style.maxWidth = "640px";
+    document.querySelector("h1").style.fontSize = "70px";
+  }
+</script>
+</body>
+</html>

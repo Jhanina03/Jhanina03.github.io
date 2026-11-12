@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pattern Archive · Jhanina Conterón</title>
+  <meta name="description" content="Every project by Jhanina Conterón: frontend, backend, databases, AI, QA and games.">
+  <meta name="theme-color" content="#7B5CD6">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@500;700&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="loaded">
+  <div class="thread-progress" aria-hidden="true">
+    <svg viewBox="0 0 1000 12" preserveAspectRatio="none"><path class="thread-bg" d="M0 6H1000"/><path class="thread-fg" d="M0 6H1000" pathLength="1000"/></svg>
+    <span class="needle">🪡</span>
+  </div>
+  <canvas class="stitch-cursor" aria-hidden="true"></canvas>
+
+  <header class="hud">
+    <a class="brand" href="index.html" aria-label="Back to home">
+      <span class="brand-mark">JC</span><span class="brand-name">Jhanina<span>.atelier</span></span>
+    </a>
+    <div class="hud-right">
+      <a class="btn btn-ghost small" href="cv.html" data-i18n="nav.cv">Quick CV</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang="en" aria-pressed="true">EN</button><button data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle dark mode"><span class="sun">☀︎</span><span class="moon">☾</span></button>
+    </div>
+  </header>
+
+  <main>
+    <header class="page-head">
+      <a class="back-link" href="index.html#projects" data-i18n="archive.back">← Back to the atelier</a>
+      <h1 data-i18n="archive.title">The pattern archive</h1>
+      <p data-i18n="archive.lead"></p>
+    </header>
+    <section class="section" style="padding-top:24px">
+      <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+      <p class="archive-count"><b id="count">0</b> <span data-i18n="archive.count">patterns</span></p>
+      <div class="patterns" id="archive"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <ul class="socials" id="socials" style="margin-bottom:18px"></ul>
+    <p>© <span id="year">2026</span> Jhanina Conterón · <a href="index.html" data-i18n="archive.back">← Back to the atelier</a></p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    (function () {
+      const tags = ["all", "front", "back", "data", "ai", "qa", "fashion", "game"];
+      let active = "all";
+      try { const h = location.hash.slice(1); if (tags.includes(h)) active = h; } catch (e) {}
+      const list = PROJECTS.slice().sort((a, b) => b.year - a.year || (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+
+      function render() {
+        document.getElementById("filters").innerHTML = tags.map((tg) => {
+          const n = tg === "all" ? list.length : list.filter((p) => p.tags.includes(tg)).length;
+          return `<button type="button" data-tag="${tg}" aria-pressed="${tg === active}">${i18n.t("filter." + tg)} <small>${n}</small></button>`;
+        }).join("");
+        const shown = list.filter((p) => active === "all" || p.tags.includes(active));
+        document.getElementById("archive").innerHTML = shown.map((p, i) => JC.projectCard(p, i)).join("");
+        document.querySelectorAll("#archive .pattern").forEach((el) => { el.classList.remove("reveal"); el.classList.add("pop"); });
+        document.getElementById("count").textContent = shown.length;
+      }
+      document.getElementById("filters").addEventListener("click", (e) => {
+        const b = e.target.closest("button[data-tag]");
+        if (!b) return;
+        active = b.dataset.tag;
+        history.replaceState(null, "", active === "all" ? location.pathname : "#" + active);
+        render();
+      });
+      document.getElementById("socials").innerHTML = JC.socialsHTML();
+      document.addEventListener("langchange", render);
+      render();
+    })();
+  </script>
+</body>
+</html>
