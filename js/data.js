@@ -8,8 +8,7 @@ window.PROFILE = {
   fullName: "Britani Jhanina Conterón Villamarín",
   email: "jhaninaconteron03@gmail.com",
   github: "https://github.com/Jhanina03",
-  // TODO: replace with your public profile URL (linkedin.com/in/your-name)
-  linkedin: "https://www.linkedin.com/search/results/people/?keywords=Jhanina%20Conter%C3%B3n%20Villamar%C3%ADn",
+  linkedin: "https://www.linkedin.com/in/conter%C3%B3n-jhanina-20b29333a/",
   steam: "https://steamcommunity.com/profiles/76561199698705664/",
   instagram: "https://www.instagram.com/jhanis_03/",
   facebook: "https://www.facebook.com/britani.villamarin",

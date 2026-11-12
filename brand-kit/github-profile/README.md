@@ -58,7 +58,7 @@ Soy estudiante de 8.º semestre de **Ingeniería de Software** en la Universidad
 ### 💌 Let's make something that fits
 
 <p>
-  <a href="https://www.linkedin.com/search/results/people/?keywords=Jhanina%20Conter%C3%B3n%20Villamar%C3%ADn"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://www.linkedin.com/in/conter%C3%B3n-jhanina-20b29333a/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="https://steamcommunity.com/profiles/76561199698705664/"><img src="https://img.shields.io/badge/Steam-1b2838?style=flat-square&logo=steam&logoColor=white" alt="Steam"></a>
   <a href="https://www.instagram.com/jhanis_03/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white" alt="Instagram"></a>
   <a href="mailto:jhaninaconteron03@gmail.com"><img src="https://img.shields.io/badge/jhaninaconteron03@gmail.com-7B5CD6?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
