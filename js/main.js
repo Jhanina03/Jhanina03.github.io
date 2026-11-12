@@ -4,8 +4,8 @@
 (function () {
   const $ = (s, el = document) => el.querySelector(s);
   const t = (k) => i18n.t(k), pk = (v) => i18n.pick(v), esc = JC.esc;
-  const LOOK_COLORS = { sunny: "#F6C431", casual: "#FFB3D9", hoodie: "#B79CFF", designer: "#7B5CD6", labcoat: "#E9EEF8", blazer: "#4F6EDB", gala: "#9FC4FF" };
-  const SECTION_LABEL = { about: "nav.about", skills: "nav.skills", projects: "nav.projects", experience: "nav.experience", certificates: "nav.certs" };
+  const LOOK_COLORS = { sunny: "#F6C431", casual: "#FFB3D9", hoodie: "#B79CFF", designer: "#7B5CD6", labcoat: "#E9EEF8", blazer: "#4F6EDB", gala: "#9FC4FF", coat: "#E8BFD3", noir: "#3A3344" };
+  const SECTION_LABEL = { about: "nav.about", skills: "nav.skills", projects: "nav.projects", experience: "nav.experience", certificates: "nav.certs", contact: "nav.contact" };
 
   /* ---------- state (per-browser convenience only) ---------- */
   let unlocked = ["sunny"];
@@ -17,6 +17,8 @@
   const save = () => { try { localStorage.setItem("jc-looks", JSON.stringify(unlocked)); } catch (e) {} };
 
   /* ---------- avatars ---------- */
+  const markup = (slotId, look) => avatarSVG(look, slotId) +
+    (slotId === "hero-avatar" ? `<span class="hi-bubble">${i18n.lang === "es" ? "¡Hola! 👋" : "Hi! 👋"}</span>` : "");
   function dress(slotId, look, animate = true) {
     const slot = document.getElementById(slotId);
     if (!slot) return;
@@ -25,12 +27,24 @@
     if (animate && !JC.reduced && slot.innerHTML) {
       slot.classList.remove("dressing"); void slot.offsetWidth; slot.classList.add("dressing");
       clearTimeout(slot._t);
-      slot._t = setTimeout(() => (slot.innerHTML = avatarSVG(slot.dataset.look, slotId)), 280);
+      slot._t = setTimeout(() => (slot.innerHTML = markup(slotId, slot.dataset.look)), 280);
     } else {
       clearTimeout(slot._t);
-      slot.innerHTML = avatarSVG(look, slotId);
+      slot.innerHTML = markup(slotId, look);
     }
   }
+  // tap to wave on touch screens (hover covers mouse users)
+  ["hero-avatar", "buddy-avatar"].forEach((sid) => {
+    const el = document.getElementById(sid);
+    el.addEventListener("click", () => {
+      el.classList.remove("waving"); void el.offsetWidth; el.classList.add("waving");
+      clearTimeout(el._w); el._w = setTimeout(() => el.classList.remove("waving"), 2900);
+    });
+  });
+  document.addEventListener("langchange", () => {
+    const b = document.querySelector("#hero-avatar .hi-bubble");
+    if (b) b.textContent = i18n.lang === "es" ? "¡Hola! 👋" : "Hi! 👋";
+  });
   dress("hero-avatar", heroLook, false);
   dress("qa-avatar", "hoodie", false);
   dress("buddy-avatar", heroLook, false);
@@ -39,13 +53,13 @@
   function renderRack() {
     $("#hangers").innerHTML = LOOKS.map((l) => {
       const open = unlocked.includes(l.id);
-      const hint = l.section === "qa-game"
-        ? `${t("rack.locked")}: QA`
+      const hint = l.section === "qa-game" ? `${t("rack.locked")}: QA`
+        : l.section === "secret" ? t("rack.secret")
         : `${t("rack.locked")}: ${t(SECTION_LABEL[l.section] || "nav.about")}`;
       return `<li><button class="hanger" type="button" data-look="${l.id}" ${open ? "" : "disabled"}
         aria-pressed="${heroLook === l.id}" title="${esc(open ? pk(l.name) : hint)}" aria-label="${esc(open ? pk(l.name) : hint)}">
         <span class="cloth ${l.id === "gala" ? "dress" : ""}" style="--c:${LOOK_COLORS[l.id]}"></span>
-        <span class="hname">${esc(open ? pk(l.name) : "???")}</span></button></li>`;
+        <span class="hname">${esc(open ? pk(l.name) : l.section === "secret" ? "✦ ✦ ✦" : "???")}</span></button></li>`;
     }).join("");
     $(".looks-count").textContent = `${unlocked.length}/${LOOKS.length}`;
   }
@@ -71,7 +85,13 @@
     save();
     renderRack();
     const look = LOOKS.find((l) => l.id === id);
-    toast(`<span class="pixel">NEW</span> ${t("toast.unlock")} <strong style="color:inherit">${esc(pk(look.name))}</strong>`);
+    toast(id === "noir"
+      ? `<span class="pixel">SECRET</span> ${t("toast.secret")} <strong style="color:inherit">${esc(pk(look.name))}</strong>`
+      : `<span class="pixel">NEW</span> ${t("toast.unlock")} <strong style="color:inherit">${esc(pk(look.name))}</strong>`);
+    // the secret look appears once every other look is collected
+    if (id !== "noir" && !unlocked.includes("noir") && LOOKS.every((l) => l.id === "noir" || unlocked.includes(l.id))) {
+      setTimeout(() => unlock("noir"), 1400);
+    }
     const stat = $(".hud-stat"); stat.classList.remove("bump"); void stat.offsetWidth; stat.classList.add("bump");
     const h = document.querySelector(`.hanger[data-look="${id}"]`);
     if (h) h.classList.add("just-unlocked");
@@ -112,7 +132,7 @@
   }
   let current = "hero";
   const sectionLook = (sec) => {
-    if (sec === "contact") return "sunny";
+    if (sec === "contact") return unlocked.includes("coat") ? "coat" : "sunny";
     if (sec === "qa") return unlocked.includes("labcoat") ? "labcoat" : "hoodie";
     const l = LOOKS.find((x) => x.section === sec);
     return l && unlocked.includes(l.id) ? l.id : heroLook;

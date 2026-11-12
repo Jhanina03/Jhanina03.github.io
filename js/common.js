@@ -50,7 +50,7 @@
 
   /* ---------- loader ---------- */
   const done = () => document.body.classList.add("loaded");
-  setTimeout(done, reduced ? 0 : 2300); // matches the CSS intro (needle sews the name)
+  setTimeout(done, reduced ? 0 : 3000); // matches the CSS intro (laser cut + split)
 
   /* ---------- thread progress ---------- */
   const fg = document.querySelector(".thread-fg");

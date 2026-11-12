@@ -91,33 +91,102 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .btn-ghost:hover { background: var(--bg2); }
 .btn.small { padding: .55rem 1rem; font-size: .92rem; }
 
-/* ---------- loader ---------- */
+/* ---------- loader: holographic atelier ----------
+   0.0–1.6s  a laser needle sews the name in neon
+   1.4–2.0s  holographic fill + stitches, ring and % reach 100
+   2.1s      a laser line cuts across the middle
+   2.3–2.9s  the two halves slide apart to reveal the page
+   Everything is CSS, so it never waits on JS timers. */
+@property --pct { syntax: "<integer>"; inherits: false; initial-value: 0; }
 .loader {
-  position: fixed; inset: 0; z-index: 200; display: grid; place-content: center; justify-items: center; gap: 14px;
-  background: var(--bg); transition: opacity .6s, visibility .6s;
-  animation: loader-out .55s ease 2.3s forwards; /* CSS-only exit, never depends on JS timers */
+  position: fixed; inset: 0; z-index: 200; display: grid; place-content: center; justify-items: center;
+  color: #EDE6FF; overflow: hidden; pointer-events: none;
+  animation: loader-out .01s linear 2.95s forwards;
 }
-.loader-stage { position: relative; display: grid; justify-items: center; gap: 6px; width: min(560px, 92vw); }
-.loader-art { width: 100%; height: auto; overflow: visible; }
+.loaded .loader { visibility: hidden; }
+@keyframes loader-out { to { visibility: hidden; } }
+.loader-half { position: absolute; left: 0; right: 0; height: 50.5%; background: #0E0A1F; z-index: 0; }
+.loader-half.top { top: 0; animation: split-up .7s cubic-bezier(.7, 0, .3, 1) 2.25s forwards; }
+.loader-half.bottom { bottom: 0; animation: split-down .7s cubic-bezier(.7, 0, .3, 1) 2.25s forwards; }
+@keyframes split-up { to { transform: translateY(-101%); } }
+@keyframes split-down { to { transform: translateY(101%); } }
+.loader-fx { position: absolute; inset: 0; z-index: 1; animation: fade-out .5s ease 2.2s forwards; }
+.aurora i { position: absolute; width: 46vmax; height: 46vmax; border-radius: 50%; filter: blur(70px); opacity: .45; mix-blend-mode: screen; }
+.aurora i:nth-child(1) { background: #7B5CD6; left: -10vmax; top: -12vmax; animation: drift 6s ease-in-out infinite alternate; }
+.aurora i:nth-child(2) { background: #3BA7FF; right: -12vmax; top: 10vmax; animation: drift 7s ease-in-out infinite alternate-reverse; }
+.aurora i:nth-child(3) { background: #FF5C9A; left: 20vmax; bottom: -20vmax; animation: drift 5s ease-in-out infinite alternate; }
+@keyframes drift { to { transform: translate(6vmax, 4vmax) scale(1.15); } }
+.neon-floor {
+  position: absolute; left: -50%; right: -50%; bottom: -10%; height: 55%;
+  background-image: linear-gradient(rgba(183, 156, 255, .55) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(127, 227, 255, .45) 1.5px, transparent 1.5px);
+  background-size: 60px 60px; transform: perspective(380px) rotateX(62deg); transform-origin: 50% 0;
+  -webkit-mask-image: linear-gradient(transparent, #000 45%); mask-image: linear-gradient(transparent, #000 45%);
+  animation: floor 1.2s linear infinite;
+}
+@keyframes floor { to { background-position: 0 60px, 0 0; } }
+.stars {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(1.5px 1.5px at 12% 18%, #fff, transparent), radial-gradient(1px 1px at 28% 62%, #C9B8FF, transparent),
+    radial-gradient(1.5px 1.5px at 72% 22%, #fff, transparent), radial-gradient(1px 1px at 86% 48%, #7FE3FF, transparent),
+    radial-gradient(1.5px 1.5px at 44% 12%, #FF9ACB, transparent), radial-gradient(1px 1px at 62% 80%, #fff, transparent),
+    radial-gradient(1px 1px at 8% 82%, #7FE3FF, transparent), radial-gradient(1.5px 1.5px at 92% 86%, #C9B8FF, transparent);
+  animation: twinkle 2s ease-in-out infinite;
+}
+.loader-stage { position: relative; z-index: 2; display: grid; justify-items: center; width: min(600px, 92vw); animation: stage-out .45s ease 2.1s forwards; }
+@keyframes stage-out { to { opacity: 0; transform: scale(1.06); filter: blur(6px); } }
+.holo-ring { position: absolute; top: 50%; left: 50%; width: min(420px, 86vw); aspect-ratio: 1; transform: translate(-50%, -58%); pointer-events: none; }
+.holo-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); animation: ring-spin 8s linear infinite; }
+.ring-track { fill: none; stroke: rgba(183, 156, 255, .18); stroke-width: 1; stroke-dasharray: 2 4; }
+.ring-fill { fill: none; stroke: url(#name-fill); stroke: #B79CFF; stroke-width: 1.6; stroke-dasharray: 100; stroke-dashoffset: 100; filter: drop-shadow(0 0 6px #B79CFF); animation: ring-load 1.9s ease-in-out .1s forwards; }
+@keyframes ring-load { to { stroke-dashoffset: 0; } }
+@keyframes ring-spin { to { transform: rotate(270deg); } }
+.loader-art { width: 100%; height: auto; overflow: visible; position: relative; }
 .loader-art text { font-family: var(--hand); font-weight: 700; font-size: 132px; }
-.loader-thread { fill: none; stroke: var(--rose); stroke-width: 2.5; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.6s ease-in-out .1s forwards; }
-.name-outline { fill: none; stroke: var(--purple); stroke-width: 2.2; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.5s ease-in-out .2s forwards; }
-.name-fill { fill: url(#name-fill); opacity: 0; animation: fade-in .45s ease 1.45s forwards; }
-.name-stitch { fill: none; stroke: #fff; stroke-width: 1.6; stroke-dasharray: 6 5; opacity: 0; animation: fade-in .4s ease 1.75s forwards; }
+.loader-thread { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.6s ease-in-out .1s forwards; }
+.name-outline { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.5s ease-in-out .15s forwards; }
+.name-fill { opacity: 0; animation: fade-in .5s ease 1.4s forwards; }
+.name-stitch { opacity: 0; animation: fade-in .4s ease 1.7s forwards; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 @keyframes fade-in { to { opacity: 1; } }
-.loader-needle { position: absolute; top: 26%; left: 8%; font-size: 34px; transform: rotate(45deg); animation: needle-run 1.5s ease-in-out .2s forwards, needle-bob .25s ease-in-out .2s 6; }
-@keyframes needle-run { to { left: 86%; top: 22%; } }
-@keyframes needle-bob { 50% { margin-top: 10px; } }
-.loader-spools { display: flex; gap: 18px; margin-top: -6px; }
-.loader-spools .spool { width: 34px; height: 38px; }
-.loader-spools .spool::before, .loader-spools .spool::after { height: 8px; }
-.loader-spools .spool span { inset: 5px 6px; }
-.loader-spools .spool.alt { animation-direction: reverse; }
-.loader-spools .spool.alt span { background: repeating-linear-gradient(0deg, #7FB6FF 0 4px, #FFFFFF 4px 8px); }
-@keyframes loader-out { to { opacity: 0; visibility: hidden; } }
-.loader p { font-family: var(--hand); font-size: 1.6rem; color: var(--purple); margin: 0; }
-.loaded .loader { opacity: 0; visibility: hidden; }
+@keyframes fade-out { to { opacity: 0; } }
+/* laser needle travelling across the letters */
+.laser-needle { position: absolute; top: 2%; left: 8%; width: 0; height: 60%; animation: needle-run 1.5s ease-in-out .15s forwards, fade-out .3s ease 1.65s forwards; }
+@keyframes needle-run { to { left: 90%; } }
+.needle-body { position: absolute; top: 0; left: -3px; width: 6px; height: 34%; border-radius: 3px 3px 50% 50%; background: linear-gradient(#F4F1FF, #9AA0B4); box-shadow: 0 0 10px #C9B8FF; }
+.needle-body::after { content: ""; position: absolute; top: 5px; left: 1.5px; width: 3px; height: 9px; border-radius: 2px; background: #0E0A1F; }
+.beam { position: absolute; top: 33%; left: -1px; width: 2px; height: 70%; background: linear-gradient(#FF5C9A, rgba(127, 227, 255, .9), transparent); box-shadow: 0 0 12px 2px #FF5C9A; animation: beam .12s linear infinite alternate; }
+@keyframes beam { to { opacity: .55; } }
+.laser-needle i { position: absolute; top: 96%; left: 0; width: 4px; height: 4px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px 2px #7FE3FF; animation: spark .6s ease-out infinite; }
+.laser-needle i:nth-of-type(2) { animation-delay: .12s; --dx: -14px; background: #FF9ACB; }
+.laser-needle i:nth-of-type(3) { animation-delay: .24s; --dx: 16px; }
+.laser-needle i:nth-of-type(4) { animation-delay: .36s; --dx: -8px; background: #C9B8FF; }
+.laser-needle i:nth-of-type(5) { animation-delay: .48s; --dx: 10px; background: #FF9ACB; }
+@keyframes spark { from { transform: translate(0, 0) scale(1); opacity: 1; } to { transform: translate(var(--dx, 12px), 22px) scale(0); opacity: 0; } }
+.loader-surname {
+  margin: -18px 0 10px; font-family: var(--pixel); font-size: clamp(.8rem, 2.4vw, 1.1rem); letter-spacing: .3em; color: #7FE3FF;
+  text-shadow: 0 0 10px rgba(127, 227, 255, .8); opacity: 0; animation: glitch-in .6s steps(6) 1.2s forwards;
+}
+@keyframes glitch-in {
+  0% { opacity: 0; transform: translateX(-8px); text-shadow: 3px 0 #FF5C9A, -3px 0 #7FE3FF; }
+  50% { opacity: 1; transform: translateX(4px); text-shadow: -3px 0 #FF5C9A, 3px 0 #7FE3FF; }
+  100% { opacity: 1; transform: none; text-shadow: 0 0 10px rgba(127, 227, 255, .8); }
+}
+.loader-hud { display: flex; align-items: center; gap: 12px; font-family: var(--pixel); font-size: .7rem; letter-spacing: .12em; color: #C9B8FF; }
+.loader-hud .pct { --pct: 0; counter-reset: pct var(--pct); animation: pct 1.9s ease-in-out .1s forwards; min-width: 4ch; text-align: right; color: #fff; }
+.loader-hud .pct::after { content: counter(pct) "%"; }
+@keyframes pct { to { --pct: 100; } }
+.hud-bar { width: 110px; height: 6px; border-radius: 3px; background: rgba(183, 156, 255, .2); overflow: hidden; }
+.hud-bar b { display: block; height: 100%; width: 0; background: repeating-linear-gradient(90deg, #FF5C9A 0 6px, #B79CFF 6px 12px); box-shadow: 0 0 8px #FF5C9A; animation: bar 1.9s ease-in-out .1s forwards; }
+@keyframes bar { to { width: 100%; } }
+.hud-text { opacity: .8; }
+/* the laser that cuts the fabric open */
+.cut-line {
+  position: absolute; top: 50%; left: 0; right: 0; height: 2px; z-index: 3; transform: scaleX(0); transform-origin: 0 50%;
+  background: linear-gradient(90deg, transparent, #FF5C9A 10%, #fff 50%, #7FE3FF 90%, transparent);
+  box-shadow: 0 0 16px 3px #FF5C9A; animation: cut .35s ease-in 1.95s forwards, fade-out .3s ease 2.4s forwards;
+}
+@keyframes cut { to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) { .loader { display: none; } }
 .spool { width: 64px; height: 70px; position: relative; animation: spin 1.1s linear infinite; }
 .spool::before, .spool::after { content: ""; position: absolute; left: 0; right: 0; height: 12px; border-radius: 50%; background: var(--deep); }
 .spool::before { top: 0; } .spool::after { bottom: 0; }
@@ -245,9 +314,19 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 @keyframes float { 50% { transform: translateY(-8px); } }
 
 /* avatar animations */
-.avatar-svg .av-eyes { transform-origin: 100px 101px; animation: blink 5s infinite; }
+.avatar-svg .av-eyes { transform-origin: 100px 105px; animation: blink 5s infinite; }
 @keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
-.avatar-svg .av-wave { transform-origin: 141px 162px; animation: wave 1.4s ease-in-out infinite; }
+/* she only waves when you hover (or tap) her */
+.avatar-svg .av-arm-r { transform-origin: 141px 162px; }
+#hero-avatar, #buddy-avatar { cursor: pointer; }
+#hero-avatar:hover .av-arm-r, .buddy .avatar-slot:hover .av-arm-r, .avatar-slot.waving .av-arm-r { animation: wave 1.4s ease-in-out 2; }
+.buddy .avatar-slot { pointer-events: auto; }
+.hi-bubble {
+  position: absolute; top: 6%; right: -6%; z-index: 3; background: var(--paper); color: var(--ink); border: 1.5px solid var(--line);
+  padding: 6px 12px; border-radius: 14px 14px 14px 4px; font-weight: 700; font-size: .9rem; box-shadow: var(--shadow);
+  opacity: 0; transform: scale(.6) translateY(8px); transform-origin: 0 100%; transition: opacity .25s, transform .3s cubic-bezier(.3, 1.6, .5, 1); pointer-events: none;
+}
+#hero-avatar:hover .hi-bubble, #hero-avatar.waving .hi-bubble { opacity: 1; transform: none; }
 @keyframes wave { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-150deg); } 50% { transform: rotate(-120deg); } 75% { transform: rotate(-150deg); } }
 .avatar-svg .av-sparkle { animation: twinkle 1.6s infinite; }
 .avatar-svg .av-magnifier { transform-origin: 150px 214px; animation: scan 2.4s ease-in-out infinite; }
@@ -261,7 +340,7 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .rack-title { font-size: 1.05rem; }
 .rack-shuffle { border: 0; background: var(--bg2); color: var(--purple); font-size: .8rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
 .rack-bar { height: 5px; border-radius: 4px; background: linear-gradient(90deg, #C9C9D6, #F4F4FA, #C9C9D6); margin: 10px 4px 0; }
-.hangers { list-style: none; margin: 0; padding: 0 2px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.hangers { list-style: none; margin: 0; padding: 0 2px; display: grid; grid-template-columns: repeat(9, 1fr); gap: 2px; }
 .hanger {
   position: relative; border: 0; background: none; width: 100%; padding: 14px 0 4px; display: grid; justify-items: center; gap: 2px;
   transform-origin: 50% 0; transition: transform .3s;
@@ -571,8 +650,8 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
   .spool-card { grid-template-columns: 54px 1fr; padding: 18px; gap: 14px; }
   .spool-art { width: 54px; height: 74px; }
   .spool-card:hover .spool-art i { width: 0; }
-  .hanger .cloth { width: 28px; height: 32px; }
-  .hanger .hname { font-size: .55rem; }
+  .hanger .cloth { width: 24px; height: 28px; }
+  .hanger .hname { font-size: .5rem; }
   .buddy { width: 66px; right: 10px; }
   .buddy .avatar-slot { width: 66px; }
   .bubble { display: none; }

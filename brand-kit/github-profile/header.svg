@@ -31,222 +31,321 @@
   <rect width="1200" height="340" fill="url(#bg)"/><rect width="1200" height="340" fill="url(#pk)"/><rect width="1200" height="340" fill="url(#grid)"/>
   <rect x="14" y="14" width="1172" height="312" rx="18" fill="none" stroke="#7B5CD6" stroke-opacity=".4" stroke-width="2.5" class="stitch"/>
   <g class="float"><g transform="translate(70 22) scale(.92)"><g class="look l0">
-  <!-- hair back -->
-  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
-  <!-- legs + arms -->
-  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
-  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
-  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
-  <g class="av-arm-r av-wave"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
-  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
+  <defs>
+    <linearGradient id="streak-h0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-h0" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-h0" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+  </defs>
+  <!-- hair back, soft waves at the ends -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
+  <!-- legs -->
+  <rect x="81" y="226" width="15" height="70" rx="7" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="15" height="70" rx="7" fill="#EDC3A3"/>
+  <!-- neck -->
+  <path d="M92 132H108V156Q100 160 92 156Z" fill="#DCA684"/>
   <!-- outfit -->
   <g class="av-outfit">
-      <path d="M62 222H138L134 296H104L100 246L96 296H66Z" fill="#8DB4E8"/>
-      <path d="M100 246V292" stroke="#6E98D4" stroke-width="1.5"/>
-      <ellipse cx="80" cy="298" rx="13" ry="6" fill="#FFFFFF"/><ellipse cx="120" cy="298" rx="13" ry="6" fill="#FFFFFF"/>
-      <path d="M68 166Q76 150 90 146L110 146Q124 150 132 166L136 222L64 222Z" fill="#F6C431"/>
-      <path d="M90 146Q100 152 110 146L110 160Q100 166 90 160Z" fill="#E8B21E"/>
-      <path d="M70 178Q100 186 130 178M68 196Q100 204 132 196M66 212Q100 220 134 212" stroke="#E8B21E" stroke-width="1.4" fill="none"/>
-      <path d="M92 164Q100 176 108 164" stroke="#E7C26B" stroke-width="1.5" fill="none"/>
-      <rect x="97" y="173" width="6" height="7" rx="1" fill="#E7C26B"/></g>
-  <path d="M64 162Q58 166 58 176" stroke="#DCA684" stroke-width="1" fill="none" opacity=".5"/>
-  <!-- front hair locks with blonde streaks -->
-  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
-  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
-  <!-- face -->
-  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
-  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
-  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
-  <!-- bangs -->
-  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
-  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <!-- eyes -->
-  <g class="av-eyes">
-    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
-    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
-  </g>
-  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <!-- cat-eye glasses -->
-  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
-    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
-    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
-  </g>
-  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
-  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
-  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
-  <!-- nose, blush, lips -->
-  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
-  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
-  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
-  <path d="M86 156Q100 170 114 156" stroke="#E7C26B" stroke-width="1.6" fill="none"/>
-</g><g class="look l1">
-  <!-- hair back -->
-  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
-  <!-- legs + arms -->
-  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
-  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
-  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
-  <g class="av-arm-r"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
-  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
-  <!-- outfit -->
-  <g class="av-outfit">
-      <path d="M62 222H138L134 296H104L100 246L96 296H66Z" fill="#3B2A6B"/>
-      <ellipse cx="80" cy="298" rx="13" ry="6" fill="#FFFFFF"/><ellipse cx="120" cy="298" rx="13" ry="6" fill="#FFFFFF"/>
-      <path d="M64 158Q54 160 52 172L50 220L64 220L68 176Z" fill="#B79CFF"/><path d="M136 158Q146 160 148 172L150 220L136 220L132 176Z" fill="#B79CFF"/>
-      <path d="M50 214H65V224H50ZM135 214H150V224H135Z" fill="#9A7BF0"/>
-      <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="#B79CFF"/>
-      <path d="M78 150Q100 176 122 150Q118 164 100 168Q82 164 78 150Z" fill="#9A7BF0"/>
-      <path d="M94 166V186M106 166V186" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-      <path d="M78 200H122V218H78Z" fill="#9A7BF0" opacity=".6"/>
-      <text x="100" y="198" text-anchor="middle" font-family="monospace" font-weight="700" font-size="13" fill="#fff">&lt;/&gt;</text></g>
+    <path d="M62 222H138L135 294H104.5L100 244L95.5 294H65Z" fill="#8DB4E8"/>
+    <path d="M62 229H138" stroke="#6E98D4" stroke-width="1.4"/>
+    <path d="M100 229V244" stroke="#6E98D4" stroke-width="1.2"/>
+    <path d="M67 230Q71 240 82 238" stroke="#6E98D4" stroke-width="1.2" fill="none"/>
+            <path d="M84 246L81 286" stroke="#fff" stroke-width=".9" stroke-dasharray="2 2" opacity=".55"/>
+            <path d="M65.2 286H95.7L95.5 294H65Z" fill="#6E98D4" opacity=".55"/><g transform="matrix(-1 0 0 1 200 0)"><path d="M67 230Q71 240 82 238" stroke="#6E98D4" stroke-width="1.2" fill="none"/>
+            <path d="M84 246L81 286" stroke="#fff" stroke-width=".9" stroke-dasharray="2 2" opacity=".55"/>
+            <path d="M65.2 286H95.7L95.5 294H65Z" fill="#6E98D4" opacity=".55"/></g>
+    <path d="M65.5 294Q65.5 288.5 73 288.5H85Q93.5 289.5 95 296V300H65.5Z" fill="#FFFFFF" stroke="#D9D3F0" stroke-width=".8"/>
+    <path d="M65 299H95.5V302Q80 303.6 65 302Z" fill="#fff" stroke="#D9D3F0" stroke-width=".8"/>
+    <path d="M73 291.5L79 294M75 290L81 292.5" stroke="#F6C431" stroke-width="1.2" stroke-linecap="round"/><g transform="matrix(-1 0 0 1 200 0)">
+    <path d="M65.5 294Q65.5 288.5 73 288.5H85Q93.5 289.5 95 296V300H65.5Z" fill="#FFFFFF" stroke="#D9D3F0" stroke-width=".8"/>
+    <path d="M65 299H95.5V302Q80 303.6 65 302Z" fill="#fff" stroke="#D9D3F0" stroke-width=".8"/>
+    <path d="M73 291.5L79 294M75 290L81 292.5" stroke="#F6C431" stroke-width="1.2" stroke-linecap="round"/></g>
+        <path d="M70 168Q75 152 91 146L109 146Q125 152 130 168L134 222H66Z" fill="#F6C431"/>
+        <path d="M73 172V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M79 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M85 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M91 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M97 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M103 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M109 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M115 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M121 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M127 172V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/>
+        <path d="M90 146Q100 150 110 146V157Q100 161 90 157Z" fill="#E8B21E"/>
+        <path d="M66 214Q100 220 134 214" stroke="#E5AE16" stroke-width="1.4" fill="none"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h0)"/></g>
+  <!-- arms (sleeves move with them) -->
+  <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/></g>
+  <g class="av-arm-r"><g transform="matrix(-1 0 0 1 200 0)"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/></g></g>
+  <g class="av-over">
+        <path d="M92 158Q100 172 108 158" stroke="#E2B65A" stroke-width="1.1" fill="none"/>
+        <path d="M98 168.5A2 2 0 0 1 102 168.5V170" stroke="#E2B65A" stroke-width="1.2" fill="none"/>
+        <rect x="97" y="170" width="6" height="5.6" rx="1.2" fill="#E2B65A"/></g>
   
-  <!-- front hair locks with blonde streaks -->
-  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
-  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
-  <!-- face -->
-  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
-  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
-  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
-  <!-- bangs -->
-  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
-  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <!-- eyes -->
+  <!-- front locks with thin blonde streaks -->
+  <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h0)"/>
+  <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h0)"/>
+  <!-- face: soft oval -->
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h0)"/>
+  <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
+  <!-- soft wispy bangs -->
+  <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
+  <path d="M78 54Q100 45 122 55" stroke="#5A4553" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+  <path d="M86 62Q89 72 87 84M114 62Q112 72 115 86" stroke="#3D2C38" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".8"/>
+  <!-- eyes: big and expressive, with lashes -->
   <g class="av-eyes">
-    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
-    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
+    <ellipse cx="84" cy="105" rx="6.6" ry="7.2" fill="#fff"/>
+    <ellipse cx="84.5" cy="105.8" rx="5.2" ry="6.2" fill="#4A2C1E"/><ellipse cx="84.5" cy="106.4" rx="3.6" ry="4.4" fill="#2A170F"/>
+    <circle cx="86.6" cy="103.2" r="1.9" fill="#fff"/><circle cx="82.4" cy="108.6" r=".9" fill="#fff" opacity=".9"/>
+    <ellipse cx="116" cy="105" rx="6.6" ry="7.2" fill="#fff"/>
+    <ellipse cx="115.5" cy="105.8" rx="5.2" ry="6.2" fill="#4A2C1E"/><ellipse cx="115.5" cy="106.4" rx="3.6" ry="4.4" fill="#2A170F"/>
+    <circle cx="117.6" cy="103.2" r="1.9" fill="#fff"/><circle cx="113.4" cy="108.6" r=".9" fill="#fff" opacity=".9"/>
   </g>
-  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <!-- cat-eye glasses -->
-  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
-    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
-    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
+  <path d="M76.8 101.6Q84 96.4 91.6 100.6M108.4 100.6Q116 96.4 123.2 101.6" stroke="#1D1418" stroke-width="2.1" fill="none" stroke-linecap="round"/>
+  <path d="M76.8 101.6L74.2 99.6M78.4 99.8L76.4 97.4M123.2 101.6L125.8 99.6M121.6 99.8L123.6 97.4" stroke="#1D1418" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M79 111.4Q84 113 89 111.4M111 111.4Q116 113 121 111.4" stroke="#8C6A5C" stroke-width=".8" fill="none" opacity=".6"/>
+  <!-- cat-eye glasses like hers: thin black browline on top, fine clear rim below -->
+  <g fill="rgba(210,235,255,.12)" stroke="#C3C7D2" stroke-width="1">
+    <path d="M71 98Q84 93 97 97Q97 111 85.5 114.4Q72.5 113.4 71 98Z"/>
+    <path d="M103 97Q116 93 129 98Q127.5 113.4 114.5 114.4Q103 111 103 97Z"/>
   </g>
-  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
-  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
-  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
+  <path d="M70 98.4Q84 92 97.6 96.6M102.4 96.6Q116 92 130 98.4" stroke="#1D1720" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M70 98.4L67.8 95.8M130 98.4L132.2 95.8" stroke="#1D1720" stroke-width="1.9" stroke-linecap="round"/>
+  <path d="M97 98Q100 96 103 98" stroke="#C3C7D2" stroke-width="1.2" fill="none"/>
+  <path d="M74.5 100.5L78.5 105.5M107 100L109.6 103.4" stroke="#fff" stroke-width="1.1" opacity=".45" stroke-linecap="round"/>
   <!-- nose, blush, lips -->
-  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
-  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
-  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
+  <path d="M100.5 112q-2 4.6 1 5.6" stroke="#DCA684" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="76" cy="119" rx="6.4" ry="3.6" fill="#FF8FB8" opacity=".38"/><ellipse cx="124" cy="119" rx="6.4" ry="3.6" fill="#FF8FB8" opacity=".38"/>
+  <path d="M93 125Q96.5 122.4 100 124Q103.5 122.4 107 125Q104 130.4 100 130.6Q96 130.4 93 125Z" fill="#B42E3D"/>
+  <path d="M93.6 125.2Q100 127.4 106.4 125.2" stroke="#86202C" stroke-width=".8" fill="none"/>
+  <ellipse cx="102" cy="128.4" rx="2" ry=".8" fill="#fff" opacity=".35"/>
+  
+</g><g class="look l1">
+  <defs>
+    <linearGradient id="streak-h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-h1" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-h1" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+  </defs>
+  <!-- hair back, soft waves at the ends -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
+  <!-- legs -->
+  <rect x="81" y="226" width="15" height="70" rx="7" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="15" height="70" rx="7" fill="#EDC3A3"/>
+  <!-- neck -->
+  <path d="M92 132H108V156Q100 160 92 156Z" fill="#DCA684"/>
+  <!-- outfit -->
+  <g class="av-outfit">
+    <path d="M62 222H138L135 294H104.5L100 244L95.5 294H65Z" fill="#3B2A6B"/>
+    <path d="M62 229H138" stroke="#2C1F52" stroke-width="1.4"/>
+    <path d="M80 232L80.5 292" stroke="#2C1F52" stroke-width="1.1" opacity=".8"/><g transform="matrix(-1 0 0 1 200 0)"><path d="M80 232L80.5 292" stroke="#2C1F52" stroke-width="1.1" opacity=".8"/></g><rect x="65" y="286" width="30.6" height="8" rx="2" fill="#2C1F52"/><g transform="matrix(-1 0 0 1 200 0)"><rect x="65" y="286" width="30.6" height="8" rx="2" fill="#2C1F52"/></g>
+    <path d="M65.5 294Q65.5 288.5 73 288.5H85Q93.5 289.5 95 296V300H65.5Z" fill="#FFFFFF" stroke="#D9D3F0" stroke-width=".8"/>
+    <path d="M65 299H95.5V302Q80 303.6 65 302Z" fill="#fff" stroke="#D9D3F0" stroke-width=".8"/>
+    <path d="M73 291.5L79 294M75 290L81 292.5" stroke="#B79CFF" stroke-width="1.2" stroke-linecap="round"/><g transform="matrix(-1 0 0 1 200 0)">
+    <path d="M65.5 294Q65.5 288.5 73 288.5H85Q93.5 289.5 95 296V300H65.5Z" fill="#FFFFFF" stroke="#D9D3F0" stroke-width=".8"/>
+    <path d="M65 299H95.5V302Q80 303.6 65 302Z" fill="#fff" stroke="#D9D3F0" stroke-width=".8"/>
+    <path d="M73 291.5L79 294M75 290L81 292.5" stroke="#B79CFF" stroke-width="1.2" stroke-linecap="round"/></g>
+        <path d="M78 154Q76 140 100 138Q124 140 122 154Q112 162 100 162Q88 162 78 154Z" fill="#9A7BF0"/>
+        <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="#B79CFF"/>
+        <path d="M86 151Q100 168 114 151Q110 162 100 165Q90 162 86 151Z" fill="#8A6AE6"/>
+        <path d="M94 163V184M106 163V184" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+        <rect x="92.6" y="183" width="3" height="5" rx="1" fill="#E4DAFF"/><rect x="104.4" y="183" width="3" height="5" rx="1" fill="#E4DAFF"/>
+        <text x="100" y="200" text-anchor="middle" font-family="monospace" font-weight="700" font-size="11" fill="#fff">&lt;/&gt;</text>
+        <path d="M76 205Q78 201 84 201H116Q122 201 124 205L126 218H74Z" fill="#A98BFA" stroke="#9A7BF0" stroke-width="1"/>
+        <path d="M61 218H139V226H61Z" fill="#9A7BF0"/>
+        <path d="M64 219V225M70 219V225M76 219V225M82 219V225M88 219V225M94 219V225M100 219V225M106 219V225M112 219V225M118 219V225M124 219V225M130 219V225M136 219V225" stroke="#8A6AE6" stroke-width=".8"/>
+        <path transform="translate(118 170) scale(0.55)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF9ACB"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h1)"/></g>
+  <!-- arms (sleeves move with them) -->
+  <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
+    <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 216H52.2Z" fill="#B79CFF" />
+    <rect x="51.6" y="209" width="15.2" height="8" rx="2" fill="#9A7BF0"/></g>
+  <g class="av-arm-r"><g transform="matrix(-1 0 0 1 200 0)"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
+    <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 216H52.2Z" fill="#B79CFF" />
+    <rect x="51.6" y="209" width="15.2" height="8" rx="2" fill="#9A7BF0"/></g></g>
+  <g class="av-over"></g>
+  
+  <!-- front locks with thin blonde streaks -->
+  <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h1)"/>
+  <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h1)"/>
+  <!-- face: soft oval -->
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h1)"/>
+  <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
+  <!-- soft wispy bangs -->
+  <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
+  <path d="M78 54Q100 45 122 55" stroke="#5A4553" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+  <path d="M86 62Q89 72 87 84M114 62Q112 72 115 86" stroke="#3D2C38" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".8"/>
+  <!-- eyes: big and expressive, with lashes -->
+  <g class="av-eyes">
+    <ellipse cx="84" cy="105" rx="6.6" ry="7.2" fill="#fff"/>
+    <ellipse cx="84.5" cy="105.8" rx="5.2" ry="6.2" fill="#4A2C1E"/><ellipse cx="84.5" cy="106.4" rx="3.6" ry="4.4" fill="#2A170F"/>
+    <circle cx="86.6" cy="103.2" r="1.9" fill="#fff"/><circle cx="82.4" cy="108.6" r=".9" fill="#fff" opacity=".9"/>
+    <ellipse cx="116" cy="105" rx="6.6" ry="7.2" fill="#fff"/>
+    <ellipse cx="115.5" cy="105.8" rx="5.2" ry="6.2" fill="#4A2C1E"/><ellipse cx="115.5" cy="106.4" rx="3.6" ry="4.4" fill="#2A170F"/>
+    <circle cx="117.6" cy="103.2" r="1.9" fill="#fff"/><circle cx="113.4" cy="108.6" r=".9" fill="#fff" opacity=".9"/>
+  </g>
+  <path d="M76.8 101.6Q84 96.4 91.6 100.6M108.4 100.6Q116 96.4 123.2 101.6" stroke="#1D1418" stroke-width="2.1" fill="none" stroke-linecap="round"/>
+  <path d="M76.8 101.6L74.2 99.6M78.4 99.8L76.4 97.4M123.2 101.6L125.8 99.6M121.6 99.8L123.6 97.4" stroke="#1D1418" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M79 111.4Q84 113 89 111.4M111 111.4Q116 113 121 111.4" stroke="#8C6A5C" stroke-width=".8" fill="none" opacity=".6"/>
+  <!-- cat-eye glasses like hers: thin black browline on top, fine clear rim below -->
+  <g fill="rgba(210,235,255,.12)" stroke="#C3C7D2" stroke-width="1">
+    <path d="M71 98Q84 93 97 97Q97 111 85.5 114.4Q72.5 113.4 71 98Z"/>
+    <path d="M103 97Q116 93 129 98Q127.5 113.4 114.5 114.4Q103 111 103 97Z"/>
+  </g>
+  <path d="M70 98.4Q84 92 97.6 96.6M102.4 96.6Q116 92 130 98.4" stroke="#1D1720" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M70 98.4L67.8 95.8M130 98.4L132.2 95.8" stroke="#1D1720" stroke-width="1.9" stroke-linecap="round"/>
+  <path d="M97 98Q100 96 103 98" stroke="#C3C7D2" stroke-width="1.2" fill="none"/>
+  <path d="M74.5 100.5L78.5 105.5M107 100L109.6 103.4" stroke="#fff" stroke-width="1.1" opacity=".45" stroke-linecap="round"/>
+  <!-- nose, blush, lips -->
+  <path d="M100.5 112q-2 4.6 1 5.6" stroke="#DCA684" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="76" cy="119" rx="6.4" ry="3.6" fill="#FF8FB8" opacity=".38"/><ellipse cx="124" cy="119" rx="6.4" ry="3.6" fill="#FF8FB8" opacity=".38"/>
+  <path d="M93 125Q96.5 122.4 100 124Q103.5 122.4 107 125Q104 130.4 100 130.6Q96 130.4 93 125Z" fill="#B42E3D"/>
+  <path d="M93.6 125.2Q100 127.4 106.4 125.2" stroke="#86202C" stroke-width=".8" fill="none"/>
+  <ellipse cx="102" cy="128.4" rx="2" ry=".8" fill="#fff" opacity=".35"/>
   
 </g><g class="look l2">
-  <!-- hair back -->
-  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
-  <!-- legs + arms -->
-  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
-  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
-  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
-  <g class="av-arm-r"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
-  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
+  <defs>
+    <linearGradient id="streak-h2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-h2" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-h2" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+  </defs>
+  <!-- hair back, soft waves at the ends -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
+  <!-- legs -->
+  <rect x="81" y="226" width="15" height="70" rx="7" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="15" height="70" rx="7" fill="#EDC3A3"/>
+  <!-- neck -->
+  <path d="M92 132H108V156Q100 160 92 156Z" fill="#DCA684"/>
   <!-- outfit -->
   <g class="av-outfit">
-      <path d="M62 222H138L134 296H104L100 246L96 296H66Z" fill="#56628F"/>
-      <ellipse cx="80" cy="298" rx="13" ry="6" fill="#3B2A6B"/><ellipse cx="120" cy="298" rx="13" ry="6" fill="#3B2A6B"/>
-      <path d="M64 158Q54 160 52 172L50 220L64 220L68 176Z" fill="#FFFFFF" stroke="#D9D3F0"/><path d="M136 158Q146 160 148 172L150 220L136 220L132 176Z" fill="#FFFFFF" stroke="#D9D3F0"/>
-      <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L142 250L58 250Z" fill="#FFFFFF" stroke="#D9D3F0"/>
-      <path d="M86 150L100 190L114 150Z" fill="#A8D8FF"/>
-      <path d="M86 150L96 184L84 196M114 150L104 184L116 196" stroke="#D9D3F0" stroke-width="2" fill="none"/>
-      <path d="M100 190V250" stroke="#D9D3F0" stroke-width="2"/>
-      <rect x="110" y="204" width="18" height="14" rx="2" fill="none" stroke="#D9D3F0" stroke-width="2"/>
-      <path d="M116 200V212" stroke="#7B5CD6" stroke-width="3" stroke-linecap="round"/>
-      <rect x="72" y="200" width="16" height="10" rx="2" fill="#8EE3E0"/>
-      <text x="80" y="208" text-anchor="middle" font-family="monospace" font-size="6" font-weight="700" fill="#2f6f6c">QA</text>
-      <g class="av-magnifier"><circle cx="160" cy="206" r="10" fill="#E8F6FF" stroke="#3B2A6B" stroke-width="3"/><path d="M152 214L146 222" stroke="#3B2A6B" stroke-width="4" stroke-linecap="round"/></g></g>
+    <path d="M62 222H138L135 294H104.5L100 244L95.5 294H65Z" fill="#56628F"/>
+    <path d="M62 229H138" stroke="#45507A" stroke-width="1.4"/>
+    <path d="M80 232L80.5 292" stroke="#45507A" stroke-width="1.1" opacity=".8"/><g transform="matrix(-1 0 0 1 200 0)"><path d="M80 232L80.5 292" stroke="#45507A" stroke-width="1.1" opacity=".8"/></g><path d="M65.5 295Q65.5 290 73 290H86Q94 291 95.5 297V300.5H65.5Z" fill="#3B2A6B"/><path d="M70 293H82" stroke="#fff" stroke-width=".8" opacity=".35"/><g transform="matrix(-1 0 0 1 200 0)"><path d="M65.5 295Q65.5 290 73 290H86Q94 291 95.5 297V300.5H65.5Z" fill="#3B2A6B"/><path d="M70 293H82" stroke="#fff" stroke-width=".8" opacity=".35"/></g>
+        <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="#CDEBFF"/>
+        <path d="M92 151L100 162L108 151" stroke="#A8D2F2" stroke-width="2" fill="none"/>
+        <path d="M64 160Q70 151 86 150L98 196L99 252H58Z" fill="#FFFFFF" stroke="#DCD6F2" stroke-width="1.2"/>
+                <path d="M86 150L96 182L87 188L79 160Z" fill="#F3F0FB" stroke="#DCD6F2" stroke-width="1"/>
+                <rect x="66" y="222" width="18" height="15" rx="2" fill="none" stroke="#DCD6F2" stroke-width="1.4"/>
+                <circle cx="96" cy="206" r="1.6" fill="#C9C2E6"/><circle cx="96" cy="222" r="1.6" fill="#C9C2E6"/><g transform="matrix(-1 0 0 1 200 0)"><path d="M64 160Q70 151 86 150L98 196L99 252H58Z" fill="#FFFFFF" stroke="#DCD6F2" stroke-width="1.2"/>
+                <path d="M86 150L96 182L87 188L79 160Z" fill="#F3F0FB" stroke="#DCD6F2" stroke-width="1"/>
+                <rect x="66" y="222" width="18" height="15" rx="2" fill="none" stroke="#DCD6F2" stroke-width="1.4"/>
+                <circle cx="96" cy="206" r="1.6" fill="#C9C2E6"/><circle cx="96" cy="222" r="1.6" fill="#C9C2E6"/></g>
+        <rect x="113" y="178" width="14" height="12" rx="2" fill="none" stroke="#DCD6F2" stroke-width="1.4"/>
+        <path d="M117 172V184" stroke="#7B5CD6" stroke-width="2.6" stroke-linecap="round"/><path d="M122 174V184" stroke="#FF7AB8" stroke-width="2.6" stroke-linecap="round"/>
+        <rect x="70" y="182" width="17" height="11" rx="2" fill="#8EE3E0"/>
+        <text x="78.5" y="190" text-anchor="middle" font-family="monospace" font-size="6.5" font-weight="700" fill="#2f6f6c">QA</text><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h2)"/></g>
+  <!-- arms (sleeves move with them) -->
+  <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
+    <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 216H52.2Z" fill="#FFFFFF" stroke="#DCD6F2" stroke-width="1"/>
+    <rect x="51.6" y="209" width="15.2" height="8" rx="2" fill="#F3F0FB"/></g>
+  <g class="av-arm-r"><g transform="matrix(-1 0 0 1 200 0)"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
+    <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 216H52.2Z" fill="#FFFFFF" stroke="#DCD6F2" stroke-width="1"/>
+    <rect x="51.6" y="209" width="15.2" height="8" rx="2" fill="#F3F0FB"/></g><g class="av-magnifier"><path d="M143 228L150 240" stroke="#3B2A6B" stroke-width="4" stroke-linecap="round"/><circle cx="155" cy="248" r="9" fill="#E8F6FF" stroke="#3B2A6B" stroke-width="3"/><path d="M151 244Q153 242 156 242" stroke="#fff" stroke-width="1.6" fill="none"/></g></g>
+  <g class="av-over"></g>
   
-  <!-- front hair locks with blonde streaks -->
-  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
-  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
-  <!-- face -->
-  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
-  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
-  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
-  <!-- bangs -->
-  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
-  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <!-- eyes -->
+  <!-- front locks with thin blonde streaks -->
+  <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h2)"/>
+  <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h2)"/>
+  <!-- face: soft oval -->
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h2)"/>
+  <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
+  <!-- soft wispy bangs -->
+  <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
+  <path d="M78 54Q100 45 122 55" stroke="#5A4553" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+  <path d="M86 62Q89 72 87 84M114 62Q112 72 115 86" stroke="#3D2C38" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".8"/>
+  <!-- eyes: big and expressive, with lashes -->
   <g class="av-eyes">
-    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
-    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
+    <ellipse cx="84" cy="105" rx="6.6" ry="7.2" fill="#fff"/>
+    <ellipse cx="84.5" cy="105.8" rx="5.2" ry="6.2" fill="#4A2C1E"/><ellipse cx="84.5" cy="106.4" rx="3.6" ry="4.4" fill="#2A170F"/>
+    <circle cx="86.6" cy="103.2" r="1.9" fill="#fff"/><circle cx="82.4" cy="108.6" r=".9" fill="#fff" opacity=".9"/>
+    <ellipse cx="116" cy="105" rx="6.6" ry="7.2" fill="#fff"/>
+    <ellipse cx="115.5" cy="105.8" rx="5.2" ry="6.2" fill="#4A2C1E"/><ellipse cx="115.5" cy="106.4" rx="3.6" ry="4.4" fill="#2A170F"/>
+    <circle cx="117.6" cy="103.2" r="1.9" fill="#fff"/><circle cx="113.4" cy="108.6" r=".9" fill="#fff" opacity=".9"/>
   </g>
-  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <!-- cat-eye glasses -->
-  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
-    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
-    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
+  <path d="M76.8 101.6Q84 96.4 91.6 100.6M108.4 100.6Q116 96.4 123.2 101.6" stroke="#1D1418" stroke-width="2.1" fill="none" stroke-linecap="round"/>
+  <path d="M76.8 101.6L74.2 99.6M78.4 99.8L76.4 97.4M123.2 101.6L125.8 99.6M121.6 99.8L123.6 97.4" stroke="#1D1418" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M79 111.4Q84 113 89 111.4M111 111.4Q116 113 121 111.4" stroke="#8C6A5C" stroke-width=".8" fill="none" opacity=".6"/>
+  <!-- cat-eye glasses like hers: thin black browline on top, fine clear rim below -->
+  <g fill="rgba(210,235,255,.12)" stroke="#C3C7D2" stroke-width="1">
+    <path d="M71 98Q84 93 97 97Q97 111 85.5 114.4Q72.5 113.4 71 98Z"/>
+    <path d="M103 97Q116 93 129 98Q127.5 113.4 114.5 114.4Q103 111 103 97Z"/>
   </g>
-  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
-  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
-  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
+  <path d="M70 98.4Q84 92 97.6 96.6M102.4 96.6Q116 92 130 98.4" stroke="#1D1720" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M70 98.4L67.8 95.8M130 98.4L132.2 95.8" stroke="#1D1720" stroke-width="1.9" stroke-linecap="round"/>
+  <path d="M97 98Q100 96 103 98" stroke="#C3C7D2" stroke-width="1.2" fill="none"/>
+  <path d="M74.5 100.5L78.5 105.5M107 100L109.6 103.4" stroke="#fff" stroke-width="1.1" opacity=".45" stroke-linecap="round"/>
   <!-- nose, blush, lips -->
-  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
-  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
-  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
+  <path d="M100.5 112q-2 4.6 1 5.6" stroke="#DCA684" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="76" cy="119" rx="6.4" ry="3.6" fill="#FF8FB8" opacity=".38"/><ellipse cx="124" cy="119" rx="6.4" ry="3.6" fill="#FF8FB8" opacity=".38"/>
+  <path d="M93 125Q96.5 122.4 100 124Q103.5 122.4 107 125Q104 130.4 100 130.6Q96 130.4 93 125Z" fill="#B42E3D"/>
+  <path d="M93.6 125.2Q100 127.4 106.4 125.2" stroke="#86202C" stroke-width=".8" fill="none"/>
+  <ellipse cx="102" cy="128.4" rx="2" ry=".8" fill="#fff" opacity=".35"/>
   
 </g><g class="look l3">
-  <!-- hair back -->
-  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
-  <!-- legs + arms -->
-  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
-  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
-  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
-  <g class="av-arm-r"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
-  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
+  <defs>
+    <linearGradient id="streak-h3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-h3" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-h3" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+  </defs>
+  <!-- hair back, soft waves at the ends -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
+  <!-- legs -->
+  <rect x="81" y="226" width="15" height="70" rx="7" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="15" height="70" rx="7" fill="#EDC3A3"/>
+  <!-- neck -->
+  <path d="M92 132H108V156Q100 160 92 156Z" fill="#DCA684"/>
   <!-- outfit -->
   <g class="av-outfit">
-      <defs><linearGradient id="gown-h3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B79CFF"/><stop offset=".55" stop-color="#9FC4FF"/><stop offset="1" stop-color="#FFB3D9"/></linearGradient></defs>
-      <path d="M70 162Q100 154 130 162L134 212Q160 260 172 302H28Q40 260 66 212Z" fill="url(#gown-h3)"/>
-      <path d="M70 162Q100 172 130 162" stroke="#fff" stroke-width="2" fill="none" opacity=".7"/>
-      <path d="M66 212Q100 222 134 212" stroke="#fff" stroke-width="3" fill="none" opacity=".8"/>
-      <path d="M60 300Q72 250 84 222M140 300Q128 250 116 222M100 224V300" stroke="#fff" stroke-width="1.2" fill="none" opacity=".45"/>
-      <path class="av-sparkle" transform="translate(62 270) scale(0.9)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(138 250) scale(0.7)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(104 190) scale(0.6)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(90 284) scale(0.8)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/>
-      <path d="M84 50L88 40L94 48L100 36L106 48L112 40L116 50Z" fill="#FFD66B" stroke="#E9B949" stroke-width="1"/>
-      <circle cx="100" cy="42" r="2.4" fill="#FF9ACB"/></g>
-  <path d="M64 162Q58 166 58 176" stroke="#DCA684" stroke-width="1" fill="none" opacity=".5"/>
-  <!-- front hair locks with blonde streaks -->
-  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
-  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
-  <!-- face -->
-  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
-  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
-  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
-  <!-- bangs -->
-  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
-  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <!-- eyes -->
+        <defs><linearGradient id="gown-h3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B79CFF"/><stop offset=".55" stop-color="#9FC4FF"/><stop offset="1" stop-color="#FFB3D9"/></linearGradient></defs>
+        <path d="M66 206Q30 258 22 302H178Q170 258 134 206Z" fill="#D9CCFF"/>
+        <path d="M66 206Q42 260 36 302H164Q158 260 134 206Z" fill="url(#gown-h3)"/>
+        <path d="M58 300Q70 250 84 214M142 300Q130 250 116 214M100 216V300M78 302Q86 256 92 216M122 302Q114 256 108 216" stroke="#fff" stroke-width="1.1" fill="none" opacity=".4"/>
+        <path d="M36 302Q60 294 82 302T126 302T164 302" stroke="#fff" stroke-width="1.6" fill="none" opacity=".7"/>
+        <path class="av-sparkle" transform="translate(58 272) scale(0.9)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(140 252) scale(0.7)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(92 286) scale(0.8)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(120 284) scale(0.6)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(74 240) scale(0.5)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/>
+        <path d="M68 168Q75 158 86 164Q100 173 114 164Q125 158 132 168L134 210H66Z" fill="url(#gown-h3)"/>
+        <path d="M68 168Q75 158 86 164Q100 173 114 164Q125 158 132 168" stroke="#fff" stroke-width="1.6" fill="none" opacity=".8"/>
+        <path class="av-sparkle" transform="translate(104 190) scale(0.55)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(84 182) scale(0.4)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h3)"/></g>
+  <!-- arms (sleeves move with them) -->
+  <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/></g>
+  <g class="av-arm-r"><g transform="matrix(-1 0 0 1 200 0)"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/></g></g>
+  <g class="av-over">
+        <path d="M100 210Q88 200 84 208Q86 216 100 211Q114 216 116 208Q112 200 100 210Z" fill="#FF9ACB"/>
+        <path d="M98 211L92 226M102 211L108 226" stroke="#FF9ACB" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="100" cy="210" r="3" fill="#FF7AB8"/></g>
+  <path d="M91 150Q100 164 109 150" stroke="#E2B65A" stroke-width="1.1" fill="none"/><path transform="translate(97.2 160.5) scale(0.48)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="none" stroke="#E2B65A" stroke-width="1.6"/>
+  <!-- front locks with thin blonde streaks -->
+  <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h3)"/>
+  <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h3)"/>
+  <!-- face: soft oval -->
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h3)"/>
+  <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
+  <!-- soft wispy bangs -->
+  <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
+  <path d="M78 54Q100 45 122 55" stroke="#5A4553" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+  <path d="M86 62Q89 72 87 84M114 62Q112 72 115 86" stroke="#3D2C38" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".8"/>
+  <!-- eyes: big and expressive, with lashes -->
   <g class="av-eyes">
-    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
-    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
+    <ellipse cx="84" cy="105" rx="6.6" ry="7.2" fill="#fff"/>
+    <ellipse cx="84.5" cy="105.8" rx="5.2" ry="6.2" fill="#4A2C1E"/><ellipse cx="84.5" cy="106.4" rx="3.6" ry="4.4" fill="#2A170F"/>
+    <circle cx="86.6" cy="103.2" r="1.9" fill="#fff"/><circle cx="82.4" cy="108.6" r=".9" fill="#fff" opacity=".9"/>
+    <ellipse cx="116" cy="105" rx="6.6" ry="7.2" fill="#fff"/>
+    <ellipse cx="115.5" cy="105.8" rx="5.2" ry="6.2" fill="#4A2C1E"/><ellipse cx="115.5" cy="106.4" rx="3.6" ry="4.4" fill="#2A170F"/>
+    <circle cx="117.6" cy="103.2" r="1.9" fill="#fff"/><circle cx="113.4" cy="108.6" r=".9" fill="#fff" opacity=".9"/>
   </g>
-  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <!-- cat-eye glasses -->
-  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
-    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
-    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
+  <path d="M76.8 101.6Q84 96.4 91.6 100.6M108.4 100.6Q116 96.4 123.2 101.6" stroke="#1D1418" stroke-width="2.1" fill="none" stroke-linecap="round"/>
+  <path d="M76.8 101.6L74.2 99.6M78.4 99.8L76.4 97.4M123.2 101.6L125.8 99.6M121.6 99.8L123.6 97.4" stroke="#1D1418" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M79 111.4Q84 113 89 111.4M111 111.4Q116 113 121 111.4" stroke="#8C6A5C" stroke-width=".8" fill="none" opacity=".6"/>
+  <!-- cat-eye glasses like hers: thin black browline on top, fine clear rim below -->
+  <g fill="rgba(210,235,255,.12)" stroke="#C3C7D2" stroke-width="1">
+    <path d="M71 98Q84 93 97 97Q97 111 85.5 114.4Q72.5 113.4 71 98Z"/>
+    <path d="M103 97Q116 93 129 98Q127.5 113.4 114.5 114.4Q103 111 103 97Z"/>
   </g>
-  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
-  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
-  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
+  <path d="M70 98.4Q84 92 97.6 96.6M102.4 96.6Q116 92 130 98.4" stroke="#1D1720" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M70 98.4L67.8 95.8M130 98.4L132.2 95.8" stroke="#1D1720" stroke-width="1.9" stroke-linecap="round"/>
+  <path d="M97 98Q100 96 103 98" stroke="#C3C7D2" stroke-width="1.2" fill="none"/>
+  <path d="M74.5 100.5L78.5 105.5M107 100L109.6 103.4" stroke="#fff" stroke-width="1.1" opacity=".45" stroke-linecap="round"/>
   <!-- nose, blush, lips -->
-  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
-  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
-  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
-  
+  <path d="M100.5 112q-2 4.6 1 5.6" stroke="#DCA684" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="76" cy="119" rx="6.4" ry="3.6" fill="#FF8FB8" opacity=".38"/><ellipse cx="124" cy="119" rx="6.4" ry="3.6" fill="#FF8FB8" opacity=".38"/>
+  <path d="M93 125Q96.5 122.4 100 124Q103.5 122.4 107 125Q104 130.4 100 130.6Q96 130.4 93 125Z" fill="#B42E3D"/>
+  <path d="M93.6 125.2Q100 127.4 106.4 125.2" stroke="#86202C" stroke-width=".8" fill="none"/>
+  <ellipse cx="102" cy="128.4" rx="2" ry=".8" fill="#fff" opacity=".35"/>
+  <path d="M84 50L88 40L94 48L100 36L106 48L112 40L116 50Z" fill="#FFD66B" stroke="#E9B949" stroke-width="1"/><circle cx="100" cy="42" r="2.4" fill="#FF9ACB"/><circle cx="88" cy="41" r="1.4" fill="#A8D8FF"/><circle cx="112" cy="41" r="1.4" fill="#A8D8FF"/>
 </g></g></g>
   <text x="300" y="110" class="t4">Hi! Welcome to my atelier ✂</text>
   <text x="300" y="180" class="t1">Jhanina <tspan class="t2">Conterón</tspan></text>
