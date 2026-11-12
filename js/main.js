@@ -241,9 +241,43 @@
     dress("qa-avatar", "hoodie");
   });
 
+  /* ---------- sewing buttons on the top thread ---------- */
+  const BTN_COLORS = { about: "#FF9ACB", skills: "#B79CFF", projects: "#7B5CD6", qa: "#8EE3E0", experience: "#5B8DEF", certificates: "#FFB3D9", contact: "#FF5C9A" };
+  const BTN_LABEL = { about: "nav.about", skills: "nav.skills", projects: "nav.projects", qa: "nav.qa", experience: "nav.experience", certificates: "nav.certs", contact: "nav.contact" };
+  const btnWrap = $("#thread-buttons");
+  const btnSections = [...document.querySelectorAll("section[data-section]")].filter((s) => s.id);
+  function renderThreadButtons() {
+    btnWrap.innerHTML = btnSections.map((s) =>
+      `<button class="thread-btn" type="button" data-target="${s.id}" style="--c:${BTN_COLORS[s.id] || "#B79CFF"}" aria-label="${esc(t(BTN_LABEL[s.id]))}"><span class="tip">${esc(t(BTN_LABEL[s.id]))}</span></button>`
+    ).join("");
+    placeThreadButtons();
+  }
+  function placeThreadButtons() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    btnWrap.querySelectorAll(".thread-btn").forEach((b) => {
+      const s = document.getElementById(b.dataset.target);
+      const p = max > 0 ? Math.min(1, Math.max(0, (s.offsetTop - 80) / max)) : 0;
+      b.style.left = `calc(${p * 100}% - ${p * 8}px)`;
+      b.dataset.at = String(p);
+    });
+    sewButtons();
+  }
+  function sewButtons() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? scrollY / max : 0;
+    btnWrap.querySelectorAll(".thread-btn").forEach((b) => b.classList.toggle("sewn", p + 0.002 >= Number(b.dataset.at)));
+  }
+  btnWrap.addEventListener("click", (e) => {
+    const b = e.target.closest(".thread-btn");
+    if (b) document.getElementById(b.dataset.target).scrollIntoView({ behavior: JC.reduced ? "auto" : "smooth" });
+  });
+  document.addEventListener("threadscroll", sewButtons);
+  addEventListener("resize", placeThreadButtons);
+  addEventListener("load", placeThreadButtons);
+
   /* ---------- render + re-render on language change ---------- */
   function renderAll() {
-    renderSkills(); renderProjects(); renderRunway(); renderTags(); renderRack();
+    renderSkills(); renderProjects(); renderRunway(); renderTags(); renderRack(); renderThreadButtons();
     document.querySelectorAll("#spools .reveal, #featured .reveal, #runway .reveal, #tags .reveal").forEach(JC.reveal);
   }
   renderAll();

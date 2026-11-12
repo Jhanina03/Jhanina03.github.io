@@ -1,0 +1,447 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 400" width="1180" height="400" role="img" aria-label="My wardrobe: seven illustrated looks">
+<style>
+  .av-eyes{transform-origin:100px 101px;animation:blink 5s infinite}
+  @keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+  .av-wave{transform-origin:141px 162px;animation:wave 1.4s ease-in-out infinite}
+  @keyframes wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-150deg)}50%{transform:rotate(-120deg)}75%{transform:rotate(-150deg)}}
+  .av-sparkle{animation:tw 1.6s infinite}@keyframes tw{50%{opacity:.3}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}.stitch{animation:sew 3s linear infinite}@keyframes sew{to{stroke-dashoffset:-30}}.swing{animation:swing 4s ease-in-out infinite}@keyframes swing{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3ECFF"/><stop offset="1" stop-color="#E6F2FF"/></linearGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#7B5CD6" stroke-opacity=".08"/></pattern></defs>
+  <rect width="1180" height="400" rx="22" fill="url(#bg)"/><rect width="1180" height="400" rx="22" fill="url(#grid)"/>
+  <rect x="10" y="10" width="1160" height="380" rx="16" fill="none" stroke="#7B5CD6" stroke-opacity=".35" stroke-width="2" stroke-dasharray="9 6" class="stitch"/>
+<rect x="24" y="40" width="1132" height="7" rx="3.5" fill="#C9C9D6"/><rect x="24" y="40" width="1132" height="3" rx="1.5" fill="#F4F4FA"/>
+<g transform="translate(30 0)">
+    <g class="swing" style="animation-delay:0s;transform-origin:80px 44px">
+      <path d="M80 58V44M46 82L80 62L114 82" stroke="#A9A9BC" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <g transform="translate(10 60) scale(.7)">
+  <!-- hair back -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
+  <!-- legs + arms -->
+  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
+  <g class="av-arm-r av-wave"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
+  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
+  <!-- outfit -->
+  <g class="av-outfit">
+      <path d="M62 222H138L134 296H104L100 246L96 296H66Z" fill="#8DB4E8"/>
+      <path d="M100 246V292" stroke="#6E98D4" stroke-width="1.5"/>
+      <ellipse cx="80" cy="298" rx="13" ry="6" fill="#FFFFFF"/><ellipse cx="120" cy="298" rx="13" ry="6" fill="#FFFFFF"/>
+      <path d="M68 166Q76 150 90 146L110 146Q124 150 132 166L136 222L64 222Z" fill="#F6C431"/>
+      <path d="M90 146Q100 152 110 146L110 160Q100 166 90 160Z" fill="#E8B21E"/>
+      <path d="M70 178Q100 186 130 178M68 196Q100 204 132 196M66 212Q100 220 134 212" stroke="#E8B21E" stroke-width="1.4" fill="none"/>
+      <path d="M92 164Q100 176 108 164" stroke="#E7C26B" stroke-width="1.5" fill="none"/>
+      <rect x="97" y="173" width="6" height="7" rx="1" fill="#E7C26B"/></g>
+  <path d="M64 162Q58 166 58 176" stroke="#DCA684" stroke-width="1" fill="none" opacity=".5"/>
+  <!-- front hair locks with blonde streaks -->
+  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
+  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
+  <!-- face -->
+  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
+  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
+  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
+  <!-- bangs -->
+  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
+  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- eyes -->
+  <g class="av-eyes">
+    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
+    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
+  </g>
+  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <!-- cat-eye glasses -->
+  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
+    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
+    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
+  </g>
+  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
+  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
+  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
+  <!-- nose, blush, lips -->
+  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
+  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
+  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
+  <path d="M86 156Q100 170 114 156" stroke="#E7C26B" stroke-width="1.6" fill="none"/>
+</g>
+    </g>
+    <rect x="24" y="306" width="112" height="26" rx="13" fill="#fff" stroke="#7B5CD6" stroke-opacity=".3"/>
+    <text x="80" y="324" text-anchor="middle" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;fill:#554B70">Sunny top</text>
+  </g><g transform="translate(190 0)">
+    <g class="swing" style="animation-delay:0.25s;transform-origin:80px 44px">
+      <path d="M80 58V44M46 82L80 62L114 82" stroke="#A9A9BC" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <g transform="translate(10 60) scale(.7)">
+  <!-- hair back -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
+  <!-- legs + arms -->
+  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
+  <g class="av-arm-r"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
+  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
+  <!-- outfit -->
+  <g class="av-outfit">
+      <path d="M62 222H138L134 296H104L100 246L96 296H66Z" fill="#8DB4E8"/>
+      <path d="M100 246V292" stroke="#6E98D4" stroke-width="1.5"/>
+      <ellipse cx="80" cy="298" rx="13" ry="6" fill="#FFFFFF"/><ellipse cx="120" cy="298" rx="13" ry="6" fill="#FFFFFF"/>
+      <path d="M64 158Q54 160 52 172L50 220L64 220L68 176Z" fill="#FFE3F1"/><path d="M136 158Q146 160 148 172L150 220L136 220L132 176Z" fill="#FFE3F1"/>
+      <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="#FFE3F1"/>
+      <path d="M84 151Q100 168 116 151" fill="#EDC3A3"/>
+      <path d="M66 182Q86 172 100 186T136 178" stroke="#BFE3FF" stroke-width="7" fill="none" opacity=".7"/>
+      <path transform="translate(74 190) scale(1)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF5C9A"/><path transform="translate(108 170) scale(0.9)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF5C9A"/><path transform="translate(116 200) scale(1.1)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF7AB8"/>
+      <path transform="translate(86 210) scale(0.8)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF7AB8"/><path transform="translate(55 190) scale(0.7)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF5C9A"/><path transform="translate(138 196) scale(0.7)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF5C9A"/></g>
+  
+  <!-- front hair locks with blonde streaks -->
+  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
+  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
+  <!-- face -->
+  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
+  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
+  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
+  <!-- bangs -->
+  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
+  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- eyes -->
+  <g class="av-eyes">
+    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
+    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
+  </g>
+  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <!-- cat-eye glasses -->
+  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
+    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
+    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
+  </g>
+  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
+  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
+  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
+  <!-- nose, blush, lips -->
+  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
+  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
+  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
+  
+</g>
+    </g>
+    <rect x="24" y="306" width="112" height="26" rx="13" fill="#fff" stroke="#7B5CD6" stroke-opacity=".3"/>
+    <text x="80" y="324" text-anchor="middle" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;fill:#554B70">Heart tee</text>
+  </g><g transform="translate(350 0)">
+    <g class="swing" style="animation-delay:0.5s;transform-origin:80px 44px">
+      <path d="M80 58V44M46 82L80 62L114 82" stroke="#A9A9BC" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <g transform="translate(10 60) scale(.7)">
+  <!-- hair back -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
+  <!-- legs + arms -->
+  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
+  <g class="av-arm-r"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
+  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
+  <!-- outfit -->
+  <g class="av-outfit">
+      <path d="M62 222H138L134 296H104L100 246L96 296H66Z" fill="#3B2A6B"/>
+      <ellipse cx="80" cy="298" rx="13" ry="6" fill="#FFFFFF"/><ellipse cx="120" cy="298" rx="13" ry="6" fill="#FFFFFF"/>
+      <path d="M64 158Q54 160 52 172L50 220L64 220L68 176Z" fill="#B79CFF"/><path d="M136 158Q146 160 148 172L150 220L136 220L132 176Z" fill="#B79CFF"/>
+      <path d="M50 214H65V224H50ZM135 214H150V224H135Z" fill="#9A7BF0"/>
+      <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="#B79CFF"/>
+      <path d="M78 150Q100 176 122 150Q118 164 100 168Q82 164 78 150Z" fill="#9A7BF0"/>
+      <path d="M94 166V186M106 166V186" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <path d="M78 200H122V218H78Z" fill="#9A7BF0" opacity=".6"/>
+      <text x="100" y="198" text-anchor="middle" font-family="monospace" font-weight="700" font-size="13" fill="#fff">&lt;/&gt;</text></g>
+  
+  <!-- front hair locks with blonde streaks -->
+  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
+  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
+  <!-- face -->
+  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
+  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
+  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
+  <!-- bangs -->
+  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
+  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- eyes -->
+  <g class="av-eyes">
+    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
+    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
+  </g>
+  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <!-- cat-eye glasses -->
+  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
+    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
+    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
+  </g>
+  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
+  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
+  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
+  <!-- nose, blush, lips -->
+  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
+  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
+  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
+  
+</g>
+    </g>
+    <rect x="24" y="306" width="112" height="26" rx="13" fill="#fff" stroke="#7B5CD6" stroke-opacity=".3"/>
+    <text x="80" y="324" text-anchor="middle" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;fill:#554B70">Dev hoodie</text>
+  </g><g transform="translate(510 0)">
+    <g class="swing" style="animation-delay:0.75s;transform-origin:80px 44px">
+      <path d="M80 58V44M46 82L80 62L114 82" stroke="#A9A9BC" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <g transform="translate(10 60) scale(.7)">
+  <!-- hair back -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
+  <!-- legs + arms -->
+  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
+  <g class="av-arm-r"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
+  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
+  <!-- outfit -->
+  <g class="av-outfit">
+      <path d="M62 220H138L150 264H50Z" fill="#FF8CC6"/>
+      <path d="M70 230L64 262M100 230V264M130 230L136 262" stroke="#FF6FB4" stroke-width="1.5"/>
+      <rect x="78" y="262" width="12" height="32" fill="#EDC3A3"/><rect x="110" y="262" width="12" height="32" fill="#EDC3A3"/>
+      <ellipse cx="80" cy="298" rx="13" ry="6" fill="#7B5CD6"/><ellipse cx="120" cy="298" rx="13" ry="6" fill="#7B5CD6"/>
+      <defs><pattern id="stripes-w3" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#fff"/><rect width="8" height="3" fill="#7B5CD6"/></pattern></defs>
+      <path d="M64 158Q56 160 54 170L52 186L66 188L68 172Z" fill="url(#stripes-w3)"/>
+      <path d="M136 158Q144 160 146 170L148 186L134 188L132 172Z" fill="url(#stripes-w3)"/>
+      <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#stripes-w3)"/>
+      <rect x="61" y="214" width="78" height="8" fill="#3B2A6B"/>
+      <path d="M86 150Q80 190 76 224" stroke="#FFD66B" stroke-width="6" fill="none"/>
+      <path d="M114 150Q120 190 124 224" stroke="#FFD66B" stroke-width="6" fill="none"/>
+      <path d="M86 160l4 1M85 170l4 1M84 180l4 1M83 190l4 1M82 200l4 1M114 160l-4 1M115 170l-4 1M116 180l-4 1M117 190l-4 1M118 200l-4 1" stroke="#7a5b00" stroke-width="1"/></g>
+  
+  <!-- front hair locks with blonde streaks -->
+  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
+  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
+  <!-- face -->
+  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
+  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
+  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
+  <!-- bangs -->
+  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
+  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- eyes -->
+  <g class="av-eyes">
+    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
+    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
+  </g>
+  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <!-- cat-eye glasses -->
+  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
+    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
+    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
+  </g>
+  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
+  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
+  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
+  <!-- nose, blush, lips -->
+  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
+  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
+  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
+  <g transform="rotate(-14 100 48)"><ellipse cx="96" cy="46" rx="40" ry="11" fill="#7B5CD6"/><path d="M62 46Q66 22 98 22Q130 24 132 46Z" fill="#7B5CD6"/><circle cx="98" cy="20" r="4" fill="#5A3FB0"/></g>
+               <path d="M140 136l10-6 4 7-10 6Z" fill="#C9C9D6"/><circle cx="145" cy="131" r="2" fill="#3B2A6B"/>
+</g>
+    </g>
+    <rect x="24" y="306" width="112" height="26" rx="13" fill="#fff" stroke="#7B5CD6" stroke-opacity=".3"/>
+    <text x="80" y="324" text-anchor="middle" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;fill:#554B70">Designer</text>
+  </g><g transform="translate(670 0)">
+    <g class="swing" style="animation-delay:1s;transform-origin:80px 44px">
+      <path d="M80 58V44M46 82L80 62L114 82" stroke="#A9A9BC" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <g transform="translate(10 60) scale(.7)">
+  <!-- hair back -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
+  <!-- legs + arms -->
+  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
+  <g class="av-arm-r"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
+  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
+  <!-- outfit -->
+  <g class="av-outfit">
+      <path d="M62 222H138L134 296H104L100 246L96 296H66Z" fill="#56628F"/>
+      <ellipse cx="80" cy="298" rx="13" ry="6" fill="#3B2A6B"/><ellipse cx="120" cy="298" rx="13" ry="6" fill="#3B2A6B"/>
+      <path d="M64 158Q54 160 52 172L50 220L64 220L68 176Z" fill="#FFFFFF" stroke="#D9D3F0"/><path d="M136 158Q146 160 148 172L150 220L136 220L132 176Z" fill="#FFFFFF" stroke="#D9D3F0"/>
+      <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L142 250L58 250Z" fill="#FFFFFF" stroke="#D9D3F0"/>
+      <path d="M86 150L100 190L114 150Z" fill="#A8D8FF"/>
+      <path d="M86 150L96 184L84 196M114 150L104 184L116 196" stroke="#D9D3F0" stroke-width="2" fill="none"/>
+      <path d="M100 190V250" stroke="#D9D3F0" stroke-width="2"/>
+      <rect x="110" y="204" width="18" height="14" rx="2" fill="none" stroke="#D9D3F0" stroke-width="2"/>
+      <path d="M116 200V212" stroke="#7B5CD6" stroke-width="3" stroke-linecap="round"/>
+      <rect x="72" y="200" width="16" height="10" rx="2" fill="#8EE3E0"/>
+      <text x="80" y="208" text-anchor="middle" font-family="monospace" font-size="6" font-weight="700" fill="#2f6f6c">QA</text>
+      <g class="av-magnifier"><circle cx="160" cy="206" r="10" fill="#E8F6FF" stroke="#3B2A6B" stroke-width="3"/><path d="M152 214L146 222" stroke="#3B2A6B" stroke-width="4" stroke-linecap="round"/></g></g>
+  
+  <!-- front hair locks with blonde streaks -->
+  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
+  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
+  <!-- face -->
+  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
+  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
+  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
+  <!-- bangs -->
+  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
+  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- eyes -->
+  <g class="av-eyes">
+    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
+    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
+  </g>
+  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <!-- cat-eye glasses -->
+  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
+    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
+    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
+  </g>
+  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
+  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
+  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
+  <!-- nose, blush, lips -->
+  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
+  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
+  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
+  
+</g>
+    </g>
+    <rect x="24" y="306" width="112" height="26" rx="13" fill="#fff" stroke="#7B5CD6" stroke-opacity=".3"/>
+    <text x="80" y="324" text-anchor="middle" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;fill:#554B70">QA lab coat</text>
+  </g><g transform="translate(830 0)">
+    <g class="swing" style="animation-delay:1.25s;transform-origin:80px 44px">
+      <path d="M80 58V44M46 82L80 62L114 82" stroke="#A9A9BC" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <g transform="translate(10 60) scale(.7)">
+  <!-- hair back -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
+  <!-- legs + arms -->
+  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
+  <g class="av-arm-r"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
+  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
+  <!-- outfit -->
+  <g class="av-outfit">
+      <path d="M62 222H138L134 296H104L100 246L96 296H66Z" fill="#2E3A6E"/>
+      <ellipse cx="80" cy="298" rx="13" ry="6" fill="#1B1B2F"/><ellipse cx="120" cy="298" rx="13" ry="6" fill="#1B1B2F"/>
+      <path d="M64 158Q54 160 52 172L50 220L64 220L68 176Z" fill="#4F6EDB"/><path d="M136 158Q146 160 148 172L150 220L136 220L132 176Z" fill="#4F6EDB"/>
+      <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="#4F6EDB"/>
+      <path d="M86 150L100 196L114 150Z" fill="#FFFFFF"/>
+      <path d="M86 150L94 182L82 188L80 160ZM114 150L106 182L118 188L120 160Z" fill="#3D58BE"/>
+      <circle cx="100" cy="206" r="2.5" fill="#FFD66B"/><circle cx="100" cy="216" r="2.5" fill="#FFD66B"/>
+      <path d="M118 168h10" stroke="#FF9ACB" stroke-width="3" stroke-linecap="round"/></g>
+  
+  <!-- front hair locks with blonde streaks -->
+  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
+  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
+  <!-- face -->
+  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
+  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
+  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
+  <!-- bangs -->
+  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
+  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- eyes -->
+  <g class="av-eyes">
+    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
+    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
+  </g>
+  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <!-- cat-eye glasses -->
+  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
+    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
+    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
+  </g>
+  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
+  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
+  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
+  <!-- nose, blush, lips -->
+  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
+  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
+  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
+  
+</g>
+    </g>
+    <rect x="24" y="306" width="112" height="26" rx="13" fill="#fff" stroke="#7B5CD6" stroke-opacity=".3"/>
+    <text x="80" y="324" text-anchor="middle" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;fill:#554B70">Office blazer</text>
+  </g><g transform="translate(990 0)">
+    <g class="swing" style="animation-delay:1.5s;transform-origin:80px 44px">
+      <path d="M80 58V44M46 82L80 62L114 82" stroke="#A9A9BC" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <g transform="translate(10 60) scale(.7)">
+  <!-- hair back -->
+  <path d="M50 92Q46 38 100 36Q154 38 150 92L158 206Q146 220 130 204L128 128H72L70 204Q54 220 42 206Z" fill="#2A1E27"/>
+  <!-- legs + arms -->
+  <rect x="80" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <rect x="104" y="226" width="16" height="70" rx="6" fill="#EDC3A3"/>
+  <g class="av-arm-l"><rect x="52" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="58" cy="224" r="7" fill="#EDC3A3"/></g>
+  <g class="av-arm-r"><rect x="134" y="158" width="14" height="66" rx="7" fill="#EDC3A3"/><circle cx="142" cy="224" r="7" fill="#EDC3A3"/></g>
+  <rect x="91" y="134" width="18" height="22" rx="6" fill="#DCA684"/>
+  <!-- outfit -->
+  <g class="av-outfit">
+      <defs><linearGradient id="gown-w6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B79CFF"/><stop offset=".55" stop-color="#9FC4FF"/><stop offset="1" stop-color="#FFB3D9"/></linearGradient></defs>
+      <path d="M70 162Q100 154 130 162L134 212Q160 260 172 302H28Q40 260 66 212Z" fill="url(#gown-w6)"/>
+      <path d="M70 162Q100 172 130 162" stroke="#fff" stroke-width="2" fill="none" opacity=".7"/>
+      <path d="M66 212Q100 222 134 212" stroke="#fff" stroke-width="3" fill="none" opacity=".8"/>
+      <path d="M60 300Q72 250 84 222M140 300Q128 250 116 222M100 224V300" stroke="#fff" stroke-width="1.2" fill="none" opacity=".45"/>
+      <path class="av-sparkle" transform="translate(62 270) scale(0.9)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(138 250) scale(0.7)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(104 190) scale(0.6)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(90 284) scale(0.8)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/>
+      <path d="M84 50L88 40L94 48L100 36L106 48L112 40L116 50Z" fill="#FFD66B" stroke="#E9B949" stroke-width="1"/>
+      <circle cx="100" cy="42" r="2.4" fill="#FF9ACB"/></g>
+  <path d="M64 162Q58 166 58 176" stroke="#DCA684" stroke-width="1" fill="none" opacity=".5"/>
+  <!-- front hair locks with blonde streaks -->
+  <path d="M60 100Q50 160 58 214Q66 220 74 208Q66 160 72 108Z" fill="#3D2C38"/>
+  <path d="M68 108Q62 156 68 206L71 204Q66 156 72 110Z" fill="#E9D3A2" opacity=".85"/>
+  <path d="M140 100Q150 160 142 214Q134 220 126 208Q134 160 128 108Z" fill="#3D2C38"/>
+  <path d="M132 108Q138 156 132 206L129 204Q134 156 128 110Z" fill="#E9D3A2" opacity=".85"/>
+  <!-- face -->
+  <ellipse cx="100" cy="94" rx="40" ry="44" fill="#EDC3A3"/>
+  <ellipse cx="60" cy="100" rx="5" ry="8" fill="#DCA684"/><ellipse cx="140" cy="100" rx="5" ry="8" fill="#DCA684"/>
+  <circle cx="60" cy="108" r="2.2" fill="#FFD66B"/><circle cx="140" cy="108" r="2.2" fill="#FFD66B"/>
+  <!-- bangs -->
+  <path d="M56 96Q50 44 100 44Q150 44 144 96L141 86L137 90L133 82L128 87L123 80L118 86L113 79L108 85L103 78L98 85L93 79L88 86L83 80L78 87L73 81L68 89L63 84L60 92Z" fill="#2A1E27"/>
+  <path d="M84 52Q96 48 112 52" stroke="#3D2C38" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- eyes -->
+  <g class="av-eyes">
+    <ellipse cx="82" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="83.6" cy="99" r="1.6" fill="#fff"/>
+    <ellipse cx="118" cy="101" rx="4.6" ry="5.6" fill="#24181F"/><circle cx="119.6" cy="99" r="1.6" fill="#fff"/>
+  </g>
+  <path d="M75 95Q82 91 89 94M111 94Q118 91 125 95" stroke="#24181F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <!-- cat-eye glasses -->
+  <g fill="rgba(200,230,255,.18)" stroke="#9AA0B4" stroke-width="1.4">
+    <path d="M67 94Q80 89 95 93Q95 107 82 110Q68 108 67 94Z"/>
+    <path d="M105 93Q120 89 133 94Q132 108 118 110Q105 107 105 93Z"/>
+  </g>
+  <path d="M65 93Q80 86 96 92M104 92Q120 86 135 93" stroke="#1D1720" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <path d="M65 93L60 88M135 93L140 88" stroke="#1D1720" stroke-width="3" stroke-linecap="round"/>
+  <path d="M95 94Q100 91 105 94" stroke="#9AA0B4" stroke-width="1.6" fill="none"/>
+  <path d="M71 96L76 100" stroke="#fff" stroke-width="1.4" opacity=".7" stroke-linecap="round"/>
+  <!-- nose, blush, lips -->
+  <path d="M100 108q-2.4 6 1.2 7.4" stroke="#DCA684" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="74" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#FF9ACB" opacity=".45"/>
+  <path d="M92 123Q96 121 100 123Q104 121 108 123Q104 131 100 131Q96 131 92 123Z" fill="#B5303E"/>
+  <path d="M95 124Q100 126 105 124" stroke="#8F1F2C" stroke-width=".8" fill="none"/>
+  
+</g>
+    </g>
+    <rect x="24" y="306" width="112" height="26" rx="13" fill="#fff" stroke="#7B5CD6" stroke-opacity=".3"/>
+    <text x="80" y="324" text-anchor="middle" style="font-family:'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;fill:#554B70">Gala gown</text>
+  </g>
+<text x="590" y="372" text-anchor="middle" style="font-family:'Segoe Script','Comic Sans MS',cursive;font-size:20px;fill:#7B5CD6">unlock them all at jhanina03.github.io ✂</text>
+</svg>

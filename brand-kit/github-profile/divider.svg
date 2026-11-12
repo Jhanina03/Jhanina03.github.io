@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 40" width="1000" height="40" role="img" aria-label="">
+<style>.t{stroke-dasharray:12 8;animation:sew 2.4s linear infinite}@keyframes sew{to{stroke-dashoffset:-40}}
+.n{animation:go 6s ease-in-out infinite}@keyframes go{0%{transform:translateX(0)}50%{transform:translateX(940px)}100%{transform:translateX(0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+<path class="t" d="M10 20C180 6 320 34 500 20S820 6 990 20" stroke="#FF7AB8" stroke-width="3" fill="none" stroke-linecap="round"/>
+<g transform="translate(200 20)"><circle r="8" fill="#B79CFF"/><path d="M-3 -3L3 3M3 -3L-3 3" stroke="#fff" stroke-width="1.6"/></g><g transform="translate(400 20)"><circle r="8" fill="#7FB6FF"/><path d="M-3 -3L3 3M3 -3L-3 3" stroke="#fff" stroke-width="1.6"/></g><g transform="translate(600 20)"><circle r="8" fill="#FF9ACB"/><path d="M-3 -3L3 3M3 -3L-3 3" stroke="#fff" stroke-width="1.6"/></g><g transform="translate(800 20)"><circle r="8" fill="#8EE3E0"/><path d="M-3 -3L3 3M3 -3L-3 3" stroke="#fff" stroke-width="1.6"/></g>
+<g class="n"><g transform="translate(20 18) rotate(-20)"><path d="M0 0L28 0" stroke="#8C92A6" stroke-width="3" stroke-linecap="round"/><ellipse cx="25" cy="0" rx="3.2" ry="1.4" fill="#fff" stroke="#5A5F72" stroke-width="1"/></g></g>
+</svg>

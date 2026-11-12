@@ -95,8 +95,26 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .loader {
   position: fixed; inset: 0; z-index: 200; display: grid; place-content: center; justify-items: center; gap: 14px;
   background: var(--bg); transition: opacity .6s, visibility .6s;
-  animation: loader-out .5s ease .9s forwards; /* CSS-only fallback, never depends on JS timers */
+  animation: loader-out .55s ease 2.3s forwards; /* CSS-only exit, never depends on JS timers */
 }
+.loader-stage { position: relative; display: grid; justify-items: center; gap: 6px; width: min(560px, 92vw); }
+.loader-art { width: 100%; height: auto; overflow: visible; }
+.loader-art text { font-family: var(--hand); font-weight: 700; font-size: 132px; }
+.loader-thread { fill: none; stroke: var(--rose); stroke-width: 2.5; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.6s ease-in-out .1s forwards; }
+.name-outline { fill: none; stroke: var(--purple); stroke-width: 2.2; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.5s ease-in-out .2s forwards; }
+.name-fill { fill: url(#name-fill); opacity: 0; animation: fade-in .45s ease 1.45s forwards; }
+.name-stitch { fill: none; stroke: #fff; stroke-width: 1.6; stroke-dasharray: 6 5; opacity: 0; animation: fade-in .4s ease 1.75s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fade-in { to { opacity: 1; } }
+.loader-needle { position: absolute; top: 26%; left: 8%; font-size: 34px; transform: rotate(45deg); animation: needle-run 1.5s ease-in-out .2s forwards, needle-bob .25s ease-in-out .2s 6; }
+@keyframes needle-run { to { left: 86%; top: 22%; } }
+@keyframes needle-bob { 50% { margin-top: 10px; } }
+.loader-spools { display: flex; gap: 18px; margin-top: -6px; }
+.loader-spools .spool { width: 34px; height: 38px; }
+.loader-spools .spool::before, .loader-spools .spool::after { height: 8px; }
+.loader-spools .spool span { inset: 5px 6px; }
+.loader-spools .spool.alt { animation-direction: reverse; }
+.loader-spools .spool.alt span { background: repeating-linear-gradient(0deg, #7FB6FF 0 4px, #FFFFFF 4px 8px); }
 @keyframes loader-out { to { opacity: 0; visibility: hidden; } }
 .loader p { font-family: var(--hand); font-size: 1.6rem; color: var(--purple); margin: 0; }
 .loaded .loader { opacity: 0; visibility: hidden; }
@@ -107,11 +125,41 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 @keyframes spin { 50% { transform: rotate(180deg) scale(.92); } 100% { transform: rotate(360deg); } }
 
 /* ---------- thread progress ---------- */
-.thread-progress { position: fixed; top: 0; left: 0; right: 0; height: 12px; z-index: 60; pointer-events: none; }
-.thread-progress svg { width: 100%; height: 12px; }
-.thread-bg { stroke: transparent; }
-.thread-fg { stroke: var(--rose); stroke-width: 3; stroke-dasharray: 10 6; fill: none; }
-.thread-progress .needle { position: absolute; top: -4px; left: 0; font-size: 16px; transform: translateX(-50%) rotate(45deg); transition: left .1s linear; }
+.thread-progress { position: fixed; top: 0; left: 0; right: 0; height: 14px; z-index: 60; pointer-events: none; }
+.thread-progress svg { position: absolute; left: 22px; right: 0; width: calc(100% - 22px); height: 12px; top: 1px; }
+.thread-bg { stroke: var(--line); stroke-width: 1; stroke-dasharray: 2 6; }
+.thread-fg { stroke: var(--rose); stroke-width: 3; fill: none; }
+.thread-progress .needle { position: absolute; top: -3px; left: 22px; font-size: 16px; transform: translateX(-50%) rotate(45deg); transition: left .1s linear; }
+.thread-spool {
+  position: absolute; left: 3px; top: 0; width: 16px; height: 14px; border-radius: 3px;
+  background: repeating-linear-gradient(90deg, var(--rose) 0 2px, #FF9ACB 2px 4px);
+  border-left: 3px solid #C7A27A; border-right: 3px solid #C7A27A; box-shadow: 0 2px 6px -2px rgba(0, 0, 0, .3);
+}
+.thread-buttons { position: absolute; left: 22px; right: 0; top: 0; height: 14px; }
+.thread-btn {
+  position: absolute; top: 0; width: 14px; height: 14px; border-radius: 50%; padding: 0; transform: translateX(-50%);
+  background: var(--paper); border: 1.5px solid var(--lilac); pointer-events: auto;
+  box-shadow: 0 2px 6px -2px rgba(59, 42, 107, .4); transition: transform .25s, background .3s, border-color .3s;
+}
+.thread-btn::before { /* the four button holes */
+  content: ""; position: absolute; inset: 3px;
+  background: radial-gradient(circle at 25% 25%, var(--muted) 0 1px, transparent 1.4px), radial-gradient(circle at 75% 25%, var(--muted) 0 1px, transparent 1.4px),
+              radial-gradient(circle at 25% 75%, var(--muted) 0 1px, transparent 1.4px), radial-gradient(circle at 75% 75%, var(--muted) 0 1px, transparent 1.4px);
+}
+.thread-btn::after { /* little cross stitch once sewn */
+  content: ""; position: absolute; inset: 3px; opacity: 0; transition: opacity .3s;
+  background: linear-gradient(45deg, transparent 44%, #fff 44% 56%, transparent 56%), linear-gradient(-45deg, transparent 44%, #fff 44% 56%, transparent 56%);
+}
+.thread-btn:hover { transform: translateX(-50%) scale(1.35); }
+.thread-btn.sewn { background: var(--c); border-color: var(--c); animation: sew-on .5s ease; }
+.thread-btn.sewn::before { opacity: 0; }
+.thread-btn.sewn::after { opacity: 1; }
+@keyframes sew-on { 40% { transform: translateX(-50%) scale(1.6) rotate(90deg); } }
+.thread-btn .tip {
+  position: absolute; top: 20px; left: 50%; transform: translateX(-50%) translateY(-4px); white-space: nowrap; font-family: var(--pixel); font-size: .62rem;
+  background: var(--deep); color: var(--bg); padding: 3px 8px; border-radius: 6px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+}
+.thread-btn:hover .tip, .thread-btn:focus-visible .tip { opacity: 1; transform: translateX(-50%); }
 
 .stitch-cursor { position: fixed; inset: 0; pointer-events: none; z-index: 55; }
 

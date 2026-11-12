@@ -26,15 +26,25 @@ Soy estudiante de 8.º semestre de **Ingeniería de Software** en la Universidad
 
 </details>
 
+<img src="divider.svg" alt="" width="100%">
+
+### 👗 My wardrobe
+
+Every section of my portfolio unlocks a new look. Can you collect all seven?
+
+<a href="https://jhanina03.github.io/"><img src="wardrobe.svg" alt="Seven illustrated looks of Jhanina on a clothes rack" width="100%"></a>
+
 ### 🪡 My thread collection
 
-<p>
-  <img src="https://skillicons.dev/icons?i=angular,ts,nextjs,react,js,html,css,bootstrap&theme=light" alt="Frontend skills"><br>
-  <img src="https://skillicons.dev/icons?i=dotnet,cs,nestjs,nodejs,express,java,py&theme=light" alt="Backend skills"><br>
-  <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,firebase,sqlite,docker,jenkins,git,github&theme=light" alt="Databases and tools">
+<img src="spools.svg" alt="Skills as thread spools: Frontend, Backend, Databases, QA &amp; Testing" width="100%">
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=angular,ts,nextjs,react,dotnet,cs,nestjs,nodejs,postgres,mysql,mongodb,docker,jenkins,git,py&theme=light&perline=15" alt="Tech icons">
 </p>
 
-### 👗 Featured collection
+<img src="divider.svg" alt="" width="100%">
+
+### ✂️ Featured collection
 
 | Project | What it is | Stack |
 |---|---|---|
@@ -47,6 +57,8 @@ Soy estudiante de 8.º semestre de **Ingeniería de Software** en la Universidad
 | [**MNIST**](https://github.com/Jhanina03/mnist) | Handwritten-digit neural network vs. KNN | Python |
 
 👉 See them all in the **[pattern archive](https://jhanina03.github.io/archive.html)**.
+
+<img src="divider.svg" alt="" width="100%">
 
 ### 📊 Stats
 
@@ -64,4 +76,4 @@ Soy estudiante de 8.º semestre de **Ingeniería de Software** en la Universidad
   <a href="mailto:jhaninaconteron03@gmail.com"><img src="https://img.shields.io/badge/jhaninaconteron03@gmail.com-7B5CD6?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
 </p>
 
-<sub>✂︎ Care instructions: serve with coffee, debug gently, never iron out the creativity.</sub>
+<img src="care-label.svg" alt="Care instructions: serve with coffee, debug gently, tumble-dry on lilac playlists, recharges on Steam weekends, hand-wash bugs at 30 °C, do not iron out the creativity" width="100%">

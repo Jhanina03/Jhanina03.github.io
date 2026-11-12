@@ -22,14 +22,28 @@
 
   <!-- Loader -->
   <div class="loader" aria-hidden="true">
-    <div class="spool"><span></span></div>
-    <p data-i18n="loader">Threading the needle…</p>
+    <div class="loader-stage">
+      <svg class="loader-art" viewBox="0 0 560 230">
+        <defs>
+          <linearGradient id="name-fill" x1="0" x2="1"><stop offset="0" stop-color="#B79CFF"/><stop offset=".55" stop-color="#7FB6FF"/><stop offset="1" stop-color="#FF9ACB"/></linearGradient>
+        </defs>
+        <path class="loader-thread" d="M-20 196C70 160 120 214 200 190S340 150 420 186 520 170 590 150" pathLength="1000"/>
+        <text class="name-outline" x="280" y="138" text-anchor="middle" pathLength="1000">Jhanina</text>
+        <text class="name-fill" x="280" y="138" text-anchor="middle">Jhanina</text>
+        <text class="name-stitch" x="280" y="138" text-anchor="middle">Jhanina</text>
+      </svg>
+      <span class="loader-needle">🪡</span>
+      <div class="loader-spools"><div class="spool"><span></span></div><div class="spool alt"><span></span></div></div>
+      <p data-i18n="loader">Threading the needle…</p>
+    </div>
   </div>
 
-  <!-- Thread progress -->
-  <div class="thread-progress" aria-hidden="true">
-    <svg viewBox="0 0 1000 12" preserveAspectRatio="none"><path class="thread-bg" d="M0 6H1000"/><path class="thread-fg" d="M0 6H1000" pathLength="1000"/></svg>
-    <span class="needle">🪡</span>
+  <!-- Thread progress: a spool unwinds as you scroll and sews a button on for each section -->
+  <div class="thread-progress">
+    <span class="thread-spool" aria-hidden="true"></span>
+    <svg viewBox="0 0 1000 12" preserveAspectRatio="none" aria-hidden="true"><path class="thread-bg" d="M0 6H1000"/><path class="thread-fg" d="M0 6H1000" pathLength="1000"/></svg>
+    <nav class="thread-buttons" id="thread-buttons" aria-label="Section progress"></nav>
+    <span class="needle" aria-hidden="true">🪡</span>
   </div>
   <canvas class="stitch-cursor" aria-hidden="true"></canvas>
 

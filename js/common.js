@@ -50,18 +50,21 @@
 
   /* ---------- loader ---------- */
   const done = () => document.body.classList.add("loaded");
-  setTimeout(done, reduced ? 0 : 700); // short intro, never blocks on fonts/images
+  setTimeout(done, reduced ? 0 : 2300); // matches the CSS intro (needle sews the name)
 
   /* ---------- thread progress ---------- */
   const fg = document.querySelector(".thread-fg");
   const needle = document.querySelector(".thread-progress .needle");
+  const spool = document.querySelector(".thread-spool");
   if (fg) {
     fg.style.strokeDasharray = "1000";
     const onScroll = () => {
       const max = document.documentElement.scrollHeight - innerHeight;
       const p = max > 0 ? Math.min(1, scrollY / max) : 0;
       fg.style.strokeDashoffset = String(1000 - p * 1000);
-      if (needle) needle.style.left = p * 100 + "%";
+      if (needle) needle.style.left = `calc(22px + (100% - 22px) * ${p})`;
+      if (spool) spool.style.backgroundPosition = `${-scrollY / 6}px 0`; // the spool "unwinds"
+      document.dispatchEvent(new CustomEvent("threadscroll"));
     };
     addEventListener("scroll", onScroll, { passive: true });
     onScroll();
