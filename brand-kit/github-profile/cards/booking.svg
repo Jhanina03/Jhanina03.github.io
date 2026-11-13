@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 230" width="480" height="230" role="img" aria-label="BookingView: Accommodation booking platform with users, listings, reservations and availability, backed by a REST API.">
+<style>.cut{stroke-dasharray:9 6;animation:sew 3s linear infinite}@keyframes sew{to{stroke-dashoffset:-30}}
+.sc{animation:snip 4s ease-in-out infinite}@keyframes snip{0%,100%{transform:translateX(0)}50%{transform:translateX(410px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+<defs><pattern id="g" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="rgba(123,92,214,.07)"/></pattern></defs>
+<rect x="2" y="2" width="476" height="226" rx="16" fill="#FFFDF8"/>
+<rect x="2" y="2" width="476" height="226" rx="16" fill="url(#g)"/>
+<rect x="11" y="11" width="458" height="208" rx="10" fill="none" stroke="rgba(123,92,214,.3)" stroke-width="1.8" class="cut"/>
+<g class="sc"><text x="20" y="18" font-size="16" fill="#7B5CD6" transform="rotate(90 26 12)">✂</text></g>
+<circle cx="240" cy="14" r="7" fill="#FFB3D9"/><circle cx="238" cy="12" r="2" fill="#fff"/>
+<circle cx="46" cy="52" r="18" fill="#FFB3D9"/><circle cx="46" cy="52" r="13" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 3" opacity=".8"/>
+<text x="74" y="46" font-family="'Courier New',monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="#7B5CD6">AIRBNB / BOOKING STYLE</text>
+<text x="74" y="68" font-family="Georgia,'Times New Roman',serif" font-size="22" font-weight="700" fill="#2B2140">BookingView</text>
+<text x="454" y="46" text-anchor="end" font-family="'Segoe Script','Comic Sans MS',cursive" font-size="16" fill="#554B70">2025</text>
+<text x="26" y="100" font-family="'Segoe UI',Arial,sans-serif" font-size="13" fill="#554B70">Accommodation booking platform with users, listings,</text><text x="26" y="119" font-family="'Segoe UI',Arial,sans-serif" font-size="13" fill="#554B70">reservations and availability, backed by a REST API.</text>
+<g transform="translate(26 176)"><rect width="69.6" height="24" rx="12" fill="#F3EEFF" stroke="#FFB3D9" stroke-width="1.4"/><text x="34.8" y="16.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="600" fill="#554B70">Node.js</text></g><g transform="translate(103.6 176)"><rect width="69.6" height="24" rx="12" fill="#F3EEFF" stroke="#FFB3D9" stroke-width="1.4"/><text x="34.8" y="16.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="600" fill="#554B70">MongoDB</text></g><g transform="translate(181.2 176)"><rect width="49.2" height="24" rx="12" fill="#F3EEFF" stroke="#FFB3D9" stroke-width="1.4"/><text x="24.6" y="16.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="600" fill="#554B70">REST</text></g>
+<text x="454" y="193" text-anchor="end" font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="700" fill="#7B5CD6">view code ↗</text>
+</svg>

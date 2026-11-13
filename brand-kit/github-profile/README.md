@@ -46,19 +46,27 @@ Every section of my portfolio unlocks a new look. Can you collect all seven?
 
 ### ✂️ Featured collection
 
-| Project | What it is | Stack |
-|---|---|---|
-| **FashionIA** | Garment comfort recommender: fuzzy Mamdani inference + genetic algorithm for optimal pattern measurements | Python |
-| [**Chat Básico**](https://github.com/Jhanina03/chat-basico) | Real-time chat with video calls, covered by unit, integration and mutation tests · [demo](https://chat-basico.onrender.com) | Node.js · Socket.IO · WebRTC |
-| **License plate recognition** | Detects and reads vehicle license plates from images | Python · computer vision |
-| **Account reconciliation system** | Internship project at a financial institution: cross-checks balances and flags mismatches | SQL · .NET |
-| **Hotel booking on Odoo** | Booking sites and custom ERP modules | Odoo · Python |
-| [**APE7 · GPIS**](https://github.com/Jhanina03/APE7-proyectogpis) | Decoupled app with Docker Compose and a Jenkins pipeline | TypeScript · Docker |
-| [**MNIST**](https://github.com/Jhanina03/mnist) | Handwritten-digit neural network vs. KNN | Python |
+<p align="center">
+  <a href="https://jhanina03.github.io/archive.html#fashion"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/fashionia-dark.svg"><img src="cards/fashionia.svg" width="49%" alt="FashionIA: garment comfort recommender with fuzzy logic and genetic algorithms"></picture></a>
+  <a href="https://github.com/Jhanina03/chat-basico"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/chat-dark.svg"><img src="cards/chat.svg" width="49%" alt="Chat Básico: real-time chat with video calls, fully tested"></picture></a>
+  <a href="https://github.com/Jhanina03/APE7-proyectogpis"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/gpis-dark.svg"><img src="cards/gpis.svg" width="49%" alt="APE7 GPIS: microservices with Docker and Jenkins"></picture></a>
+  <a href="https://github.com/Jhanina03/mnist"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/mnist-dark.svg"><img src="cards/mnist.svg" width="49%" alt="MNIST neural network vs KNN"></picture></a>
+  <a href="https://github.com/Jhanina03/BookingView"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/booking-dark.svg"><img src="cards/booking.svg" width="49%" alt="BookingView: accommodation booking platform"></picture></a>
+  <a href="https://feriauto-juego.vercel.app"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/feriauto-dark.svg"><img src="cards/feriauto.svg" width="49%" alt="FeriaAuto: browser game"></picture></a>
+</p>
 
-👉 See them all in the **[pattern archive](https://jhanina03.github.io/archive.html)**.
+Also: **license-plate recognition** (computer vision), an **account-reconciliation system** built during my internship at a financial institution, and **hotel booking modules on Odoo**.
+
+👉 See them all in the **[pattern archive](https://jhanina03.github.io/archive.html)**, or play my sewing mini-game **[Sew the dress 🎮](https://jhanina03.github.io/game.html)**.
 
 <img src="divider.svg" alt="" width="100%">
+
+### 🧵 My contributions, stitched
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Jhanina03/Jhanina03/output/snake-dark.svg">
+  <img src="https://raw.githubusercontent.com/Jhanina03/Jhanina03/output/snake-light.svg" alt="A pink thread sewing through my contribution graph" width="100%">
+</picture>
 
 ### 📊 Stats
 
