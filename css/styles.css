@@ -845,3 +845,9 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .term-ok { opacity: 0; animation: fade-in .2s ease 2.05s forwards; }
 .tag-barcode { opacity: 0; animation: fade-in .5s ease 1.95s forwards; }
 .tag-shadow { top: calc(clamp(60px, 16vh, 150px) + min(440px, 98vw)); }
+
+/* intro: CSS-only reveals (no SMIL), so they always play */
+.emb-reveal { clip-path: inset(0 100% 0 0); animation: emb-reveal 1.2s linear .9s forwards; }
+@keyframes emb-reveal { to { clip-path: inset(0 0 0 0); } }
+.term-type { clip-path: inset(0 100% 0 0); animation: term-type 1s steps(18) 1s forwards; }
+@keyframes term-type { to { clip-path: inset(0 0 0 0); } }
