@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -47,7 +47,11 @@
   .score { font: 700 3rem Fraunces, serif; color: var(--rose); line-height: 1; }
   .final-avatar { width: 150px; margin: 6px auto; }
   @media (max-width: 640px) { .dress { width: 104px; right: 10px; bottom: 10px; } .tagbox { min-width: 0; } }
-  .top { display: flex; gap: 8px; }
+  .top { display: flex; gap: 8px; align-items: center; }
+  .lang { pointer-events: auto; display: flex; background: rgba(255,255,255,.85); border-radius: 999px; padding: 3px; box-shadow: 0 8px 18px -10px rgba(59,42,107,.5); }
+  .lang button { border: 0; background: none; padding: 5px 10px; border-radius: 999px; font: 700 .8rem "DM Sans"; color: var(--ink2); cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: #7B5CD6; color: #fff; }
+  :root[data-theme="dark"] .lang { background: rgba(36,28,58,.9); }
   .top button { pointer-events: auto; width: 38px; height: 38px; border-radius: 50%; border: 0; background: rgba(255,255,255,.85); font-size: 1rem; cursor: pointer; box-shadow: 0 8px 18px -10px rgba(59,42,107,.5); color: var(--ink); }
   /* night satin (dark mode) */
   :root[data-theme="dark"] { --ink: #F3EEFF; --ink2: #CFC5EC; --purple: #C9B8FF; color-scheme: dark; }
@@ -66,8 +70,8 @@
 <body>
 <canvas id="c"></canvas>
 <div class="hud">
-  <div class="tagbox"><small id="pieceTag">PIEZA 1/4</small><b id="pieceName">Manga</b><div class="bar"><i id="prog"></i></div><div class="acc">precisión <b id="acc">100%</b></div></div>
-  <div class="top"><button id="theme" type="button" aria-label="Cambiar tema claro/oscuro">☾</button><a href="index.html">Ver portafolio ›</a></div>
+  <div class="tagbox"><small id="pieceTag">PIECE 1/4</small><b id="pieceName">Sleeve</b><div class="bar"><i id="prog"></i></div><div class="acc"><span id="accLbl">accuracy</span> <b id="acc">100%</b></div></div>
+  <div class="top"><div class="lang"><button type="button" data-l="en">EN</button><button type="button" data-l="es">ES</button></div><button id="theme" type="button" aria-label="Toggle light/dark">☾</button><a id="back" href="index.html?view=portfolio">View portfolio ›</a></div>
 </div>
 <div class="dress">
   <svg viewBox="0 0 120 150" aria-hidden="true">
@@ -77,7 +81,7 @@
     <path id="p2" class="part" d="M36 30Q60 38 84 30L86 72H34Z M34 72Q12 112 8 132Q60 144 112 132Q108 112 86 72Z"/>
     <path id="p3" class="part" d="M60 72Q48 62 44 70Q46 78 60 73Q74 78 76 70Q72 62 60 72Z"/>
   </svg>
-  <small>TU VESTIDO</small>
+  <small id="dressLbl">YOUR DRESS</small>
 </div>
 <div class="modal open" id="modal"><div class="card" id="card"></div></div>
 
@@ -86,7 +90,23 @@
 <script src="js/avatar.js"></script>
 <script>
 (function () {
-  i18n.lang = "es";
+  i18n.init(); // English by default; follows the language chosen in the portfolio intro
+  const L = () => i18n.lang;
+  const G = {
+    en: { piece: "PIECE", unlocks: "UNLOCKS", acc: "accuracy", dress: "YOUR DRESS", back: "View portfolio ›", mini: "MINI-GAME · ATELIER JHANINA", title: "Sew the dress",
+      how: "Move the needle with your <b>mouse</b> (or finger, or the ← → keys) to sew <b>along the dashed line</b> while the fabric moves. Every piece you sew unlocks part of my portfolio, and at the end… I wear the dress! 👗",
+      start: "Start sewing 🪡", almost: "Almost!", missed: "A few stitches slipped away. Follow the dashed line calmly.", again: "Sew it again ↺",
+      sewn: "SEWN", accW: "ACCURACY", unlocked: "SECTION UNLOCKED", seeDress: "See my finished dress! 👗", next: "Next piece:", done: "DRESS FINISHED · 4/4 PIECES", wear: "I'm wearing it!",
+      thanks: "Thanks for sewing with me. That's how I build software too: <b>measured, tested and made to fit</b>. ✂", full: "See the full portfolio ›", restart: "Sew again",
+      pieces: [["Sleeve", "About me"], ["Collar", "Skills"], ["Skirt", "Projects"], ["Bow", "Contact"]], pattern: "pattern", size: "size full-stack" },
+    es: { piece: "PIEZA", unlocks: "DESBLOQUEA", acc: "precisión", dress: "TU VESTIDO", back: "Ver portafolio ›", mini: "MINI-JUEGO · ATELIER JHANINA", title: "Cose el vestido",
+      how: "Mueve la aguja con el <b>mouse</b> (o el dedo, o las flechas ← →) para coser <b>siguiendo la línea punteada</b> mientras la tela avanza. Cada pieza que coses desbloquea una parte de mi portafolio, y al final… ¡estreno el vestido! 👗",
+      start: "Empezar a coser 🪡", almost: "¡Casi!", missed: "Se te escaparon algunas puntadas. Sigue la línea punteada con calma.", again: "Coser otra vez ↺",
+      sewn: "COSIDA", accW: "DE PRECISIÓN", unlocked: "SECCIÓN DESBLOQUEADA", seeDress: "¡Ver mi vestido terminado! 👗", next: "Siguiente pieza:", done: "VESTIDO TERMINADO · 4/4 PIEZAS", wear: "¡Lo estreno!",
+      thanks: "Gracias por coser conmigo. Así trabajo también el software: <b>a medida, probado y hecho para quedar perfecto</b>. ✂", full: "Ver el portafolio completo ›", restart: "Coser otra vez",
+      pieces: [["Manga", "Sobre mí"], ["Cuello", "Habilidades"], ["Falda", "Proyectos"], ["Moño", "Contacto"]], pattern: "patrón", size: "talla full-stack" },
+  };
+  const T = (k) => G[L()][k];
   const t = (k) => i18n.t(k), pk = (v) => i18n.pick(v);
   const cv = document.getElementById("c"), g = cv.getContext("2d");
   let W, H, DPR;
@@ -95,11 +115,19 @@
 
   /* ---------- the 4 pieces (each unlocks a section) ---------- */
   const PIECES = [
-    { name: "Manga", section: "Sobre mí", amp: 50, f: .006, f2: .013, len: 1000 },
-    { name: "Cuello", section: "Habilidades", amp: 70, f: .008, f2: .017, len: 1050 },
-    { name: "Falda", section: "Proyectos", amp: 95, f: .009, f2: .021, len: 1100 },
-    { name: "Moño", section: "Contacto", amp: 80, f: .012, f2: .026, len: 1000 },
+    { amp: 50, f: .006, f2: .013, len: 1000 },
+    { amp: 70, f: .008, f2: .017, len: 1050 },
+    { amp: 95, f: .009, f2: .021, len: 1100 },
+    { amp: 80, f: .012, f2: .026, len: 1000 },
   ];
+  PIECES.forEach((p, i) => { Object.defineProperty(p, "name", { get: () => T("pieces")[i][0] }); Object.defineProperty(p, "section", { get: () => T("pieces")[i][1] }); });
+  function labels() {
+    document.documentElement.lang = L();
+    document.getElementById("accLbl").textContent = T("acc"); document.getElementById("dressLbl").textContent = T("dress"); document.getElementById("back").textContent = T("back");
+    document.querySelectorAll(".lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.l === L())));
+    const p = PIECES[idx]; document.getElementById("pieceTag").textContent = `${T("piece")} ${idx + 1}/4 · ${T("unlocks")}: ${p.section.toUpperCase()}`; document.getElementById("pieceName").textContent = p.name;
+  }
+  document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => { i18n.set(b.dataset.l); labels(); if (state === "intro") intro(); }));
   let idx = 0, state = "intro", scroll = 0, needleX = 0, targetX = 0, stitches = [], good = 0, total = 0, sampleT = 0, needleBob = 0, sparks = [];
   const SPEED = 95;
   const NEEDLE_Y = () => Math.min(H * .38, 300);
@@ -117,25 +145,22 @@
   function show(html) { card.innerHTML = `<div class="btnhole"></div>${html}`; modal.classList.add("open"); }
   function hide() { modal.classList.remove("open"); }
   function intro() {
-    show(`<span class="kick">MINI-JUEGO · ATELIER JHANINA</span><h2>Cose el vestido</h2>
-      <p>Mueve la aguja con el <b>mouse</b> (o el dedo, o las flechas ← →) para coser <b>siguiendo la línea punteada</b> mientras la tela avanza. Cada pieza que coses desbloquea una parte de mi portafolio, y al final… ¡estreno el vestido! 👗</p>
-      <button class="btn" id="go" type="button">Empezar a coser 🪡</button>`);
+    show(`<span class="kick">${T("mini")}</span><h2>${T("title")}</h2><p>${T("how")}</p><button class="btn" id="go" type="button">${T("start")}</button>`);
     document.getElementById("go").onclick = () => { hide(); begin(); };
   }
   function begin() {
     scroll = -NEEDLE_Y() - 40; stitches = []; good = 0; total = 0; sparks = [];
     needleX = targetX = W / 2;
     const p = PIECES[idx];
-    document.getElementById("pieceTag").textContent = `PIEZA ${idx + 1}/4 · DESBLOQUEA: ${p.section.toUpperCase()}`;
-    document.getElementById("pieceName").textContent = p.name;
+    labels();
     state = "sew";
   }
   function finishPiece() {
     state = "card";
     const acc = total ? Math.round((good / total) * 100) : 0, p = PIECES[idx];
     if (acc < 55) {
-      show(`<span class="kick">PIEZA ${idx + 1}/4 · ${p.name.toUpperCase()}</span><h2>¡Casi!</h2><div class="score">${acc}%</div>
-        <p style="text-align:center">Se te escaparon algunas puntadas. Sigue la línea punteada con calma.</p><button class="btn" id="go" type="button">Coser otra vez ↺</button>`);
+      show(`<span class="kick">${T("piece")} ${idx + 1}/4 · ${p.name.toUpperCase()}</span><h2>${T("almost")}</h2><div class="score">${acc}%</div>
+        <p style="text-align:center">${T("missed")}</p><button class="btn" id="go" type="button">${T("again")}</button>`);
       document.getElementById("go").onclick = () => { hide(); begin(); };
       return;
     }
@@ -147,17 +172,17 @@
       () => `<p>${t("contact.lead")}</p><p style="text-align:center"><a href="mailto:${PROFILE.email}"><b>${PROFILE.email}</b></a><br><a href="${PROFILE.linkedin}" target="_blank">LinkedIn</a> · <a href="${PROFILE.github}" target="_blank">GitHub</a> · <a href="${PROFILE.instagram}" target="_blank">Instagram</a></p>`,
     ][idx]();
     const last = idx === PIECES.length - 1;
-    show(`<span class="kick">PIEZA ${idx + 1}/4 COSIDA · ${acc}% DE PRECISIÓN · SECCIÓN DESBLOQUEADA</span><h2>${p.section}</h2>${body}
-      <button class="btn" id="go" type="button">${last ? "¡Ver mi vestido terminado! 👗" : `Siguiente pieza: ${PIECES[idx + 1].name} ▶`}</button>`);
+    show(`<span class="kick">${T("piece")} ${idx + 1}/4 ${T("sewn")} · ${acc}% ${T("accW")} · ${T("unlocked")}</span><h2>${p.section}</h2>${body}
+      <button class="btn" id="go" type="button">${last ? T("seeDress") : `${T("next")} ${PIECES[idx + 1].name} ▶`}</button>`);
     document.getElementById("go").onclick = () => { if (last) return finale(); hide(); idx++; begin(); };
   }
   function finale() {
     const cfg = { silhouette: "swing", fabric: "polka", color: "lilac", details: ["bow", "lace", "puff"] };
-    show(`<span class="kick">VESTIDO TERMINADO · 4/4 PIEZAS</span><h2>¡Lo estreno!</h2>
+    show(`<span class="kick">${T("done")}</span><h2>${T("wear")}</h2>
       <div class="final-avatar">${avatarSVG("custom", "fin", cfg)}</div>
-      <p style="text-align:center">Gracias por coser conmigo. Así trabajo también el software: <b>a medida, probado y hecho para quedar perfecto</b>. ✂</p>
-      <button class="btn" id="go" type="button">Ver el portafolio completo ›</button> <button class="btn alt" id="again" type="button">Coser otra vez</button>`);
-    document.getElementById("go").onclick = () => (location.href = "index.html");
+      <p style="text-align:center">${T("thanks")}</p>
+      <button class="btn" id="go" type="button">${T("full")}</button> <button class="btn alt" id="again" type="button">${T("restart")}</button>`);
+    document.getElementById("go").onclick = () => (location.href = "index.html?view=portfolio");
     document.getElementById("again").onclick = () => { idx = 0; document.querySelectorAll(".part").forEach((p) => p.classList.remove("done")); hide(); begin(); };
   }
 
@@ -215,7 +240,7 @@
     g.fillStyle = C.dots;
     for (let y = Math.max(0, Math.floor(-top / 24) * 24); y < p.len && top + y < H; y += 24) for (let x = 12; x < stripW; x += 24) g.fillRect(sx + x, top + y, 2, 2);
     g.font = "18px Caveat"; g.fillStyle = C.note; g.textAlign = "left";
-    g.fillText(`patrón: ${p.name.toLowerCase()} · talla full-stack`, sx + 14, top + 26);
+    g.fillText(`${T("pattern")}: ${p.name.toLowerCase()} · ${T("size")}`, sx + 14, top + 26);
     // scissors marks at start/end
     g.fillStyle = C.note; g.font = "20px DM Sans"; g.fillText("✂", sx + stripW - 30, top + 26);
     // dashed pattern line
@@ -245,6 +270,7 @@
   }
   function roundRect(x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
 
+  labels();
   intro();
   requestAnimationFrame(frame);
 })();

@@ -15,7 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@500;700&family=Silkscreen&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261112j">
+  <link rel="stylesheet" href="css/styles.css?v=20261112k">
+<noscript><style>.loader { display: none !important; }</style></noscript>
 </head>
 <body data-title-key="meta.title">
   <a class="skip" href="#about">Skip to content</a>
@@ -24,7 +25,7 @@
   <!-- Intro: on lilac satin a 3D clothing tag drops in, a needle embroiders the
        name (with sparks) while another stitches the edge, sequins burst, a button
        is sewn on, then a zipper opens the fabric in a V and the tag flies to the logo -->
-  <div class="loader" aria-hidden="true">
+  <div class="loader">
     <div class="zip-wrap">
       <div class="zip-half l"><i class="sheen"></i></div>
       <div class="zip-half r"><i class="sheen"></i></div>
@@ -121,7 +122,17 @@
         <div class="button-needle"></div>
       </div>
     </div>
-    <button class="skip-intro" type="button" data-i18n="intro.skip">Skip intro ›</button>
+    <!-- after the tag presents itself, the visitor chooses where to go -->
+    <div class="ic-lang lang-toggle" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button></div>
+    <div class="intro-choices">
+      <p class="ic-q" data-i18n="intro.q">What would you like to do?</p>
+      <div class="ic-btns">
+        <button class="ic-btn primary" type="button" data-go="portfolio"><span class="ic-ico" aria-hidden="true">✂</span><span><b data-i18n="intro.portfolio">View portfolio</b><small data-i18n="intro.portfolioSub">open the atelier</small></span></button>
+        <a class="ic-btn" href="cv.html"><span class="ic-ico" aria-hidden="true">⚡</span><span><b data-i18n="intro.cv">Quick CV</b><small data-i18n="intro.cvSub">one-page summary</small></span></a>
+        <a class="ic-btn play" href="game.html"><span class="ic-ico" aria-hidden="true">🎮</span><span><b data-i18n="intro.play">Play</b><small data-i18n="intro.playSub">sew the dress</small></span></a>
+      </div>
+    </div>
+    <button class="skip-intro" type="button" data-go="portfolio" data-i18n="intro.skip">Skip intro ›</button>
   </div>
 
   <!-- Thread progress: a spool unwinds as you scroll and sews a button on for each section -->
@@ -168,7 +179,6 @@
         <div class="hero-cta reveal">
           <a class="btn btn-primary" href="#about"><span data-i18n="hero.start">Start the fitting</span> <span aria-hidden="true">↓</span></a>
           <a class="btn btn-ghost" href="cv.html" data-i18n="hero.quick">Quick CV for recruiters</a>
-          <a class="btn btn-play" href="game.html"><span aria-hidden="true">🎮</span> <span data-i18n="hero.play">Play: sew the dress</span></a>
         </div>
         <p class="hero-where reveal"><span class="dot"></span><span data-i18n="hero.where">Ambato, Ecuador · open to remote work</span></p>
       </div>
@@ -400,11 +410,11 @@
   </div>
   <div class="toasts" aria-live="polite"></div>
 
-  <script src="js/i18n.js?v=20261112j"></script>
-  <script src="js/data.js?v=20261112j"></script>
-  <script src="js/avatar.js?v=20261112j"></script>
-  <script src="js/common.js?v=20261112j"></script>
-  <script src="js/main.js?v=20261112j"></script>
-  <script src="js/studio.js?v=20261112j"></script>
+  <script src="js/i18n.js?v=20261112k"></script>
+  <script src="js/data.js?v=20261112k"></script>
+  <script src="js/avatar.js?v=20261112k"></script>
+  <script src="js/common.js?v=20261112k"></script>
+  <script src="js/main.js?v=20261112k"></script>
+  <script src="js/studio.js?v=20261112k"></script>
 </body>
 </html>

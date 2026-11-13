@@ -852,7 +852,67 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .term-type { clip-path: inset(0 100% 0 0); animation: term-type 1s steps(18) 1s forwards; }
 @keyframes term-type { to { clip-path: inset(0 0 0 0); } }
 
-/* hero: play button for the sewing mini-game */
-.btn-play { background: linear-gradient(135deg, #FF9ACB, #FF5C9A); color: #fff; box-shadow: 0 10px 24px -10px rgba(255, 92, 154, .8); }
-.btn-play::before { display: none; }
-.btn-play:hover { box-shadow: 0 14px 28px -10px rgba(255, 92, 154, .9); }
+
+/* ============================================================
+   Intro v3: the tag presents itself and waits for a choice.
+   Exit (zipper, fly, fling) only runs once .loader.opening is set.
+   ============================================================ */
+.loader { --tagw: min(330px, 74vw, 44vh); animation: none; pointer-events: none; }
+.loader.opening { animation: loader-out .01s linear 1.45s forwards; }
+.intro-tag { width: var(--tagw); margin-left: calc(var(--tagw) / -2);
+  animation: tag-drop 1s cubic-bezier(.3, 1.35, .5, 1) .1s both, tag-swing 1.8s ease-in-out 1.05s, tag-idle 5s ease-in-out 2.9s infinite; }
+@keyframes tag-idle { 0%, 100% { transform: rotate(-1.2deg); } 50% { transform: rotate(1.2deg); } }
+.tag-string { height: clamp(36px, 9vh, 110px); margin-bottom: calc(var(--tagw) * -.145); }
+.tag-shadow { display: none; }
+.zip-half.l, .zip-half.r, .zip-teeth { animation: none; }
+.zip-pull { animation: none; }
+.ribbons { animation: none; }
+.floaters i { animation: float-up 6s cubic-bezier(.3, .6, .5, 1) var(--d) infinite; }
+.loader.opening .zip-half.l { animation: zip-l 1.1s cubic-bezier(.55, 0, .35, 1) .3s forwards; }
+.loader.opening .zip-half.r { animation: zip-r 1.1s cubic-bezier(.55, 0, .35, 1) .3s forwards; }
+.loader.opening .zip-teeth { animation: teeth-open 1.1s cubic-bezier(.55, 0, .35, 1) .3s forwards; }
+.loader.opening .zip-pull { animation: pull-in .3s ease forwards, pull-down 1.1s cubic-bezier(.55, 0, .35, 1) .3s forwards; }
+.loader.opening .intro-tag { animation: tag-fly .7s cubic-bezier(.6, 0, .3, 1) .2s forwards; }
+.loader.opening .ribbons { animation: fade-out .4s ease forwards; }
+.loader.opening .floaters i { animation: float-up 6s cubic-bezier(.3, .6, .5, 1) var(--d) infinite, fling .7s cubic-bezier(.5, 0, .7, .4) .25s forwards; }
+.loader.opening .intro-choices { animation: choices-out .35s ease forwards; }
+.skip-intro { animation: skip-hide .3s ease 2.3s forwards; }
+@keyframes skip-hide { to { opacity: 0; visibility: hidden; } }
+.loader.opening .skip-intro { display: none; }
+
+/* the choice card under the tag */
+.intro-choices {
+  position: absolute; left: 50%; bottom: max(18px, 4vh); z-index: 7; width: min(640px, calc(100% - 24px)); transform: translateX(-50%);
+  display: grid; justify-items: center; gap: 10px; pointer-events: auto;
+  opacity: 0; animation: choices-in .6s cubic-bezier(.3, 1.4, .5, 1) 2.35s forwards;
+}
+@keyframes choices-in { from { opacity: 0; transform: translate(-50%, 24px); } to { opacity: 1; transform: translate(-50%, 0); } }
+@keyframes choices-out { to { opacity: 0; transform: translate(-50%, 30px); visibility: hidden; } }
+.ic-q { margin: 0; font: 700 clamp(1.3rem, 3vw, 1.7rem) var(--hand); color: #7B5CD6; text-shadow: 0 1px 0 rgba(255, 255, 255, .6); }
+.ic-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.ic-btn {
+  display: flex; align-items: center; gap: 10px; min-width: 176px; padding: 10px 18px 10px 10px; border-radius: 16px; text-decoration: none; text-align: left; cursor: pointer;
+  background: #fff; color: #2B2140; border: 0; font: inherit; position: relative;
+  box-shadow: 0 12px 24px -12px rgba(59, 42, 107, .55); outline: 2px dashed #D9CCFF; outline-offset: -6px; transition: transform .2s, outline-color .2s;
+}
+.ic-btn:hover, .ic-btn:focus-visible { transform: translateY(-4px) rotate(-1deg); outline-color: #FF5C9A; }
+.ic-btn b { display: block; font: 700 1rem var(--sans); } .ic-btn small { display: block; font: .58rem var(--pixel); color: #7B5CD6; letter-spacing: .06em; margin-top: 2px; }
+.ic-ico { width: 40px; height: 40px; flex: none; border-radius: 50%; display: grid; place-content: center; font-size: 1.15rem; background: #F1EAFF; color: #7B5CD6; position: relative; }
+.ic-ico::after { /* the four holes of a sewing button */
+  content: ""; position: absolute; inset: 7px; border-radius: 50%; opacity: .35;
+  background: radial-gradient(circle at 25% 25%, #7B5CD6 0 1.4px, transparent 2px), radial-gradient(circle at 75% 25%, #7B5CD6 0 1.4px, transparent 2px),
+    radial-gradient(circle at 25% 75%, #7B5CD6 0 1.4px, transparent 2px), radial-gradient(circle at 75% 75%, #7B5CD6 0 1.4px, transparent 2px);
+}
+.ic-btn.primary { background: linear-gradient(135deg, #7B5CD6, #5B8DEF); color: #fff; outline-color: rgba(255, 255, 255, .5); }
+.ic-btn.primary small { color: #E4DAFF; } .ic-btn.primary .ic-ico { background: rgba(255, 255, 255, .2); color: #fff; }
+.ic-btn.play .ic-ico { background: #FFE0EE; }
+.ic-lang { position: absolute; top: 16px; right: 16px; z-index: 8; pointer-events: auto; box-shadow: 0 8px 18px -10px rgba(59, 42, 107, .5); }
+.loader.opening .ic-lang { display: none; }
+:root[data-theme="dark"] .ic-q { color: #E4DAFF; text-shadow: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ic-q { color: #E4DAFF; text-shadow: none; } }
+@media (max-width: 600px) {
+  .loader { --tagw: min(300px, 70vw, 38vh); }
+  .ic-btns { flex-direction: column; width: 100%; max-width: 320px; }
+  .ic-btn { min-width: 0; width: 100%; padding: 8px 14px 8px 8px; }
+  .ic-ico { width: 34px; height: 34px; }
+}

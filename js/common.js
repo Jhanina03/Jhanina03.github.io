@@ -55,10 +55,17 @@
     const hero = document.getElementById("hero-avatar"); // she says hi once the page opens
     if (hero && !reduced) { hero.classList.add("waving"); setTimeout(() => hero.classList.remove("waving"), 2900); }
   };
-  const skip = document.querySelector(".skip-intro");
-  if (skip) skip.addEventListener("click", done);
+  // the intro waits on the tag until the visitor picks "View portfolio" (or skips)
+  const loader = document.querySelector(".loader");
+  const openPortfolio = () => {
+    if (!loader || reduced || loader.classList.contains("opening")) return done();
+    loader.classList.add("opening");
+    setTimeout(done, 1500); // zipper + split, then the page
+  };
+  document.querySelectorAll('[data-go="portfolio"]').forEach((b) => b.addEventListener("click", openPortfolio));
   if (new URLSearchParams(location.search).has("nointro")) done(); // ?nointro skips the intro
-  setTimeout(done, reduced ? 0 : 4100); // matches the CSS intro (sewn tag + V zipper)
+  if (!loader || reduced) done();
+  else if (new URLSearchParams(location.search).get("view") === "portfolio") setTimeout(openPortfolio, 2600); // coming back from the game
 
   /* ---------- thread progress ---------- */
   const fg = document.querySelector(".thread-fg");
