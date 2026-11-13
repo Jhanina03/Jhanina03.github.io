@@ -8,7 +8,7 @@ window.PROFILE = {
   fullName: "Britani Jhanina Conterón Villamarín",
   email: "jhaninaconteron03@gmail.com",
   github: "https://github.com/Jhanina03",
-  linkedin: "https://www.linkedin.com/in/conter%C3%B3n-jhanina-20b29333a/",
+  linkedin: "https://www.linkedin.com/in/jhanina-conteron/",
   steam: "https://steamcommunity.com/profiles/76561199698705664/",
   instagram: "https://www.instagram.com/jhanis_03/",
   facebook: "https://www.facebook.com/britani.villamarin",
@@ -32,7 +32,7 @@ window.SKILLS = [
     id: "data", color: "#FF9ACB",
     title: { en: "Databases", es: "Bases de datos" },
     note: { en: "measured to the millimetre", es: "medidas al milímetro" },
-    items: ["SQL Server", "PostgreSQL", "MySQL", "MongoDB", "Firebase", "EF Migrations", "SSAS / Data Warehousing", "Query optimisation"],
+    items: ["SQL", "SQL Server", "PostgreSQL (Neon)", "MySQL", "MongoDB", "Firebase", "EF Migrations", "SSAS / Data Warehousing", "Query optimisation"],
   },
   {
     id: "qa", color: "#8EE3E0",
@@ -44,7 +44,7 @@ window.SKILLS = [
     id: "tools", color: "#C9B8FF",
     title: { en: "Tools & more", es: "Herramientas y más" },
     note: { en: "my sewing kit", es: "mi costurero" },
-    items: ["Git & GitHub", "Docker", "Jira", "Azure DevOps", "Odoo", "Wireframes & mockups", "Scrum", "AI / ML (Python)"],
+    items: ["Git, GitHub & GitLab", "Docker", "Jira", "Azure DevOps", "Odoo", "Wireframes & mockups", "Scrum", "AI / ML (Python)"],
   },
 ];
 
@@ -295,6 +295,11 @@ window.EXPERIENCE = [
 /* ---------- Certificates (clothing tags) ----------
    Add new ones here: { title, issuer, year, url }            */
 window.CERTS = [
+  {
+    title: { en: "Quality Assurance Certification · freeCodeCamp", es: "Quality Assurance Certification · freeCodeCamp" },
+    issuer: { en: "freeCodeCamp", es: "freeCodeCamp" },
+    year: "2026", url: "https://www.freecodecamp.org/certification/Jhanina03/quality-assurance-v7", color: "#8EE3E0",
+  },
   {
     title: { en: "CSEI 2024 · Participation", es: "CSEI 2024 · Participación" },
     issuer: { en: "Computer Science, Electronics & Industrial Engineering Congress · UTA", es: "Congreso de Ciencias de la Computación, Electrónica e Ingeniería Industrial · UTA" },

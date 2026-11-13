@@ -5,38 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CV · Jhanina Conterón</title>
   <meta name="description" content="Résumé of Jhanina Conterón, Software Engineering student: frontend, databases and QA.">
-  <meta name="theme-color" content="#7B5CD6">
+  <meta name="theme-color" content="#0284C7">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@500;700&family=Silkscreen&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261112n">
+  <link rel="stylesheet" href="css/styles.css?v=20261113a">
   <style>
     .cv-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 24px 16px 0; }
     .sheet {
-      max-width: 860px; margin: 24px auto 80px; background: #fff; color: #2B2140; border-radius: 18px; box-shadow: var(--shadow-lg);
-      padding: clamp(24px, 5vw, 56px); border: 1.5px solid var(--line);
+      max-width: 860px; margin: 24px auto 80px; background: #fff; color: #0F172A; border-radius: 14px; box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+      padding: clamp(24px, 5vw, 56px); border: 1.5px solid #E2E8F0;
     }
-    .sheet h1, .sheet h2, .sheet h3, .sheet strong { color: #2B2140; }
-    .cv-head { display: flex; gap: 24px; align-items: center; padding-bottom: 20px; border-bottom: 2px dashed #D9CCFF; }
-    .cv-head img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 4px solid #EFE8FF; flex: none; }
-    .cv-head h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); }
-    .cv-head .role { font-family: var(--pixel); font-size: .75rem; color: #7B5CD6; margin: 6px 0 10px; letter-spacing: .04em; }
-    .cv-contact { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .9rem; color: #554B70; padding: 0; margin: 0; list-style: none; }
-    .cv-contact a { color: #7B5CD6; }
+    .sheet h1, .sheet h2, .sheet h3, .sheet strong { color: #0F172A; }
+    .cv-head { display: flex; gap: 24px; align-items: center; padding-bottom: 20px; border-bottom: 2px solid #E2E8F0; }
+    .cv-head img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 4px solid #E0F2FE; flex: none; }
+    .cv-head h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; color: #0F172A; }
+    .cv-head .role { font-family: var(--sans); font-size: 1.05rem; font-weight: 700; color: #0284C7; margin: 6px 0 10px; letter-spacing: .02em; }
+    .cv-contact { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .9rem; color: #475569; padding: 0; margin: 0; list-style: none; }
+    .cv-contact a { color: #0284C7; font-weight: 600; text-decoration: none; }
+    .cv-contact a:hover { color: #0369A1; text-decoration: underline; }
     .sheet section { margin-top: 24px; }
-    .sheet h2 { font-size: 1.15rem; display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-    .sheet h2::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, #D9CCFF, transparent); }
-    .sheet p, .sheet li { font-size: .95rem; color: #3e3555; }
+    .sheet h2 { font-size: 1.15rem; font-weight: 700; color: #0F172A; display: flex; align-items: center; gap: 10px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .04em; }
+    .sheet h2::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, #38BDF8, transparent); }
+    .sheet p, .sheet li { font-size: .95rem; color: #334155; line-height: 1.6; }
     .sheet p { margin: 0; }
     .cv-item { margin-bottom: 14px; break-inside: avoid; }
     .cv-item .top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-    .cv-item h3 { font-family: var(--sans); font-size: 1rem; font-weight: 700; }
-    .cv-item .when { font-family: var(--pixel); font-size: .7rem; color: #7B5CD6; white-space: nowrap; }
-    .cv-item .org { color: #847A9E; font-size: .9rem; margin: 0 0 4px; }
+    .cv-item h3 { font-family: var(--sans); font-size: 1rem; font-weight: 700; color: #0F172A; }
+    .cv-item .when { font-family: var(--sans); font-size: .85rem; font-weight: 600; color: #0284C7; white-space: nowrap; }
+    .cv-item .org { color: #64748B; font-size: .9rem; font-weight: 500; margin: 0 0 4px; }
     .cv-item ul { margin: 4px 0 0; padding-left: 1.1rem; }
     .cv-skills { display: grid; grid-template-columns: 150px 1fr; gap: 6px 16px; font-size: .93rem; }
-    .cv-skills dt { font-weight: 700; color: #2B2140; } .cv-skills dd { margin: 0; color: #3e3555; }
+    .cv-skills dt { font-weight: 700; color: #0F172A; } .cv-skills dd { margin: 0; color: #334155; }
     .cv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
     @media (max-width: 640px) { .cv-head { flex-direction: column; text-align: center; } .cv-contact { justify-content: center; } .cv-skills, .cv-two { grid-template-columns: 1fr; } }
     @media print {
@@ -69,14 +70,13 @@
           <li>✉️ <a id="cv-mail" href="#">jhaninaconteron03@gmail.com</a></li>
           <li>🌐 <a href="https://jhanina03.github.io/">jhanina03.github.io</a></li>
           <li>💻 <a href="https://github.com/Jhanina03">github.com/Jhanina03</a></li>
-          <li>💼 <a id="cv-li" href="#">LinkedIn</a></li>
+          <li>💼 <a id="cv-li" href="https://www.linkedin.com/in/jhanina-conteron/" target="_blank" rel="noopener">linkedin.com/in/jhanina-conteron</a></li>
         </ul>
       </div>
     </header>
 
     <section><h2 data-i18n="cv.summary">Summary</h2><p data-i18n="cv.summaryText"></p></section>
     <section><h2 data-i18n="cv.experience">Experience</h2><div id="cv-exp"></div></section>
-    <section><h2 data-i18n="cv.projects">Selected projects</h2><div id="cv-proj" class="cv-two"></div></section>
     <section><h2 data-i18n="cv.skills">Technical skills</h2><dl class="cv-skills" id="cv-skills"></dl></section>
     <div class="cv-two">
       <section>
@@ -93,9 +93,9 @@
     </div>
   </article>
 
-  <script src="js/i18n.js?v=20261112n"></script>
-  <script src="js/data.js?v=20261112n"></script>
-  <script src="js/common.js?v=20261112n"></script>
+  <script src="js/i18n.js?v=20261113a"></script>
+  <script src="js/data.js?v=20261113a"></script>
+  <script src="js/common.js?v=20261113a"></script>
   <script>
     (function () {
       const pk = (v) => i18n.pick(v), esc = JC.esc;
@@ -106,9 +106,12 @@
         document.getElementById("cv-exp").innerHTML = EXPERIENCE.filter((x) => !/Universidad/.test(x.org.en)).map((x) => `
           <div class="cv-item"><div class="top"><h3>${esc(pk(x.role))}</h3><span class="when">${esc(pk(x.when))}</span></div>
           <p class="org">${esc(pk(x.org))}</p><ul>${pk(x.points).map((p) => `<li>${esc(p)}</li>`).join("")}</ul></div>`).join("");
-        document.getElementById("cv-proj").innerHTML = PROJECTS.filter((p) => p.featured || ["mnist", "booking", "fcc-qa", "hospital"].includes(p.id)).map((p) => `
-          <div class="cv-item"><div class="top"><h3>${esc(pk(p.title))}</h3><span class="when">${p.year}</span></div>
-          <p class="org">${esc(p.stack.join(" · "))}</p><p>${esc(pk(p.desc))}</p></div>`).join("");
+        const projEl = document.getElementById("cv-proj");
+        if (projEl) {
+          projEl.innerHTML = PROJECTS.filter((p) => p.featured || ["mnist", "booking", "fcc-qa", "hospital"].includes(p.id)).map((p) => `
+            <div class="cv-item"><div class="top"><h3>${esc(pk(p.title))}</h3><span class="when">${p.year}</span></div>
+            <p class="org">${esc(p.stack.join(" · "))}</p><p>${esc(pk(p.desc))}</p></div>`).join("");
+        }
         document.getElementById("cv-skills").innerHTML = SKILLS.map((s) => `<dt>${esc(pk(s.title))}</dt><dd>${esc(s.items.join(", "))}</dd>`).join("");
         document.getElementById("cv-certs").innerHTML = CERTS.map((c) => `<li>${esc(pk(c.title))} · ${esc(c.year)}</li>`).join("");
       }
