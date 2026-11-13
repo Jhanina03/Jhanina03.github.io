@@ -77,8 +77,19 @@
   <div class="dress-av"><div class="av gray" id="avGray"></div><div class="av color" id="avColor"></div></div>
   <small id="dressLbl">YOUR OUTFIT</small>
 </div>
+<div class="console" aria-live="polite"><div class="console-head"><i></i><i></i><i></i><span>atelier — console</span></div><pre id="log"></pre></div>
 <div class="modal open" id="modal"><div class="card" id="card"></div></div>
 <style>
+  .console { position: fixed; left: 14px; bottom: 14px; z-index: 5; width: min(330px, calc(100vw - 150px)); background: rgba(28,21,48,.92); border-radius: 12px; overflow: hidden;
+             box-shadow: 0 14px 28px -14px rgba(20,10,40,.7); border: 1.5px solid rgba(183,156,255,.3); pointer-events: none; }
+  .console-head { display: flex; align-items: center; gap: 5px; padding: 6px 10px; background: #261D40; font: .55rem Silkscreen, monospace; color: #C9B8FF; }
+  .console-head i { width: 8px; height: 8px; border-radius: 50%; background: #FF7AB8; } .console-head i:nth-child(2) { background: #B79CFF; } .console-head i:nth-child(3) { background: #8CC8FF; }
+  .console-head span { margin-left: 6px; }
+  .console pre { margin: 0; padding: 8px 10px; height: 118px; overflow: hidden; font: .7rem/1.55 ui-monospace, Consolas, monospace; color: #E9E2FF; white-space: pre-wrap; display: flex; flex-direction: column; justify-content: flex-end; }
+  .console .c-ok { color: #8CE0FF; } .console .c-bad { color: #FF9ACB; } .console .c-cmd { color: #C9B8FF; } .console .c-dim { color: #8E83AE; }
+  .code { text-align: left; background: #1C1530; color: #E9E2FF; border-radius: 12px; padding: 12px 14px; font: .78rem/1.6 ui-monospace, Consolas, monospace; margin: 10px 0; white-space: pre-wrap; }
+  .code .k { color: #FF9ACB; } .code .s { color: #8CE0FF; } .code .ty { color: #C9B8FF; }
+  @media (max-width: 640px) { .console { width: calc(100vw - 120px); } .console pre { height: 82px; font-size: .62rem; } }
   .dress { width: 130px; }
   .dress-av { position: relative; width: 100%; aspect-ratio: 200 / 320; }
   .dress-av .av { position: absolute; inset: 0; } .dress-av svg { width: 100%; height: 100%; }
@@ -182,6 +193,15 @@
   addEventListener("keydown", (e) => keys.add(e.key));
   addEventListener("keyup", (e) => keys.delete(e.key));
 
+  /* ---------- console log ---------- */
+  const logEl = document.getElementById("log");
+  function log(text, cls = "") {
+    const line = document.createElement("span"); line.className = cls; line.textContent = text;
+    logEl.appendChild(line); while (logEl.children.length > 7) logEl.firstChild.remove();
+  }
+  const slug = (txt) => txt.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  log("$ npm run atelier", "c-cmd"); log(L() === "es" ? "> elige un outfit para empezar…" : "> pick an outfit to start…", "c-dim");
+
   /* ---------- flow ---------- */
   const modal = document.getElementById("modal"), card = document.getElementById("card");
   function show(html) { card.innerHTML = `<div class="btnhole"></div>${html}`; modal.classList.add("open"); modal.scrollTop = 0; }
@@ -190,13 +210,19 @@
     state = "pick";
     show(`<span class="kick">${T("mini")}</span><h2>${T("title")}</h2><p style="text-align:center">${T("choose")}</p>
       <div class="picker">${OUTFITS.map((o, i) => `<button class="pick" type="button" data-i="${i}"><div class="mini-av">${avatarSVG(o.look, "p" + i)}</div><b>${pk(o.name)}</b><small>${T("pieces4")}</small></button>`).join("")}</div>`);
-    card.querySelectorAll(".pick").forEach((b) => b.onclick = () => { outfit = OUTFITS[+b.dataset.i]; idx = 0; dressAvatar(); labels(); how(); });
+    card.querySelectorAll(".pick").forEach((b) => b.onclick = () => { outfit = OUTFITS[+b.dataset.i]; idx = 0; dressAvatar(); labels(); log(`$ cat outfits/${outfit.look}.config.ts`, "c-cmd"); log(`> ${pk(outfit.name)} · 4 pieces loaded`, "c-dim"); how(); });
   }
   function how() {
     state = "how";
     const list = outfit.pieces.map((p, i) => `<span>${L() === "es" ? p[2] : p[1]} → ${T("sections")[i]}</span>`).join("");
     show(`<span class="kick">${pk(outfit.name).toUpperCase()} · ${T("pieces4")}</span><h2>${pk(outfit.name)}</h2><div class="final-avatar" style="width:110px">${avatarSVG(outfit.look, "h")}</div>
-      <div class="chips">${list}</div><p>${T("how")}</p>
+      <div class="chips">${list}</div>
+      <div class="code"><span class="k">export const</span> outfit: <span class="ty">Outfit</span> = {
+  look: <span class="s">"${outfit.look}"</span>,
+  pieces: [${outfit.pieces.map((p) => `<span class="s">"${p[0]}"</span>`).join(", ")}],
+  unlocks: [<span class="s">"about"</span>, <span class="s">"skills"</span>, <span class="s">"projects"</span>, <span class="s">"contact"</span>],
+  tailor: <span class="s">"Jhanina"</span>,
+};</div><p>${T("how")}</p>
       <button class="btn" id="go" type="button">${T("start")}</button> <button class="btn alt" id="chg" type="button">${T("change")}</button>`);
     document.getElementById("go").onclick = () => { hide(); begin(); };
     document.getElementById("chg").onclick = pick;
@@ -205,11 +231,14 @@
     scroll = -NEEDLE_Y() - 40; stitches = []; good = 0; total = 0; sparks = [];
     needleX = targetX = seamX(0, piece());
     labels();
+    log(`$ sew ${slug(piece().name)} --seam=right`, "c-cmd");
     state = "sew";
   }
   function finishPiece() {
     state = "card";
     const acc = total ? Math.round((good / total) * 100) : 0, p = piece();
+    if (acc < 55) log(`✗ ${slug(p.name)}: ${acc}% < 55% · ${L() === "es" ? "reintentar" : "retry"}`, "c-bad");
+    else log(`✓ ${slug(p.name)}: ${L() === "es" ? "costura alineada" : "seam aligned"} (${acc}%) → ${p.section.toLowerCase()} 🔓`, "c-ok");
     if (acc < 55) {
       show(`<span class="kick">${T("piece")} ${idx + 1}/4 · ${p.name.toUpperCase()}</span><h2>${T("almost")}</h2><div class="score">${acc}%</div>
         <p style="text-align:center">${T("missed")}</p><button class="btn" id="go" type="button">${T("again")}</button>`);
@@ -230,6 +259,7 @@
   }
   function finale() {
     state = "end";
+    log(`✓ 4 passing · ${L() === "es" ? "outfit listo para producción" : "outfit ready for production"} ✂`, "c-ok");
     show(`<span class="kick">${T("done")}</span><h2>${T("wear")}</h2>
       <div class="final-avatar">${avatarSVG(outfit.look, "fin")}</div>
       <p style="text-align:center">${T("thanks")}</p>
@@ -258,6 +288,7 @@
         stitches.push({ x: needleX, y: fy, ok: ok || near });
         if (ok && Math.random() < .35) sparks.push({ x: needleX, y: ny + 6, vx: (Math.random() - .5) * 80, vy: -40 - Math.random() * 60, life: .5 });
         document.getElementById("acc").textContent = Math.round((good / total) * 100) + "%";
+        if (total % 30 === 0) log(`  ${L() === "es" ? "cosiendo…" : "stitching…"} ${total} ${L() === "es" ? "puntadas" : "stitches"} · ${Math.round((good / total) * 100)}%`, "c-dim");
       }
       document.getElementById("prog").style.width = Math.max(0, Math.min(100, (fy / p.len) * 100)) + "%";
       if (fy > p.len + 40) finishPiece();

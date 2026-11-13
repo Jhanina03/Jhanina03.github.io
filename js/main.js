@@ -226,12 +226,13 @@
     el.classList.add("found");
     $("#bug-count").textContent = found.size;
     logLine(esc(t("qa.bug" + id)));
-    if (found.size === 3) {
+    if (found.size === 5) {
       card.classList.add("fixed");
       setTimeout(() => {
         $(".qa-price").textContent = "$34.90";
         $(".qa-stars").textContent = "★★★★★";
         $(".qa-btn").textContent = i18n.lang === "es" ? "Añadir al carrito" : "Add to cart";
+        $(".qa-title").textContent = t("qa.product"); $(".qa-dup").textContent = "XL";
         document.querySelectorAll("[data-bug]").forEach((b) => b.classList.remove("found"));
         logLine(t("qa.win"), "win");
         unlock("labcoat");
@@ -241,7 +242,7 @@
     }
   }
   card.addEventListener("click", (e) => {
-    if (found.size === 3) return;
+    if (found.size === 5) return;
     const bug = e.target.closest("[data-bug]");
     if (bug) { e.preventDefault(); hit(bug); return; }
     if (!log.querySelector(".miss")) logLine(esc(t("qa.miss")), "miss");
@@ -259,6 +260,7 @@
     $(".qa-price").textContent = "$NaN";
     $(".qa-stars").textContent = "★★★★★★";
     $(".qa-btn").textContent = t("qa.btn");
+    $(".qa-title").textContent = t("qa.productBug"); $(".qa-dup").textContent = "L";
     dress("qa-avatar", "hoodie");
   });
 
@@ -327,6 +329,6 @@
   renderAll();
   document.addEventListener("langchange", () => {
     renderAll();
-    if (found.size === 3) $(".qa-btn").textContent = i18n.lang === "es" ? "Añadir al carrito" : "Add to cart";
+    if (found.size === 5) { $(".qa-btn").textContent = i18n.lang === "es" ? "Añadir al carrito" : "Add to cart"; $(".qa-title").textContent = t("qa.product"); }
   });
 })();
