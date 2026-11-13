@@ -230,34 +230,52 @@
   /* ---------- custom dress from the design-studio mini-game ----------
      cfg = { silhouette, fabric, color, details[] } — shared by the
      mannequin view and the avatar ("custom" look). */
-  const DRESS_COLORS = { lilac: "#B79CFF", purple: "#7B5CD6", sky: "#8CC8FF", blue: "#5B8DEF", pink: "#FF9ACB", rose: "#FF7AB8", white: "#F7F3FF" };
+  const DRESS_COLORS = {
+    lilac: "#B79CFF", lavender: "#D9CCFF", purple: "#7B5CD6", sky: "#8CC8FF", baby: "#BFE3FF", blue: "#5B8DEF", navy: "#3B4C9B",
+    pink: "#FF9ACB", rose: "#FF7AB8", hot: "#FF4F8B", white: "#F7F3FF", cream: "#FFF4E6", black: "#2A2530",
+  };
+  const LIGHT = ["white", "cream", "lavender", "baby"];
   const SKIRTS = {
     mini:    "M66 208Q50 234 47 252H153Q150 234 134 208Z",
     swing:   "M66 208Q34 246 30 272Q100 286 170 272Q166 246 134 208Z",
     aline:   "M66 208Q48 256 42 296H158Q152 256 134 208Z",
     ball:    "M66 206Q26 252 18 302H182Q174 252 134 206Z",
     mermaid: "M66 208Q62 240 73 268Q56 290 46 302H154Q144 290 127 268Q138 240 134 208Z",
+    empire:  "M68 186Q44 240 38 300H162Q156 240 132 186Z",
+    tiered:  "M66 208Q56 222 54 236H146Q144 222 134 208Z M54 234Q44 252 42 266H158Q156 252 146 234Z M42 264Q32 282 30 298H170Q168 282 158 264Z",
+    pencil:  "M66 208Q64 250 70 286H130Q136 250 134 208Z",
   };
-  const HEMS = { mini: [47, 153, 252], swing: [30, 170, 274], aline: [42, 158, 296], ball: [18, 182, 302], mermaid: [46, 154, 302] };
+  const HEMS = { mini: [47, 153, 252], swing: [30, 170, 274], aline: [42, 158, 296], ball: [18, 182, 302], mermaid: [46, 154, 302], empire: [38, 162, 300], tiered: [30, 170, 298], pencil: [70, 130, 286] };
   function dressParts(cfg, uid) {
     const c = DRESS_COLORS[cfg.color] || cfg.color || "#B79CFF";
-    const ink = cfg.color === "white" ? "#B79CFF" : "#FFFFFF";
+    const ink = LIGHT.includes(cfg.color) ? "#B79CFF" : cfg.color === "black" ? "#FF9ACB" : "#FFFFFF";
+    const heartP = (x, y, s) => `<path transform="translate(${x} ${y}) scale(${s})" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="${ink}" opacity=".9"/>`;
+    const starP = (x, y, s) => `<path transform="translate(${x} ${y}) scale(${s})" d="M0-5 1.2-1.6 5-1.5 2-.7 3 4 0 1.6-3 4-2-.7-5-1.5-1.2-1.6Z" fill="${ink}" opacity=".9"/>`;
     const pat = {
       solid: "",
       polka: `<circle cx="4" cy="4" r="2.1" fill="${ink}" opacity=".85"/><circle cx="12" cy="12" r="2.1" fill="${ink}" opacity=".85"/>`,
       gingham: `<rect width="16" height="5" fill="${ink}" opacity=".35"/><rect width="5" height="16" fill="${ink}" opacity=".35"/>`,
       floral: `<g fill="${ink}" opacity=".9"><circle cx="5" cy="3.4" r="1.5"/><circle cx="6.8" cy="5" r="1.5"/><circle cx="6" cy="7" r="1.5"/><circle cx="4" cy="7" r="1.5"/><circle cx="3.2" cy="5" r="1.5"/></g><circle cx="5" cy="5.4" r="1.1" fill="#FFD66B"/><circle cx="13" cy="13" r="1.2" fill="${ink}" opacity=".6"/>`,
       stripes: `<rect width="4" height="16" fill="${ink}" opacity=".45"/>`,
+      hearts: heartP(1, 2, .45) + heartP(9, 10, .45),
+      stars: starP(4, 5, .7) + starP(12, 12, .55),
+      plaid: `<rect width="16" height="3" y="3" fill="${ink}" opacity=".3"/><rect width="3" height="16" x="3" fill="${ink}" opacity=".3"/><rect width="16" height="1" y="11" fill="#FF5C9A" opacity=".45"/><rect width="1" height="16" x="11" fill="#FF5C9A" opacity=".45"/>`,
     }[cfg.fabric] || "";
     const fill = `url(#fab-${uid})`;
-    const defs = `<pattern id="fab-${uid}" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="${c}"/>${pat}</pattern>
+    const base = cfg.fabric === "ombre"
+      ? `<linearGradient id="fab-${uid}" x1="0" x2="0" gradientUnits="userSpaceOnUse" y1="150" y2="300"><stop offset="0" stop-color="${c}"/><stop offset=".55" stop-color="#C9B8FF"/><stop offset="1" stop-color="#FFC2DD"/></linearGradient>`
+      : `<pattern id="fab-${uid}" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="${c}"/>${pat}</pattern>`;
+    const defs = `${base}
       <linearGradient id="dshade-${uid}" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#1B1530" stop-opacity=".18"/></linearGradient>`;
     const sk = SKIRTS[cfg.silhouette] || SKIRTS.aline;
     const has = (d) => (cfg.details || []).includes(d);
     const [hx0, hx1, hy] = HEMS[cfg.silhouette] || HEMS.aline;
+    const waist = cfg.silhouette === "empire" ? 188 : 212;
     let skirt = "";
     if (cfg.silhouette === "swing") skirt += `<path d="M40 268Q100 286 160 268L166 278Q100 292 34 278Z" fill="#fff" opacity=".9"/>`; // petticoat
     skirt += `<path d="${sk}" fill="${fill}"/><path d="${sk}" fill="url(#dshade-${uid})"/>`;
+    if (cfg.silhouette === "tiered") skirt += `<path d="M54 236Q100 242 146 236M42 266Q100 272 158 266" stroke="#fff" stroke-width="1.6" fill="none" opacity=".75"/>`;
+    if (cfg.silhouette === "pencil") skirt += `<path d="M100 250V286" stroke="#fff" stroke-width="1.2" opacity=".5"/>`;
     if (has("lace")) {
       const n = Math.round((hx1 - hx0) / 9), w = (hx1 - hx0) / n;
       let d = `M${hx0} ${hy}`;
@@ -265,15 +283,27 @@
       skirt += `<path d="${d}" fill="#fff" stroke="#fff" stroke-width="1"/>`;
       for (let i = 0; i < n; i++) skirt += `<circle cx="${hx0 + w * i + w / 2}" cy="${hy + w / 4.4}" r="1" fill="${c}"/>`;
     }
-    const bodicePath = "M70 162Q78 154 90 156Q100 162 110 156Q122 154 130 162L134 212H66Z";
+    if (has("ruffles")) {
+      let d = `M${hx0 - 2} ${hy - 4}`; const n = Math.round((hx1 - hx0) / 7), w = (hx1 - hx0 + 4) / n;
+      for (let i = 0; i < n; i++) d += `q${w / 2} 7 ${w} 0`;
+      skirt += `<path d="${d}" stroke="${ink}" stroke-width="2.4" fill="none" opacity=".85"/>`;
+    }
+    if (has("sparkles")) skirt += [[0.25, .35], [0.7, .5], [0.45, .75], [0.82, .82], [0.18, .8]].map(([fx, fy]) => {
+      const x = hx0 + (hx1 - hx0) * fx, y = waist + (hy - waist) * fy;
+      return `<path class="av-sparkle" transform="translate(${x} ${y}) scale(.55)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/>`; }).join("");
+    const bodicePath = `M70 162Q78 154 90 156Q100 162 110 156Q122 154 130 162L${waist === 212 ? 134 : 132} ${waist}H${waist === 212 ? 66 : 68}Z`;
     let bodice = `<path d="${bodicePath}" fill="${fill}"/><path d="${bodicePath}" fill="url(#dshade-${uid})"/>
       <path d="M70 162Q78 154 90 156Q100 162 110 156Q122 154 130 162" stroke="#fff" stroke-width="1.3" fill="none" opacity=".7"/>`;
+    if (cfg.silhouette === "empire") bodice += `<path d="M68 188H132" stroke="#fff" stroke-width="2.4" opacity=".85"/>`;
     let front = "";
     if (has("puff")) front += `<ellipse cx="66" cy="166" rx="11" ry="9" fill="${fill}"/><ellipse cx="134" cy="166" rx="11" ry="9" fill="${fill}"/><path d="M58 170Q66 176 74 170M126 170Q134 176 142 170" stroke="#fff" stroke-width="1" fill="none" opacity=".6"/>`;
-    if (has("belt")) front += `<rect x="65" y="204" width="70" height="8" rx="2" fill="#3B2A6B"/><rect x="95" y="203" width="10" height="10" rx="2" fill="none" stroke="#FFD66B" stroke-width="2"/>`;
-    if (has("buttons")) front += [172, 184, 196].map((y) => `<circle cx="100" cy="${y}" r="2.6" fill="#fff" stroke="${c}" stroke-width=".8"/><path d="M99 ${y - 1}l2 2M101 ${y - 1}l-2 2" stroke="${c}" stroke-width=".6"/>`).join("");
-    if (has("bow")) front += `<path d="M100 210Q87 199 83 208Q86 217 100 211Q114 217 117 208Q113 199 100 210Z" fill="#FF7AB8"/><path d="M98 211L92 226M102 211L108 226" stroke="#FF7AB8" stroke-width="2.4" stroke-linecap="round"/><circle cx="100" cy="210" r="3" fill="#FF5C9A"/>`;
-    const seams = `<path class="seam" d="M66 210H134" pathLength="100"/><path class="seam" d="M70 162Q78 154 90 156Q100 162 110 156Q122 154 130 162" pathLength="100"/><path class="seam" d="M${hx0} ${hy - 2}H${hx1}" pathLength="100"/>`;
+    if (has("ruffles")) front += `<path d="M62 168q4 6 8 0q4 6 8 0M122 168q4 6 8 0q4 6 8 0" stroke="${ink}" stroke-width="2" fill="none" opacity=".85"/>`;
+    if (has("pearls")) front += [0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => { const tt = i / 8, x = 84 + 32 * tt, y = 158 + 9 * Math.sin(Math.PI * tt); return `<circle cx="${x}" cy="${y}" r="2.1" fill="#FFF8F0" stroke="#E4DAFF" stroke-width=".6"/>`; }).join("");
+    if (has("belt")) front += `<rect x="65" y="${waist - 8}" width="70" height="8" rx="2" fill="#3B2A6B"/><rect x="95" y="${waist - 9}" width="10" height="10" rx="2" fill="none" stroke="#FFD66B" stroke-width="2"/>`;
+    if (has("sash")) front += `<path d="M70 ${waist - 22}L132 ${waist - 2}L130 ${waist + 6}L68 ${waist - 14}Z" fill="#FF9ACB" opacity=".92"/><path d="M128 ${waist + 2}q10 -8 14 2q-10 4 -14 -2Z M128 ${waist + 2}l6 16M128 ${waist + 2}l-2 17" stroke="#FF7AB8" stroke-width="2.2" fill="#FF7AB8" stroke-linecap="round"/>`;
+    if (has("buttons")) front += [172, 184, 196].filter((y) => y < waist - 4).map((y) => `<circle cx="100" cy="${y}" r="2.6" fill="#fff" stroke="${c}" stroke-width=".8"/><path d="M99 ${y - 1}l2 2M101 ${y - 1}l-2 2" stroke="${c}" stroke-width=".6"/>`).join("");
+    if (has("bow")) front += `<path d="M100 ${waist - 2}Q87 ${waist - 13} 83 ${waist - 4}Q86 ${waist + 5} 100 ${waist - 1}Q114 ${waist + 5} 117 ${waist - 4}Q113 ${waist - 13} 100 ${waist - 2}Z" fill="#FF7AB8"/><path d="M98 ${waist - 1}L92 ${waist + 14}M102 ${waist - 1}L108 ${waist + 14}" stroke="#FF7AB8" stroke-width="2.4" stroke-linecap="round"/><circle cx="100" cy="${waist - 2}" r="3" fill="#FF5C9A"/>`;
+    const seams = `<path class="seam" d="M66 ${waist - 2}H134" pathLength="100"/><path class="seam" d="M70 162Q78 154 90 156Q100 162 110 156Q122 154 130 162" pathLength="100"/><path class="seam" d="M${hx0} ${hy - 2}H${hx1}" pathLength="100"/>`;
     return { defs, skirt, bodice, front, seams };
   }
   window.dressParts = dressParts;

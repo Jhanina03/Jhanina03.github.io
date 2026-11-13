@@ -172,19 +172,28 @@
     { look: "designer", name: { en: "Designer", es: "Diseñadora" }, pieces: [["front", "Striped top", "Blusa a rayas"], ["skirt", "Pleated skirt", "Falda plisada"], ["band", "Waistband", "Pretina"], ["collar", "Boat neck", "Cuello barco"]] },
   ];
   const LENS = [1000, 1050, 1100, 1000];
+  const THREADS = [["TypeScript", "#5B8DEF"], ["Angular", "#FF5C9A"], ["SQL", "#7B5CD6"], ["NestJS", "#FF7AB8"]];
+  const thread = () => THREADS[idx % THREADS.length];
+  const GLYPHS = ["{ }", "</>", "=>", ";", "✓", "()", "[ ]", "&&"];
+  const TECH = ["Angular", "TypeScript", ".NET", "NestJS", "Next.js", "SQL Server", "PostgreSQL", "MongoDB", "Docker", "Git", "Python", "Jenkins", "QA", "REST"];
+  const badges = Array.from({ length: 14 }, (_, i) => ({ text: TECH[i % TECH.length], x: Math.random(), y: Math.random(), v: 10 + Math.random() * 16, side: i % 2 }));
+  let glyphs = [];
   const AV = (o, id) => (o.cfg ? avatarSVG("custom", id, o.cfg) : avatarSVG(o.look, id));
   const nameOf = (o) => (o.cfg ? T("mine") : pk(o.name));
   const DOPTS = {
-    silhouette: [["aline", "A-line", "Línea A"], ["swing", "50s swing", "Swing años 50"], ["ball", "Ball gown", "De baile"], ["mermaid", "Mermaid", "Sirena"], ["mini", "Mini", "Mini"]],
-    fabric: [["polka", "Polka dots", "Lunares"], ["gingham", "Gingham", "Vichy"], ["floral", "Floral", "Flores"], ["stripes", "Stripes", "Rayas"], ["solid", "Satin", "Satén"]],
-    details: [["bow", "Bow", "Moño"], ["lace", "Lace hem", "Encaje"], ["puff", "Puff sleeves", "Mangas abullonadas"], ["belt", "Belt", "Cinturón"], ["buttons", "Buttons", "Botones"]],
+    silhouette: [["aline", "A-line", "Línea A"], ["swing", "50s swing", "Swing años 50"], ["ball", "Ball gown", "De baile"], ["mermaid", "Mermaid", "Sirena"], ["mini", "Mini", "Mini"],
+                 ["empire", "Empire", "Imperio"], ["tiered", "Tiered", "Por capas"], ["pencil", "Pencil", "Lápiz"]],
+    fabric: [["polka", "Polka dots", "Lunares"], ["gingham", "Gingham", "Vichy"], ["floral", "Floral", "Flores"], ["stripes", "Stripes", "Rayas"], ["solid", "Satin", "Satén"],
+             ["hearts", "Hearts", "Corazones"], ["stars", "Stars", "Estrellas"], ["plaid", "Plaid", "Tartán"], ["ombre", "Ombré", "Degradado"]],
+    details: [["bow", "Bow", "Moño"], ["lace", "Lace hem", "Encaje"], ["puff", "Puff sleeves", "Mangas abullonadas"], ["belt", "Belt", "Cinturón"], ["buttons", "Buttons", "Botones"],
+              ["pearls", "Pearls", "Perlas"], ["ruffles", "Ruffles", "Volantes"], ["sparkles", "Sparkles", "Brillos"], ["sash", "Sash", "Lazo cruzado"]],
   };
   let design = { silhouette: "swing", fabric: "polka", color: "lilac", details: ["bow"] };
   function designedOutfit() {
-    const skirt = { aline: "skirt", swing: "skirt", ball: "tulle", mermaid: "bodice", mini: "mini" }[design.silhouette];
+    const skirt = { aline: "skirt", swing: "skirt", ball: "tulle", mermaid: "bodice", mini: "mini", empire: "skirt", tiered: "tulle", pencil: "leg" }[design.silhouette];
     const d = design.details;
     const third = d.includes("puff") ? ["sleeve", "Puff sleeve", "Manga abullonada"] : ["neck", "Neckline", "Escote"];
-    const fourth = d.includes("bow") ? ["bow", "Bow", "Moño"] : d.includes("belt") ? ["band", "Belt", "Cinturón"] : d.includes("buttons") ? ["band", "Button band", "Tira de botones"] : ["cuff", "Hem", "Dobladillo"];
+    const fourth = d.includes("bow") ? ["bow", "Bow", "Moño"] : d.includes("sash") ? ["band", "Sash", "Lazo"] : d.includes("belt") ? ["band", "Belt", "Cinturón"] : d.includes("buttons") ? ["band", "Button band", "Tira de botones"] : d.includes("ruffles") ? ["tulle", "Ruffle", "Volante"] : ["cuff", "Hem", "Dobladillo"];
     return { look: "custom", cfg: { ...design, details: [...d] }, name: { en: "My design", es: "Mi diseño" }, pieces: [["bodice", "Bodice", "Corpiño"], [skirt, "Skirt", "Falda"], third, fourth] };
   }
   let outfit = OUTFITS[0];
@@ -203,7 +212,8 @@
     document.documentElement.lang = L();
     document.getElementById("accLbl").textContent = T("acc"); document.getElementById("dressLbl").textContent = T("outfit"); document.getElementById("back").textContent = T("back");
     document.querySelectorAll(".lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.l === L())));
-    const p = piece(); document.getElementById("pieceTag").textContent = `${T("piece")} ${idx + 1}/4 · ${T("unlocks")}: ${p.section.toUpperCase()}`; document.getElementById("pieceName").textContent = p.name;
+    const p = piece(); document.getElementById("pieceTag").textContent = `${T("piece")} ${idx + 1}/4 · ${T("unlocks")}: ${p.section.toUpperCase()}`;
+    document.getElementById("pieceName").innerHTML = `${p.name} <span style="font:.62rem Silkscreen,monospace;color:${thread()[1]}">🧵 ${thread()[0]}</span>`;
   }
   document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => { i18n.set(b.dataset.l); labels(); if (state === "pick") pick(); if (state === "how") how(); if (state === "design") designer(); }));
   const isDark = () => document.documentElement.dataset.theme === "dark";
@@ -293,14 +303,20 @@
     scroll = -NEEDLE_Y() - 40; stitches = []; good = 0; total = 0; sparks = [];
     needleX = targetX = seamX(0, piece());
     labels();
-    log(`$ sew ${slug(piece().name)} --seam=right`, "c-cmd");
+    log(`$ git checkout -b sew/${slug(piece().name)}`, "c-cmd");
+    log(`$ sew ${slug(piece().name)} --thread=${thread()[0].toLowerCase()}`, "c-cmd");
     state = "sew";
+  }
+  function deployBurst() {
+    for (let i = 0; i < 26; i++) { const a = Math.random() * Math.PI * 2, sp = 120 + Math.random() * 160;
+      glyphs.push({ t: GLYPHS[i % GLYPHS.length], x: W / 2, y: H * .45, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 60, life: 1.4, c: [thread()[1], "#B79CFF", "#FF9ACB", "#8CC8FF"][i % 4] }); }
   }
   function finishPiece() {
     state = "card";
     const acc = total ? Math.round((good / total) * 100) : 0, p = piece();
     if (acc < 55) log(`✗ ${slug(p.name)}: ${acc}% < 55% · ${L() === "es" ? "reintentar" : "retry"}`, "c-bad");
-    else log(`✓ ${slug(p.name)}: ${L() === "es" ? "costura alineada" : "seam aligned"} (${acc}%) → ${p.section.toLowerCase()} 🔓`, "c-ok");
+    else { log(`✓ ${slug(p.name)}: ${L() === "es" ? "costura alineada" : "seam aligned"} (${acc}%) → ${p.section.toLowerCase()} 🔓`, "c-ok");
+      log(`$ git commit -m "feat(${slug(p.name)}): sewn with ${thread()[0]}"`, "c-cmd"); deployBurst(); }
     if (acc < 55) {
       show(`<span class="kick">${T("piece")} ${idx + 1}/4 · ${p.name.toUpperCase()}</span><h2>${T("almost")}</h2><div class="score">${acc}%</div>
         <p style="text-align:center">${T("missed")}</p><button class="btn" id="go" type="button">${T("again")}</button>`);
@@ -347,8 +363,9 @@
         sampleT = .07;
         const d = Math.abs(needleX - seamX(fy, p)), ok = d < 16, near = d < 30;
         total++; if (ok) good++; else if (near) good += .5;
-        stitches.push({ x: needleX, y: fy, ok: ok || near });
+        stitches.push({ x: needleX, y: fy, ok: ok || near, c: thread()[1] });
         if (ok && Math.random() < .35) sparks.push({ x: needleX, y: ny + 6, vx: (Math.random() - .5) * 80, vy: -40 - Math.random() * 60, life: .5 });
+        if (ok && Math.random() < .12) glyphs.push({ t: GLYPHS[Math.floor(Math.random() * GLYPHS.length)], x: needleX + (Math.random() - .5) * 30, y: ny, vx: (Math.random() - .5) * 40, vy: -50 - Math.random() * 40, life: 1.1, c: thread()[1] });
         document.getElementById("acc").textContent = Math.round((good / total) * 100) + "%";
         if (total % 30 === 0) log(`  ${L() === "es" ? "cosiendo…" : "stitching…"} ${total} ${L() === "es" ? "puntadas" : "stitches"} · ${Math.round((good / total) * 100)}%`, "c-dim");
       }
@@ -357,6 +374,8 @@
     }
     draw(p, ny);
     sparks.forEach((s) => { s.x += s.vx * dt; s.y += s.vy * dt; s.vy += 160 * dt; s.life -= dt; }); sparks = sparks.filter((s) => s.life > 0);
+    glyphs.forEach((q) => { q.x += q.vx * dt; q.y += q.vy * dt; q.vy += 60 * dt; q.life -= dt; }); glyphs = glyphs.filter((q) => q.life > 0);
+    badges.forEach((b) => { b.y -= (b.v * dt) / Math.max(400, H); if (b.y < -0.05) { b.y = 1.05; b.x = Math.random(); } });
     requestAnimationFrame(frame);
   }
 
@@ -368,7 +387,18 @@
     const sh = g.createLinearGradient(0, 0, W, H); const k = (performance.now() / 3000) % 1;
     sh.addColorStop(Math.max(0, k - .15), "rgba(255,255,255,0)"); sh.addColorStop(k, C.sheen); sh.addColorStop(Math.min(1, k + .15), "rgba(255,255,255,0)");
     g.fillStyle = sh; g.fillRect(0, 0, W, H);
-    if (state === "pick" || state === "how") return;
+    // floating technology badges on the satin (both sides of the paper)
+    g.font = "600 12px DM Sans"; g.textAlign = "center";
+    const stripHalf = Math.min(W - 40, 560) / 2;
+    badges.forEach((b) => {
+      const room = Math.max(0, W / 2 - stripHalf - 20); if (room < 60 && state !== "pick" && state !== "how" && state !== "design") return;
+      const x = state === "sew" || state === "card" || state === "end" ? (b.side ? W / 2 + stripHalf + 10 + b.x * room : W / 2 - stripHalf - 10 - b.x * room) : b.x * W;
+      const y = b.y * H, w = g.measureText(b.text).width + 18;
+      g.globalAlpha = .55; g.fillStyle = D ? "rgba(36,28,58,.9)" : "rgba(255,255,255,.75)"; roundRect(x - w / 2, y - 11, w, 22, 11); g.fill();
+      g.strokeStyle = D ? "rgba(201,184,255,.35)" : "rgba(123,92,214,.3)"; g.lineWidth = 1; g.setLineDash([3, 3]); g.stroke(); g.setLineDash([]);
+      g.fillStyle = D ? "#C9B8FF" : "#7B5CD6"; g.fillText(b.text, x, y + 4); g.globalAlpha = 1;
+    });
+    if (state === "pick" || state === "how" || state === "design") return;
     const top = -scroll, stripW = Math.min(W - 40, 560), sx = W / 2 - stripW / 2;
     g.save(); g.shadowColor = "rgba(59,42,107,.25)"; g.shadowBlur = 24; g.shadowOffsetY = 10;
     g.fillStyle = C.paper; g.fillRect(sx, top - 60, stripW, p.len + 120); g.restore();
@@ -393,13 +423,17 @@
     g.lineCap = "round";
     for (let i = 1; i < stitches.length; i++) {
       const a = stitches[i - 1], b = stitches[i], ay = top + a.y, by = top + b.y; if (by < -10 || ay > H + 10) continue;
-      g.strokeStyle = b.ok ? "#FF5C9A" : "rgba(255,92,154,.35)"; g.lineWidth = b.ok ? 3 : 2;
+      g.strokeStyle = b.ok ? (b.c || "#FF5C9A") : "rgba(255,92,154,.35)"; g.lineWidth = b.ok ? 3 : 2;
       g.beginPath(); g.moveTo(a.x, ay); g.lineTo(a.x + (b.x - a.x) * .62, ay + (by - ay) * .62); g.stroke();
     }
     // machine arm, presser foot, needle
     g.fillStyle = C.arm; roundRect(needleX - 34, ny - 120, 68, 70, 16); g.fill();
     g.fillStyle = C.arm2; roundRect(needleX - 22, ny - 54, 44, 18, 6); g.fill();
     g.fillStyle = "#FFFFFF"; g.font = "700 12px Fraunces"; g.textAlign = "center"; g.fillText("Maison J.", needleX, ny - 80);
+    // spool on top of the machine, wound with this piece's "language" thread
+    g.fillStyle = "#C7A27A"; g.fillRect(needleX - 13, ny - 136, 26, 4); g.fillRect(needleX - 13, ny - 120, 26, 4);
+    g.fillStyle = thread()[1]; g.fillRect(needleX - 10, ny - 132, 20, 12);
+    g.fillStyle = D ? "#E9E2FF" : "#3B2A6B"; g.font = "9px Silkscreen"; g.fillText(thread()[0].toUpperCase(), needleX, ny - 142);
     const bob = Math.sin(needleBob) * 5;
     g.strokeStyle = "#9AA0B4"; g.lineWidth = 3; g.beginPath(); g.moveTo(needleX, ny - 36); g.lineTo(needleX, ny + 6 + bob); g.stroke();
     g.fillStyle = "#E4E6EE"; g.fillRect(needleX - 14, ny - 6 + bob * .3, 28, 5);
@@ -408,6 +442,7 @@
     g.strokeStyle = d < 16 ? "rgba(61,187,138,.8)" : d < 30 ? "rgba(255,214,107,.9)" : "rgba(255,92,154,.8)"; g.lineWidth = 2;
     g.beginPath(); g.arc(needleX, ny + 8, 13, 0, Math.PI * 2); g.stroke();
     sparks.forEach((s) => { g.fillStyle = `rgba(255,154,203,${s.life * 2})`; g.fillRect(s.x, s.y, 3, 3); });
+    glyphs.forEach((q) => { g.globalAlpha = Math.max(0, Math.min(1, q.life)); g.fillStyle = q.c; g.font = "700 14px ui-monospace, Consolas, monospace"; g.textAlign = "center"; g.fillText(q.t, q.x, q.y); }); g.globalAlpha = 1;
   }
   function roundRect(x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
 
