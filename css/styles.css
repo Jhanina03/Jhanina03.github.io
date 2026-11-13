@@ -916,3 +916,11 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
   .ic-btn { min-width: 0; width: 100%; padding: 8px 14px 8px 8px; }
   .ic-ico { width: 34px; height: 34px; }
 }
+
+/* intro: game chooser under "Play" */
+.ic-games { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; animation: pop .35s ease; }
+.ic-games[hidden] { display: none; }
+.ic-mini { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; background: #FFE0EE; color: #2B2140; font: 700 .9rem var(--sans); text-decoration: none;
+  box-shadow: 0 8px 18px -10px rgba(59, 42, 107, .5); outline: 2px dashed #FF9ACB; outline-offset: -5px; transition: transform .2s; }
+.ic-mini:hover, .ic-mini:focus-visible { transform: translateY(-3px); }
+.ic-btn.play[aria-expanded="true"] { outline-color: #FF5C9A; }

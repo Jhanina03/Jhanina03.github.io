@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Sew the Dress · Jhanina</title>
+<title>Sew the Outfit · Jhanina</title>
 <meta name="description" content="Mini-game: sew a dress with Jhanina and unlock her portfolio.">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <script>try { var th = localStorage.getItem("jc-theme"); document.documentElement.dataset.theme = (th === "dark" || th === "light") ? th : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); } catch (e) {}</script>
@@ -29,9 +29,9 @@
   .dress .part { fill: none; stroke: #C9B8FF; stroke-width: 2; stroke-dasharray: 5 4; transition: fill .5s, stroke .5s; }
   .dress .part.done { fill: url(#dot); stroke: #FF5C9A; stroke-dasharray: 0; }
   /* modals: tag-style cards */
-  .modal { position: fixed; inset: 0; z-index: 20; display: none; place-items: center; background: rgba(43,33,64,.35); backdrop-filter: blur(4px); padding: 16px; }
+  .modal { position: fixed; inset: 0; z-index: 20; display: none; place-items: center; background: rgba(43,33,64,.35); backdrop-filter: blur(4px); padding: 24px 16px; overflow-y: auto; }
   .modal.open { display: grid; }
-  .card { width: min(560px, 100%); max-height: 86vh; overflow: auto; background: #fff; padding: 34px 28px 26px; position: relative; text-align: center; border-radius: 22px;
+  .card { width: min(560px, 100%); margin: auto; background: #fff; padding: 34px 28px 26px; position: relative; text-align: center; border-radius: 22px;
           box-shadow: 0 30px 60px -20px rgba(43,33,64,.6); animation: drop .55s cubic-bezier(.3,1.4,.5,1); }
   .card::before { content: ""; position: absolute; inset: 12px; border: 2.5px dashed #FF5C9A; border-radius: 14px; pointer-events: none; }
   .card .btnhole { width: 26px; height: 26px; border-radius: 50%; background: #B79CFF; margin: -8px auto 8px; box-shadow: inset 0 0 0 4px #fff;
@@ -74,16 +74,24 @@
   <div class="top"><div class="lang"><button type="button" data-l="en">EN</button><button type="button" data-l="es">ES</button></div><button id="theme" type="button" aria-label="Toggle light/dark">☾</button><a id="back" href="index.html?view=portfolio">View portfolio ›</a></div>
 </div>
 <div class="dress">
-  <svg viewBox="0 0 120 150" aria-hidden="true">
-    <defs><pattern id="dot" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#B79CFF"/><circle cx="4" cy="4" r="1.6" fill="#fff"/></pattern></defs>
-    <path id="p0" class="part" d="M26 30Q14 34 12 50L22 54L34 38Z M94 30Q106 34 108 50L98 54L86 38Z"/>
-    <path id="p1" class="part" d="M44 22Q60 30 76 22L80 30Q60 40 40 30Z"/>
-    <path id="p2" class="part" d="M36 30Q60 38 84 30L86 72H34Z M34 72Q12 112 8 132Q60 144 112 132Q108 112 86 72Z"/>
-    <path id="p3" class="part" d="M60 72Q48 62 44 70Q46 78 60 73Q74 78 76 70Q72 62 60 72Z"/>
-  </svg>
-  <small id="dressLbl">YOUR DRESS</small>
+  <div class="dress-av"><div class="av gray" id="avGray"></div><div class="av color" id="avColor"></div></div>
+  <small id="dressLbl">YOUR OUTFIT</small>
 </div>
 <div class="modal open" id="modal"><div class="card" id="card"></div></div>
+<style>
+  .dress { width: 130px; }
+  .dress-av { position: relative; width: 100%; aspect-ratio: 200 / 320; }
+  .dress-av .av { position: absolute; inset: 0; } .dress-av svg { width: 100%; height: 100%; }
+  .dress-av .gray { filter: grayscale(1) opacity(.35); }
+  .dress-av .color { clip-path: inset(100% 0 0 0); transition: clip-path .8s cubic-bezier(.3, 1.2, .5, 1); }
+  .picker { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 10px; margin: 12px 0 4px; }
+  .pick { border: 2px dashed #D9CCFF; background: #fff; border-radius: 16px; padding: 8px 6px 10px; cursor: pointer; font: inherit; color: var(--ink); transition: transform .2s, border-color .2s; }
+  .pick:hover, .pick:focus-visible { transform: translateY(-4px); border-color: #FF5C9A; }
+  .pick .mini-av { width: 70px; margin: 0 auto; } .pick .mini-av svg { width: 100%; height: auto; }
+  .pick b { display: block; font: 700 .9rem "DM Sans"; margin-top: 4px; } .pick small { display: block; font: .55rem Silkscreen, monospace; color: var(--purple); margin-top: 2px; }
+  :root[data-theme="dark"] .pick { background: #2A2145; border-color: #4A3A70; }
+  @media (max-width: 640px) { .dress { width: 90px; } .picker { grid-template-columns: repeat(2, 1fr); } }
+</style>
 
 <script src="js/i18n.js"></script>
 <script src="js/data.js"></script>
@@ -93,18 +101,20 @@
   i18n.init(); // English by default; follows the language chosen in the portfolio intro
   const L = () => i18n.lang;
   const G = {
-    en: { piece: "PIECE", unlocks: "UNLOCKS", acc: "accuracy", dress: "YOUR DRESS", back: "View portfolio ›", mini: "MINI-GAME · ATELIER JHANINA", title: "Sew the dress",
-      how: "Move the needle with your <b>mouse</b> (or finger, or the ← → keys) to sew <b>along the dashed line</b> while the fabric moves. Every piece you sew unlocks part of my portfolio, and at the end… I wear the dress! 👗",
-      start: "Start sewing 🪡", almost: "Almost!", missed: "A few stitches slipped away. Follow the dashed line calmly.", again: "Sew it again ↺",
-      sewn: "SEWN", accW: "ACCURACY", unlocked: "SECTION UNLOCKED", seeDress: "See my finished dress! 👗", next: "Next piece:", done: "DRESS FINISHED · 4/4 PIECES", wear: "I'm wearing it!",
-      thanks: "Thanks for sewing with me. That's how I build software too: <b>measured, tested and made to fit</b>. ✂", full: "See the full portfolio ›", restart: "Sew again",
-      pieces: [["Sleeve", "About me"], ["Collar", "Skills"], ["Skirt", "Projects"], ["Bow", "Contact"]], pattern: "pattern", size: "size full-stack" },
-    es: { piece: "PIEZA", unlocks: "DESBLOQUEA", acc: "precisión", dress: "TU VESTIDO", back: "Ver portafolio ›", mini: "MINI-JUEGO · ATELIER JHANINA", title: "Cose el vestido",
-      how: "Mueve la aguja con el <b>mouse</b> (o el dedo, o las flechas ← →) para coser <b>siguiendo la línea punteada</b> mientras la tela avanza. Cada pieza que coses desbloquea una parte de mi portafolio, y al final… ¡estreno el vestido! 👗",
-      start: "Empezar a coser 🪡", almost: "¡Casi!", missed: "Se te escaparon algunas puntadas. Sigue la línea punteada con calma.", again: "Coser otra vez ↺",
-      sewn: "COSIDA", accW: "DE PRECISIÓN", unlocked: "SECCIÓN DESBLOQUEADA", seeDress: "¡Ver mi vestido terminado! 👗", next: "Siguiente pieza:", done: "VESTIDO TERMINADO · 4/4 PIEZAS", wear: "¡Lo estreno!",
-      thanks: "Gracias por coser conmigo. Así trabajo también el software: <b>a medida, probado y hecho para quedar perfecto</b>. ✂", full: "Ver el portafolio completo ›", restart: "Coser otra vez",
-      pieces: [["Manga", "Sobre mí"], ["Cuello", "Habilidades"], ["Falda", "Proyectos"], ["Moño", "Contacto"]], pattern: "patrón", size: "talla full-stack" },
+    en: { piece: "PIECE", unlocks: "UNLOCKS", acc: "accuracy", outfit: "YOUR OUTFIT", back: "View portfolio ›", mini: "MINI-GAME · ATELIER JHANINA", title: "Sew the outfit",
+      choose: "Pick the outfit you want to sew. Every piece of its pattern unlocks part of my portfolio, and at the end I wear it! 👗",
+      how: "Move the needle with your <b>mouse</b> (or finger, or the ← → keys) to sew <b>along the dashed seam</b> of each pattern piece while the fabric moves.",
+      start: "Start sewing 🪡", change: "Pick another outfit", almost: "Almost!", missed: "A few stitches slipped away. Follow the dashed seam calmly.", again: "Sew it again ↺",
+      sewn: "SEWN", accW: "ACCURACY", unlocked: "SECTION UNLOCKED", seeDress: "See my finished outfit! 👗", next: "Next piece:", done: "OUTFIT FINISHED · 4/4 PIECES", wear: "I'm wearing it!",
+      thanks: "Thanks for sewing with me. That's how I build software too: <b>measured, tested and made to fit</b>. ✂", full: "See the full portfolio ›", restart: "Sew another outfit",
+      sections: ["About me", "Skills", "Projects", "Contact"], pattern: "pattern", size: "size full-stack", pieces4: "4 PIECES" },
+    es: { piece: "PIEZA", unlocks: "DESBLOQUEA", acc: "precisión", outfit: "TU OUTFIT", back: "Ver portafolio ›", mini: "MINI-JUEGO · ATELIER JHANINA", title: "Cose el outfit",
+      choose: "Elige el outfit que quieres coser. Cada pieza de su patrón desbloquea una parte de mi portafolio, ¡y al final lo estreno! 👗",
+      how: "Mueve la aguja con el <b>mouse</b> (o el dedo, o las flechas ← →) para coser <b>siguiendo la costura punteada</b> de cada pieza del patrón mientras la tela avanza.",
+      start: "Empezar a coser 🪡", change: "Elegir otro outfit", almost: "¡Casi!", missed: "Se te escaparon algunas puntadas. Sigue la costura punteada con calma.", again: "Coser otra vez ↺",
+      sewn: "COSIDA", accW: "DE PRECISIÓN", unlocked: "SECCIÓN DESBLOQUEADA", seeDress: "¡Ver mi outfit terminado! 👗", next: "Siguiente pieza:", done: "OUTFIT TERMINADO · 4/4 PIEZAS", wear: "¡Lo estreno!",
+      thanks: "Gracias por coser conmigo. Así trabajo también el software: <b>a medida, probado y hecho para quedar perfecto</b>. ✂", full: "Ver el portafolio completo ›", restart: "Coser otro outfit",
+      sections: ["Sobre mí", "Habilidades", "Proyectos", "Contacto"], pattern: "patrón", size: "talla full-stack", pieces4: "4 PIEZAS" },
   };
   const T = (k) => G[L()][k];
   const t = (k) => i18n.t(k), pk = (v) => i18n.pick(v);
@@ -113,25 +123,57 @@
   function size() { DPR = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * DPR; cv.height = H * DPR; cv.style.width = W + "px"; cv.style.height = H + "px"; g.setTransform(DPR, 0, 0, DPR, 0, 0); }
   size(); addEventListener("resize", size);
 
-  /* ---------- the 4 pieces (each unlocks a section) ---------- */
-  const PIECES = [
-    { amp: 50, f: .006, f2: .013, len: 1000 },
-    { amp: 70, f: .008, f2: .017, len: 1050 },
-    { amp: 95, f: .009, f2: .021, len: 1100 },
-    { amp: 80, f: .012, f2: .026, len: 1000 },
+  /* ---------- pattern-piece shapes: half-width of the piece along its length (0..1) ---------- */
+  const S = Math.PI;
+  const SHAPES = {
+    front:  (u) => 92 + (u < .22 ? -46 * Math.sin(S * u / .22) : 0) - 14 * Math.sin(S * u),       // armhole + soft waist
+    back:   (u) => 96 + (u < .2 ? -38 * Math.sin(S * u / .2) : 0) - 8 * Math.sin(S * u),
+    sleeve: (u) => (u < .34 ? 40 + 70 * Math.sin(S / 2 * u / .34) : 110 - 52 * (u - .34) / .66),     // sleeve cap, tapering to the wrist
+    bell:   (u) => 46 + 104 * u * u,                                                                    // bell sleeve
+    collar: (u) => 74 + 44 * Math.sin(2 * S * u),                                                       // curved collar
+    neck:   (u) => 60 + 70 * (1 - Math.cos(S * u)) / 2,                                                 // neckline curve
+    skirt:  (u) => 40 + 112 * u,                                                                        // flared skirt
+    bodice: (u) => 84 - 40 * Math.sin(S * u),                                                           // fitted waist
+    tulle:  (u) => 50 + 100 * Math.pow(u, .7) + 10 * Math.sin(10 * S * u),                              // ruffled tulle
+    bow:    (u) => 70 + 56 * Math.sin(4 * S * u) * Math.sin(S * u),                                     // bow loops
+    leg:    (u) => 70 - 22 * u + 8 * Math.sin(2 * S * u),                                               // jeans leg
+    band:   (u) => 64 + 6 * Math.sin(16 * S * u),                                                       // button band
+    cuff:   (u) => 58 + 24 * Math.sin(S * u),
+    mini:   (u) => 66 + 46 * u,                                                                         // leather mini skirt
+  };
+  const OUTFITS = [
+    { look: "sunny",  name: { en: "Sunny top", es: "Top amarillo" },  pieces: [["front", "Front", "Delantero"], ["back", "Back", "Espalda"], ["collar", "Mock neck", "Cuello alto"], ["leg", "Jeans leg", "Pierna del jean"]] },
+    { look: "casual", name: { en: "Heart tee", es: "Blusa de corazones" }, pieces: [["sleeve", "Sleeve", "Manga"], ["front", "Front", "Delantero"], ["neck", "Neckline", "Escote"], ["cuff", "Cuff", "Puño"]] },
+    { look: "coat",   name: { en: "Pink coat", es: "Abrigo rosado" }, pieces: [["bell", "Bell sleeve", "Manga campana"], ["collar", "Stand collar", "Cuello alto"], ["front", "Front panel", "Panel delantero"], ["band", "Button band", "Tira de botones"]] },
+    { look: "gala",   name: { en: "Gala gown", es: "Vestido de gala" }, pieces: [["bodice", "Bodice", "Corpiño"], ["skirt", "Skirt", "Falda"], ["tulle", "Tulle layer", "Capa de tul"], ["bow", "Bow", "Moño"]] },
+    { look: "noir",   name: { en: "All black", es: "Todo negro" },    pieces: [["front", "Mock top", "Top cuello alto"], ["mini", "Leather mini", "Mini de cuero"], ["band", "Belt", "Cinturón"], ["neck", "Neckline", "Escote"]] },
+    { look: "designer", name: { en: "Designer", es: "Diseñadora" }, pieces: [["front", "Striped top", "Blusa a rayas"], ["skirt", "Pleated skirt", "Falda plisada"], ["band", "Waistband", "Pretina"], ["collar", "Boat neck", "Cuello barco"]] },
   ];
-  PIECES.forEach((p, i) => { Object.defineProperty(p, "name", { get: () => T("pieces")[i][0] }); Object.defineProperty(p, "section", { get: () => T("pieces")[i][1] }); });
-  function labels() {
-    document.documentElement.lang = L();
-    document.getElementById("accLbl").textContent = T("acc"); document.getElementById("dressLbl").textContent = T("dress"); document.getElementById("back").textContent = T("back");
-    document.querySelectorAll(".lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.l === L())));
-    const p = PIECES[idx]; document.getElementById("pieceTag").textContent = `${T("piece")} ${idx + 1}/4 · ${T("unlocks")}: ${p.section.toUpperCase()}`; document.getElementById("pieceName").textContent = p.name;
-  }
-  document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => { i18n.set(b.dataset.l); labels(); if (state === "intro") intro(); }));
-  let idx = 0, state = "intro", scroll = 0, needleX = 0, targetX = 0, stitches = [], good = 0, total = 0, sampleT = 0, needleBob = 0, sparks = [];
+  const LENS = [1000, 1050, 1100, 1000];
+  let outfit = OUTFITS[0];
+  const piece = (i = idx) => ({ shape: SHAPES[outfit.pieces[i][0]], name: L() === "es" ? outfit.pieces[i][2] : outfit.pieces[i][1], section: T("sections")[i], len: LENS[i] });
+
+  let idx = 0, state = "pick", scroll = 0, needleX = 0, targetX = 0, stitches = [], good = 0, total = 0, sampleT = 0, needleBob = 0, sparks = [];
   const SPEED = 95;
   const NEEDLE_Y = () => Math.min(H * .38, 300);
-  const pathX = (y, p) => W / 2 + Math.sin(y * p.f) * p.amp + Math.sin(y * p.f2 + 1.3) * p.amp * .35;
+  const half = (y, p) => p.shape(Math.max(0, Math.min(1, y / p.len)));
+  const seamX = (y, p) => W / 2 + half(y, p) - 14;                 // sew 14px inside the right cutting edge
+
+  /* ---------- labels, language, theme ---------- */
+  function setProgress() { document.getElementById("avColor").style.clipPath = `inset(${100 - idx * 25}% 0 0 0)`; }
+  function dressAvatar() { document.getElementById("avGray").innerHTML = avatarSVG(outfit.look, "g"); document.getElementById("avColor").innerHTML = avatarSVG(outfit.look, "c"); setProgress(); }
+  function labels() {
+    document.documentElement.lang = L();
+    document.getElementById("accLbl").textContent = T("acc"); document.getElementById("dressLbl").textContent = T("outfit"); document.getElementById("back").textContent = T("back");
+    document.querySelectorAll(".lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.l === L())));
+    const p = piece(); document.getElementById("pieceTag").textContent = `${T("piece")} ${idx + 1}/4 · ${T("unlocks")}: ${p.section.toUpperCase()}`; document.getElementById("pieceName").textContent = p.name;
+  }
+  document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => { i18n.set(b.dataset.l); labels(); if (state === "pick") pick(); if (state === "how") how(); }));
+  const isDark = () => document.documentElement.dataset.theme === "dark";
+  const themeBtn = document.getElementById("theme");
+  const syncBtn = () => (themeBtn.textContent = isDark() ? "☀︎" : "☾");
+  themeBtn.addEventListener("click", () => { const n = isDark() ? "light" : "dark"; document.documentElement.dataset.theme = n; try { localStorage.setItem("jc-theme", n); } catch (e) {} syncBtn(); });
+  syncBtn();
 
   /* ---------- input ---------- */
   const keys = new Set();
@@ -142,68 +184,76 @@
 
   /* ---------- flow ---------- */
   const modal = document.getElementById("modal"), card = document.getElementById("card");
-  function show(html) { card.innerHTML = `<div class="btnhole"></div>${html}`; modal.classList.add("open"); }
+  function show(html) { card.innerHTML = `<div class="btnhole"></div>${html}`; modal.classList.add("open"); modal.scrollTop = 0; }
   function hide() { modal.classList.remove("open"); }
-  function intro() {
-    show(`<span class="kick">${T("mini")}</span><h2>${T("title")}</h2><p>${T("how")}</p><button class="btn" id="go" type="button">${T("start")}</button>`);
+  function pick() {
+    state = "pick";
+    show(`<span class="kick">${T("mini")}</span><h2>${T("title")}</h2><p style="text-align:center">${T("choose")}</p>
+      <div class="picker">${OUTFITS.map((o, i) => `<button class="pick" type="button" data-i="${i}"><div class="mini-av">${avatarSVG(o.look, "p" + i)}</div><b>${pk(o.name)}</b><small>${T("pieces4")}</small></button>`).join("")}</div>`);
+    card.querySelectorAll(".pick").forEach((b) => b.onclick = () => { outfit = OUTFITS[+b.dataset.i]; idx = 0; dressAvatar(); labels(); how(); });
+  }
+  function how() {
+    state = "how";
+    const list = outfit.pieces.map((p, i) => `<span>${L() === "es" ? p[2] : p[1]} → ${T("sections")[i]}</span>`).join("");
+    show(`<span class="kick">${pk(outfit.name).toUpperCase()} · ${T("pieces4")}</span><h2>${pk(outfit.name)}</h2><div class="final-avatar" style="width:110px">${avatarSVG(outfit.look, "h")}</div>
+      <div class="chips">${list}</div><p>${T("how")}</p>
+      <button class="btn" id="go" type="button">${T("start")}</button> <button class="btn alt" id="chg" type="button">${T("change")}</button>`);
     document.getElementById("go").onclick = () => { hide(); begin(); };
+    document.getElementById("chg").onclick = pick;
   }
   function begin() {
     scroll = -NEEDLE_Y() - 40; stitches = []; good = 0; total = 0; sparks = [];
-    needleX = targetX = W / 2;
-    const p = PIECES[idx];
+    needleX = targetX = seamX(0, piece());
     labels();
     state = "sew";
   }
   function finishPiece() {
     state = "card";
-    const acc = total ? Math.round((good / total) * 100) : 0, p = PIECES[idx];
+    const acc = total ? Math.round((good / total) * 100) : 0, p = piece();
     if (acc < 55) {
       show(`<span class="kick">${T("piece")} ${idx + 1}/4 · ${p.name.toUpperCase()}</span><h2>${T("almost")}</h2><div class="score">${acc}%</div>
         <p style="text-align:center">${T("missed")}</p><button class="btn" id="go" type="button">${T("again")}</button>`);
       document.getElementById("go").onclick = () => { hide(); begin(); };
       return;
     }
-    document.getElementById("p" + idx).classList.add("done");
     const body = [
       () => `<p>${t("about.p1")}</p><p>${t("about.p2")}</p>`,
       () => SKILLS.map((s) => `<p style="text-align:center;margin:10px 0 2px"><b>${pk(s.title)}</b></p><div class="chips">${s.items.map((i) => `<span>${i}</span>`).join("")}</div>`).join(""),
       () => PROJECTS.filter((x) => x.featured).map((x) => `<div class="mini"><b>${pk(x.title)}</b> · ${pk(x.kicker)}<br>${pk(x.desc)}</div>`).join(""),
       () => `<p>${t("contact.lead")}</p><p style="text-align:center"><a href="mailto:${PROFILE.email}"><b>${PROFILE.email}</b></a><br><a href="${PROFILE.linkedin}" target="_blank">LinkedIn</a> · <a href="${PROFILE.github}" target="_blank">GitHub</a> · <a href="${PROFILE.instagram}" target="_blank">Instagram</a></p>`,
     ][idx]();
-    const last = idx === PIECES.length - 1;
+    const last = idx === 3;
+    idx++; setProgress(); idx--;
     show(`<span class="kick">${T("piece")} ${idx + 1}/4 ${T("sewn")} · ${acc}% ${T("accW")} · ${T("unlocked")}</span><h2>${p.section}</h2>${body}
-      <button class="btn" id="go" type="button">${last ? T("seeDress") : `${T("next")} ${PIECES[idx + 1].name} ▶`}</button>`);
+      <button class="btn" id="go" type="button">${last ? T("seeDress") : `${T("next")} ${piece(idx + 1).name} ▶`}</button>`);
     document.getElementById("go").onclick = () => { if (last) return finale(); hide(); idx++; begin(); };
   }
   function finale() {
-    const cfg = { silhouette: "swing", fabric: "polka", color: "lilac", details: ["bow", "lace", "puff"] };
+    state = "end";
     show(`<span class="kick">${T("done")}</span><h2>${T("wear")}</h2>
-      <div class="final-avatar">${avatarSVG("custom", "fin", cfg)}</div>
+      <div class="final-avatar">${avatarSVG(outfit.look, "fin")}</div>
       <p style="text-align:center">${T("thanks")}</p>
       <button class="btn" id="go" type="button">${T("full")}</button> <button class="btn alt" id="again" type="button">${T("restart")}</button>`);
     document.getElementById("go").onclick = () => (location.href = "index.html?view=portfolio");
-    document.getElementById("again").onclick = () => { idx = 0; document.querySelectorAll(".part").forEach((p) => p.classList.remove("done")); hide(); begin(); };
+    document.getElementById("again").onclick = () => { idx = 0; pick(); };
   }
 
   /* ---------- loop ---------- */
   let last = performance.now();
   function frame(now) {
     const dt = Math.min(.05, (now - last) / 1000); last = now;
-    const p = PIECES[idx], ny = NEEDLE_Y();
+    const p = piece(), ny = NEEDLE_Y();
     if (state === "sew") {
       if (keys.has("ArrowLeft") || keys.has("a")) targetX -= 320 * dt;
       if (keys.has("ArrowRight") || keys.has("d")) targetX += 320 * dt;
       targetX = Math.max(30, Math.min(W - 30, targetX));
       needleX += (targetX - needleX) * Math.min(1, dt * 12);
-      scroll += SPEED * dt;
-      needleBob += dt * 26;
-      const fy = scroll + ny;                       // fabric y under the needle
+      scroll += SPEED * dt; needleBob += dt * 26;
+      const fy = scroll + ny;
       sampleT -= dt;
       if (fy > 0 && fy < p.len && sampleT <= 0) {
         sampleT = .07;
-        const d = Math.abs(needleX - pathX(fy, p));
-        const ok = d < 16, near = d < 30;
+        const d = Math.abs(needleX - seamX(fy, p)), ok = d < 16, near = d < 30;
         total++; if (ok) good++; else if (near) good += .5;
         stitches.push({ x: needleX, y: fy, ok: ok || near });
         if (ok && Math.random() < .35) sparks.push({ x: needleX, y: ny + 6, vx: (Math.random() - .5) * 80, vy: -40 - Math.random() * 60, life: .5 });
@@ -217,44 +267,43 @@
     requestAnimationFrame(frame);
   }
 
-  const isDark = () => document.documentElement.dataset.theme === "dark";
-  const themeBtn = document.getElementById("theme");
-  const syncBtn = () => (themeBtn.textContent = isDark() ? "☀︎" : "☾");
-  themeBtn.addEventListener("click", () => { const n = isDark() ? "light" : "dark"; document.documentElement.dataset.theme = n; try { localStorage.setItem("jc-theme", n); } catch (e) {} syncBtn(); });
-  syncBtn();
   function draw(p, ny) {
     const D = isDark();
-    const C = D ? { paper: "#2B2145", dots: "rgba(201,184,255,.12)", note: "rgba(201,184,255,.6)", line: "#C9B8FF", sheen: "rgba(214,196,255,.16)", arm: "#7B5CD6", arm2: "#5A3FB0" }
-                : { paper: "#FFFDF8", dots: "rgba(123,92,214,.10)", note: "rgba(123,92,214,.55)", line: "#7B5CD6", sheen: "rgba(255,255,255,.35)", arm: "#B79CFF", arm2: "#9A7BF0" };
+    const C = D ? { paper: "#2B2145", dots: "rgba(201,184,255,.12)", note: "rgba(201,184,255,.6)", line: "#C9B8FF", cut: "rgba(201,184,255,.45)", fill: "rgba(183,156,255,.14)", sheen: "rgba(214,196,255,.16)", arm: "#7B5CD6", arm2: "#5A3FB0" }
+                : { paper: "#FFFDF8", dots: "rgba(123,92,214,.10)", note: "rgba(123,92,214,.55)", line: "#7B5CD6", cut: "rgba(123,92,214,.4)", fill: "rgba(183,156,255,.16)", sheen: "rgba(255,255,255,.35)", arm: "#B79CFF", arm2: "#9A7BF0" };
     g.clearRect(0, 0, W, H);
-    // satin sheen
     const sh = g.createLinearGradient(0, 0, W, H); const k = (performance.now() / 3000) % 1;
     sh.addColorStop(Math.max(0, k - .15), "rgba(255,255,255,0)"); sh.addColorStop(k, C.sheen); sh.addColorStop(Math.min(1, k + .15), "rgba(255,255,255,0)");
     g.fillStyle = sh; g.fillRect(0, 0, W, H);
-    // the paper pattern strip moving up
+    if (state === "pick" || state === "how") return;
     const top = -scroll, stripW = Math.min(W - 40, 560), sx = W / 2 - stripW / 2;
-    g.save();
-    g.shadowColor = "rgba(59,42,107,.25)"; g.shadowBlur = 24; g.shadowOffsetY = 10;
-    g.fillStyle = C.paper; g.fillRect(sx, top, stripW, p.len);
-    g.restore();
+    g.save(); g.shadowColor = "rgba(59,42,107,.25)"; g.shadowBlur = 24; g.shadowOffsetY = 10;
+    g.fillStyle = C.paper; g.fillRect(sx, top - 60, stripW, p.len + 120); g.restore();
     g.fillStyle = C.dots;
-    for (let y = Math.max(0, Math.floor(-top / 24) * 24); y < p.len && top + y < H; y += 24) for (let x = 12; x < stripW; x += 24) g.fillRect(sx + x, top + y, 2, 2);
-    g.font = "18px Caveat"; g.fillStyle = C.note; g.textAlign = "left";
-    g.fillText(`${T("pattern")}: ${p.name.toLowerCase()} · ${T("size")}`, sx + 14, top + 26);
-    // scissors marks at start/end
-    g.fillStyle = C.note; g.font = "20px DM Sans"; g.fillText("✂", sx + stripW - 30, top + 26);
-    // dashed pattern line
+    for (let y = Math.max(-60, Math.floor(-top / 24) * 24); y < p.len + 60 && top + y < H; y += 24) for (let x = 12; x < stripW; x += 24) g.fillRect(sx + x, top + y, 2, 2);
+    // the pattern piece: filled shape with a solid cutting line on both sides
+    g.beginPath();
+    for (let y = 0; y <= p.len; y += 8) { const X = W / 2 + half(y, p); y ? g.lineTo(X, top + y) : g.moveTo(X, top + y); }
+    for (let y = p.len; y >= 0; y -= 8) g.lineTo(W / 2 - half(y, p), top + y);
+    g.closePath(); g.fillStyle = C.fill; g.fill(); g.strokeStyle = C.cut; g.lineWidth = 1.5; g.setLineDash([]); g.stroke();
+    // grain line arrow
+    g.strokeStyle = C.cut; g.beginPath(); g.moveTo(W / 2 - 10, top + 120); g.lineTo(W / 2 - 10, top + p.len - 120); g.stroke();
+    g.font = "18px Caveat"; g.fillStyle = C.note; g.textAlign = "center";
+    g.fillText(`${T("pattern")}: ${p.name.toLowerCase()}`, W / 2 - 10, top + p.len / 2); g.fillText(T("size"), W / 2 - 10, top + p.len / 2 + 22);
+    g.textAlign = "left"; g.fillText("✂", sx + stripW - 30, top - 30);
+    // dashed seam to sew (inside the right edge)
     g.save(); g.setLineDash([10, 8]); g.lineWidth = 2.5; g.strokeStyle = C.line; g.beginPath();
-    for (let y = 0; y <= p.len; y += 6) { const X = pathX(y, p), Y = top + y; if (Y < -20 || Y > H + 20) continue; y === 0 || Y <= -14 ? g.moveTo(X, Y) : g.lineTo(X, Y); }
+    let started = false;
+    for (let y = 0; y <= p.len; y += 6) { const Y = top + y; if (Y < -20 || Y > H + 20) { started = false; continue; } const X = seamX(y, p); started ? g.lineTo(X, Y) : (g.moveTo(X, Y), started = true); }
     g.stroke(); g.restore();
-    // stitches
+    // stitches already sewn
     g.lineCap = "round";
     for (let i = 1; i < stitches.length; i++) {
-      const a = stitches[i - 1], b = stitches[i]; const ay = top + a.y, by = top + b.y; if (by < -10 || ay > H + 10) continue;
+      const a = stitches[i - 1], b = stitches[i], ay = top + a.y, by = top + b.y; if (by < -10 || ay > H + 10) continue;
       g.strokeStyle = b.ok ? "#FF5C9A" : "rgba(255,92,154,.35)"; g.lineWidth = b.ok ? 3 : 2;
       g.beginPath(); g.moveTo(a.x, ay); g.lineTo(a.x + (b.x - a.x) * .62, ay + (by - ay) * .62); g.stroke();
     }
-    // sewing machine arm + presser foot + needle
+    // machine arm, presser foot, needle
     g.fillStyle = C.arm; roundRect(needleX - 34, ny - 120, 68, 70, 16); g.fill();
     g.fillStyle = C.arm2; roundRect(needleX - 22, ny - 54, 44, 18, 6); g.fill();
     g.fillStyle = "#FFFFFF"; g.font = "700 12px Fraunces"; g.textAlign = "center"; g.fillText("Maison J.", needleX, ny - 80);
@@ -262,16 +311,14 @@
     g.strokeStyle = "#9AA0B4"; g.lineWidth = 3; g.beginPath(); g.moveTo(needleX, ny - 36); g.lineTo(needleX, ny + 6 + bob); g.stroke();
     g.fillStyle = "#E4E6EE"; g.fillRect(needleX - 14, ny - 6 + bob * .3, 28, 5);
     g.strokeStyle = "#FF5C9A"; g.lineWidth = 1.5; g.beginPath(); g.moveTo(needleX, ny - 120); g.quadraticCurveTo(needleX + 18, ny - 70, needleX + 1, ny - 30); g.stroke();
-    // guide ring under the needle
-    const d = Math.abs(needleX - pathX(scroll + ny, p));
+    const d = Math.abs(needleX - seamX(scroll + ny, p));
     g.strokeStyle = d < 16 ? "rgba(61,187,138,.8)" : d < 30 ? "rgba(255,214,107,.9)" : "rgba(255,92,154,.8)"; g.lineWidth = 2;
     g.beginPath(); g.arc(needleX, ny + 8, 13, 0, Math.PI * 2); g.stroke();
     sparks.forEach((s) => { g.fillStyle = `rgba(255,154,203,${s.life * 2})`; g.fillRect(s.x, s.y, 3, 3); });
   }
   function roundRect(x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
 
-  labels();
-  intro();
+  dressAvatar(); labels(); pick();
   requestAnimationFrame(frame);
 })();
 </script>

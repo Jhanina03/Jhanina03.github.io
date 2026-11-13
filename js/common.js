@@ -63,6 +63,8 @@
     setTimeout(done, 1500); // zipper + split, then the page
   };
   document.querySelectorAll('[data-go="portfolio"]').forEach((b) => b.addEventListener("click", openPortfolio));
+  const playBtn = document.querySelector(".ic-btn.play"), games = document.getElementById("ic-games");
+  if (playBtn && games) playBtn.addEventListener("click", () => { games.hidden = !games.hidden; playBtn.setAttribute("aria-expanded", String(!games.hidden)); });
   if (new URLSearchParams(location.search).has("nointro")) done(); // ?nointro skips the intro
   if (!loader || reduced) done();
   else if (new URLSearchParams(location.search).get("view") === "portfolio") setTimeout(openPortfolio, 2600); // coming back from the game
@@ -103,15 +105,15 @@
     });
     function draw() {
       const now = performance.now();
-      pts = pts.filter((p) => now - p.t < 520);
+      pts = pts.filter((p) => now - p.t < 260);
       ctx.clearRect(0, 0, innerWidth, innerHeight);
       if (pts.length > 1) {
         ctx.lineCap = "round";
         ctx.setLineDash([7, 6]);
         for (let i = 1; i < pts.length; i++) {
-          const a = 1 - (now - pts[i].t) / 520;
-          ctx.strokeStyle = `rgba(255, 92, 154, ${a * 0.85})`;
-          ctx.lineWidth = 2.4 * a + 0.4;
+          const a = 1 - (now - pts[i].t) / 260;
+          ctx.strokeStyle = `rgba(255, 92, 154, ${a * 0.6})`;
+          ctx.lineWidth = 1.8 * a + 0.3;
           ctx.beginPath();
           ctx.moveTo(pts[i - 1].x, pts[i - 1].y);
           ctx.lineTo(pts[i].x, pts[i].y);
