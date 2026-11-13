@@ -134,14 +134,14 @@
       start: "Start sewing 🪡", change: "Pick another outfit", almost: "Almost!", missed: "A few stitches slipped away. Follow the dashed seam calmly.", again: "Sew it again ↺",
       sewn: "SEWN", accW: "ACCURACY", unlocked: "SECTION UNLOCKED", seeDress: "See my finished outfit! 👗", next: "Next piece:", done: "OUTFIT FINISHED · 4/4 PIECES", wear: "I'm wearing it!",
       thanks: "Thanks for sewing with me. That's how I build software too: <b>measured, tested and made to fit</b>. ✂", full: "See the full portfolio ›", restart: "Sew another outfit",
-      sections: ["About me", "Skills", "Projects", "Contact"], pattern: "pattern", size: "size full-stack", pieces4: "4 PIECES", design: "Design your own", designSub: "YOUR OWN DRESS", designer: "DESIGNER · LIVE CODE", sewIt: "Sew it ✂", backPick: "‹ Back", s1: "Silhouette", s2: "Fabric", s3: "Colour", s4: "Details", mine: "My design", anyColor: "Any colour" },
+      sections: ["About me", "Skills", "Projects", "Contact"], pattern: "pattern", size: "size full-stack", pieces4: "4 PIECES", design: "Design your own", designSub: "DRESS, SET, JUMPSUIT, COAT", designer: "DESIGNER · LIVE CODE", sewIt: "Sew it ✂", backPick: "‹ Back", s1: "Silhouette", s2: "Fabric", s3: "Colour", s4: "Details", mine: "My design", anyColor: "Any colour", sType: "Garment", sTop: "Top", sBottom: "Bottom", sColor2: "Bottom colour", sLeg: "Leg", sLength: "Length", sCoat: "Coat colour" },
     es: { piece: "PIEZA", unlocks: "DESBLOQUEA", acc: "precisión", outfit: "TU OUTFIT", back: "Ver portafolio ›", mini: "MINI-JUEGO · ATELIER JHANINA", title: "Cose el outfit",
       choose: "Elige el outfit que quieres coser. Cada pieza de su patrón desbloquea una parte de mi portafolio, ¡y al final lo estreno! 👗",
       how: "Mueve la aguja con el <b>mouse</b> (o el dedo, o las flechas ← →) para coser <b>siguiendo la costura punteada</b> de cada pieza del patrón mientras la tela avanza.",
       start: "Empezar a coser 🪡", change: "Elegir otro outfit", almost: "¡Casi!", missed: "Se te escaparon algunas puntadas. Sigue la costura punteada con calma.", again: "Coser otra vez ↺",
       sewn: "COSIDA", accW: "DE PRECISIÓN", unlocked: "SECCIÓN DESBLOQUEADA", seeDress: "¡Ver mi outfit terminado! 👗", next: "Siguiente pieza:", done: "OUTFIT TERMINADO · 4/4 PIEZAS", wear: "¡Lo estreno!",
       thanks: "Gracias por coser conmigo. Así trabajo también el software: <b>a medida, probado y hecho para quedar perfecto</b>. ✂", full: "Ver el portafolio completo ›", restart: "Coser otro outfit",
-      sections: ["Sobre mí", "Habilidades", "Proyectos", "Contacto"], pattern: "patrón", size: "talla full-stack", pieces4: "4 PIEZAS", design: "Diseña el tuyo", designSub: "TU PROPIO VESTIDO", designer: "DISEÑADOR · CÓDIGO EN VIVO", sewIt: "Coser ✂", backPick: "‹ Volver", s1: "Silueta", s2: "Tela", s3: "Color", s4: "Detalles", mine: "Mi diseño", anyColor: "Cualquier color" },
+      sections: ["Sobre mí", "Habilidades", "Proyectos", "Contacto"], pattern: "patrón", size: "talla full-stack", pieces4: "4 PIEZAS", design: "Diseña el tuyo", designSub: "VESTIDO, CONJUNTO, ENTERIZO, ABRIGO", designer: "DISEÑADOR · CÓDIGO EN VIVO", sewIt: "Coser ✂", backPick: "‹ Volver", s1: "Silueta", s2: "Tela", s3: "Color", s4: "Detalles", mine: "Mi diseño", anyColor: "Cualquier color", sType: "Prenda", sTop: "Top", sBottom: "Parte de abajo", sColor2: "Color de abajo", sLeg: "Pierna", sLength: "Largo", sCoat: "Color del abrigo" },
   };
   const T = (k) => G[L()][k];
   const t = (k) => i18n.t(k), pk = (v) => i18n.pick(v);
@@ -193,13 +193,27 @@
     details: [["bow", "Bow", "Moño"], ["lace", "Lace hem", "Encaje"], ["puff", "Puff sleeves", "Mangas abullonadas"], ["belt", "Belt", "Cinturón"], ["buttons", "Buttons", "Botones"],
               ["pearls", "Pearls", "Perlas"], ["ruffles", "Ruffles", "Volantes"], ["sparkles", "Sparkles", "Brillos"], ["sash", "Sash", "Lazo cruzado"]],
   };
-  let design = { silhouette: "swing", fabric: "polka", color: "lilac", details: ["bow"] };
+  DOPTS.type = [["dress", "Dress", "Vestido"], ["set", "Top + bottom", "Top + parte de abajo"], ["jumpsuit", "Jumpsuit", "Enterizo"], ["coat", "Coat", "Abrigo"]];
+  DOPTS.top = [["crop", "Crop top", "Top corto"], ["blouse", "Blouse", "Blusa"], ["halter", "Halter", "Halter"], ["turtle", "Turtleneck", "Cuello alto"]];
+  DOPTS.bottom = [["wide", "Wide-leg pants", "Pantalón ancho"], ["jeans", "Straight jeans", "Jean recto"], ["flare", "Flared pants", "Acampanado"], ["shorts", "Shorts", "Short"],
+                  ["mini", "Mini skirt", "Minifalda"], ["midi", "Midi skirt", "Falda midi"], ["pleated", "Pleated skirt", "Falda plisada"]];
+  DOPTS.leg = [["jeans", "Straight", "Recto"], ["wide", "Wide", "Ancho"], ["flare", "Flared", "Acampanado"]];
+  DOPTS.length = [["long", "Long", "Largo"], ["short", "Short", "Corto"]];
+  let design = { type: "dress", silhouette: "swing", top: "crop", bottom: "jeans", leg: "wide", length: "long", fabric: "polka", color: "lilac", color2: "blue", details: ["bow"] };
   function designedOutfit() {
     const skirt = { aline: "skirt", swing: "skirt", ball: "tulle", mermaid: "bodice", mini: "mini", empire: "skirt", tiered: "tulle", pencil: "leg" }[design.silhouette];
     const d = design.details;
     const third = d.includes("puff") ? ["sleeve", "Puff sleeve", "Manga abullonada"] : ["neck", "Neckline", "Escote"];
     const fourth = d.includes("bow") ? ["bow", "Bow", "Moño"] : d.includes("sash") ? ["band", "Sash", "Lazo"] : d.includes("belt") ? ["band", "Belt", "Cinturón"] : d.includes("buttons") ? ["band", "Button band", "Tira de botones"] : d.includes("ruffles") ? ["tulle", "Ruffle", "Volante"] : ["cuff", "Hem", "Dobladillo"];
-    return { look: "custom", cfg: { ...design, details: [...d] }, name: { en: "My design", es: "Mi diseño" }, pieces: [["bodice", "Bodice", "Corpiño"], [skirt, "Skirt", "Falda"], third, fourth] };
+    const legShape = { wide: "leg", jeans: "leg", flare: "bell", shorts: "cuff", mini: "mini", midi: "skirt", pleated: "skirt" };
+    const botName = { wide: ["Pant leg", "Pierna del pantalón"], jeans: ["Jeans leg", "Pierna del jean"], flare: ["Flared leg", "Pierna acampanada"], shorts: ["Shorts", "Short"],
+                      mini: ["Mini skirt", "Minifalda"], midi: ["Midi skirt", "Falda midi"], pleated: ["Pleated skirt", "Falda plisada"] };
+    const topName = { crop: ["Crop top", "Top corto"], blouse: ["Blouse", "Blusa"], halter: ["Halter", "Halter"], turtle: ["Turtleneck", "Cuello alto"] };
+    let pieces = [["bodice", "Bodice", "Corpiño"], [skirt, "Skirt", "Falda"], third, fourth];
+    if (design.type === "set") pieces = [["front", ...topName[design.top]], [legShape[design.bottom], ...botName[design.bottom]], third, fourth];
+    if (design.type === "jumpsuit") pieces = [["bodice", "Bodice", "Corpiño"], [legShape[design.leg], ...botName[design.leg]], ["neck", "Neckline", "Escote"], ["band", "Waistband", "Pretina"]];
+    if (design.type === "coat") pieces = [["front", "Front panel", "Panel delantero"], ["sleeve", "Sleeve", "Manga"], ["collar", "Lapel", "Solapa"], ["band", "Button band", "Tira de botones"]];
+    return { look: "custom", cfg: { ...design, details: [...d] }, name: { en: "My design", es: "Mi diseño" }, pieces };
   }
   let outfit = OUTFITS[0];
   const piece = (i = idx) => ({ shape: SHAPES[outfit.pieces[i][0]], name: L() === "es" ? outfit.pieces[i][2] : outfit.pieces[i][1], section: T("sections")[i], len: LENS[i] });
@@ -261,7 +275,14 @@
     const opt = (key, [id, en, esN]) => `<button class="dopt" type="button" data-k="${key}" data-id="${id}" aria-pressed="${key === "details" ? design.details.includes(id) : design[key] === id}">${es ? esN : en}</button>`;
     show(`<span class="kick">${T("designer")}</span><h2>${T("design")}</h2>
       <div class="designer"><div class="prev" id="dprev"></div><div>
-        <h4><span>1</span>${T("s1")}</h4><div class="dopts">${DOPTS.silhouette.map((o) => opt("silhouette", o)).join("")}</div>
+        <h4><span>0</span>${T("sType")}</h4><div class="dopts">${DOPTS.type.map((o) => opt("type", o)).join("")}</div>
+        ${design.type === "dress" ? `<h4><span>1</span>${T("s1")}</h4><div class="dopts">${DOPTS.silhouette.map((o) => opt("silhouette", o)).join("")}</div>` : ""}
+        ${design.type === "set" ? `<h4><span>1</span>${T("sTop")}</h4><div class="dopts">${DOPTS.top.map((o) => opt("top", o)).join("")}</div>
+          <h4><span>1b</span>${T("sBottom")}</h4><div class="dopts">${DOPTS.bottom.map((o) => opt("bottom", o)).join("")}</div>
+          <h4><span>1c</span>${T("sColor2")}</h4><div class="dopts">${Object.keys(DRESS_COLORS).map((c) => `<button class="dsw" type="button" data-k="color2" data-id="${c}" aria-pressed="${design.color2 === c}" aria-label="${c}" title="${c}" style="--c:${DRESS_COLORS[c]}"></button>`).join("")}</div>` : ""}
+        ${design.type === "jumpsuit" ? `<h4><span>1</span>${T("sLeg")}</h4><div class="dopts">${DOPTS.leg.map((o) => opt("leg", o)).join("")}</div>` : ""}
+        ${design.type === "coat" ? `<h4><span>1</span>${T("sLength")}</h4><div class="dopts">${DOPTS.length.map((o) => opt("length", o)).join("")}</div>
+          <h4><span>1b</span>${T("sCoat")}</h4><div class="dopts">${Object.keys(DRESS_COLORS).map((c) => `<button class="dsw" type="button" data-k="color2" data-id="${c}" aria-pressed="${design.color2 === c}" aria-label="${c}" title="${c}" style="--c:${DRESS_COLORS[c]}"></button>`).join("")}</div>` : ""}
         <h4><span>2</span>${T("s2")}</h4><div class="dopts">${DOPTS.fabric.map((o) => opt("fabric", o)).join("")}</div>
         <h4><span>3</span>${T("s3")}</h4><div class="dopts">${Object.keys(DRESS_COLORS).map((c) => `<button class="dsw" type="button" data-k="color" data-id="${c}" aria-pressed="${design.color === c}" aria-label="${c}" title="${c}" style="--c:${DRESS_COLORS[c]}"></button>`).join("")}
           <label class="dpick" id="dpick" aria-pressed="${design.color.startsWith("#")}" title="${T("anyColor")}"><span class="wheel" aria-hidden="true"></span><span class="cur" id="dcur" style="background:${DRESS_COLORS[design.color] || design.color}"></span>${T("anyColor")}
@@ -272,8 +293,12 @@
       <button class="btn" id="go" type="button">${T("sewIt")}</button> <button class="btn alt" id="chg" type="button">${T("backPick")}</button>`);
     const paint = () => {
       document.getElementById("dprev").innerHTML = avatarSVG("custom", "d", design);
-      document.getElementById("dcode").innerHTML = `<span class="k">export const</span> dress: <span class="ty">Dress</span> = {
-  silhouette: <span class="s">"${design.silhouette}"</span>,
+      const q = (v) => `<span class="s">"${v}"</span>`;
+      const shape = design.type === "dress" ? `silhouette: ${q(design.silhouette)},` : design.type === "set" ? `top: ${q(design.top)}, bottom: ${q(design.bottom)}, bottomColor: ${q(DRESS_COLORS[design.color2] || design.color2)},`
+        : design.type === "jumpsuit" ? `leg: ${q(design.leg)},` : `length: ${q(design.length)}, coatColor: ${q(DRESS_COLORS[design.color2] || design.color2)},`;
+      document.getElementById("dcode").innerHTML = `<span class="k">export const</span> look: <span class="ty">Garment</span> = {
+  type: ${q(design.type)},
+  ${shape}
   fabric: { pattern: <span class="s">"${design.fabric}"</span>, color: <span class="s">"${DRESS_COLORS[design.color] || design.color}"</span> },
   details: [${design.details.map((d) => `<span class="s">"${d}"</span>`).join(", ")}],
   designer: <span class="s">"you ♥ Jhanina"</span>,
@@ -288,11 +313,12 @@
       const k = b.dataset.k, id = b.dataset.id;
       if (k === "details") design.details = design.details.includes(id) ? design.details.filter((x) => x !== id) : [...design.details, id];
       else design[k] = id;
+      if (k === "type") { if (id === "coat") design.color2 = design.color2 === "blue" ? "rose" : design.color2; designer(); return; }
       paint();
     });
     paint();
     log("$ open designer --live", "c-cmd");
-    document.getElementById("go").onclick = () => { outfit = designedOutfit(); idx = 0; dressAvatar(); labels(); log(`$ cat designs/my-dress.config.ts`, "c-cmd"); log(`> ${design.silhouette} · ${design.fabric} · ${design.color}`, "c-dim"); how(); };
+    document.getElementById("go").onclick = () => { outfit = designedOutfit(); idx = 0; dressAvatar(); labels(); log(`$ cat designs/my-${design.type}.config.ts`, "c-cmd"); log(`> ${design.type} · ${design.fabric} · ${design.color}`, "c-dim"); how(); };
     document.getElementById("chg").onclick = pick;
   }
   function how() {

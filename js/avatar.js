@@ -269,6 +269,7 @@
       : `<pattern id="fab-${uid}" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="${c}"/>${pat}</pattern>`;
     const defs = `${base}
       <linearGradient id="dshade-${uid}" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#1B1530" stop-opacity=".18"/></linearGradient>`;
+    if (cfg.type && cfg.type !== "dress") return garmentParts(cfg, uid, c, ink, fill, defs);
     const sk = SKIRTS[cfg.silhouette] || SKIRTS.aline;
     const has = (d) => (cfg.details || []).includes(d);
     const [hx0, hx1, hy] = HEMS[cfg.silhouette] || HEMS.aline;
@@ -308,6 +309,69 @@
     const seams = `<path class="seam" d="M66 ${waist - 2}H134" pathLength="100"/><path class="seam" d="M70 162Q78 154 90 156Q100 162 110 156Q122 154 130 162" pathLength="100"/><path class="seam" d="M${hx0} ${hy - 2}H${hx1}" pathLength="100"/>`;
     return { defs, skirt, bodice, front, seams };
   }
+  /* ---------- tops, bottoms, jumpsuits and coats ---------- */
+  const TOPS = {
+    crop:   "M68 162Q76 152 90 150L110 150Q124 152 132 162L134 198H66Z",
+    blouse: "M64 160Q70 151 86 150L114 150Q130 151 136 160L139 216H61Z",
+    halter: "M70 168Q75 152 91 146L109 146Q125 152 130 168L134 214H66Z",
+    turtle: "M64 160Q70 151 86 150L114 150Q130 151 136 160L139 216H61Z",
+  };
+  const BOTTOMS = {
+    wide:    { d: "M63 210H137L148 300H104L100 242L96 300H52Z", hem: [52, 148, 300], long: true },
+    jeans:   { d: "M64 210H136L134 296H104.5L100 242L95.5 296H66Z", hem: [66, 134, 296], long: true },
+    flare:   { d: "M64 210H136L129 260L142 300H104L100 242L96 300H58L71 260Z", hem: [58, 142, 300], long: true },
+    shorts:  { d: "M64 210H136L139 244H104L100 230L96 244H61Z", hem: [61, 139, 244] },
+    mini:    { d: "M66 208Q50 234 47 252H153Q150 234 134 208Z", hem: [47, 153, 252] },
+    midi:    { d: "M66 208Q54 252 52 274H148Q146 252 134 208Z", hem: [52, 148, 274] },
+    pleated: { d: "M66 208L52 266H148L134 208Z", hem: [52, 148, 266], pleats: true },
+  };
+  function garmentParts(cfg, uid, c, ink, fill, defs) {
+    const has = (d) => (cfg.details || []).includes(d);
+    const c2 = DRESS_COLORS[cfg.color2] || cfg.color2 || "#8DB4E8";
+    const shade = `url(#dshade-${uid})`;
+    let skirt = "", bodice = "", front = "";
+    const type = cfg.type;
+    const topKey = type === "set" ? (cfg.top || "blouse") : type === "jumpsuit" ? "blouse" : "turtle";
+    const botKey = type === "set" ? (cfg.bottom || "jeans") : type === "jumpsuit" ? (cfg.leg || "wide") : "jeans";
+    const bot = BOTTOMS[botKey];
+    const botFill = type === "jumpsuit" ? fill : c2;
+    // midriff skin behind a crop top
+    if (type === "set" && topKey === "crop") skirt += `<path d="M66 196H134V214H66Z" fill="#EDC3A3"/>`;
+    if (type === "coat") skirt += `<path d="${BOTTOMS.jeans.d}" fill="#2A2530"/>`;     // dark trousers under the coat
+    else {
+      skirt += `<path d="${bot.d}" fill="${botFill}"/><path d="${bot.d}" fill="${shade}"/>`;
+      if (botKey === "jeans" || botKey === "shorts") skirt += `<path d="M64 218H136M100 218V232" stroke="#fff" stroke-width="1" opacity=".35"/>`;
+      if (bot.pleats) skirt += `<path d="M76 214L66 264M90 214L86 266M100 214V266M110 214L114 266M124 214L134 264" stroke="#fff" stroke-width="1.1" opacity=".4"/>`;
+      if (has("lace") || has("ruffles")) { const [x0, x1, y] = bot.hem; let d = `M${x0} ${y - 3}`; const n = Math.max(4, Math.round((x1 - x0) / 7)), w = (x1 - x0) / n; for (let i = 0; i < n; i++) d += `q${w / 2} 6 ${w} 0`; skirt += `<path d="${d}" stroke="#fff" stroke-width="2.2" fill="none" opacity=".85"/>`; }
+    }
+    // top / bodice
+    const tp = TOPS[topKey];
+    bodice += `<path d="${tp}" fill="${fill}"/><path d="${tp}" fill="${shade}"/>`;
+    if (topKey === "turtle") bodice += `<path d="M90 139Q100 142 110 139V152Q100 156 90 152Z" fill="${fill}"/><path d="M90 139Q100 142 110 139V152Q100 156 90 152Z" fill="${shade}"/>`;
+    if (topKey === "halter") bodice += `<path d="M90 146Q100 152 110 146V157Q100 161 90 157Z" fill="${fill}"/>`;
+    if (topKey === "blouse") bodice += `<path d="M88 151L100 166L112 151" stroke="#fff" stroke-width="1.6" fill="none" opacity=".8"/>`;
+    if (type === "jumpsuit") bodice += `<rect x="62" y="206" width="76" height="7" rx="2" fill="${fill}"/><path d="M62 209H138" stroke="#fff" stroke-width="1.2" opacity=".6"/>`;
+    // coat: long or short panels with lapels and buttons, worn over a turtleneck
+    if (type === "coat") {
+      const long = cfg.length !== "short", y2 = long ? 276 : 236;
+      const panel = `M64 160Q70 150 86 148L100 150V170L97 ${y2}H${long ? 56 : 58}Z`;
+      const cc = DRESS_COLORS[cfg.color2] || cfg.color2 || "#E8BFD3";
+      front += `<path d="${panel}" fill="${cc}"/><g transform="matrix(-1 0 0 1 200 0)"><path d="${panel}" fill="${cc}"/></g>`;
+      front += `<path d="M86 148L96 176L88 182L80 158Z" fill="${cc}" stroke="#fff" stroke-opacity=".5"/><path d="M114 148L104 176L112 182L120 158Z" fill="${cc}" stroke="#fff" stroke-opacity=".5"/>`;
+      front += `<path d="${panel}" fill="${shade}"/>` + [190, 208, 226].concat(long ? [244] : []).map((y) => `<circle cx="104" cy="${y}" r="2.6" fill="#fff" opacity=".9"/>`).join("");
+    }
+    // details shared with the dress designer
+    if (has("puff")) front += `<ellipse cx="66" cy="166" rx="11" ry="9" fill="${fill}"/><ellipse cx="134" cy="166" rx="11" ry="9" fill="${fill}"/>`;
+    if (has("pearls")) front += [0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => { const tt = i / 8, x = 84 + 32 * tt, y = 158 + 9 * Math.sin(Math.PI * tt); return `<circle cx="${x}" cy="${y}" r="2.1" fill="#FFF8F0" stroke="#E4DAFF" stroke-width=".6"/>`; }).join("");
+    if (has("belt")) front += `<rect x="64" y="206" width="72" height="8" rx="2" fill="#3B2A6B"/><rect x="95" y="205" width="10" height="10" rx="2" fill="none" stroke="#FFD66B" stroke-width="2"/>`;
+    if (has("sash")) front += `<path d="M70 190L132 210L130 218L68 198Z" fill="#FF9ACB" opacity=".92"/>`;
+    if (has("buttons") && type !== "coat") front += [172, 184].map((y) => `<circle cx="100" cy="${y}" r="2.6" fill="#fff" stroke="${c}" stroke-width=".8"/>`).join("");
+    if (has("bow")) front += `<path d="M100 210Q87 199 83 208Q86 217 100 211Q114 217 117 208Q113 199 100 210Z" fill="#FF7AB8"/><circle cx="100" cy="210" r="3" fill="#FF5C9A"/>`;
+    if (has("sparkles")) front += [[80, 178], [118, 192], [96, 200]].map(([x, y]) => `<path class="av-sparkle" transform="translate(${x} ${y}) scale(.5)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/>`).join("");
+    const [hx0, hx1, hy] = type === "coat" ? [56, 144, cfg.length !== "short" ? 276 : 236] : bot.hem;
+    const seams = `<path class="seam" d="M64 210H136" pathLength="100"/><path class="seam" d="M${hx0} ${hy - 2}H${hx1}" pathLength="100"/>`;
+    return { defs, skirt, bodice, front, seams, long: type !== "coat" && !!bot.long };
+  }
   window.dressParts = dressParts;
   window.DRESS_COLORS = DRESS_COLORS;
 
@@ -315,8 +379,9 @@
     let L = looks[look] || looks.casual;
     if (look === "custom" && cfg) {
       const D = dressParts(cfg, uid);
-      const long = ["ball", "mermaid"].includes(cfg.silhouette);
-      L = { under: `<defs>${D.defs}</defs>${long ? "" : both(`<path d="M76 291H86Q94 292 95.5 297V300.5H74Q70 300 72 295Z" fill="#7B5CD6"/>`)}${D.skirt}`, torso: D.bodice, over: D.front, sleeve: null, noShade: true };
+      const long = ["ball", "mermaid"].includes(cfg.silhouette) && (!cfg.type || cfg.type === "dress");
+      const shoes = cfg.type && cfg.type !== "dress" ? SNEAKERS("#FFFFFF", "#FF9ACB") : both(`<path d="M76 291H86Q94 292 95.5 297V300.5H74Q70 300 72 295Z" fill="#7B5CD6"/>`);
+      L = { under: `<defs>${D.defs}</defs>${long ? "" : shoes}${D.skirt}`, torso: D.bodice, over: D.front, sleeve: null, noShade: true };
     }
     const id = (s) => (s || "").replaceAll("$ID", uid);
     const sleeve = L.sleeve ? { ...L.sleeve, fill: id(L.sleeve.fill) } : null;
