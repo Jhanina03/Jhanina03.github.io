@@ -49,9 +49,16 @@
   }
 
   /* ---------- loader ---------- */
-  const done = () => document.body.classList.add("loaded");
+  const done = () => {
+    if (document.body.classList.contains("loaded")) return;
+    document.body.classList.add("loaded");
+    const hero = document.getElementById("hero-avatar"); // she says hi once the page opens
+    if (hero && !reduced) { hero.classList.add("waving"); setTimeout(() => hero.classList.remove("waving"), 2900); }
+  };
+  const skip = document.querySelector(".skip-intro");
+  if (skip) skip.addEventListener("click", done);
   if (new URLSearchParams(location.search).has("nointro")) done(); // ?nointro skips the intro
-  setTimeout(done, reduced ? 0 : 3800); // matches the CSS intro (sewn tag + zipper)
+  setTimeout(done, reduced ? 0 : 4100); // matches the CSS intro (sewn tag + V zipper)
 
   /* ---------- thread progress ---------- */
   const fg = document.querySelector(".thread-fg");
