@@ -840,3 +840,8 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 @keyframes fling { to { translate: var(--fx) -10vh; scale: 1.6; opacity: 0; } }
 .intro-tag { z-index: 5; }
 .zip-teeth { z-index: 4; } .zip-pull { z-index: 6; }
+/* intro: code details on the tag */
+.floaters .fc { font-family: ui-monospace, Consolas, monospace; font-weight: 700; width: auto; white-space: nowrap; font-size: calc(var(--s) * .85); }
+.term-ok { opacity: 0; animation: fade-in .2s ease 2.05s forwards; }
+.tag-barcode { opacity: 0; animation: fade-in .5s ease 1.95s forwards; }
+.tag-shadow { top: calc(clamp(60px, 16vh, 150px) + min(440px, 98vw)); }

@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@500;700&family=Silkscreen&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261112f">
+  <link rel="stylesheet" href="css/styles.css?v=20261112g">
 </head>
 <body data-title-key="meta.title">
   <a class="skip" href="#about">Skip to content</a>
@@ -38,19 +38,19 @@
     <!-- sewing things floating up, flung out when the zipper opens -->
     <div class="floaters">
       <i class="fb" style="--x:6%;--d:.0s;--s:22px;--c:#B79CFF;--fx:-40vw"></i>
-      <i class="fg" style="--x:14%;--d:.5s;--s:26px;--c:#FF7AB8;--fx:-35vw">♥</i>
+      <i class="fg fc" style="--x:14%;--d:.5s;--s:26px;--c:#FF7AB8;--fx:-35vw">&lt;/&gt;</i>
       <i class="fs" style="--x:22%;--d:.2s;--s:20px;--c:#8CC8FF;--fx:-30vw"></i>
-      <i class="fg" style="--x:30%;--d:.9s;--s:24px;--c:#7B5CD6;--fx:-25vw">✂</i>
+      <i class="fg fc" style="--x:30%;--d:.9s;--s:24px;--c:#7B5CD6;--fx:-25vw">{ }</i>
       <i class="fb" style="--x:38%;--d:1.2s;--s:16px;--c:#FF9ACB;--fx:-15vw"></i>
-      <i class="fg" style="--x:44%;--d:.35s;--s:18px;--c:#FFD66B;--fx:-8vw">✦</i>
+      <i class="fg fc" style="--x:44%;--d:.35s;--s:18px;--c:#FFD66B;--fx:-8vw">01</i>
       <i class="fb" style="--x:56%;--d:.7s;--s:18px;--c:#8CC8FF;--fx:10vw"></i>
-      <i class="fg" style="--x:62%;--d:1.05s;--s:20px;--c:#FF7AB8;--fx:16vw">✦</i>
+      <i class="fg fc" style="--x:62%;--d:1.05s;--s:20px;--c:#FF7AB8;--fx:16vw">▌</i>
       <i class="fs" style="--x:70%;--d:.15s;--s:22px;--c:#FF9ACB;--fx:26vw"></i>
       <i class="fg" style="--x:78%;--d:.6s;--s:28px;--c:#B79CFF;--fx:32vw">♥</i>
       <i class="fb" style="--x:86%;--d:.95s;--s:24px;--c:#5B8DEF;--fx:38vw"></i>
       <i class="fg" style="--x:93%;--d:.3s;--s:22px;--c:#7B5CD6;--fx:42vw">✂</i>
       <i class="fb" style="--x:50%;--d:1.5s;--s:14px;--c:#FFFFFF;--fx:4vw"></i>
-      <i class="fg" style="--x:26%;--d:1.7s;--s:16px;--c:#FFFFFF;--fx:-22vw">✦</i>
+      <i class="fg fc" style="--x:26%;--d:1.7s;--s:16px;--c:#FFFFFF;--fx:-22vw">01</i>
       <i class="fs" style="--x:82%;--d:1.4s;--s:18px;--c:#B79CFF;--fx:30vw"></i>
     </div>
     <div class="zip-teeth"></div>
@@ -59,38 +59,48 @@
     <div class="intro-tag">
       <div class="tag-string"></div>
       <div class="tag-body">
-        <svg class="tag-svg" viewBox="0 0 300 380">
+        <svg class="tag-svg" viewBox="0 0 300 412">
           <defs>
             <linearGradient id="tag-name" x1="0" x2="1"><stop offset="0" stop-color="#7B5CD6"/><stop offset=".5" stop-color="#5B8DEF"/><stop offset="1" stop-color="#FF7AB8"/></linearGradient>
             <linearGradient id="tag-paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F6F1FF"/></linearGradient>
             <mask id="stitch-mask">
-              <path d="M76 24H224L276 76V350Q276 356 270 356H30Q24 356 24 350V76Z" fill="none" stroke="#fff" stroke-width="8" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100">
+              <path d="M76 24H224L276 76V382Q276 388 270 388H30Q24 388 24 382V76Z" fill="none" stroke="#fff" stroke-width="8" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100">
                 <animate attributeName="stroke-dashoffset" from="100" to="0" begin="0.7s" dur="1.6s" fill="freeze"/>
               </path>
             </mask>
             <clipPath id="emb-clip"><rect x="0" y="100" width="0" height="100"><animate attributeName="width" from="0" to="300" begin="0.9s" dur="1.2s" fill="freeze"/></rect></clipPath>
           </defs>
-          <path d="M70 10H230L290 70V360Q290 370 280 370H20Q10 370 10 360V70Z" fill="url(#tag-paper)"/>
-          <path d="M70 10H230L290 70V360Q290 370 280 370H20Q10 370 10 360V70Z" fill="none" stroke="#E4DAFF" stroke-width="2"/>
-          <path id="tag-stitch" d="M76 24H224L276 76V350Q276 356 270 356H30Q24 356 24 350V76Z" fill="none" stroke="#FF5C9A" stroke-width="2.4" stroke-dasharray="8 6" stroke-linecap="round" mask="url(#stitch-mask)"/>
+          <path d="M70 10H230L290 70V392Q290 402 280 402H20Q10 402 10 392V70Z" fill="url(#tag-paper)"/>
+          <path d="M70 10H230L290 70V392Q290 402 280 402H20Q10 402 10 392V70Z" fill="none" stroke="#E4DAFF" stroke-width="2"/>
+          <path id="tag-stitch" d="M76 24H224L276 76V382Q276 388 270 388H30Q24 388 24 382V76Z" fill="none" stroke="#FF5C9A" stroke-width="2.4" stroke-dasharray="8 6" stroke-linecap="round" mask="url(#stitch-mask)"/>
           <g class="tag-button"><circle cx="150" cy="52" r="15" fill="#B79CFF"/><circle cx="150" cy="52" r="11" fill="none" stroke="#fff" stroke-width="1.2" opacity=".6"/>
             <circle cx="145" cy="47" r="2" fill="#5A3FB0"/><circle cx="155" cy="47" r="2" fill="#5A3FB0"/><circle cx="145" cy="57" r="2" fill="#5A3FB0"/><circle cx="155" cy="57" r="2" fill="#5A3FB0"/>
             <path class="btn-x a" d="M145 47L155 57" stroke="#FF5C9A" stroke-width="2.2" stroke-linecap="round" pathLength="100"/>
             <path class="btn-x b" d="M155 47L145 57" stroke="#FF5C9A" stroke-width="2.2" stroke-linecap="round" pathLength="100"/></g>
-          <text x="150" y="104" text-anchor="middle" font-family="Silkscreen, monospace" font-size="10" letter-spacing="2" fill="#7B5CD6">NEW COLLECTION · 2026</text>
-          <g font-family="Caveat, 'Segoe Script', cursive" font-weight="700" font-size="84" text-anchor="middle">
-            <text x="150" y="178" fill="none" stroke="#E4DAFF" stroke-width="1.2" stroke-dasharray="3 3">Jhanina</text>
+          <text x="150" y="98" text-anchor="middle" font-family="Silkscreen, monospace" font-size="10" letter-spacing="2" fill="#7B5CD6">NEW RELEASE · v2026.1</text>
+          <g font-family="Caveat, 'Segoe Script', cursive" font-weight="700" font-size="72" text-anchor="middle">
+            <text x="150" y="166" fill="none" stroke="#E4DAFF" stroke-width="1.2" stroke-dasharray="3 3">Jhanina</text>
             <g clip-path="url(#emb-clip)">
-              <text x="150" y="178" fill="url(#tag-name)">Jhanina</text>
-              <text x="150" y="178" fill="none" stroke="#fff" stroke-width="1.1" stroke-dasharray="4 3" opacity=".9">Jhanina</text>
+              <text x="150" y="166" fill="url(#tag-name)">Jhanina</text>
+              <text x="150" y="166" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="4 3" opacity=".9">Jhanina</text>
+              <g font-family="ui-monospace, Consolas, monospace" font-weight="700" font-size="48" fill="#FF5C9A"><text x="40" y="160">{</text><text x="260" y="160">}</text></g>
             </g>
           </g>
-          <text class="tag-surname" x="150" y="216" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="30" fill="url(#tag-name)">Conterón</text>
+          <text class="tag-surname" x="150" y="202" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="30" fill="url(#tag-name)">Conterón</text>
           <g class="tag-role" font-family="Silkscreen, monospace" font-size="10.5" letter-spacing="1.5" fill="#554B70" text-anchor="middle">
-            <text x="150" y="252">SOFTWARE ENGINEER</text><text x="150" y="268">FRONTEND · DATABASES · QA</text>
+            <text x="150" y="232">SOFTWARE ENGINEER</text><text x="150" y="247">FRONTEND · DATABASES · QA</text>
           </g>
-          <path d="M50 292H250" stroke="#D9CCFF" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <text class="tag-care" x="150" y="326" text-anchor="middle" font-family="Caveat, cursive" font-size="22" fill="#847A9E" data-i18n="intro.care">100% handmade code ✂</text>
+          <!-- terminal line that types itself while the tag is sewn -->
+          <rect x="42" y="260" width="216" height="26" rx="7" fill="#1C1530"/>
+          <circle cx="54" cy="273" r="2.4" fill="#FF7AB8"/><circle cx="62" cy="273" r="2.4" fill="#B79CFF"/><circle cx="70" cy="273" r="2.4" fill="#8CC8FF"/>
+          <clipPath id="type-clip"><rect x="78" y="262" width="0" height="22"><animate attributeName="width" from="0" to="150" begin="1.0s" dur="1.0s" fill="freeze" calcMode="discrete" values="0;12;24;36;48;60;72;84;96;108;120;132;144;150"/></rect></clipPath>
+          <text x="80" y="277.5" font-family="ui-monospace, Consolas, monospace" font-size="10.5" fill="#E9E2FF" clip-path="url(#type-clip)"><tspan fill="#C9B8FF">$</tspan> npm run portfolio</text>
+          <text class="term-ok" x="236" y="277.5" font-family="ui-monospace, Consolas, monospace" font-size="11" font-weight="700" fill="#8CE0FF">✓</text>
+          <!-- barcode made of a commit -->
+          <g class="tag-barcode" fill="#2B2140"><rect x="62" y="306" width="2" height="22"/><rect x="66" y="306" width="2" height="22"/><rect x="69" y="306" width="1" height="22"/><rect x="71" y="306" width="2" height="22"/><rect x="74" y="306" width="3" height="22"/><rect x="79" y="306" width="1" height="22"/><rect x="81" y="306" width="2" height="22"/><rect x="86" y="306" width="1" height="22"/><rect x="89" y="306" width="1" height="22"/><rect x="93" y="306" width="1" height="22"/><rect x="95" y="306" width="1" height="22"/><rect x="97" y="306" width="3" height="22"/><rect x="103" y="306" width="1" height="22"/><rect x="106" y="306" width="1" height="22"/><rect x="109" y="306" width="2" height="22"/><rect x="114" y="306" width="1" height="22"/><rect x="116" y="306" width="3" height="22"/><rect x="121" y="306" width="3" height="22"/><rect x="126" y="306" width="1" height="22"/><rect x="129" y="306" width="2" height="22"/><rect x="132" y="306" width="3" height="22"/><rect x="136" y="306" width="3" height="22"/><rect x="140" y="306" width="3" height="22"/><rect x="145" y="306" width="2" height="22"/><rect x="150" y="306" width="2" height="22"/><rect x="155" y="306" width="3" height="22"/><rect x="161" y="306" width="2" height="22"/><rect x="165" y="306" width="1" height="22"/><rect x="168" y="306" width="1" height="22"/><rect x="170" y="306" width="3" height="22"/><rect x="175" y="306" width="3" height="22"/><rect x="181" y="306" width="2" height="22"/><rect x="186" y="306" width="2" height="22"/><rect x="189" y="306" width="1" height="22"/><rect x="193" y="306" width="1" height="22"/><rect x="196" y="306" width="1" height="22"/><rect x="200" y="306" width="2" height="22"/><rect x="203" y="306" width="1" height="22"/><rect x="206" y="306" width="2" height="22"/><rect x="210" y="306" width="3" height="22"/><rect x="216" y="306" width="3" height="22"/><rect x="222" y="306" width="1" height="22"/><rect x="224" y="306" width="2" height="22"/><rect x="229" y="306" width="1" height="22"/><rect x="231" y="306" width="2" height="22"/><rect x="236" y="306" width="2" height="22"/></g>
+          <text class="tag-barcode" x="150" y="341" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="9" letter-spacing="1" fill="#554B70">commit #a3f9c2 · SIZE: FULL-STACK</text>
+          <path d="M50 352H250" stroke="#D9CCFF" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text class="tag-care" x="150" y="374" text-anchor="middle" font-family="Caveat, cursive" font-size="16.5" fill="#847A9E" data-i18n="intro.care">wash with npm test · never iron in prod ✂</text>
           <!-- needle that stitches the edge -->
           <g opacity="0">
             <path d="M-14 0H12" stroke="#9AA0B4" stroke-width="3" stroke-linecap="round"/><ellipse cx="9" cy="0" rx="3" ry="1.3" fill="#fff" stroke="#6B7085" stroke-width=".8"/>
@@ -102,7 +112,7 @@
             <g><path d="M0 -34V6" stroke="#9AA0B4" stroke-width="3" stroke-linecap="round"/><ellipse cx="0" cy="-30" rx="1.3" ry="3" fill="#fff" stroke="#6B7085" stroke-width=".8"/>
               <path d="M0 -34Q-10 -60 6 -80" stroke="#FF5C9A" stroke-width="1.4" fill="none"/>
               <animateTransform attributeName="transform" type="translate" values="0 0;0 8;0 0" dur="0.14s" repeatCount="indefinite"/></g>
-            <animateMotion begin="0.9s" dur="1.2s" fill="freeze" path="M24 160H276"/>
+            <animateMotion begin="0.9s" dur="1.2s" fill="freeze" path="M30 148H270"/>
             <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.05;.92;1" begin="0.9s" dur="1.3s" fill="freeze"/>
           </g>
         </svg>
@@ -388,11 +398,11 @@
   </div>
   <div class="toasts" aria-live="polite"></div>
 
-  <script src="js/i18n.js?v=20261112f"></script>
-  <script src="js/data.js?v=20261112f"></script>
-  <script src="js/avatar.js?v=20261112f"></script>
-  <script src="js/common.js?v=20261112f"></script>
-  <script src="js/main.js?v=20261112f"></script>
-  <script src="js/studio.js?v=20261112f"></script>
+  <script src="js/i18n.js?v=20261112g"></script>
+  <script src="js/data.js?v=20261112g"></script>
+  <script src="js/avatar.js?v=20261112g"></script>
+  <script src="js/common.js?v=20261112g"></script>
+  <script src="js/main.js?v=20261112g"></script>
+  <script src="js/studio.js?v=20261112g"></script>
 </body>
 </html>
