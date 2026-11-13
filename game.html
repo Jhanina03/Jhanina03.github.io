@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Sew the Dress · Jhanina</title>
+<meta name="description" content="Mini-game: sew a dress with Jhanina and unlock her portfolio.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<script>try { var th = localStorage.getItem("jc-theme"); document.documentElement.dataset.theme = (th === "dark" || th === "light") ? th : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&family=Silkscreen&display=swap" rel="stylesheet">
+<style>
+  /* Mini-game: guide the needle along the pattern line; each piece unlocks a section of the portfolio */
+  :root { --ink: #2B2140; --ink2: #554B70; --purple: #7B5CD6; --lilac: #B79CFF; --pink: #FF9ACB; --rose: #FF5C9A; --sky: #8CC8FF; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; font-family: "DM Sans", sans-serif; color: var(--ink); touch-action: none; user-select: none; -webkit-user-select: none;
+    background: linear-gradient(160deg, #E8DCFB, #EFE4FD 40%, #E3D4F9 70%, #EEDDF8); }
+  canvas { position: fixed; inset: 0; display: block; cursor: none; }
+  .hud { position: fixed; top: 12px; left: 12px; right: 12px; z-index: 5; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; pointer-events: none; }
+  .tagbox { background: #fff; padding: 10px 14px 10px; border-radius: 12px; box-shadow: 0 10px 22px -12px rgba(59,42,107,.5); outline: 2px dashed #FF9ACB; outline-offset: -6px; min-width: 210px; }
+  .tagbox small { font: .62rem Silkscreen, monospace; color: var(--purple); letter-spacing: .08em; } .tagbox b { display: block; font: 700 1.05rem Fraunces, serif; }
+  .bar { height: 8px; border-radius: 6px; background: #EFE8FF; overflow: hidden; margin-top: 6px; } .bar i { display: block; height: 100%; width: 0; background: repeating-linear-gradient(90deg, #FF5C9A 0 8px, #FF9ACB 8px 14px); transition: width .2s; }
+  .acc { font: .7rem Silkscreen, monospace; margin-top: 6px; color: var(--ink2); } .acc b { color: var(--rose); font-weight: 400; }
+  .top a { pointer-events: auto; font: 700 .85rem "DM Sans"; color: var(--purple); background: rgba(255,255,255,.85); padding: 8px 12px; border-radius: 999px; text-decoration: none; box-shadow: 0 8px 18px -10px rgba(59,42,107,.5); }
+  /* dress being assembled */
+  .dress { position: fixed; right: 18px; bottom: 18px; width: 150px; z-index: 5; background: rgba(255,255,255,.75); backdrop-filter: blur(6px); border-radius: 18px; padding: 10px 10px 6px; box-shadow: 0 12px 26px -14px rgba(59,42,107,.6); text-align: center; pointer-events: none; }
+  .dress small { font: .58rem Silkscreen, monospace; color: var(--purple); }
+  .dress .part { fill: none; stroke: #C9B8FF; stroke-width: 2; stroke-dasharray: 5 4; transition: fill .5s, stroke .5s; }
+  .dress .part.done { fill: url(#dot); stroke: #FF5C9A; stroke-dasharray: 0; }
+  /* modals: tag-style cards */
+  .modal { position: fixed; inset: 0; z-index: 20; display: none; place-items: center; background: rgba(43,33,64,.35); backdrop-filter: blur(4px); padding: 16px; }
+  .modal.open { display: grid; }
+  .card { width: min(560px, 100%); max-height: 86vh; overflow: auto; background: #fff; padding: 34px 28px 26px; position: relative; text-align: center; border-radius: 22px;
+          box-shadow: 0 30px 60px -20px rgba(43,33,64,.6); animation: drop .55s cubic-bezier(.3,1.4,.5,1); }
+  .card::before { content: ""; position: absolute; inset: 12px; border: 2.5px dashed #FF5C9A; border-radius: 14px; pointer-events: none; }
+  .card .btnhole { width: 26px; height: 26px; border-radius: 50%; background: #B79CFF; margin: -8px auto 8px; box-shadow: inset 0 0 0 4px #fff;
+                   background-image: radial-gradient(circle at 34% 34%, #5A3FB0 0 2px, transparent 2.5px), radial-gradient(circle at 66% 34%, #5A3FB0 0 2px, transparent 2.5px), radial-gradient(circle at 34% 66%, #5A3FB0 0 2px, transparent 2.5px), radial-gradient(circle at 66% 66%, #5A3FB0 0 2px, transparent 2.5px); }
+  @keyframes drop { from { transform: translateY(-60px) rotate(-4deg); opacity: 0; } }
+  .card .kick { font: .66rem Silkscreen, monospace; color: var(--purple); letter-spacing: .12em; }
+  .card h2 { margin: 6px 0 4px; font: 700 2.1rem Caveat, cursive; background: linear-gradient(90deg, #7B5CD6, #5B8DEF, #FF7AB8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .card p { color: var(--ink2); line-height: 1.6; text-align: left; }
+  .card .chips { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 8px 0; } .card .chips span { font-size: .78rem; padding: 4px 10px; border-radius: 999px; background: #F6F1FF; border: 1px dashed #B79CFF; }
+  .card .mini { text-align: left; padding: 8px 0; border-bottom: 1px dashed #E4DAFF; font-size: .9rem; color: var(--ink2); } .card .mini b { color: var(--ink); font-family: Fraunces, serif; }
+  .btn { margin-top: 12px; border: 0; background: linear-gradient(135deg, #7B5CD6, #5B8DEF); color: #fff; font: 700 1rem "DM Sans"; padding: 12px 22px; border-radius: 999px; cursor: pointer; box-shadow: 0 10px 22px -10px rgba(91,92,214,.8); }
+  .btn.alt { background: #fff; color: var(--purple); border: 2px dashed var(--purple); box-shadow: none; }
+  .score { font: 700 3rem Fraunces, serif; color: var(--rose); line-height: 1; }
+  .final-avatar { width: 150px; margin: 6px auto; }
+  @media (max-width: 640px) { .dress { width: 104px; right: 10px; bottom: 10px; } .tagbox { min-width: 0; } }
+  .top { display: flex; gap: 8px; }
+  .top button { pointer-events: auto; width: 38px; height: 38px; border-radius: 50%; border: 0; background: rgba(255,255,255,.85); font-size: 1rem; cursor: pointer; box-shadow: 0 8px 18px -10px rgba(59,42,107,.5); color: var(--ink); }
+  /* night satin (dark mode) */
+  :root[data-theme="dark"] { --ink: #F3EEFF; --ink2: #CFC5EC; --purple: #C9B8FF; color-scheme: dark; }
+  :root[data-theme="dark"] body { background: linear-gradient(160deg, #241A42, #2E2052 40%, #1E1638 70%, #33204F); }
+  :root[data-theme="dark"] .tagbox, :root[data-theme="dark"] .card { background: #241C3A; }
+  :root[data-theme="dark"] .bar { background: #3A2E5C; }
+  :root[data-theme="dark"] .top a, :root[data-theme="dark"] .top button { background: rgba(36,28,58,.9); }
+  :root[data-theme="dark"] .dress { background: rgba(36,28,58,.8); }
+  :root[data-theme="dark"] .card .chips span { background: #2E2450; }
+  :root[data-theme="dark"] .card .mini { border-color: #3A2E5C; }
+  :root[data-theme="dark"] .card .btnhole { box-shadow: inset 0 0 0 4px #241C3A; }
+  :root[data-theme="dark"] .btn.alt { background: transparent; }
+  :root[data-theme="dark"] .card a { color: #C9B8FF; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="hud">
+  <div class="tagbox"><small id="pieceTag">PIEZA 1/4</small><b id="pieceName">Manga</b><div class="bar"><i id="prog"></i></div><div class="acc">precisión <b id="acc">100%</b></div></div>
+  <div class="top"><button id="theme" type="button" aria-label="Cambiar tema claro/oscuro">☾</button><a href="index.html">Ver portafolio ›</a></div>
+</div>
+<div class="dress">
+  <svg viewBox="0 0 120 150" aria-hidden="true">
+    <defs><pattern id="dot" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#B79CFF"/><circle cx="4" cy="4" r="1.6" fill="#fff"/></pattern></defs>
+    <path id="p0" class="part" d="M26 30Q14 34 12 50L22 54L34 38Z M94 30Q106 34 108 50L98 54L86 38Z"/>
+    <path id="p1" class="part" d="M44 22Q60 30 76 22L80 30Q60 40 40 30Z"/>
+    <path id="p2" class="part" d="M36 30Q60 38 84 30L86 72H34Z M34 72Q12 112 8 132Q60 144 112 132Q108 112 86 72Z"/>
+    <path id="p3" class="part" d="M60 72Q48 62 44 70Q46 78 60 73Q74 78 76 70Q72 62 60 72Z"/>
+  </svg>
+  <small>TU VESTIDO</small>
+</div>
+<div class="modal open" id="modal"><div class="card" id="card"></div></div>
+
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/avatar.js"></script>
+<script>
+(function () {
+  i18n.lang = "es";
+  const t = (k) => i18n.t(k), pk = (v) => i18n.pick(v);
+  const cv = document.getElementById("c"), g = cv.getContext("2d");
+  let W, H, DPR;
+  function size() { DPR = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * DPR; cv.height = H * DPR; cv.style.width = W + "px"; cv.style.height = H + "px"; g.setTransform(DPR, 0, 0, DPR, 0, 0); }
+  size(); addEventListener("resize", size);
+
+  /* ---------- the 4 pieces (each unlocks a section) ---------- */
+  const PIECES = [
+    { name: "Manga", section: "Sobre mí", amp: 50, f: .006, f2: .013, len: 1000 },
+    { name: "Cuello", section: "Habilidades", amp: 70, f: .008, f2: .017, len: 1050 },
+    { name: "Falda", section: "Proyectos", amp: 95, f: .009, f2: .021, len: 1100 },
+    { name: "Moño", section: "Contacto", amp: 80, f: .012, f2: .026, len: 1000 },
+  ];
+  let idx = 0, state = "intro", scroll = 0, needleX = 0, targetX = 0, stitches = [], good = 0, total = 0, sampleT = 0, needleBob = 0, sparks = [];
+  const SPEED = 95;
+  const NEEDLE_Y = () => Math.min(H * .38, 300);
+  const pathX = (y, p) => W / 2 + Math.sin(y * p.f) * p.amp + Math.sin(y * p.f2 + 1.3) * p.amp * .35;
+
+  /* ---------- input ---------- */
+  const keys = new Set();
+  addEventListener("pointermove", (e) => { targetX = e.clientX; });
+  addEventListener("pointerdown", (e) => { targetX = e.clientX; });
+  addEventListener("keydown", (e) => keys.add(e.key));
+  addEventListener("keyup", (e) => keys.delete(e.key));
+
+  /* ---------- flow ---------- */
+  const modal = document.getElementById("modal"), card = document.getElementById("card");
+  function show(html) { card.innerHTML = `<div class="btnhole"></div>${html}`; modal.classList.add("open"); }
+  function hide() { modal.classList.remove("open"); }
+  function intro() {
+    show(`<span class="kick">MINI-JUEGO · ATELIER JHANINA</span><h2>Cose el vestido</h2>
+      <p>Mueve la aguja con el <b>mouse</b> (o el dedo, o las flechas ← →) para coser <b>siguiendo la línea punteada</b> mientras la tela avanza. Cada pieza que coses desbloquea una parte de mi portafolio, y al final… ¡estreno el vestido! 👗</p>
+      <button class="btn" id="go" type="button">Empezar a coser 🪡</button>`);
+    document.getElementById("go").onclick = () => { hide(); begin(); };
+  }
+  function begin() {
+    scroll = -NEEDLE_Y() - 40; stitches = []; good = 0; total = 0; sparks = [];
+    needleX = targetX = W / 2;
+    const p = PIECES[idx];
+    document.getElementById("pieceTag").textContent = `PIEZA ${idx + 1}/4 · DESBLOQUEA: ${p.section.toUpperCase()}`;
+    document.getElementById("pieceName").textContent = p.name;
+    state = "sew";
+  }
+  function finishPiece() {
+    state = "card";
+    const acc = total ? Math.round((good / total) * 100) : 0, p = PIECES[idx];
+    if (acc < 55) {
+      show(`<span class="kick">PIEZA ${idx + 1}/4 · ${p.name.toUpperCase()}</span><h2>¡Casi!</h2><div class="score">${acc}%</div>
+        <p style="text-align:center">Se te escaparon algunas puntadas. Sigue la línea punteada con calma.</p><button class="btn" id="go" type="button">Coser otra vez ↺</button>`);
+      document.getElementById("go").onclick = () => { hide(); begin(); };
+      return;
+    }
+    document.getElementById("p" + idx).classList.add("done");
+    const body = [
+      () => `<p>${t("about.p1")}</p><p>${t("about.p2")}</p>`,
+      () => SKILLS.map((s) => `<p style="text-align:center;margin:10px 0 2px"><b>${pk(s.title)}</b></p><div class="chips">${s.items.map((i) => `<span>${i}</span>`).join("")}</div>`).join(""),
+      () => PROJECTS.filter((x) => x.featured).map((x) => `<div class="mini"><b>${pk(x.title)}</b> · ${pk(x.kicker)}<br>${pk(x.desc)}</div>`).join(""),
+      () => `<p>${t("contact.lead")}</p><p style="text-align:center"><a href="mailto:${PROFILE.email}"><b>${PROFILE.email}</b></a><br><a href="${PROFILE.linkedin}" target="_blank">LinkedIn</a> · <a href="${PROFILE.github}" target="_blank">GitHub</a> · <a href="${PROFILE.instagram}" target="_blank">Instagram</a></p>`,
+    ][idx]();
+    const last = idx === PIECES.length - 1;
+    show(`<span class="kick">PIEZA ${idx + 1}/4 COSIDA · ${acc}% DE PRECISIÓN · SECCIÓN DESBLOQUEADA</span><h2>${p.section}</h2>${body}
+      <button class="btn" id="go" type="button">${last ? "¡Ver mi vestido terminado! 👗" : `Siguiente pieza: ${PIECES[idx + 1].name} ▶`}</button>`);
+    document.getElementById("go").onclick = () => { if (last) return finale(); hide(); idx++; begin(); };
+  }
+  function finale() {
+    const cfg = { silhouette: "swing", fabric: "polka", color: "lilac", details: ["bow", "lace", "puff"] };
+    show(`<span class="kick">VESTIDO TERMINADO · 4/4 PIEZAS</span><h2>¡Lo estreno!</h2>
+      <div class="final-avatar">${avatarSVG("custom", "fin", cfg)}</div>
+      <p style="text-align:center">Gracias por coser conmigo. Así trabajo también el software: <b>a medida, probado y hecho para quedar perfecto</b>. ✂</p>
+      <button class="btn" id="go" type="button">Ver el portafolio completo ›</button> <button class="btn alt" id="again" type="button">Coser otra vez</button>`);
+    document.getElementById("go").onclick = () => (location.href = "index.html");
+    document.getElementById("again").onclick = () => { idx = 0; document.querySelectorAll(".part").forEach((p) => p.classList.remove("done")); hide(); begin(); };
+  }
+
+  /* ---------- loop ---------- */
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(.05, (now - last) / 1000); last = now;
+    const p = PIECES[idx], ny = NEEDLE_Y();
+    if (state === "sew") {
+      if (keys.has("ArrowLeft") || keys.has("a")) targetX -= 320 * dt;
+      if (keys.has("ArrowRight") || keys.has("d")) targetX += 320 * dt;
+      targetX = Math.max(30, Math.min(W - 30, targetX));
+      needleX += (targetX - needleX) * Math.min(1, dt * 12);
+      scroll += SPEED * dt;
+      needleBob += dt * 26;
+      const fy = scroll + ny;                       // fabric y under the needle
+      sampleT -= dt;
+      if (fy > 0 && fy < p.len && sampleT <= 0) {
+        sampleT = .07;
+        const d = Math.abs(needleX - pathX(fy, p));
+        const ok = d < 16, near = d < 30;
+        total++; if (ok) good++; else if (near) good += .5;
+        stitches.push({ x: needleX, y: fy, ok: ok || near });
+        if (ok && Math.random() < .35) sparks.push({ x: needleX, y: ny + 6, vx: (Math.random() - .5) * 80, vy: -40 - Math.random() * 60, life: .5 });
+        document.getElementById("acc").textContent = Math.round((good / total) * 100) + "%";
+      }
+      document.getElementById("prog").style.width = Math.max(0, Math.min(100, (fy / p.len) * 100)) + "%";
+      if (fy > p.len + 40) finishPiece();
+    }
+    draw(p, ny);
+    sparks.forEach((s) => { s.x += s.vx * dt; s.y += s.vy * dt; s.vy += 160 * dt; s.life -= dt; }); sparks = sparks.filter((s) => s.life > 0);
+    requestAnimationFrame(frame);
+  }
+
+  const isDark = () => document.documentElement.dataset.theme === "dark";
+  const themeBtn = document.getElementById("theme");
+  const syncBtn = () => (themeBtn.textContent = isDark() ? "☀︎" : "☾");
+  themeBtn.addEventListener("click", () => { const n = isDark() ? "light" : "dark"; document.documentElement.dataset.theme = n; try { localStorage.setItem("jc-theme", n); } catch (e) {} syncBtn(); });
+  syncBtn();
+  function draw(p, ny) {
+    const D = isDark();
+    const C = D ? { paper: "#2B2145", dots: "rgba(201,184,255,.12)", note: "rgba(201,184,255,.6)", line: "#C9B8FF", sheen: "rgba(214,196,255,.16)", arm: "#7B5CD6", arm2: "#5A3FB0" }
+                : { paper: "#FFFDF8", dots: "rgba(123,92,214,.10)", note: "rgba(123,92,214,.55)", line: "#7B5CD6", sheen: "rgba(255,255,255,.35)", arm: "#B79CFF", arm2: "#9A7BF0" };
+    g.clearRect(0, 0, W, H);
+    // satin sheen
+    const sh = g.createLinearGradient(0, 0, W, H); const k = (performance.now() / 3000) % 1;
+    sh.addColorStop(Math.max(0, k - .15), "rgba(255,255,255,0)"); sh.addColorStop(k, C.sheen); sh.addColorStop(Math.min(1, k + .15), "rgba(255,255,255,0)");
+    g.fillStyle = sh; g.fillRect(0, 0, W, H);
+    // the paper pattern strip moving up
+    const top = -scroll, stripW = Math.min(W - 40, 560), sx = W / 2 - stripW / 2;
+    g.save();
+    g.shadowColor = "rgba(59,42,107,.25)"; g.shadowBlur = 24; g.shadowOffsetY = 10;
+    g.fillStyle = C.paper; g.fillRect(sx, top, stripW, p.len);
+    g.restore();
+    g.fillStyle = C.dots;
+    for (let y = Math.max(0, Math.floor(-top / 24) * 24); y < p.len && top + y < H; y += 24) for (let x = 12; x < stripW; x += 24) g.fillRect(sx + x, top + y, 2, 2);
+    g.font = "18px Caveat"; g.fillStyle = C.note; g.textAlign = "left";
+    g.fillText(`patrón: ${p.name.toLowerCase()} · talla full-stack`, sx + 14, top + 26);
+    // scissors marks at start/end
+    g.fillStyle = C.note; g.font = "20px DM Sans"; g.fillText("✂", sx + stripW - 30, top + 26);
+    // dashed pattern line
+    g.save(); g.setLineDash([10, 8]); g.lineWidth = 2.5; g.strokeStyle = C.line; g.beginPath();
+    for (let y = 0; y <= p.len; y += 6) { const X = pathX(y, p), Y = top + y; if (Y < -20 || Y > H + 20) continue; y === 0 || Y <= -14 ? g.moveTo(X, Y) : g.lineTo(X, Y); }
+    g.stroke(); g.restore();
+    // stitches
+    g.lineCap = "round";
+    for (let i = 1; i < stitches.length; i++) {
+      const a = stitches[i - 1], b = stitches[i]; const ay = top + a.y, by = top + b.y; if (by < -10 || ay > H + 10) continue;
+      g.strokeStyle = b.ok ? "#FF5C9A" : "rgba(255,92,154,.35)"; g.lineWidth = b.ok ? 3 : 2;
+      g.beginPath(); g.moveTo(a.x, ay); g.lineTo(a.x + (b.x - a.x) * .62, ay + (by - ay) * .62); g.stroke();
+    }
+    // sewing machine arm + presser foot + needle
+    g.fillStyle = C.arm; roundRect(needleX - 34, ny - 120, 68, 70, 16); g.fill();
+    g.fillStyle = C.arm2; roundRect(needleX - 22, ny - 54, 44, 18, 6); g.fill();
+    g.fillStyle = "#FFFFFF"; g.font = "700 12px Fraunces"; g.textAlign = "center"; g.fillText("Maison J.", needleX, ny - 80);
+    const bob = Math.sin(needleBob) * 5;
+    g.strokeStyle = "#9AA0B4"; g.lineWidth = 3; g.beginPath(); g.moveTo(needleX, ny - 36); g.lineTo(needleX, ny + 6 + bob); g.stroke();
+    g.fillStyle = "#E4E6EE"; g.fillRect(needleX - 14, ny - 6 + bob * .3, 28, 5);
+    g.strokeStyle = "#FF5C9A"; g.lineWidth = 1.5; g.beginPath(); g.moveTo(needleX, ny - 120); g.quadraticCurveTo(needleX + 18, ny - 70, needleX + 1, ny - 30); g.stroke();
+    // guide ring under the needle
+    const d = Math.abs(needleX - pathX(scroll + ny, p));
+    g.strokeStyle = d < 16 ? "rgba(61,187,138,.8)" : d < 30 ? "rgba(255,214,107,.9)" : "rgba(255,92,154,.8)"; g.lineWidth = 2;
+    g.beginPath(); g.arc(needleX, ny + 8, 13, 0, Math.PI * 2); g.stroke();
+    sparks.forEach((s) => { g.fillStyle = `rgba(255,154,203,${s.life * 2})`; g.fillRect(s.x, s.y, 3, 3); });
+  }
+  function roundRect(x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
+
+  intro();
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

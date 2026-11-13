@@ -851,3 +851,8 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 @keyframes emb-reveal { to { clip-path: inset(0 0 0 0); } }
 .term-type { clip-path: inset(0 100% 0 0); animation: term-type 1s steps(18) 1s forwards; }
 @keyframes term-type { to { clip-path: inset(0 0 0 0); } }
+
+/* hero: play button for the sewing mini-game */
+.btn-play { background: linear-gradient(135deg, #FF9ACB, #FF5C9A); color: #fff; box-shadow: 0 10px 24px -10px rgba(255, 92, 154, .8); }
+.btn-play::before { display: none; }
+.btn-play:hover { box-shadow: 0 14px 28px -10px rgba(255, 92, 154, .9); }

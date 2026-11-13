@@ -4,6 +4,7 @@
    ============================================================ */
 window.I18N = {
   en: {
+    "hero.play": "Play: sew the dress",
     "intro.care": "wash with npm test · never iron in prod ✂", "intro.skip": "Skip intro ›",
     "studio.no": "No. 05", "studio.title": "The design studio", "studio.note": "a dressmaker mini-game, written in code",
     "studio.s1": "Silhouette", "studio.s2": "Fabric", "studio.s3": "Colour", "studio.s4": "Details",
@@ -90,6 +91,7 @@ window.I18N = {
   },
 
   es: {
+    "hero.play": "Jugar: cose el vestido",
     "intro.care": "lavar con npm test · no planchar en prod ✂", "intro.skip": "Saltar intro ›",
     "studio.no": "N.º 05", "studio.title": "El estudio de diseño", "studio.note": "un mini-juego de modista, escrito en código",
     "studio.s1": "Silueta", "studio.s2": "Tela", "studio.s3": "Color", "studio.s4": "Detalles",
