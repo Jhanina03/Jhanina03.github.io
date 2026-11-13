@@ -30,7 +30,7 @@ Soy estudiante de 8.º semestre de **Ingeniería de Software** en la Universidad
 
 ### 👗 My wardrobe
 
-Every section of my portfolio unlocks a new look. Can you collect all seven?
+Every section of my portfolio unlocks a new look. Can you collect all nine? (one is secret 🤫)
 
 <a href="https://jhanina03.github.io/"><img src="wardrobe.svg" alt="Seven illustrated looks of Jhanina on a clothes rack" width="100%"></a>
 
