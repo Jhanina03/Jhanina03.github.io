@@ -232,9 +232,11 @@
      mannequin view and the avatar ("custom" look). */
   const DRESS_COLORS = {
     lilac: "#B79CFF", lavender: "#D9CCFF", purple: "#7B5CD6", sky: "#8CC8FF", baby: "#BFE3FF", blue: "#5B8DEF", navy: "#3B4C9B",
-    pink: "#FF9ACB", rose: "#FF7AB8", hot: "#FF4F8B", white: "#F7F3FF", cream: "#FFF4E6", black: "#2A2530",
+    pink: "#FF9ACB", rose: "#FF7AB8", hot: "#FF4F8B", red: "#E5484D", wine: "#8E2D4A", peach: "#FFC7A8",
+    mint: "#B8EBC8", sage: "#8FBF9F", gold: "#E9C46A", silver: "#C9CDD6", gray: "#8C8F99", white: "#F7F3FF", cream: "#FFF4E6", black: "#2A2530",
   };
-  const LIGHT = ["white", "cream", "lavender", "baby"];
+  // pattern ink: purple on light fabrics, white on the rest (works for any custom hex too)
+  const isLight = (hex) => { const h = hex.replace("#", ""); if (h.length < 6) return false; const [r, g, b] = [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16) / 255); return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.72; };
   const SKIRTS = {
     mini:    "M66 208Q50 234 47 252H153Q150 234 134 208Z",
     swing:   "M66 208Q34 246 30 272Q100 286 170 272Q166 246 134 208Z",
@@ -248,7 +250,7 @@
   const HEMS = { mini: [47, 153, 252], swing: [30, 170, 274], aline: [42, 158, 296], ball: [18, 182, 302], mermaid: [46, 154, 302], empire: [38, 162, 300], tiered: [30, 170, 298], pencil: [70, 130, 286] };
   function dressParts(cfg, uid) {
     const c = DRESS_COLORS[cfg.color] || cfg.color || "#B79CFF";
-    const ink = LIGHT.includes(cfg.color) ? "#B79CFF" : cfg.color === "black" ? "#FF9ACB" : "#FFFFFF";
+    const ink = cfg.color === "black" ? "#FF9ACB" : isLight(c) ? "#B79CFF" : "#FFFFFF";
     const heartP = (x, y, s) => `<path transform="translate(${x} ${y}) scale(${s})" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="${ink}" opacity=".9"/>`;
     const starP = (x, y, s) => `<path transform="translate(${x} ${y}) scale(${s})" d="M0-5 1.2-1.6 5-1.5 2-.7 3 4 0 1.6-3 4-2-.7-5-1.5-1.2-1.6Z" fill="${ink}" opacity=".9"/>`;
     const pat = {
