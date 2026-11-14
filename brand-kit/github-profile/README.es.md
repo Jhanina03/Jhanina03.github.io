@@ -7,10 +7,10 @@
 </a>
 
 <p align="center">
-  <a href="https://jhanina03.github.io/?lang=es"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-portfolio-es.svg"><img src="assets/cta-portfolio-es.svg" alt="Ver mi portafolio" height="48"></picture></a>
-  <a href="https://jhanina03.github.io/game.html?lang=es"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-play-es.svg"><img src="assets/cta-play-es.svg" alt="Juega mis juegos" height="48"></picture></a>
-  <a href="https://jhanina03.github.io/cv.html?lang=es"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-cv-es.svg"><img src="assets/cta-cv-es.svg" alt="CV rápido" height="48"></picture></a>
-  <a href="#contacto"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-talk-es.svg"><img src="assets/cta-talk-es.svg" alt="Hablemos" height="48"></picture></a>
+  <a href="https://jhanina03.github.io/?lang=es"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-portfolio-es.svg"><img src="assets/cta-portfolio-es.svg" alt="Ver mi portafolio" height="42"></picture></a>
+  <a href="https://jhanina03.github.io/game.html?lang=es"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-play-es.svg"><img src="assets/cta-play-es.svg" alt="Juega mis juegos" height="42"></picture></a>
+  <a href="https://jhanina03.github.io/cv.html?lang=es"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-cv-es.svg"><img src="assets/cta-cv-es.svg" alt="CV rápido" height="42"></picture></a>
+  <a href="#contacto"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-talk-es.svg"><img src="assets/cta-talk-es.svg" alt="Hablemos" height="42"></picture></a>
 </p>
 
 <p align="center">
@@ -44,7 +44,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Jhanina03?tab=repositories"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-repos-es.svg"><img src="assets/cta-repos-es.svg" alt="Ver todos los repositorios" height="48"></picture></a>
+  <a href="https://github.com/Jhanina03?tab=repositories"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-repos-es.svg"><img src="assets/cta-repos-es.svg" alt="Ver todos los repositorios" height="42"></picture></a>
 </p>
 
 <h2 id="stack" align="center"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/h2-es.svg"><img src="assets/h2-es.svg" alt="Tecnologías" width="720"></picture></h2>

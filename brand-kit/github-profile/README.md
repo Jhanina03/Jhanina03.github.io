@@ -7,10 +7,10 @@
 </a>
 
 <p align="center">
-  <a href="https://jhanina03.github.io/"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-portfolio.svg"><img src="assets/cta-portfolio.svg" alt="View my portfolio" height="48"></picture></a>
-  <a href="https://jhanina03.github.io/game.html"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-play.svg"><img src="assets/cta-play.svg" alt="Play my games" height="48"></picture></a>
-  <a href="https://jhanina03.github.io/cv.html"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-cv.svg"><img src="assets/cta-cv.svg" alt="Quick CV" height="48"></picture></a>
-  <a href="#contact"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-talk.svg"><img src="assets/cta-talk.svg" alt="Let's talk" height="48"></picture></a>
+  <a href="https://jhanina03.github.io/"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-portfolio.svg"><img src="assets/cta-portfolio.svg" alt="View my portfolio" height="42"></picture></a>
+  <a href="https://jhanina03.github.io/game.html"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-play.svg"><img src="assets/cta-play.svg" alt="Play my games" height="42"></picture></a>
+  <a href="https://jhanina03.github.io/cv.html"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-cv.svg"><img src="assets/cta-cv.svg" alt="Quick CV" height="42"></picture></a>
+  <a href="#contact"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-talk.svg"><img src="assets/cta-talk.svg" alt="Let's talk" height="42"></picture></a>
 </p>
 
 <p align="center">
@@ -44,7 +44,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Jhanina03?tab=repositories"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-repos.svg"><img src="assets/cta-repos.svg" alt="Browse all repositories" height="48"></picture></a>
+  <a href="https://github.com/Jhanina03?tab=repositories"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-repos.svg"><img src="assets/cta-repos.svg" alt="Browse all repositories" height="42"></picture></a>
 </p>
 
 <h2 id="stack" align="center"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/h2.svg"><img src="assets/h2.svg" alt="Tech stack" width="720"></picture></h2>
