@@ -332,3 +332,18 @@
     if (found.size === 5) { $(".qa-btn").textContent = i18n.lang === "es" ? "Añadir al carrito" : "Add to cart"; $(".qa-title").textContent = t("qa.product"); }
   });
 })();
+
+/* flip card: click, tap or Enter turns the avatar card to show the photo side */
+(function () {
+  const card = document.querySelector(".flip");
+  if (!card) return;
+  const flip = () => {
+    const on = card.classList.toggle("is-flipped");
+    card.setAttribute("aria-pressed", String(on));
+  };
+  if (new URLSearchParams(location.search).has("flip")) flip(); // ?flip opens the photo side (handy for previews)
+  card.addEventListener("click", (e) => { if (!e.target.closest("a")) flip(); });
+  card.addEventListener("keydown", (e) => {
+    if ((e.key === "Enter" || e.key === " ") && !e.target.closest("a")) { e.preventDefault(); flip(); }
+  });
+})();
