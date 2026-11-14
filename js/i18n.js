@@ -4,7 +4,7 @@
    ============================================================ */
 window.I18N = {
   en: {
-    "intro.q": "What would you like to do?", "intro.portfolio": "View portfolio", "intro.portfolioSub": "open the atelier", "intro.cv": "Quick CV", "intro.cvSub": "one-page summary", "intro.play": "Play", "intro.playSub": "choose a game", "intro.g1": "Sew the outfit", "intro.g2": "Bug Invaders",
+    "intro.hello": "Hello, I'm", "intro.q": "What would you like to do?", "intro.portfolio": "View portfolio", "intro.portfolioSub": "projects & experience", "intro.cv": "Quick CV", "intro.cvSub": "one-page summary", "intro.play": "Play", "intro.playSub": "choose a game", "intro.g1": "Sew the outfit", "intro.g2": "Bug Invaders",
     "hero.play": "Play: sew the dress",
     "intro.care": "wash with npm test · never iron in prod ✂", "intro.skip": "Skip intro ›",
     "studio.no": "No. 05", "studio.title": "The design studio", "studio.note": "a dressmaker mini-game, written in code",
@@ -92,7 +92,7 @@ window.I18N = {
   },
 
   es: {
-    "intro.q": "¿Qué te gustaría hacer?", "intro.portfolio": "Ver portafolio", "intro.portfolioSub": "abrir el atelier", "intro.cv": "CV rápido", "intro.cvSub": "resumen en una página", "intro.play": "Jugar", "intro.playSub": "elige un juego", "intro.g1": "Cose el outfit", "intro.g2": "Bug Invaders",
+    "intro.hello": "Hola, soy", "intro.q": "¿Qué te gustaría hacer?", "intro.portfolio": "Ver portafolio", "intro.portfolioSub": "proyectos y experiencia", "intro.cv": "CV rápido", "intro.cvSub": "resumen en una página", "intro.play": "Jugar", "intro.playSub": "elige un juego", "intro.g1": "Cose el outfit", "intro.g2": "Bug Invaders",
     "hero.play": "Jugar: cose el vestido",
     "intro.care": "lavar con npm test · no planchar en prod ✂", "intro.skip": "Saltar intro ›",
     "studio.no": "N.º 05", "studio.title": "El estudio de diseño", "studio.note": "un mini-juego de modista, escrito en código",

@@ -924,3 +924,69 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
   box-shadow: 0 8px 18px -10px rgba(59, 42, 107, .5); outline: 2px dashed #FF9ACB; outline-offset: -5px; transition: transform .2s; }
 .ic-mini:hover, .ic-mini:focus-visible { transform: translateY(-3px); }
 .ic-btn.play[aria-expanded="true"] { outline-color: #FF5C9A; }
+
+/* intro v4: calm, professional — one smooth fabric, no sheen or weave, only the name is sewn */
+.zip-half { background: linear-gradient(160deg, var(--satin-1), var(--satin-3)) !important; }
+.zip-half .sheen, .zip-half::after { display: none !important; }
+.ribbons, .floaters, .sequins { display: none !important; }
+/* the tag is shorter now, so it can be a little wider at the same height */
+.loader { --tagw: min(400px, 80vw, 56vh); }
+@media (max-width: 640px) { .loader { --tagw: min(340px, 76vw, 48vh); } }
+
+/* intro v5: the name is sewn (outline drawn, filled, stitched) in front of the zipper */
+.intro-tag, .tag-shadow { display: none !important; }
+.intro-sew { position: absolute; left: 50%; top: clamp(30px, 12vh, 130px); width: min(620px, 92vw); transform: translateX(-50%); z-index: 5;
+  display: grid; justify-items: center; text-align: center; pointer-events: none; }
+.intro-sew::before { content: ""; position: absolute; inset: -6% -8% -4%; z-index: -1; border-radius: 50%;
+  background: radial-gradient(closest-side, var(--satin-1) 55%, transparent); }
+.sew-art { width: 100%; height: auto; overflow: visible; }
+.sew-art text { font-family: var(--hand); font-weight: 700; font-size: 132px; }
+.sew-thread { fill: none; stroke: #FF5C9A; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: sew-draw 1.6s ease-in-out .3s forwards; }
+.sew-outline { fill: none; stroke: var(--purple); stroke-width: 2.2; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: sew-draw 1.5s ease-in-out .4s forwards; }
+.sew-fill { fill: url(#sew-fill); opacity: 0; animation: sew-in .45s ease 1.7s forwards; }
+.sew-stitch { fill: none; stroke: #fff; stroke-width: 1.6; stroke-dasharray: 6 5; opacity: 0; animation: sew-in .4s ease 2s forwards; }
+.sew-needle { position: absolute; top: 15%; left: 6%; font-size: 34px; transform: rotate(45deg);
+  animation: sew-needle 1.5s ease-in-out .4s forwards, sew-bob .25s ease-in-out .4s 6; }
+.sew-surname { margin: -26px 0 0; font-family: Fraunces, Georgia, serif; font-style: italic; font-size: clamp(22px, 3.4vw, 32px); color: var(--purple); opacity: 0; animation: sew-in .5s ease 1.9s forwards; }
+.sew-role { margin: 10px 0 0; font-family: var(--sans); font-weight: 700; font-size: clamp(14px, 2vw, 18px); letter-spacing: .34em; text-transform: uppercase; color: var(--ink, #2B2140); opacity: 0; animation: sew-in .5s ease 2.15s forwards; }
+.sew-sub { margin: 6px 0 0; font-family: var(--sans); font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--purple); opacity: 0; animation: sew-in .5s ease 2.3s forwards; }
+.sew-loading { position: absolute; left: 0; right: 0; top: 74%; display: grid; justify-items: center; gap: 6px; animation: sew-out .35s ease 1.8s forwards; }
+.sew-loading p { margin: 0; font-family: var(--hand); font-size: 1.5rem; color: var(--purple); }
+.sew-spools { display: flex; gap: 18px; }
+.sew-spools .spool { width: 34px; height: 38px; }
+.sew-spools .spool::before, .sew-spools .spool::after { height: 8px; }
+.sew-spools .spool span { inset: 5px 6px; }
+.sew-spools .spool.alt { animation-direction: reverse; }
+.sew-spools .spool.alt span { background: repeating-linear-gradient(0deg, #7FB6FF 0 4px, #FFFFFF 4px 8px); }
+@keyframes sew-draw { to { stroke-dashoffset: 0; } }
+@keyframes sew-in { to { opacity: 1; } }
+@keyframes sew-out { to { opacity: 0; visibility: hidden; } }
+@keyframes sew-needle { 90% { opacity: 1; } to { left: 86%; top: 11%; opacity: 0; } }
+@keyframes sew-bob { 50% { margin-top: 10px; } }
+.loader.opening .intro-sew { animation: sew-out .4s ease forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .sew-thread, .sew-outline { stroke-dashoffset: 0; animation: none; }
+  .sew-fill, .sew-stitch, .sew-surname, .sew-role, .sew-sub { opacity: 1; animation: none; }
+  .sew-needle, .sew-loading { display: none; }
+}
+/* light mode: deeper colours so the sewn name reads well on lilac */
+.sew-fill { fill: url(#sew-fill-l); }
+.sew-stitch { stroke-opacity: .75; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .sew-fill { fill: url(#sew-fill); } :root:not([data-theme="light"]) .sew-stitch { stroke-opacity: 1; } }
+:root[data-theme="dark"] .sew-fill { fill: url(#sew-fill); } :root[data-theme="dark"] .sew-stitch { stroke-opacity: 1; }
+/* intro v5 shine: a gloss sweeps across the sewn name, a few sparkles twinkle, a small "Hello, I'm" gives context */
+.sew-hello { margin: 0 0 -34px; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .4em; text-transform: uppercase; color: #FF5C9A; opacity: 0; animation: sew-in .5s ease .2s forwards; }
+.sew-gloss { transform: skewX(-18deg); animation: sew-gloss 4.5s ease-in-out 2.2s infinite; }
+@keyframes sew-gloss { 0% { transform: skewX(-18deg) translateX(0); } 35%, 100% { transform: skewX(-18deg) translateX(760px); } }
+.sew-spark { opacity: 0; transform-box: fill-box; transform-origin: center; animation: sew-spark 2.6s ease-in-out infinite; }
+@keyframes sew-spark { 0%, 100% { opacity: 0; scale: .4; } 45% { opacity: 1; scale: 1; } 70% { opacity: .2; scale: .7; } }
+.sew-role { background: linear-gradient(90deg, var(--ink) 0 40%, #FF5C9A 50%, var(--ink) 60% 100%) 100% 0 / 260% 100% no-repeat; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: sew-in .5s ease 2.15s forwards, sew-shimmer 4.5s ease-in-out 2.6s infinite; }
+@keyframes sew-shimmer { 0% { background-position: 100% 0; } 40%, 100% { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) { .sew-hello { opacity: 1; animation: none; } .sew-gloss, .sew-spark { display: none; } .sew-role { -webkit-text-fill-color: currentColor; background: none; } }
+.intro-sew::before { inset: -16% -8% -4%; }
+.sew-hello { position: relative; padding: 2px 10px; background: var(--satin-1); border-radius: 999px; }
+/* sparkles: gold and pink on light, white and champagne on dark */
+.sew-spark { fill: #F2B84B; } .sew-spark:nth-of-type(even) { fill: #FF7AB8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .sew-spark { fill: #FFFFFF; } :root:not([data-theme="light"]) .sew-spark:nth-of-type(even) { fill: #FFE7A8; } }
+:root[data-theme="dark"] .sew-spark { fill: #FFFFFF; } :root[data-theme="dark"] .sew-spark:nth-of-type(even) { fill: #FFE7A8; }
