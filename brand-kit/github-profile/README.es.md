@@ -3,11 +3,11 @@
 <p align="right"><a href="README.md">🇬🇧 English</a> · <b>🇪🇸 Español</b></p>
 
 <a href="https://jhanina03.github.io/?lang=es">
-  <img src="assets/hero-es.svg" alt="Jhanina Conterón · Ingeniera de Software · Frontend, Bases de datos, QA · Confecciono software como un diseñador confecciona ropa" width="100%">
+  <img src="assets/hero-es.svg" alt="Jhanina Conterón · Ingeniera de Software · Frontend, Bases de datos, QA · Frontends limpios, datos sólidos y código bien probado" width="100%">
 </a>
 
 <p align="center">
-  <a href="https://jhanina03.github.io/?lang=es"><img src="assets/cta-portfolio-es.svg" alt="Explora mi atelier" height="54"></a>
+  <a href="https://jhanina03.github.io/?lang=es"><img src="assets/cta-portfolio-es.svg" alt="Ver mi portafolio" height="54"></a>
   <a href="https://jhanina03.github.io/game.html?lang=es"><img src="assets/cta-play-es.svg" alt="Juega mis juegos" height="54"></a>
   <a href="https://jhanina03.github.io/cv.html?lang=es"><img src="assets/cta-cv-es.svg" alt="CV rápido" height="54"></a>
   <a href="#contacto"><img src="assets/cta-talk-es.svg" alt="Hablemos" height="54"></a>
@@ -23,12 +23,12 @@
 
 <p align="center">
   Soy <b>Ingeniera de Software</b> (8.º semestre, Universidad Técnica de Ambato 🇪🇨). Construyo <b>frontends</b>, diseño <b>bases de datos</b> y rompo cosas a propósito en <b>QA</b>.<br>
-  Confecciono software como un diseñador confecciona ropa: <b>a medida, probado y hecho para quedar perfecto</b>.
+  Me gustan las interfaces que se ven bien, los datos que tienen sentido y el código probado antes de salir.
 </p>
 
-<h2 id="proyectos" align="center"><img src="assets/h1-es.svg" alt="No. 01 · La colección" width="720"></h2>
+<h2 id="proyectos" align="center"><img src="assets/h1-es.svg" alt="Proyectos" width="720"></h2>
 
-<p align="center">Cada pieza nace de un problema real, se cose con código limpio y se revisa costura por costura.</p>
+<p align="center">Algunas cosas que he construido recientemente.</p>
 
 <p align="center">
   <a href="https://jhanina03.github.io/?lang=es"><img src="assets/card-portfolio-es.svg" alt="Jhanina.atelier: portafolio de atelier de moda con juegos y QA" width="48%"></a>
@@ -47,37 +47,37 @@
   <a href="https://github.com/Jhanina03?tab=repositories"><img src="assets/cta-repos-es.svg" alt="Ver todos los repositorios" height="54"></a>
 </p>
 
-<h2 id="stack" align="center"><img src="assets/h2-es.svg" alt="No. 02 · Mi colección de hilos" width="720"></h2>
+<h2 id="stack" align="center"><img src="assets/h2-es.svg" alt="Tecnologías" width="720"></h2>
 
 <p align="center">
-  <img src="assets/stack-es.svg" alt="Carretes de hilo: Frontend (Angular, TypeScript, Next.js, React), Backend (NestJS, Node.js, .NET), Bases de datos (SQL Server, PostgreSQL, MySQL, MongoDB), QA y DevOps (pruebas, pruebas de mutación, Jenkins, Docker, Git)" width="100%">
+  <img src="assets/stack-es.svg" alt="Tecnologías: Frontend (Angular, TypeScript, Next.js, React), Backend (NestJS, Node.js, .NET), Bases de datos (SQL Server, PostgreSQL, MySQL, MongoDB), QA y DevOps (pruebas, pruebas de mutación, Jenkins, Docker, Git)" width="100%">
 </p>
 <p align="center">
   <img src="https://skillicons.dev/icons?i=angular,ts,nextjs,react,dotnet,cs,nestjs,nodejs,postgres,mysql,mongodb,docker,jenkins,git,py&perline=15" alt="Angular, TypeScript, Next.js, React, .NET, C#, NestJS, Node.js, PostgreSQL, MySQL, MongoDB, Docker, Jenkins, Git, Python">
 </p>
 
-<h2 id="actividad" align="center"><img src="assets/h3-es.svg" alt="No. 03 · Cosido, un commit a la vez" width="720"></h2>
+<h2 id="actividad" align="center"><img src="assets/h3-es.svg" alt="Actividad en GitHub" width="720"></h2>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Jhanina03/Jhanina03/output/snake-dark.svg">
-  <img src="https://raw.githubusercontent.com/Jhanina03/Jhanina03/output/snake-light.svg" alt="Un hilo rosa cosiendo mi gráfico de contribuciones" width="100%">
+  <img src="https://raw.githubusercontent.com/Jhanina03/Jhanina03/output/snake-light.svg" alt="Gráfico de contribuciones" width="100%">
 </picture>
 
-<h2 id="sobre-mi" align="center"><img src="assets/h4-es.svg" alt="No. 04 · Detrás de las costuras" width="720"></h2>
+<h2 id="sobre-mi" align="center"><img src="assets/h4-es.svg" alt="Sobre mí" width="720"></h2>
 
 <p align="center">
-  <img src="assets/about-es.svg" alt="Ahora: terminando Ingeniería de Software en la UTA, buscando un puesto junior de frontend, bases de datos o QA, construyendo interfaces divertidas y probadas. Con instrucciones de cuidado." width="100%">
+  <img src="assets/about-es.svg" alt="Ahora: terminando Ingeniería de Software en la UTA, buscando un puesto junior de frontend, bases de datos o QA, construyendo interfaces divertidas y probadas. Y algunos datos curiosos." width="100%">
 </p>
 
 <p align="center">
   🎨 Angular · TypeScript · Next.js &nbsp;|&nbsp; 🗄️ SQL Server · PostgreSQL · MongoDB &nbsp;|&nbsp; 🔍 Pruebas unitarias, de integración y de mutación · CI con Jenkins &nbsp;|&nbsp; 🧠 Proyectos de IA
 </p>
 
-<h2 id="contacto" align="center"><img src="assets/h5-es.svg" alt="No. 05 · Agenda una prueba" width="720"></h2>
+<h2 id="contacto" align="center"><img src="assets/h5-es.svg" alt="Contacto" width="720"></h2>
 
 <p align="center">
   Disponible para <b>prácticas, puestos junior y trabajo remoto</b> desde Ambato, Ecuador.<br>
-  ¿Necesitas un frontend a la medida, una base de datos que no pierda la forma o un ojo de QA en tus costuras? Hablemos.
+  ¿Tienes un proyecto o un puesto en mente? Me encantaría saberlo.
 </p>
 
 <p align="center">
@@ -87,6 +87,6 @@
   <a href="https://www.instagram.com/jhanis_03/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"></a>
 </p>
 
-<a href="https://jhanina03.github.io/?lang=es"><img src="assets/footer-es.svg" alt="Gracias por pasar · un poco de código, un poco de costura, muchas pruebas" width="100%"></a>
+<a href="https://jhanina03.github.io/?lang=es"><img src="assets/footer-es.svg" alt="Gracias por pasar · construyamos algo juntos" width="100%"></a>
 
 <p align="center"><a href="#top">↑ Volver arriba</a></p>
