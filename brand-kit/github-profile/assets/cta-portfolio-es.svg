@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 44" width="244" height="44" role="img" aria-label="Ver mi portafolio"><style>
-  .stitch{stroke-dasharray:8 6;animation:sew 3s linear infinite}@keyframes sew{to{stroke-dashoffset:-28}}
+  .stitch{stroke-dasharray:8 6}
   .tw{animation:tw 2.2s ease-in-out infinite}@keyframes tw{50%{opacity:.25}}
   .flo{animation:flo 4s ease-in-out infinite}@keyframes flo{50%{transform:translateY(-6px)}}
-  .draw{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 3.2s ease-in-out infinite alternate}@keyframes draw{to{stroke-dashoffset:0}}
+  .draw{}
   .av-eyes{transform-origin:100px 105px;animation:blink 5s infinite}@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
   .av-sparkle{animation:tw 1.6s infinite}
   @media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>

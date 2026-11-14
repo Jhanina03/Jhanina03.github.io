@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 424" width="480" height="424" role="img" aria-label="APE7 · GPIS: Team project with a decoupled frontend and backend, containerised with Docker Compose and delivered through a Jenkins pipeline."><style>
+  .stitch{stroke-dasharray:8 6}
+  .tw{animation:tw 2.2s ease-in-out infinite}@keyframes tw{50%{opacity:.25}}
+  .flo{animation:flo 4s ease-in-out infinite}@keyframes flo{50%{transform:translateY(-6px)}}
+  .draw{}
+  .av-eyes{transform-origin:100px 105px;animation:blink 5s infinite}@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+  .av-sparkle{animation:tw 1.6s infinite}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+      <defs><linearGradient id="vc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFDF9"/><stop offset=".55" stop-color="#FBF6F4"/><stop offset="1" stop-color="#F3ECF8"/></linearGradient>
+  <radialGradient id="glowc" cx=".7" cy=".1" r=".7"><stop offset="0" stop-color="#D9468C" stop-opacity="0.08"/><stop offset="1" stop-color="#D9468C" stop-opacity="0"/></radialGradient>
+  <pattern id="damc" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M22 6C26 14 34 18 38 22C34 26 26 30 22 38C18 30 10 26 6 22C10 18 18 14 22 6Z" fill="none" stroke="#7B5CD6" stroke-opacity=".07"/><circle cx="22" cy="22" r="2" fill="#7B5CD6" fill-opacity=".06"/></pattern>
+  <linearGradient id="gtc" x1="0" x2="1"><stop offset="0" stop-color="#7B5CD6"/><stop offset=".5" stop-color="#3E7FCC"/><stop offset="1" stop-color="#D9468C"/></linearGradient><clipPath id="win"><rect x="20" y="0" width="440" height="206" rx="8"/></clipPath></defs>
+      <rect x="2" y="2" width="476" height="420" rx="20" fill="url(#vc)"/><rect x="2" y="2" width="476" height="420" rx="20" fill="url(#damc)"/>
+      <rect x="8" y="8" width="464" height="408" rx="14" fill="none" stroke="#B8955A" stroke-opacity=".55" stroke-width="1.1"/>
+  <rect x="16" y="16" width="448" height="392" rx="10" fill="none" stroke="#D9468C" stroke-opacity=".4" stroke-width="1.1" stroke-dasharray="7 6"/>
+  <g transform="translate(6 6)"><g transform="scale(0.6)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
+  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
+  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
+  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
+  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
+  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
+  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
+</g></g></g>
+  <g transform="translate(474 6) scale(-1 1)"><g transform="scale(0.6)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
+  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
+  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
+  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
+  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
+  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
+  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
+</g></g></g>
+  <g transform="translate(6 418) scale(1 -1)"><g transform="scale(0.6)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
+  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
+  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
+  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
+  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
+  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
+  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
+</g></g></g>
+  <g transform="translate(474 418) scale(-1 -1)"><g transform="scale(0.6)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
+  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
+  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
+  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
+  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
+  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
+  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
+</g></g></g>
+  <g transform="translate(15.8 15.8)"><circle r="4.199999999999999" fill="#D9468C"/><circle r="2.856" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.134" cy="-1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="1.134" cy="-1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="-1.134" cy="1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="1.134" cy="1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/></g><g transform="translate(464.2 15.8)"><circle r="4.199999999999999" fill="#D9468C"/><circle r="2.856" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.134" cy="-1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="1.134" cy="-1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="-1.134" cy="1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="1.134" cy="1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/></g><g transform="translate(15.8 408.2)"><circle r="4.199999999999999" fill="#D9468C"/><circle r="2.856" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.134" cy="-1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="1.134" cy="-1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="-1.134" cy="1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="1.134" cy="1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/></g><g transform="translate(464.2 408.2)"><circle r="4.199999999999999" fill="#D9468C"/><circle r="2.856" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.134" cy="-1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="1.134" cy="-1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="-1.134" cy="1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/><circle cx="1.134" cy="1.134" r="0.5039999999999999" fill="#fff" fill-opacity=".9"/></g>
+      <g transform="translate(240 14) scale(0.8)" fill="none" stroke="#B8955A" stroke-linecap="round">
+  <path d="M-16 0C-34 -14 -58 -12 -70 0C-60 -6 -48 -4 -44 4C-42 9 -48 12 -51 8" stroke-width="1.2"/>
+  <path d="M16 0C34 -14 58 -12 70 0C60 -6 48 -4 44 4C42 9 48 12 51 8" stroke-width="1.2"/>
+  <path d="M-80 2H-96M80 2H96" stroke="#D9468C" stroke-opacity=".7" stroke-width="1.1" stroke-dasharray="3 4"/>
+</g><g transform="translate(240 14)"><circle r="8" fill="#D9468C"/><circle r="5.44" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-2.16" cy="-2.16" r="0.96" fill="#fff" fill-opacity=".9"/><circle cx="2.16" cy="-2.16" r="0.96" fill="#fff" fill-opacity=".9"/><circle cx="-2.16" cy="2.16" r="0.96" fill="#fff" fill-opacity=".9"/><circle cx="2.16" cy="2.16" r="0.96" fill="#fff" fill-opacity=".9"/></g>
+      <circle cx="62" cy="44" r="4" fill="#E0569A"/><circle cx="76" cy="44" r="4" fill="#B79CFF"/><circle cx="90" cy="44" r="4" fill="#3E7FCC"/>
+      <text x="420" y="48" text-anchor="end" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10.5" letter-spacing="1.5" fill="#3E7FCC">ILLUSTRATED</text>
+      <g transform="translate(0 58)">
+        <rect x="18" y="-2" width="444" height="210" rx="10" fill="none" stroke="#D9468C" stroke-opacity=".6" stroke-width="2"/>
+        <g clip-path="url(#win)"><g transform="translate(20 0)">
+      <rect width="440" height="206" fill="#F6F0FC"/>
+      <g transform="translate(40 92)"><circle r="30" fill="#B79CFF" fill-opacity=".9"/><text y="8" text-anchor="middle" font-size="22" font-family="'Segoe UI',Arial,sans-serif" font-weight="700" fill="#1C1430">&lt;/&gt;</text><text y="52" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11" fill="#5A5076">code</text></g><g transform="translate(150 92)"><circle r="30" fill="#3E7FCC" fill-opacity=".9"/><text y="8" text-anchor="middle" font-size="22" font-family="'Segoe UI',Arial,sans-serif" font-weight="700" fill="#1C1430">🐳</text><text y="52" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11" fill="#5A5076">docker</text></g><g transform="translate(260 92)"><circle r="30" fill="#D9468C" fill-opacity=".9"/><text y="8" text-anchor="middle" font-size="22" font-family="'Segoe UI',Arial,sans-serif" font-weight="700" fill="#1C1430">⚙</text><text y="52" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11" fill="#5A5076">jenkins</text></g><g transform="translate(370 92)"><circle r="30" fill="#8EE3E0" fill-opacity=".9"/><text y="8" text-anchor="middle" font-size="22" font-family="'Segoe UI',Arial,sans-serif" font-weight="700" fill="#1C1430">✓</text><text y="52" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11" fill="#5A5076">deploy</text></g>
+      <path d="M72 92H118M182 92H228M292 92H338" stroke="#E0569A" stroke-width="2.5" stroke-dasharray="6 5" class="stitch"/>
+      <text x="220" y="30" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11" fill="#D9468C">docker compose up · pipeline ✓</text></g></g>
+      </g>
+      <text x="34" y="296" font-family="Georgia,'Times New Roman',serif" font-size="24" font-weight="700" fill="#2B2140">APE7 · GPIS</text>
+      <text x="446" y="294" text-anchor="end" font-size="18" fill="#3E7FCC">↗</text>
+      <text x="34" y="276" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10.5" letter-spacing="1.2" fill="#D9468C">MICROSERVICES + CI</text>
+      <text x="34" y="320" font-family="'Segoe UI',Arial,sans-serif" font-size="12.5" fill="#5A5076">Team project with a decoupled frontend and backend,</text><text x="34" y="337" font-family="'Segoe UI',Arial,sans-serif" font-size="12.5" fill="#5A5076">containerised with Docker Compose and…</text>
+      <g transform="translate(34 352)"><rect width="92" height="24" rx="12" fill="#F1E9FB" stroke="#7B5CD6" stroke-opacity=".5"/><text x="46" y="16.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="600" fill="#2B2140">TypeScript</text></g><g transform="translate(134 352)"><rect width="64" height="24" rx="12" fill="#F1E9FB" stroke="#7B5CD6" stroke-opacity=".5"/><text x="32" y="16.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="600" fill="#2B2140">Docker</text></g><g transform="translate(206 352)"><rect width="71" height="24" rx="12" fill="#F1E9FB" stroke="#7B5CD6" stroke-opacity=".5"/><text x="35.5" y="16.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="600" fill="#2B2140">Jenkins</text></g>
+      <path d="M60 388H420" stroke="#7B5CD6" stroke-opacity=".3" stroke-dasharray="4 4"/>
+      <text x="420" y="404" text-anchor="end" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" font-weight="700" letter-spacing="1" fill="#7B5CD6">VIEW CODE</text>
+      <text x="60" y="404" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#3E7FCC">EXPLORE THE PROJECT ↗</text>
+    </svg>
