@@ -1,79 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" role="img" aria-label="Jhanina Conterón · INGENIERA DE SOFTWARE · FRONTEND · BASES DE DATOS · QA"><style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" role="img" aria-label="Jhanina Conterón · INGENIERA DE SOFTWARE · FRONTEND · BASES DE DATOS · QA · atelier ilustrado con laptop, maniquí y carretes de hilo"><style>
   .stitch{stroke-dasharray:8 6}
   .tw{animation:tw 2.2s ease-in-out infinite}@keyframes tw{50%{opacity:.25}}
   .flo{animation:flo 4s ease-in-out infinite}@keyframes flo{50%{transform:translateY(-6px)}}
   .draw{}
   .av-eyes{transform-origin:100px 105px;animation:blink 5s infinite}@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
   .av-sparkle{animation:tw 1.6s infinite}
-  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
-      .look{opacity:0;animation:cyc 24s infinite}.l0{animation-delay:0s}.l1{animation-delay:3s}.l2{animation-delay:6s}.l3{animation-delay:9s}.l4{animation-delay:12s}.l5{animation-delay:15s}.l6{animation-delay:18s}.l7{animation-delay:21s}
-      @keyframes cyc{0%{opacity:0}2%,11%{opacity:1}13%,100%{opacity:0}} @media (prefers-reduced-motion:reduce){.l0{opacity:1!important}[class^=sw]{clip-path:none!important}[class^=ck]{opacity:1!important}}
-      @keyframes type{to{clip-path:inset(0 0 0 0)}} @keyframes pop{to{opacity:1}} .sw0{clip-path:inset(0 100% 0 0);animation:type 1s ease-out 0.4s forwards}.sw1{clip-path:inset(0 100% 0 0);animation:type 1s ease-out 0.9500000000000001s forwards}.sw2{clip-path:inset(0 100% 0 0);animation:type 1s ease-out 1.5s forwards}.sw3{clip-path:inset(0 100% 0 0);animation:type 1s ease-out 2.0500000000000003s forwards}.sw4{clip-path:inset(0 100% 0 0);animation:type 1s ease-out 2.6s forwards}.sw5{clip-path:inset(0 100% 0 0);animation:type 1s ease-out 3.15s forwards}.ck0{opacity:0;animation:pop .4s ease-out 1.2s forwards}.ck1{opacity:0;animation:pop .4s ease-out 2s forwards}.ck2{opacity:0;animation:pop .4s ease-out 2.8s forwards}.ck3{opacity:0;animation:pop .4s ease-out 3.6000000000000005s forwards}
-      .needle{animation:needle 3.6s ease-in-out infinite alternate}@keyframes needle{from{transform:translateX(0)}to{transform:translateX(250px)}}
-      .bob{animation:bob .25s linear infinite alternate}@keyframes bob{to{transform:translateY(3px)}}
-      .feed{animation:feed 5s linear infinite}@keyframes feed{to{transform:translateX(260px)}}
-      .mw{transform-box:fill-box;transform-origin:center;animation:spin 1.4s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-      .nd{animation:nd .18s linear infinite alternate}@keyframes nd{to{transform:translateY(5px)}}
-      .prog{transform-box:fill-box;transform-origin:left;animation:prog 4s ease-out infinite}@keyframes prog{0%{transform:scaleX(0)}70%,100%{transform:scaleX(1)}}</style>
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}.look{opacity:0;animation:cyc 24s infinite}.l0{animation-delay:0s}.l1{animation-delay:3s}.l2{animation-delay:6s}.l3{animation-delay:9s}.l4{animation-delay:12s}.l5{animation-delay:15s}.l6{animation-delay:18s}.l7{animation-delay:21s}
+      @keyframes cyc{0%{opacity:0}2%,11%{opacity:1}13%,100%{opacity:0}}
+      .steam{animation:steam 3s ease-in-out infinite}@keyframes steam{0%{opacity:0;transform:translateY(4px)}40%{opacity:.8}100%{opacity:0;transform:translateY(-14px)}}
+      .smoke{animation:smoke 6s ease-in-out infinite}@keyframes smoke{0%{opacity:0;transform:translate(0,4px) scale(.7)}40%{opacity:.7}100%{opacity:0;transform:translate(12px,-16px) scale(1.3)}}
+      .cur{animation:tw 1s steps(1) infinite} .star{animation:tw 3s ease-in-out infinite}
+      .swing{transform-box:fill-box;transform-origin:50% 0;animation:swing 5s ease-in-out infinite alternate}@keyframes swing{from{transform:rotate(-2deg)}to{transform:rotate(2deg)}}
+      @media (prefers-reduced-motion:reduce){.l0{opacity:1!important}}</style>
       <defs><linearGradient id="vh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFDF9"/><stop offset=".55" stop-color="#FBF6F4"/><stop offset="1" stop-color="#F3ECF8"/></linearGradient>
   <radialGradient id="glowh" cx=".7" cy=".1" r=".7"><stop offset="0" stop-color="#D9468C" stop-opacity="0.08"/><stop offset="1" stop-color="#D9468C" stop-opacity="0"/></radialGradient>
   <pattern id="damh" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M22 6C26 14 34 18 38 22C34 26 26 30 22 38C18 30 10 26 6 22C10 18 18 14 22 6Z" fill="none" stroke="#7B5CD6" stroke-opacity=".07"/><circle cx="22" cy="22" r="2" fill="#7B5CD6" fill-opacity=".06"/></pattern>
-  <linearGradient id="gth" x1="0" x2="1"><stop offset="0" stop-color="#7B5CD6"/><stop offset=".5" stop-color="#3E7FCC"/><stop offset="1" stop-color="#D9468C"/></linearGradient><clipPath id="hc"><rect x="0" y="0" width="1000" height="520" rx="26"/></clipPath></defs>
-      <g clip-path="url(#hc)">
-        <rect width="1000" height="520" fill="url(#vh)"/><rect width="1000" height="520" fill="url(#damh)"/><rect width="1000" height="520" fill="url(#glowh)"/>
-
-        
-      </g>
-      <rect x="10" y="10" width="980" height="500" rx="14" fill="none" stroke="#B8955A" stroke-opacity=".55" stroke-width="1.1"/>
-  <rect x="18" y="18" width="964" height="484" rx="10" fill="none" stroke="#D9468C" stroke-opacity=".4" stroke-width="1.1" stroke-dasharray="7 6"/>
-  <g transform="translate(8 8)"><g transform="scale(1)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
-  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
-  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
-  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
-  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
-  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
-  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
-</g></g></g>
-  <g transform="translate(992 8) scale(-1 1)"><g transform="scale(1)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
-  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
-  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
-  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
-  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
-  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
-  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
-</g></g></g>
-  <g transform="translate(8 512) scale(1 -1)"><g transform="scale(1)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
-  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
-  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
-  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
-  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
-  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
-  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
-</g></g></g>
-  <g transform="translate(992 512) scale(-1 -1)"><g transform="scale(1)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
-  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
-  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
-  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
-  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
-  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
-  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
-</g></g></g>
-  <g transform="translate(23 23)"><circle r="6" fill="#D9468C"/><circle r="4.08" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="-1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/></g><g transform="translate(977 23)"><circle r="6" fill="#D9468C"/><circle r="4.08" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="-1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/></g><g transform="translate(23 497)"><circle r="6" fill="#D9468C"/><circle r="4.08" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="-1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/></g><g transform="translate(977 497)"><circle r="6" fill="#D9468C"/><circle r="4.08" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="-1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/></g>
-      <g transform="translate(500 18) scale(1)" fill="none" stroke="#B8955A" stroke-linecap="round">
-  <path d="M-16 0C-34 -14 -58 -12 -70 0C-60 -6 -48 -4 -44 4C-42 9 -48 12 -51 8" stroke-width="1.2"/>
-  <path d="M16 0C34 -14 58 -12 70 0C60 -6 48 -4 44 4C42 9 48 12 51 8" stroke-width="1.2"/>
-  <path d="M-80 2H-96M80 2H96" stroke="#D9468C" stroke-opacity=".7" stroke-width="1.1" stroke-dasharray="3 4"/>
-</g><g transform="translate(500 18)"><circle r="10" fill="#D9468C"/><circle r="6.800000000000001" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-2.7" cy="-2.7" r="1.2" fill="#fff" fill-opacity=".9"/><circle cx="2.7" cy="-2.7" r="1.2" fill="#fff" fill-opacity=".9"/><circle cx="-2.7" cy="2.7" r="1.2" fill="#fff" fill-opacity=".9"/><circle cx="2.7" cy="2.7" r="1.2" fill="#fff" fill-opacity=".9"/></g>
-      <!-- mirror with the avatar -->
-      <g transform="translate(58 70)">
-        <ellipse cx="120" cy="190" rx="120" ry="176" fill="#F1E9FB" stroke="#7B5CD6" stroke-opacity=".5" stroke-width="2"/>
-        <ellipse cx="120" cy="190" rx="108" ry="164" fill="none" stroke="#D9468C" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="4 5"/>
-        <path d="M60 60C80 40 104 34 120 34" stroke="#fff" stroke-opacity=".18" stroke-width="10" fill="none" stroke-linecap="round"/>
-        <g class="flo"><g transform="translate(22 50) scale(1)"><g class="look l0">
+  <linearGradient id="gth" x1="0" x2="1"><stop offset="0" stop-color="#7B5CD6"/><stop offset=".5" stop-color="#3E7FCC"/><stop offset="1" stop-color="#D9468C"/></linearGradient>
+        <clipPath id="sc"><rect x="22" y="22" width="956" height="516" rx="14"/></clipPath>
+        <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4ECF7"/><stop offset="1" stop-color="#EADDF2"/></linearGradient>
+        <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFD6FF"/><stop offset=".6" stop-color="#F6D1E4"/><stop offset="1" stop-color="#FFE6D0"/></linearGradient>
+        <radialGradient id="lamp" cx=".5" cy="0" r=".9"><stop offset="0" stop-color="#FFE3B0" stop-opacity="0.45"/><stop offset="1" stop-color="#FFE3B0" stop-opacity="0"/></radialGradient>
+        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF9" stop-opacity="0"/><stop offset=".55" stop-color="#FFFDF9" stop-opacity=".92"/><stop offset="1" stop-color="#FFFDF9"/></linearGradient>
+        <pattern id="wp" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20 6C23 13 30 16 34 20C30 24 23 27 20 34C17 27 10 24 6 20C10 16 17 13 20 6Z" fill="none" stroke="#7B5CD6" stroke-opacity="0.14"/></pattern>
+      </defs>
+      <rect width="1000" height="560" rx="24" fill="#FFFDF9"/>
+      <g clip-path="url(#sc)">
+        <rect x="0" y="0" width="1000" height="560" fill="url(#wall)"/><rect x="0" y="0" width="1000" height="560" fill="url(#wp)"/>
+        <!-- window with the Tungurahua at dusk -->
+        <g transform="translate(600 56)">
+          <rect x="-8" y="-8" width="196" height="166" rx="8" fill="#FFFFFF"/>
+          <rect width="180" height="150" rx="4" fill="url(#dusk)"/>
+          <circle class="star" cx="30" cy="24" r="1.6" fill="#fff"/><circle class="star" style="animation-delay:1s" cx="140" cy="18" r="1.3" fill="#fff"/><circle class="star" style="animation-delay:2s" cx="96" cy="36" r="1.1" fill="#fff"/>
+          <circle cx="146" cy="44" r="10" fill="#FFF3D6" opacity=".9"/>
+          <path d="M0 150L48 92Q58 80 66 78L80 72Q90 70 98 78L118 96L180 150Z" fill="#8C7FB8"/>
+          <path d="M66 78L80 72Q90 70 98 78L92 82L84 79L76 84Z" fill="#fff" opacity=".85"/>
+          <g class="smoke"><circle cx="84" cy="62" r="6" fill="#fff" opacity=".5"/><circle cx="92" cy="54" r="8" fill="#fff" opacity=".35"/></g>
+          <path d="M0 150L30 128L70 140L120 118L180 136V150Z" fill="#6FA58C" opacity=".9"/>
+          <path d="M90 0V150M0 75H180" stroke="#FFFFFF" stroke-width="6"/>
+          <path d="M-14 -14H194" stroke="#D9468C" stroke-width="3"/><path d="M-10 -12Q20 30 0 150" fill="#D9468C" fill-opacity=".35"/><path d="M190 -12Q160 30 180 150" fill="#D9468C" fill-opacity=".35"/>
+        </g>
+        <!-- pendant lamp -->
+        <path d="M470 22V58" stroke="#5A5076" stroke-width="1.4" opacity=".7"/>
+        <path d="M446 74Q470 50 494 74Z" fill="#B79CFF"/><ellipse cx="470" cy="76" rx="8" ry="4" fill="#FFF3D6"/>
+        <path d="M300 76L640 76L760 330L180 330Z" fill="url(#lamp)"/>
+        <!-- shelf with thread spools and books -->
+        <rect x="56" y="132" width="250" height="8" rx="2" fill="#C9A27E"/><path d="M70 140L80 152M290 140L280 152" stroke="#A9825F" stroke-width="3"/>
+        <g transform="translate(76 104)"><rect x="-8" y="0" width="16" height="4" rx="1.5" fill="#E9D7B4"/><rect x="-6" y="4" width="12" height="20" fill="#D9468C"/><path d="M-6 9H6M-6 14H6M-6 19H6" stroke="#fff" stroke-opacity=".35"/><rect x="-8" y="24" width="16" height="4" rx="1.5" fill="#D9C29A"/></g><g transform="translate(98 104)"><rect x="-8" y="0" width="16" height="4" rx="1.5" fill="#E9D7B4"/><rect x="-6" y="4" width="12" height="20" fill="#B79CFF"/><path d="M-6 9H6M-6 14H6M-6 19H6" stroke="#fff" stroke-opacity=".35"/><rect x="-8" y="24" width="16" height="4" rx="1.5" fill="#D9C29A"/></g><g transform="translate(120 104)"><rect x="-8" y="0" width="16" height="4" rx="1.5" fill="#E9D7B4"/><rect x="-6" y="4" width="12" height="20" fill="#3E7FCC"/><path d="M-6 9H6M-6 14H6M-6 19H6" stroke="#fff" stroke-opacity=".35"/><rect x="-8" y="24" width="16" height="4" rx="1.5" fill="#D9C29A"/></g><g transform="translate(142 104)"><rect x="-8" y="0" width="16" height="4" rx="1.5" fill="#E9D7B4"/><rect x="-6" y="4" width="12" height="20" fill="#8EE3E0"/><path d="M-6 9H6M-6 14H6M-6 19H6" stroke="#fff" stroke-opacity=".35"/><rect x="-8" y="24" width="16" height="4" rx="1.5" fill="#D9C29A"/></g><g transform="translate(164 104)"><rect x="-8" y="0" width="16" height="4" rx="1.5" fill="#E9D7B4"/><rect x="-6" y="4" width="12" height="20" fill="#E0569A"/><path d="M-6 9H6M-6 14H6M-6 19H6" stroke="#fff" stroke-opacity=".35"/><rect x="-8" y="24" width="16" height="4" rx="1.5" fill="#D9C29A"/></g><g transform="translate(186 104)"><rect x="-8" y="0" width="16" height="4" rx="1.5" fill="#E9D7B4"/><rect x="-6" y="4" width="12" height="20" fill="#F7DF1E"/><path d="M-6 9H6M-6 14H6M-6 19H6" stroke="#fff" stroke-opacity=".35"/><rect x="-8" y="24" width="16" height="4" rx="1.5" fill="#D9C29A"/></g>
+        <g transform="translate(212 98)"><rect width="15" height="34" rx="2" fill="#3E7FCC"/><text x="7.5" y="28" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="6.5" font-weight="700" fill="#1C1430" transform="rotate(-90 7.5 28)">SQL</text></g><g transform="translate(230 92)"><rect width="15" height="40" rx="2" fill="#B79CFF"/><text x="7.5" y="34" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="6.5" font-weight="700" fill="#1C1430" transform="rotate(-90 7.5 34)">TS</text></g><g transform="translate(248 102)"><rect width="15" height="30" rx="2" fill="#8EE3E0"/><text x="7.5" y="24" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="6.5" font-weight="700" fill="#1C1430" transform="rotate(-90 7.5 24)">QA</text></g><g transform="translate(266 96)"><rect width="15" height="36" rx="2" fill="#D9468C"/><text x="7.5" y="30" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="6.5" font-weight="700" fill="#1C1430" transform="rotate(-90 7.5 30)">UX</text></g>
+        <g transform="translate(296 104)"><path d="M-8 28H8L6 14H-6Z" fill="#E8A87C"/><path d="M0 14C-10 4 -12 -6 -4 -8C0 0 0 6 0 14M0 14C8 2 14 -2 12 -10C4 -6 2 4 0 14" fill="#7FC8A9"/></g>
+        <!-- corkboard -->
+        <g transform="translate(332 92)">
+          <rect width="236" height="124" rx="6" fill="#D9B48F" stroke="#A9825F" stroke-width="5"/>
+          <g transform="translate(16 12) rotate(-4)"><rect width="66" height="88" fill="#FFFDF8"/><path d="M33 14C28 14 26 18 27 22L23 34C21 40 18 52 12 70H54C48 52 45 40 43 34L39 22C40 18 38 14 33 14Z" fill="none" stroke="#7B5CD6" stroke-width="1.3"/><path d="M27 30Q33 34 39 30" stroke="#E0569A" stroke-width="1.3" fill="none"/><path d="M18 62Q33 68 48 62" stroke="#7B5CD6" stroke-width="1" stroke-dasharray="3 2" fill="none"/></g>
+          <circle cx="49" cy="12" r="3.5" fill="#E0569A"/>
+          <g transform="translate(96 14) rotate(3)"><rect width="56" height="44" fill="#FFF3A6"/><text x="6" y="16" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="8" fill="#5A4A1E">fix #42 ✓</text><text x="6" y="28" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="8" fill="#5A4A1E">add tests</text><text x="6" y="40" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="8" fill="#5A4A1E">deploy ✓</text></g>
+          <circle cx="124" cy="16" r="3" fill="#3E7FCC"/>
+          <g transform="translate(162 18) rotate(-3)"><rect width="58" height="40" fill="#FFD6E8"/><text x="29" y="18" text-anchor="middle" font-family="'Segoe Script','Brush Script MT','Comic Sans MS',cursive" font-size="9.5" fill="#B0306E">nuevo look</text><text x="29" y="32" text-anchor="middle" font-size="12">👗✨</text></g>
+          <g transform="translate(96 68)"><rect x="0" y="0" width="14" height="22" rx="2" fill="#D9468C"/><rect x="16" y="4" width="14" height="22" rx="2" fill="#B79CFF"/><rect x="32" y="0" width="14" height="22" rx="2" fill="#3E7FCC"/><rect x="48" y="4" width="14" height="22" rx="2" fill="#8EE3E0"/><rect x="64" y="0" width="14" height="22" rx="2" fill="#F7DF1E"/></g>
+          <g transform="translate(184 70)"><circle r="16" fill="#DD0031"/><path d="M0 -10L9 -6L7 7L0 11L-7 7L-9 -6Z" fill="#fff"/><path d="M0 -6L4 5H2L1 2H-1L-2 5H-4Z" fill="#DD0031"/></g>
+        </g>
+        <!-- dress form with a dress in progress -->
+        <g transform="translate(872 112)" class="swing">
+          <path d="M0 0V-8" stroke="#B8955A" stroke-width="3"/>
+          <path d="M-26 6Q0 -4 26 6L22 40Q18 60 24 74H-24Q-18 60 -22 40Z" fill="#F3E7D6"/>
+          <path d="M-22 40Q0 48 22 40L24 74H-24Z" fill="#D9468C"/>
+          <path d="M-24 74L-40 170H40L24 74Z" fill="#D9468C"/><path d="M-24 74L-40 170M-8 74L-14 170M8 74L14 170M24 74L40 170" stroke="#fff" stroke-opacity=".35"/>
+          <path d="M-40 170H40" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <path d="M-24 10Q-30 30 -18 46" stroke="#F1D27A" stroke-width="5" fill="none"/>
+          <circle cx="-6" cy="56" r="2" fill="#E0569A"/><circle cx="4" cy="60" r="2" fill="#3E7FCC"/><circle cx="12" cy="52" r="2" fill="#B79CFF"/>
+        </g>
+        <path d="M872 282V330M848 330H896" stroke="#B8955A" stroke-width="4" stroke-linecap="round"/>
+        <!-- desk -->
+        <rect x="30" y="322" width="940" height="14" rx="3" fill="#C9A27E"/><rect x="30" y="322" width="940" height="4" rx="2" fill="#E0BE9C"/>
+        <!-- laptop with code -->
+        <g transform="translate(378 220)">
+          <rect width="176" height="104" rx="7" fill="#C9CDD8"/><rect x="6" y="6" width="164" height="90" rx="3" fill="#15102A"/>
+          <circle cx="14" cy="13" r="2.2" fill="#E0569A"/><circle cx="21" cy="13" r="2.2" fill="#B79CFF"/><circle cx="28" cy="13" r="2.2" fill="#3E7FCC"/>
+          <rect x="14" y="22" width="60" height="3.6" rx="1.8" fill="#D9468C" opacity=".85"/><rect x="26" y="30.6" width="90" height="3.6" rx="1.8" fill="#7B5CD6" opacity=".85"/><rect x="26" y="39.2" width="50" height="3.6" rx="1.8" fill="#3E7FCC" opacity=".85"/><rect x="38" y="47.8" width="70" height="3.6" rx="1.8" fill="#8EE3E0" opacity=".85"/><rect x="26" y="56.4" width="40" height="3.6" rx="1.8" fill="#7B5CD6" opacity=".85"/><rect x="14" y="65" width="30" height="3.6" rx="1.8" fill="#D9468C" opacity=".85"/><rect x="14" y="73.6" width="84" height="3.6" rx="1.8" fill="#3E7FCC" opacity=".85"/><rect x="26" y="82.19999999999999" width="64" height="3.6" rx="1.8" fill="#7B5CD6" opacity=".85"/>
+          <rect class="cur" x="82" y="81.19999999999999" width="3" height="6" fill="#fff"/>
+          <path d="M-14 104H190L182 110H-6Z" fill="#B3B8C6"/>
+        </g>
+        <!-- coffee, controller, scissors and tape measure on the desk -->
+        <g transform="translate(606 290)"><path d="M0 0H26V22Q26 32 13 32Q0 32 0 22Z" fill="#B79CFF"/><path d="M26 6Q36 6 36 14Q36 22 26 22" stroke="#B79CFF" stroke-width="4" fill="none"/><path d="M8 12C10 16 16 16 18 12" stroke="#fff" stroke-width="1.4" fill="none"/>
+          <path class="steam" d="M8 -4C4 -10 12 -14 8 -20" stroke="#5A5076" stroke-width="1.6" fill="none" opacity=".7"/><path class="steam" style="animation-delay:1.2s" d="M17 -4C13 -10 21 -14 17 -20" stroke="#5A5076" stroke-width="1.6" fill="none" opacity=".7"/></g>
+        <g transform="translate(676 304)"><path d="M6 0H46Q58 0 58 12Q58 20 50 20Q44 20 40 14H12Q8 20 2 20Q-6 20 -6 12Q-6 0 6 0Z" fill="#4E4468"/><circle cx="42" cy="8" r="2.4" fill="#E0569A"/><circle cx="48" cy="12" r="2.4" fill="#3E7FCC"/><path d="M8 10H18M13 5V15" stroke="#fff" stroke-width="2.2"/></g>
+        <g transform="translate(260 306) rotate(-8)"><rect width="96" height="10" rx="2" fill="#F6D86B"/><path d="M4 0V5" stroke="#8C6E45" stroke-width=".8"/><path d="M12 0V3" stroke="#8C6E45" stroke-width=".8"/><path d="M20 0V5" stroke="#8C6E45" stroke-width=".8"/><path d="M28 0V3" stroke="#8C6E45" stroke-width=".8"/><path d="M36 0V5" stroke="#8C6E45" stroke-width=".8"/><path d="M44 0V3" stroke="#8C6E45" stroke-width=".8"/><path d="M52 0V5" stroke="#8C6E45" stroke-width=".8"/><path d="M60 0V3" stroke="#8C6E45" stroke-width=".8"/><path d="M68 0V5" stroke="#8C6E45" stroke-width=".8"/><path d="M76 0V3" stroke="#8C6E45" stroke-width=".8"/><path d="M84 0V5" stroke="#8C6E45" stroke-width=".8"/><path d="M92 0V3" stroke="#8C6E45" stroke-width=".8"/></g>
+        <g transform="translate(316 296) rotate(18)" fill="none" stroke="#E0569A" stroke-width="2.4"><circle cx="-6" cy="12" r="5"/><circle cx="6" cy="12" r="5"/><path d="M-3 8L10 -14M3 8L-10 -14" stroke="#B9BDC8"/></g>
+        <!-- the avatar, standing in her atelier -->
+        <g transform="translate(108 104) scale(.86)"><g class="look l0">
   <defs>
-    <linearGradient id="streak-h0es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
-    <linearGradient id="shade-h0es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
-    <radialGradient id="face-h0es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+    <linearGradient id="streak-s0es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-s0es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-s0es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
   </defs>
   <!-- hair back, soft waves at the ends -->
   <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
@@ -87,17 +105,17 @@
         <path d="M64 214H136L148 262H52Z" fill="#FF8CC6"/>
         <path d="M74 220L64 261M87 220L83 262M100 220V262M113 220L117 262M126 220L136 261" stroke="#FF6FB4" stroke-width="1.3"/>
         <path d="M76 290H86Q94 291 95.5 297V300.5H74Q70 300 72 294Z" fill="#7B5CD6"/><path d="M78 291.5Q84 288.5 92 292" stroke="#7B5CD6" stroke-width="2" fill="none"/><circle cx="90" cy="292" r="1" fill="#FFD66B"/><g transform="matrix(-1 0 0 1 200 0)"><path d="M76 290H86Q94 291 95.5 297V300.5H74Q70 300 72 294Z" fill="#7B5CD6"/><path d="M78 291.5Q84 288.5 92 292" stroke="#7B5CD6" stroke-width="2" fill="none"/><circle cx="90" cy="292" r="1" fill="#FFD66B"/></g>
-        <defs><pattern id="stripes-h0es" width="8" height="7" patternUnits="userSpaceOnUse"><rect width="8" height="7" fill="#fff"/><rect width="8" height="2.6" fill="#5B4BC4"/></pattern></defs>
-        <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#stripes-h0es)"/>
+        <defs><pattern id="stripes-s0es" width="8" height="7" patternUnits="userSpaceOnUse"><rect width="8" height="7" fill="#fff"/><rect width="8" height="2.6" fill="#5B4BC4"/></pattern></defs>
+        <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#stripes-s0es)"/>
         <path d="M80 151Q100 158 120 151" stroke="#fff" stroke-width="4" fill="none"/>
         <rect x="61" y="210" width="78" height="9" rx="2" fill="#3B2A6B"/>
-        <rect x="95" y="209" width="10" height="11" rx="2" fill="none" stroke="#FFD66B" stroke-width="2"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h0es)"/></g>
+        <rect x="95" y="209" width="10" height="11" rx="2" fill="none" stroke="#FFD66B" stroke-width="2"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-s0es)"/></g>
   <!-- arms (sleeves move with them) -->
   <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
-    <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 192H52.2Z" fill="url(#stripes-h0es)" />
+    <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 192H52.2Z" fill="url(#stripes-s0es)" />
     <circle cx="59" cy="212" r="5.4" fill="#FF5C9A"/><path d="M57 207l-2-4M60 206.6l.4-4.4M62.6 208l3-3" stroke="#9AA0B4" stroke-width="1"/><circle cx="55" cy="203" r="1" fill="#FFD66B"/><circle cx="60.4" cy="202" r="1" fill="#8EE3E0"/><circle cx="65.6" cy="205" r="1" fill="#B79CFF"/></g>
   <g class="av-arm-r"><g transform="matrix(-1 0 0 1 200 0)"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
-    <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 192H52.2Z" fill="url(#stripes-h0es)" />
+    <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 192H52.2Z" fill="url(#stripes-s0es)" />
     </g></g>
   <g class="av-over">
         <path d="M88 150Q82 186 78 214" stroke="#FFD66B" stroke-width="6" fill="none"/>
@@ -107,11 +125,11 @@
   
   <!-- front locks with thin blonde streaks -->
   <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h0es)"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-s0es)"/>
   <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h0es)"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-s0es)"/>
   <!-- face: soft oval -->
-  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h0es)"/>
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-s0es)"/>
   <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
   <!-- soft wispy bangs -->
   <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
@@ -147,9 +165,9 @@
   <g transform="rotate(-14 100 44) translate(0 -4)"><ellipse cx="96" cy="46" rx="40" ry="11" fill="#7B5CD6"/><path d="M62 46Q66 22 98 22Q130 24 132 46Z" fill="#7B5CD6"/><circle cx="98" cy="20" r="4" fill="#5A3FB0"/></g>
 </g><g class="look l1">
   <defs>
-    <linearGradient id="streak-h1es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
-    <linearGradient id="shade-h1es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
-    <radialGradient id="face-h1es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+    <linearGradient id="streak-s1es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-s1es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-s1es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
   </defs>
   <!-- hair back, soft waves at the ends -->
   <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
@@ -178,7 +196,7 @@
         <path d="M76 205Q78 201 84 201H116Q122 201 124 205L126 218H74Z" fill="#A98BFA" stroke="#9A7BF0" stroke-width="1"/>
         <path d="M61 218H139V226H61Z" fill="#9A7BF0"/>
         <path d="M64 219V225M70 219V225M76 219V225M82 219V225M88 219V225M94 219V225M100 219V225M106 219V225M112 219V225M118 219V225M124 219V225M130 219V225M136 219V225" stroke="#8A6AE6" stroke-width=".8"/>
-        <path transform="translate(118 170) scale(0.55)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF9ACB"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h1es)"/></g>
+        <path transform="translate(118 170) scale(0.55)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF9ACB"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-s1es)"/></g>
   <!-- arms (sleeves move with them) -->
   <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
     <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 216H52.2Z" fill="#B79CFF" />
@@ -190,11 +208,11 @@
   
   <!-- front locks with thin blonde streaks -->
   <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h1es)"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-s1es)"/>
   <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h1es)"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-s1es)"/>
   <!-- face: soft oval -->
-  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h1es)"/>
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-s1es)"/>
   <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
   <!-- soft wispy bangs -->
   <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
@@ -230,9 +248,9 @@
   
 </g><g class="look l2">
   <defs>
-    <linearGradient id="streak-h2es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
-    <linearGradient id="shade-h2es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
-    <radialGradient id="face-h2es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+    <linearGradient id="streak-s2es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-s2es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-s2es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
   </defs>
   <!-- hair back, soft waves at the ends -->
   <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
@@ -260,7 +278,7 @@
         <path d="M70 168Q75 152 91 146L109 146Q125 152 130 168L134 222H66Z" fill="#F6C431"/>
         <path d="M73 172V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M79 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M85 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M91 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M97 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M103 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M109 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M115 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M121 160V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/><path d="M127 172V221" stroke="#E5AE16" stroke-width="1.1" opacity=".55"/>
         <path d="M90 146Q100 150 110 146V157Q100 161 90 157Z" fill="#E8B21E"/>
-        <path d="M66 214Q100 220 134 214" stroke="#E5AE16" stroke-width="1.4" fill="none"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h2es)"/></g>
+        <path d="M66 214Q100 220 134 214" stroke="#E5AE16" stroke-width="1.4" fill="none"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-s2es)"/></g>
   <!-- arms (sleeves move with them) -->
   <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/></g>
   <g class="av-arm-r"><g transform="matrix(-1 0 0 1 200 0)"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/></g></g>
@@ -271,11 +289,11 @@
   
   <!-- front locks with thin blonde streaks -->
   <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h2es)"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-s2es)"/>
   <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h2es)"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-s2es)"/>
   <!-- face: soft oval -->
-  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h2es)"/>
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-s2es)"/>
   <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
   <!-- soft wispy bangs -->
   <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
@@ -311,9 +329,9 @@
   
 </g><g class="look l3">
   <defs>
-    <linearGradient id="streak-h3es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
-    <linearGradient id="shade-h3es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
-    <radialGradient id="face-h3es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+    <linearGradient id="streak-s3es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-s3es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-s3es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
   </defs>
   <!-- hair back, soft waves at the ends -->
   <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
@@ -339,7 +357,7 @@
         <rect x="113" y="178" width="14" height="12" rx="2" fill="none" stroke="#DCD6F2" stroke-width="1.4"/>
         <path d="M117 172V184" stroke="#7B5CD6" stroke-width="2.6" stroke-linecap="round"/><path d="M122 174V184" stroke="#FF7AB8" stroke-width="2.6" stroke-linecap="round"/>
         <rect x="70" y="182" width="17" height="11" rx="2" fill="#8EE3E0"/>
-        <text x="78.5" y="190" text-anchor="middle" font-family="monospace" font-size="6.5" font-weight="700" fill="#2f6f6c">QA</text><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h3es)"/></g>
+        <text x="78.5" y="190" text-anchor="middle" font-family="monospace" font-size="6.5" font-weight="700" fill="#2f6f6c">QA</text><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-s3es)"/></g>
   <!-- arms (sleeves move with them) -->
   <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
     <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 216H52.2Z" fill="#FFFFFF" stroke="#DCD6F2" stroke-width="1"/>
@@ -351,11 +369,11 @@
   
   <!-- front locks with thin blonde streaks -->
   <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h3es)"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-s3es)"/>
   <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h3es)"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-s3es)"/>
   <!-- face: soft oval -->
-  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h3es)"/>
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-s3es)"/>
   <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
   <!-- soft wispy bangs -->
   <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
@@ -391,9 +409,9 @@
   
 </g><g class="look l4">
   <defs>
-    <linearGradient id="streak-h4es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
-    <linearGradient id="shade-h4es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
-    <radialGradient id="face-h4es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+    <linearGradient id="streak-s4es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-s4es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-s4es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
   </defs>
   <!-- hair back, soft waves at the ends -->
   <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
@@ -415,7 +433,7 @@
                 <path d="M86 150L95 177L87 182L83 174L77 163Z" fill="#3D58BE"/>
                 <path d="M66 210H82" stroke="#3D58BE" stroke-width="1.6" stroke-linecap="round"/></g>
         <circle cx="100" cy="206" r="2.3" fill="#FFD66B"/><circle cx="100" cy="216" r="2.3" fill="#FFD66B"/>
-        <path d="M114 170L126 170L122 164L118 166Z" fill="#FF9ACB"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h4es)"/></g>
+        <path d="M114 170L126 170L122 164L118 166Z" fill="#FF9ACB"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-s4es)"/></g>
   <!-- arms (sleeves move with them) -->
   <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
     <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 216H52.2Z" fill="#4F6EDB" />
@@ -427,11 +445,11 @@
   <path d="M91 150Q100 164 109 150" stroke="#E2B65A" stroke-width="1.1" fill="none"/><path transform="translate(97.2 160.5) scale(0.48)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="none" stroke="#E2B65A" stroke-width="1.6"/>
   <!-- front locks with thin blonde streaks -->
   <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h4es)"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-s4es)"/>
   <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h4es)"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-s4es)"/>
   <!-- face: soft oval -->
-  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h4es)"/>
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-s4es)"/>
   <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
   <!-- soft wispy bangs -->
   <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
@@ -467,9 +485,9 @@
   
 </g><g class="look l5">
   <defs>
-    <linearGradient id="streak-h5es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
-    <linearGradient id="shade-h5es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
-    <radialGradient id="face-h5es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+    <linearGradient id="streak-s5es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-s5es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-s5es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
   </defs>
   <!-- hair back, soft waves at the ends -->
   <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
@@ -480,15 +498,15 @@
   <path d="M92 132H108V156Q100 160 92 156Z" fill="#DCA684"/>
   <!-- outfit -->
   <g class="av-outfit">
-        <defs><linearGradient id="gown-h5es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B79CFF"/><stop offset=".55" stop-color="#9FC4FF"/><stop offset="1" stop-color="#FFB3D9"/></linearGradient></defs>
+        <defs><linearGradient id="gown-s5es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B79CFF"/><stop offset=".55" stop-color="#9FC4FF"/><stop offset="1" stop-color="#FFB3D9"/></linearGradient></defs>
         <path d="M66 206Q30 258 22 302H178Q170 258 134 206Z" fill="#D9CCFF"/>
-        <path d="M66 206Q42 260 36 302H164Q158 260 134 206Z" fill="url(#gown-h5es)"/>
+        <path d="M66 206Q42 260 36 302H164Q158 260 134 206Z" fill="url(#gown-s5es)"/>
         <path d="M58 300Q70 250 84 214M142 300Q130 250 116 214M100 216V300M78 302Q86 256 92 216M122 302Q114 256 108 216" stroke="#fff" stroke-width="1.1" fill="none" opacity=".4"/>
         <path d="M36 302Q60 294 82 302T126 302T164 302" stroke="#fff" stroke-width="1.6" fill="none" opacity=".7"/>
         <path class="av-sparkle" transform="translate(58 272) scale(0.9)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(140 252) scale(0.7)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(92 286) scale(0.8)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(120 284) scale(0.6)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(74 240) scale(0.5)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/>
-        <path d="M68 168Q75 158 86 164Q100 173 114 164Q125 158 132 168L134 210H66Z" fill="url(#gown-h5es)"/>
+        <path d="M68 168Q75 158 86 164Q100 173 114 164Q125 158 132 168L134 210H66Z" fill="url(#gown-s5es)"/>
         <path d="M68 168Q75 158 86 164Q100 173 114 164Q125 158 132 168" stroke="#fff" stroke-width="1.6" fill="none" opacity=".8"/>
-        <path class="av-sparkle" transform="translate(104 190) scale(0.55)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(84 182) scale(0.4)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h5es)"/></g>
+        <path class="av-sparkle" transform="translate(104 190) scale(0.55)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path class="av-sparkle" transform="translate(84 182) scale(0.4)" d="M0-6 1.4-1.4 6 0 1.4 1.4 0 6-1.4 1.4-6 0-1.4-1.4Z" fill="#fff"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-s5es)"/></g>
   <!-- arms (sleeves move with them) -->
   <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/></g>
   <g class="av-arm-r"><g transform="matrix(-1 0 0 1 200 0)"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/></g></g>
@@ -499,11 +517,11 @@
   <path d="M91 150Q100 164 109 150" stroke="#E2B65A" stroke-width="1.1" fill="none"/><path transform="translate(97.2 160.5) scale(0.48)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="none" stroke="#E2B65A" stroke-width="1.6"/>
   <!-- front locks with thin blonde streaks -->
   <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h5es)"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-s5es)"/>
   <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h5es)"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-s5es)"/>
   <!-- face: soft oval -->
-  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h5es)"/>
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-s5es)"/>
   <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
   <!-- soft wispy bangs -->
   <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
@@ -539,9 +557,9 @@
   <path d="M84 50L88 40L94 48L100 36L106 48L112 40L116 50Z" fill="#FFD66B" stroke="#E9B949" stroke-width="1"/><circle cx="100" cy="42" r="2.4" fill="#FF9ACB"/><circle cx="88" cy="41" r="1.4" fill="#A8D8FF"/><circle cx="112" cy="41" r="1.4" fill="#A8D8FF"/>
 </g><g class="look l6">
   <defs>
-    <linearGradient id="streak-h6es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
-    <linearGradient id="shade-h6es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
-    <radialGradient id="face-h6es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+    <linearGradient id="streak-s6es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-s6es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-s6es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
   </defs>
   <!-- hair back, soft waves at the ends -->
   <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
@@ -566,9 +584,9 @@
     <path d="M65.5 294Q65.5 288.5 73 288.5H85Q93.5 289.5 95 296V300H65.5Z" fill="#FFFFFF" stroke="#D9D3F0" stroke-width=".8"/>
     <path d="M65 299H95.5V302Q80 303.6 65 302Z" fill="#fff" stroke="#D9D3F0" stroke-width=".8"/>
     <path d="M73 291.5L79 294M75 290L81 292.5" stroke="#FF7AB8" stroke-width="1.2" stroke-linecap="round"/></g>
-        <defs><clipPath id="tc-h6es"><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z"/></clipPath></defs>
+        <defs><clipPath id="tc-s6es"><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z"/></clipPath></defs>
         <path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="#FFF0F7"/>
-        <g clip-path="url(#tc-h6es)">
+        <g clip-path="url(#tc-s6es)">
           <circle cx="74" cy="176" r="14" fill="#FFC2DD" opacity=".75"/><circle cx="122" cy="168" r="12" fill="#BFE3FF" opacity=".7"/>
           <circle cx="102" cy="206" r="16" fill="#FFC2DD" opacity=".6"/><circle cx="132" cy="214" r="10" fill="#BFE3FF" opacity=".6"/>
           <circle cx="70" cy="214" r="10" fill="#D9CCFF" opacity=".6"/>
@@ -576,7 +594,7 @@
           <path transform="translate(84 208) scale(0.9)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="none" stroke="#FF4F8B" stroke-width="1.6"/><path transform="translate(92 178) scale(0.7)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF4F8B"/><path transform="translate(124 182) scale(0.7)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="#FF4F8B"/>
         </g>
         <path d="M82 151Q100 168 118 151" fill="#EDC3A3"/>
-        <path d="M82 151Q100 168 118 151" stroke="#FFC2DD" stroke-width="1.6" fill="none"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h6es)"/></g>
+        <path d="M82 151Q100 168 118 151" stroke="#FFC2DD" stroke-width="1.6" fill="none"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-s6es)"/></g>
   <!-- arms (sleeves move with them) -->
   <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
     <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L66.6 216H52.2Z" fill="#FFE6F2" />
@@ -588,11 +606,11 @@
   <path d="M91 150Q100 164 109 150" stroke="#E2B65A" stroke-width="1.1" fill="none"/><path transform="translate(97.2 160.5) scale(0.48)" d="M0 3C0 1 1.6 0 3 0s3 1.4 3 1.4S7.4 0 9 0s3 1 3 3c0 4-6 7-6 7S0 7 0 3Z" fill="none" stroke="#E2B65A" stroke-width="1.6"/>
   <!-- front locks with thin blonde streaks -->
   <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h6es)"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-s6es)"/>
   <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h6es)"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-s6es)"/>
   <!-- face: soft oval -->
-  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h6es)"/>
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-s6es)"/>
   <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
   <!-- soft wispy bangs -->
   <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
@@ -628,9 +646,9 @@
   
 </g><g class="look l7">
   <defs>
-    <linearGradient id="streak-h7es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
-    <linearGradient id="shade-h7es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
-    <radialGradient id="face-h7es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
+    <linearGradient id="streak-s7es" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D2C38"/><stop offset=".2" stop-color="#E9D3A2"/><stop offset="1" stop-color="#E9D3A2" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="shade-s7es" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2B2140" stop-opacity=".13"/></linearGradient>
+    <radialGradient id="face-s7es" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#F3CDB0"/><stop offset="1" stop-color="#EDC3A3"/></radialGradient>
   </defs>
   <!-- hair back, soft waves at the ends -->
   <path d="M50 92Q46 38 100 36Q154 38 150 92L156 198Q161 213 149 218Q138 221 132 208L128 128H72L68 208Q62 221 51 218Q39 213 44 198Z" fill="#2A1E27"/>
@@ -656,7 +674,7 @@
               <path d="M58 228Q66 200 64 172" stroke="#fff" stroke-width="1.4" fill="none" opacity=".25"/></g>
       <path d="M83 136Q100 131 117 136L119 153Q100 159 81 153Z" fill="#E8BFD3" stroke="#D49BB7" stroke-width="1"/>
       <circle cx="106" cy="145" r="2.8" fill="#D9A7BF" stroke="#C48AA6" stroke-width=".8"/>
-      <circle cx="106" cy="160" r="2.8" fill="#D9A7BF" stroke="#C48AA6" stroke-width=".8"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-h7es)"/></g>
+      <circle cx="106" cy="160" r="2.8" fill="#D9A7BF" stroke="#C48AA6" stroke-width=".8"/><path d="M64 160Q70 151 86 150L114 150Q130 151 136 160L139 226L61 226Z" fill="url(#shade-s7es)"/></g>
   <!-- arms (sleeves move with them) -->
   <g class="av-arm-l"><rect x="53" y="158" width="13" height="66" rx="6.5" fill="#EDC3A3"/><ellipse cx="59" cy="224" rx="6.5" ry="7" fill="#EDC3A3"/>
     <path d="M51.5 168Q51.5 155 59.5 155Q67.5 155 68 166L73 214Q59 218 43 214Z" fill="#E8BFD3" stroke="#D49BB7" stroke-width="1"/>
@@ -668,11 +686,11 @@
   
   <!-- front locks with thin blonde streaks -->
   <path d="M60 100Q50 160 58 212Q66 218 74 206Q66 160 72 108Z" fill="#3D2C38"/>
-  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-h7es)"/>
+  <path d="M67 108Q61.5 152 66.5 198L70 196Q66 152 71.5 110Z" fill="url(#streak-s7es)"/>
   <path d="M140 100Q150 160 142 212Q134 218 126 206Q134 160 128 108Z" fill="#3D2C38"/>
-  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-h7es)"/>
+  <path d="M133 108Q138.5 152 133.5 198L130 196Q134 152 128.5 110Z" fill="url(#streak-s7es)"/>
   <!-- face: soft oval -->
-  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-h7es)"/>
+  <path d="M62 92Q62 50 100 50Q138 50 138 92Q138 121 120 134Q110 140 100 140Q90 140 80 134Q62 121 62 92Z" fill="url(#face-s7es)"/>
   <circle cx="63.5" cy="112" r="2" fill="#FFD66B"/><circle cx="136.5" cy="112" r="2" fill="#FFD66B"/>
   <!-- soft wispy bangs -->
   <path d="M56 98Q50 44 100 44Q150 44 144 98Q142 88 137 82Q135 90 130 92Q127 82 120 78Q118 88 112 90Q107 80 100 78Q94 88 88 90Q83 80 78 80Q75 90 70 92Q67 84 63 82Q60 90 56 98Z" fill="#2A1E27"/>
@@ -706,81 +724,55 @@
   <path d="M93.6 125.2Q100 127.4 106.4 125.2" stroke="#86202C" stroke-width=".8" fill="none"/>
   <ellipse cx="102" cy="128.4" rx="2" ry=".8" fill="#fff" opacity=".35"/>
   
+</g></g>
+        <ellipse cx="194" cy="380" rx="62" ry="7" fill="#000" opacity=".22"/>
+        <g class="look l0"><g transform="translate(262 176) rotate(10)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-11" y="14" width="32" height="20" rx="4" fill="#DD0031" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="29.5" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11.5" font-weight="700" fill="#fff">NG</text></g></g><g class="look l1"><g transform="translate(262 176) rotate(10)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-11" y="14" width="32" height="20" rx="4" fill="#3178C6" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="29.5" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11.5" font-weight="700" fill="#fff">TS</text></g></g><g class="look l2"><g transform="translate(262 176) rotate(10)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-11" y="14" width="32" height="20" rx="4" fill="#F7DF1E" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="29.5" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11.5" font-weight="700" fill="#2B2140">JS</text></g></g><g class="look l3"><g transform="translate(262 176) rotate(10)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-11" y="14" width="32" height="20" rx="4" fill="#8EE3E0" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="29.5" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11.5" font-weight="700" fill="#2B2140">QA</text></g></g><g class="look l4"><g transform="translate(262 176) rotate(10)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-15" y="14" width="40" height="20" rx="4" fill="#7B5CD6" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="29.5" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11.5" font-weight="700" fill="#fff">SQL</text></g></g><g class="look l5"><g transform="translate(262 176) rotate(10)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-19" y="14" width="48" height="20" rx="4" fill="#8CC8FF" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="29.5" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11.5" font-weight="700" fill="#2B2140">NEXT</text></g></g><g class="look l6"><g transform="translate(262 176) rotate(10)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-19" y="14" width="48" height="20" rx="4" fill="#E96A3C" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="29.5" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11.5" font-weight="700" fill="#fff">HTML</text></g></g><g class="look l7"><g transform="translate(262 176) rotate(10)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-19" y="14" width="48" height="20" rx="4" fill="#FF5C9A" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="29.5" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11.5" font-weight="700" fill="#fff">NEST</text></g></g>
+        <!-- fade for the text -->
+        <rect x="0" y="300" width="1000" height="260" fill="url(#fade)"/>
+      </g>
+      <rect x="10" y="10" width="980" height="540" rx="14" fill="none" stroke="#B8955A" stroke-opacity=".55" stroke-width="1.1"/>
+  <rect x="18" y="18" width="964" height="524" rx="10" fill="none" stroke="#D9468C" stroke-opacity=".4" stroke-width="1.1" stroke-dasharray="7 6"/>
+  <g transform="translate(8 8)"><g transform="scale(1)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
+  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
+  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
+  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
+  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
+  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
+  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
 </g></g></g>
-        <ellipse cx="120" cy="368" rx="80" ry="8" fill="#000" opacity=".25"/>
-        <g class="look l0">
-        <g transform="translate(196 40) rotate(12)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-11" y="14" width="32" height="21" rx="4" fill="#DD0031" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="30" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12" font-weight="700" fill="#fff">NG</text></g>
-        <text x="120" y="398" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#2B2140">Angular</text>
-        <text x="120" y="414" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#D9468C">diseñadora</text>
-      </g><g class="look l1">
-        <g transform="translate(196 40) rotate(12)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-11" y="14" width="32" height="21" rx="4" fill="#3178C6" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="30" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12" font-weight="700" fill="#fff">TS</text></g>
-        <text x="120" y="398" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#2B2140">TypeScript</text>
-        <text x="120" y="414" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#D9468C">hoodie dev</text>
-      </g><g class="look l2">
-        <g transform="translate(196 40) rotate(12)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-11" y="14" width="32" height="21" rx="4" fill="#F7DF1E" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="30" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12" font-weight="700" fill="#2B2140">JS</text></g>
-        <text x="120" y="398" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#2B2140">JavaScript</text>
-        <text x="120" y="414" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#D9468C">top amarillo</text>
-      </g><g class="look l3">
-        <g transform="translate(196 40) rotate(12)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-11" y="14" width="32" height="21" rx="4" fill="#8EE3E0" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="30" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12" font-weight="700" fill="#2B2140">QA</text></g>
-        <text x="120" y="398" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#2B2140">QA · Testing</text>
-        <text x="120" y="414" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#D9468C">bata de qa</text>
-      </g><g class="look l4">
-        <g transform="translate(196 40) rotate(12)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-15" y="14" width="40" height="21" rx="4" fill="#7B5CD6" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="30" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12" font-weight="700" fill="#fff">SQL</text></g>
-        <text x="120" y="398" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#2B2140">SQL · MongoDB</text>
-        <text x="120" y="414" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#D9468C">blazer de oficina</text>
-      </g><g class="look l5">
-        <g transform="translate(196 40) rotate(12)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-19" y="14" width="48" height="21" rx="4" fill="#8CC8FF" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="30" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12" font-weight="700" fill="#2B2140">NEXT</text></g>
-        <text x="120" y="398" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#2B2140">Next.js · React</text>
-        <text x="120" y="414" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#D9468C">vestido de gala</text>
-      </g><g class="look l6">
-        <g transform="translate(196 40) rotate(12)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-19" y="14" width="48" height="21" rx="4" fill="#E96A3C" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="30" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12" font-weight="700" fill="#fff">HTML</text></g>
-        <text x="120" y="398" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#2B2140">HTML · CSS</text>
-        <text x="120" y="414" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#D9468C">blusa de corazones</text>
-      </g><g class="look l7">
-        <g transform="translate(196 40) rotate(12)"><path d="M0 0L5 14" stroke="#B8955A" stroke-width="1.2"/><rect x="-19" y="14" width="48" height="21" rx="4" fill="#FF5C9A" stroke="#fff" stroke-opacity=".8"/><circle cx="5" cy="19" r="2" fill="#fff"/><text x="5" y="30" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12" font-weight="700" fill="#fff">NEST</text></g>
-        <text x="120" y="398" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#2B2140">NestJS · .NET</text>
-        <text x="120" y="414" text-anchor="middle" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#D9468C">abrigo rosado</text>
-      </g>
-      </g>
-      <!-- name, role, buttons -->
-      <text x="330" y="112" font-family="'Segoe Script','Brush Script MT','Comic Sans MS',cursive" font-size="24" fill="#D9468C">¡Hola! Bienvenid@ a mi GitHub ✂</text>
-      <text x="328" y="178" font-family="Georgia,'Times New Roman',serif" font-size="64" font-weight="700" fill="#2B2140">Jhanina <tspan font-style="italic" font-weight="400" fill="url(#gth)">Conterón</tspan></text>
-      <text x="332" y="210" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" letter-spacing="2.4" fill="#5A5076">INGENIERA DE SOFTWARE · FRONTEND · BASES DE DATOS · QA</text>
-      <text x="332" y="236" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="17" fill="#7B5CD6">“Frontends limpios, datos sólidos y código bien probado”</text>
-      <g transform="translate(352 284)"><circle r="24" fill="#E0569A"/><circle r="18" fill="none" stroke="#fff" stroke-opacity=".6" stroke-dasharray="3 3"/><text y="5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="14" fill="#1C1430">A</text><text y="42" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10.5" fill="#5A5076">Angular</text></g><g transform="translate(426 284)"><circle r="24" fill="#3E7FCC"/><circle r="18" fill="none" stroke="#fff" stroke-opacity=".6" stroke-dasharray="3 3"/><text y="5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="14" fill="#1C1430">TS</text><text y="42" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10.5" fill="#5A5076">TypeScript</text></g><g transform="translate(500 284)"><circle r="24" fill="#B79CFF"/><circle r="18" fill="none" stroke="#fff" stroke-opacity=".6" stroke-dasharray="3 3"/><text y="5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="11" fill="#1C1430">.NET</text><text y="42" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10.5" fill="#5A5076">.NET</text></g><g transform="translate(574 284)"><circle r="24" fill="#D9468C"/><circle r="18" fill="none" stroke="#fff" stroke-opacity=".6" stroke-dasharray="3 3"/><text y="5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="11" fill="#1C1430">SQL</text><text y="42" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10.5" fill="#5A5076">SQL</text></g><g transform="translate(648 284)"><circle r="24" fill="#8EE3E0"/><circle r="18" fill="none" stroke="#fff" stroke-opacity=".6" stroke-dasharray="3 3"/><text y="5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="14" fill="#1C1430">QA</text><text y="42" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10.5" fill="#5A5076">Testing</text></g>
-
-      <!-- a sewing machine that "compiles": code fabric in, finished UI out -->
-      <g transform="translate(330 348)">
-        <clipPath id="mclipes"><rect width="610" height="128" rx="10"/></clipPath>
-        <rect width="610" height="128" rx="10" fill="#F6F0FC" stroke="#7B5CD6" stroke-opacity=".35"/>
-        <g clip-path="url(#mclipes)">
-          <rect x="0" y="92" width="610" height="10" fill="#C9A86A" opacity=".35"/>
-          <!-- incoming fabric with code -->
-          <g class="feed"><g transform="translate(0 0)"><rect x="-10" y="58" width="250" height="34" fill="#7B5CD6" opacity=".9"/><path d="M-10 62H240M-10 88H240" stroke="#fff" stroke-opacity=".5" stroke-dasharray="4 4"/>
-            <text x="4" y="73" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#3B2A63">&lt;Card /&gt;  SELECT *  it('fits')</text><text x="4" y="85" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#3B2A63">@Component  JOIN  expect(✓)</text></g><g transform="translate(-260 0)"><rect x="-10" y="58" width="250" height="34" fill="#7B5CD6" opacity=".9"/><path d="M-10 62H240M-10 88H240" stroke="#fff" stroke-opacity=".5" stroke-dasharray="4 4"/>
-            <text x="4" y="73" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#3B2A63">&lt;Card /&gt;  SELECT *  it('fits')</text><text x="4" y="85" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#3B2A63">@Component  JOIN  expect(✓)</text></g></g>
-        </g>
-        <!-- machine -->
-        <g transform="translate(196 6)">
-          <rect x="0" y="86" width="170" height="12" rx="5" fill="#7B5CD6"/>
-          <path d="M18 86V30Q18 10 40 10H132Q154 10 154 30V86H130V44Q130 36 122 36H58Q46 36 46 46V86Z" fill="#B79CFF"/>
-          <path d="M28 18H146" stroke="#fff" stroke-width="1.4" stroke-dasharray="4 3" opacity=".7"/>
-          <text x="88" y="29" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="11" fill="#fff">&lt;/&gt; build</text>
-          <g class="nd"><path d="M30 64V86" stroke="#A9AEBB" stroke-width="2.4"/></g>
-          <g class="mw"><circle cx="150" cy="52" r="13" fill="#D9468C"/><path d="M150 39V65M137 52H163" stroke="#fff" stroke-width="2"/></g>
-          <rect x="80" y="-2" width="14" height="14" rx="2" fill="#3E7FCC"/>
-        </g>
-        <!-- finished UI coming out -->
-        <g transform="translate(388 14)">
-          <rect width="200" height="80" rx="8" fill="#FBF7FF"/><rect x="5" y="5" width="190" height="70" rx="6" fill="none" stroke="#D9468C" stroke-width="1.4" stroke-dasharray="5 4" class="stitch"/>
-          <circle cx="30" cy="30" r="12" fill="#7B5CD6"/><path d="M50 24H140M50 34H112" stroke="#7B5CD6" stroke-width="3" stroke-linecap="round" opacity=".6"/>
-          <rect x="18" y="50" width="70" height="16" rx="8" fill="#E0569A"/><text x="53" y="61.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="9" font-weight="700" fill="#fff">Abrir</text>
-          <rect x="96" y="50" width="86" height="16" rx="8" fill="none" stroke="#3E7FCC" stroke-width="1.4"/><circle cx="174" cy="12" r="6" fill="#3BB3AE"/><path d="M171 12L173.5 14.5L177 9.5" stroke="#fff" stroke-width="1.6" fill="none"/>
-        </g>
-        <g transform="translate(388 106)"><rect width="200" height="8" rx="4" fill="#E6DCF3"/><rect class="prog" width="200" height="8" rx="4" fill="url(#gth)"/>
-          <text x="0" y="-1" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="0">.</text></g>
-        <text x="388" y="124" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10" fill="#2F8F8A">✓ build listo · probado y desplegado</text>
-      </g>
-
-      <text x="960" y="494" text-anchor="end" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="11" fill="#5A5076" opacity=".8">📍 Ambato, Ecuador · trabajo remoto</text>
+  <g transform="translate(992 8) scale(-1 1)"><g transform="scale(1)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
+  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
+  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
+  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
+  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
+  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
+  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
+</g></g></g>
+  <g transform="translate(8 552) scale(1 -1)"><g transform="scale(1)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
+  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
+  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
+  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
+  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
+  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
+  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
+</g></g></g>
+  <g transform="translate(992 552) scale(-1 -1)"><g transform="scale(1)"><g fill="none" stroke="#B8955A" stroke-linecap="round">
+  <path d="M10 74C10 36 36 10 74 10" stroke-width="1.3"/>
+  <path d="M20 74C20 44 44 20 74 20" stroke-width=".8" opacity=".6"/>
+  <path d="M74 10C88 10 94 19 89 27C85 33 76 31 77 25C77 21 82 20 84 23" stroke-width="1.1"/>
+  <path d="M10 74C10 88 19 94 27 89C33 85 31 76 25 77C21 77 20 82 23 84" stroke-width="1.1"/>
+  <path d="M30 31C38 23 50 23 54 31M31 30C31 38 35 44 42 47" stroke-width=".9" opacity=".8"/>
+  <path d="M40 56C46 51 52 53 54 59M56 40C51 46 53 52 59 54" stroke-width=".9" opacity=".7"/>
+</g></g></g>
+  <g transform="translate(23 23)"><circle r="6" fill="#D9468C"/><circle r="4.08" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="-1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/></g><g transform="translate(977 23)"><circle r="6" fill="#D9468C"/><circle r="4.08" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="-1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/></g><g transform="translate(23 537)"><circle r="6" fill="#D9468C"/><circle r="4.08" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="-1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/></g><g transform="translate(977 537)"><circle r="6" fill="#D9468C"/><circle r="4.08" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="-1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="-1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/><circle cx="1.62" cy="1.62" r="0.72" fill="#fff" fill-opacity=".9"/></g><g transform="translate(500 18) scale(1)" fill="none" stroke="#B8955A" stroke-linecap="round">
+  <path d="M-16 0C-34 -14 -58 -12 -70 0C-60 -6 -48 -4 -44 4C-42 9 -48 12 -51 8" stroke-width="1.2"/>
+  <path d="M16 0C34 -14 58 -12 70 0C60 -6 48 -4 44 4C42 9 48 12 51 8" stroke-width="1.2"/>
+  <path d="M-80 2H-96M80 2H96" stroke="#D9468C" stroke-opacity=".7" stroke-width="1.1" stroke-dasharray="3 4"/>
+</g><g transform="translate(500 18)"><circle r="10" fill="#D9468C"/><circle r="6.800000000000001" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-2.7" cy="-2.7" r="1.2" fill="#fff" fill-opacity=".9"/><circle cx="2.7" cy="-2.7" r="1.2" fill="#fff" fill-opacity=".9"/><circle cx="-2.7" cy="2.7" r="1.2" fill="#fff" fill-opacity=".9"/><circle cx="2.7" cy="2.7" r="1.2" fill="#fff" fill-opacity=".9"/></g>
+      <!-- text -->
+      <text x="60" y="414" font-family="'Segoe Script','Brush Script MT','Comic Sans MS',cursive" font-size="22" fill="#D9468C">¡Hola! Bienvenid@ a mi GitHub ✂</text>
+      <text x="58" y="464" font-family="Georgia,'Times New Roman',serif" font-size="54" font-weight="700" fill="#2B2140">Jhanina <tspan font-style="italic" font-weight="400" fill="url(#gth)">Conterón</tspan></text>
+      <text x="62" y="490" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12.5" font-weight="700" letter-spacing="2.2" fill="#5A5076">INGENIERA DE SOFTWARE · FRONTEND · BASES DE DATOS · QA</text>
+      <g transform="translate(62 502)"><rect width="266" height="22" rx="11" fill="#3BB3AE" fill-opacity=".14" stroke="#3BB3AE" stroke-opacity=".6"/><circle cx="13" cy="11" r="4" fill="#3BB3AE"/><text x="24" y="15" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10.5" fill="#22706B">disponible · junior · remoto</text></g>
+      <g transform="translate(662 456)"><circle r="21" fill="#E0569A"/><circle r="16" fill="none" stroke="#fff" stroke-opacity=".6" stroke-dasharray="3 3"/><text y="4.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="13" fill="#1C1430">A</text><text y="36" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#5A5076">Angular</text></g><g transform="translate(724 456)"><circle r="21" fill="#3E7FCC"/><circle r="16" fill="none" stroke="#fff" stroke-opacity=".6" stroke-dasharray="3 3"/><text y="4.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="13" fill="#1C1430">TS</text><text y="36" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#5A5076">TypeScript</text></g><g transform="translate(786 456)"><circle r="21" fill="#B79CFF"/><circle r="16" fill="none" stroke="#fff" stroke-opacity=".6" stroke-dasharray="3 3"/><text y="4.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="10" fill="#1C1430">.NET</text><text y="36" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#5A5076">.NET</text></g><g transform="translate(848 456)"><circle r="21" fill="#D9468C"/><circle r="16" fill="none" stroke="#fff" stroke-opacity=".6" stroke-dasharray="3 3"/><text y="4.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="10" fill="#1C1430">SQL</text><text y="36" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#5A5076">SQL</text></g><g transform="translate(910 456)"><circle r="21" fill="#8EE3E0"/><circle r="16" fill="none" stroke="#fff" stroke-opacity=".6" stroke-dasharray="3 3"/><text y="4.5" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="13" fill="#1C1430">QA</text><text y="36" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#5A5076">Testing</text></g>
     </svg>
