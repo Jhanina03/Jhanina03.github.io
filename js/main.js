@@ -340,6 +340,8 @@
   const flip = () => {
     const on = card.classList.toggle("is-flipped");
     card.setAttribute("aria-pressed", String(on));
+    const stage = card.closest(".stage");
+    if (stage) stage.classList.toggle("photo-side", on); // the wardrobe belongs to the avatar side
   };
   if (new URLSearchParams(location.search).has("flip")) flip(); // ?flip opens the photo side (handy for previews)
   card.addEventListener("click", (e) => { if (!e.target.closest("a")) flip(); });

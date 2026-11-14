@@ -1020,3 +1020,15 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .id-where { display: flex; align-items: center; gap: 8px; margin: 12px 0 0; font: 12px var(--sans); color: var(--muted, #8479A6); }
 @media (max-width: 640px) { .flip-hint { right: 4px; top: 2%; } }
 @media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } .flip-hint, .flip-hint b { animation: none; } }
+
+/* flip back v2: a polaroid with my photo and facts that are not already in the hero text */
+.polaroid-card { position: relative; margin: 0; width: min(310px, 74vw); box-sizing: border-box; padding: 14px 14px 16px; background: #FFFDF8; border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(43, 33, 64, .08), var(--shadow-lg); transform: rotate(-2deg); text-align: center; cursor: pointer; }
+.pc-tape { position: absolute; top: -12px; left: 50%; width: 92px; height: 24px; margin-left: -46px; background: rgba(255, 154, 203, .55); transform: rotate(3deg); border-radius: 2px; }
+.pc-photo { display: block; width: 100%; aspect-ratio: 1 / 1; height: auto; object-fit: cover; object-position: 50% 24%; border-radius: 2px; }
+.pc-caption { margin: 10px 0 6px; font-family: var(--hand); font-size: 26px; line-height: 1; color: #6A47D1; }
+.pc-facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font: 13px/1.35 var(--sans); color: #4E4468; }
+/* the wardrobe hides while the photo side is showing */
+.stage .rack { max-height: 420px; transition: opacity .35s ease, max-height .5s ease, padding .5s ease, border-width .5s ease; overflow: hidden; }
+.stage.photo-side .rack { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; border-width: 0; pointer-events: none; }
+.pc-photo { object-position: 50% 30%; }
