@@ -50,7 +50,7 @@
 <h2 id="stack" align="center"><img src="assets/h2-es.svg" alt="No. 02 · Mi colección de hilos" width="720"></h2>
 
 <p align="center">
-  <img src="spools.svg" alt="Habilidades como carretes de hilo: Frontend, Backend, Bases de datos, QA y Testing" width="100%">
+  <img src="assets/stack-es.svg" alt="Carretes de hilo: Frontend (Angular, TypeScript, Next.js, React), Backend (NestJS, Node.js, .NET), Bases de datos (SQL Server, PostgreSQL, MySQL, MongoDB), QA y DevOps (pruebas, pruebas de mutación, Jenkins, Docker, Git)" width="100%">
 </p>
 <p align="center">
   <img src="https://skillicons.dev/icons?i=angular,ts,nextjs,react,dotnet,cs,nestjs,nodejs,postgres,mysql,mongodb,docker,jenkins,git,py&perline=15" alt="Angular, TypeScript, Next.js, React, .NET, C#, NestJS, Node.js, PostgreSQL, MySQL, MongoDB, Docker, Jenkins, Git, Python">

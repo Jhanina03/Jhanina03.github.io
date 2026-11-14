@@ -50,7 +50,7 @@
 <h2 id="stack" align="center"><img src="assets/h2.svg" alt="No. 02 · My thread collection" width="720"></h2>
 
 <p align="center">
-  <img src="spools.svg" alt="Skills as thread spools: Frontend, Backend, Databases, QA and Testing" width="100%">
+  <img src="assets/stack.svg" alt="Thread spools: Frontend (Angular, TypeScript, Next.js, React), Backend (NestJS, Node.js, .NET), Databases (SQL Server, PostgreSQL, MySQL, MongoDB), QA and DevOps (tests, mutation testing, Jenkins, Docker, Git)" width="100%">
 </p>
 <p align="center">
   <img src="https://skillicons.dev/icons?i=angular,ts,nextjs,react,dotnet,cs,nestjs,nodejs,postgres,mysql,mongodb,docker,jenkins,git,py&perline=15" alt="Angular, TypeScript, Next.js, React, .NET, C#, NestJS, Node.js, PostgreSQL, MySQL, MongoDB, Docker, Jenkins, Git, Python">
