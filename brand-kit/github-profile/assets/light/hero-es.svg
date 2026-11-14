@@ -807,7 +807,7 @@
   <path d="M-80 2H-96M80 2H96" stroke="#D9468C" stroke-opacity=".7" stroke-width="1.1" stroke-dasharray="3 4"/>
 </g><g transform="translate(500 18)"><circle r="10" fill="#D9468C"/><circle r="6.800000000000001" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><circle cx="-2.7" cy="-2.7" r="1.2" fill="#fff" fill-opacity=".9"/><circle cx="2.7" cy="-2.7" r="1.2" fill="#fff" fill-opacity=".9"/><circle cx="-2.7" cy="2.7" r="1.2" fill="#fff" fill-opacity=".9"/><circle cx="2.7" cy="2.7" r="1.2" fill="#fff" fill-opacity=".9"/></g>
       <!-- text -->
-      <text x="60" y="414" font-family="'Segoe Script','Brush Script MT','Comic Sans MS',cursive" font-size="22" fill="#D9468C">¡Hola! Bienvenid@ a mi GitHub ✂</text>
+      <text x="62" y="410" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12" letter-spacing="4" fill="#D9468C">HOLA, SOY</text><path d="M146 406H196" stroke="#D9468C" stroke-opacity=".6" stroke-dasharray="4 3"/>
       <text x="58" y="464" font-family="Georgia,'Times New Roman',serif" font-size="54" font-weight="700" fill="#2B2140">Jhanina <tspan font-style="italic" font-weight="400" fill="url(#gth)">Conterón</tspan></text>
       <text x="62" y="490" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="12.5" font-weight="700" letter-spacing="2.2" fill="#5A5076">INGENIERA DE SOFTWARE · FRONTEND · BASES DE DATOS · QA</text>
       <g transform="translate(62 502)"><rect width="266" height="22" rx="11" fill="#3BB3AE" fill-opacity=".14" stroke="#3BB3AE" stroke-opacity=".6"/><circle cx="13" cy="11" r="4" fill="#3BB3AE"/><text x="24" y="15" font-family="'Cascadia Code',Consolas,'Courier New',monospace" font-size="10.5" fill="#22706B">disponible · junior · remoto</text></g>

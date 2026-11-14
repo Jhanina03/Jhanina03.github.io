@@ -8,17 +8,17 @@
 
 <p align="center">
   <a href="https://jhanina03.github.io/?lang=es"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-portfolio-es.svg"><img src="assets/cta-portfolio-es.svg" alt="Ver mi portafolio" height="42"></picture></a>
-  <a href="https://jhanina03.github.io/game.html?lang=es"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-play-es.svg"><img src="assets/cta-play-es.svg" alt="Juega mis juegos" height="42"></picture></a>
   <a href="https://jhanina03.github.io/cv.html?lang=es"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-cv-es.svg"><img src="assets/cta-cv-es.svg" alt="CV rápido" height="42"></picture></a>
   <a href="#contacto"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-talk-es.svg"><img src="assets/cta-talk-es.svg" alt="Hablemos" height="42"></picture></a>
+  <a href="https://jhanina03.github.io/game.html?lang=es"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cta-play-es.svg"><img src="assets/cta-play-es.svg" alt="Juega mis juegos" height="42"></picture></a>
 </p>
 
 <p align="center">
-  <a href="#proyectos">✂️ Proyectos</a> ·
-  <a href="#stack">🧵 Stack</a> ·
-  <a href="#actividad">🪡 Actividad</a> ·
-  <a href="#sobre-mi">👗 Sobre mí</a> ·
-  <a href="#contacto">💌 Contacto</a>
+  <a href="#proyectos">Proyectos</a> ·
+  <a href="#stack">Stack</a> ·
+  <a href="#actividad">Actividad</a> ·
+  <a href="#sobre-mi">Sobre mí</a> ·
+  <a href="#contacto">Contacto</a>
 </p>
 
 <p align="center">
