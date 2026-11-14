@@ -1032,3 +1032,40 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .stage .rack { max-height: 420px; transition: opacity .35s ease, max-height .5s ease, padding .5s ease, border-width .5s ease; overflow: hidden; }
 .stage.photo-side .rack { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; border-width: 0; pointer-events: none; }
 .pc-photo { object-position: 50% 30%; }
+
+/* flip back v3: the same mirror frame as the avatar, with the real photo inside */
+.photo-frame { position: relative; width: min(330px, 78vw); aspect-ratio: 3 / 4; box-sizing: content-box; overflow: hidden; cursor: pointer;
+  border-radius: 50% 50% 46% 46% / 40% 40% 30% 30%; border: 10px solid var(--paper); box-shadow: 0 0 0 2px var(--lilac), var(--shadow-lg); background: #E6E2E3; }
+.pf-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
+.photo-frame::before { content: ""; position: absolute; inset: 8px; z-index: 2; border-radius: inherit; border: 1.5px dashed rgba(255, 154, 203, .85); pointer-events: none; }
+.photo-frame::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 42%; z-index: 1; background: linear-gradient(to top, rgba(28, 20, 48, .88), rgba(28, 20, 48, 0)); pointer-events: none; }
+.pf-facts { position: absolute; left: 0; right: 0; bottom: 9%; z-index: 3; list-style: none; margin: 0; padding: 0 16%; display: grid; gap: 3px; text-align: center;
+  font: 600 12.5px/1.35 var(--sans); color: #fff; text-shadow: 0 1px 6px rgba(0, 0, 0, .35); }
+
+/* flip back v4: an elegant gold portrait frame in the mirror shape, just the photo */
+.photo-frame { background: linear-gradient(145deg, #F6E7C4 0%, #C9A36A 22%, #F3E2B8 45%, #B88E58 70%, #EBD3A0 100%) !important; border: 0 !important; padding: 9px; box-sizing: border-box;
+  width: calc(min(330px, 78vw) + 20px); box-shadow: 0 0 0 1px rgba(120, 88, 40, .35), 0 18px 40px -16px rgba(40, 24, 8, .55), var(--shadow-lg) !important; }
+.photo-frame::before { inset: 4px !important; border: 1px solid rgba(255, 248, 228, .75) !important; z-index: 2; }
+.photo-frame::after { display: none !important; }
+.pf-inner { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 50% 50% 46% 46% / 40% 40% 30% 30%; box-shadow: inset 0 0 0 2px rgba(110, 80, 36, .45), inset 0 0 18px rgba(0, 0, 0, .18); }
+.pf-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.pf-facts { display: none !important; }
+/* the hint changes once the photo side is showing, so it is clear how to go back to the avatar */
+.flip-hint .fh-back { display: none; }
+.flip.is-flipped .flip-hint { opacity: 1; }
+.flip.is-flipped .flip-hint .fh-front { display: none; }
+.flip.is-flipped .flip-hint .fh-back { display: inline; }
+.flip.is-flipped .flip-hint b { transform: scaleX(-1); animation: none; }
+.photo-frame { aspect-ratio: auto !important; height: calc(min(330px, 78vw) * 4 / 3 + 20px); }
+
+/* flip back v5: an ornate antique gold frame drawn in SVG around the photo */
+.photo-frame.ornate { background: none !important; padding: 0; border-radius: 0 !important; overflow: visible; box-shadow: none !important; }
+.photo-frame.ornate::before, .photo-frame.ornate::after { display: none !important; }
+.photo-frame.ornate .pf-inner { position: absolute; inset: 6.2% 7.4%; width: auto; height: auto; border-radius: 3px; box-shadow: inset 0 0 22px rgba(40, 24, 8, .35); }
+.pf-ornament { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none;
+  filter: drop-shadow(0 2px 1.5px rgba(70, 46, 12, .55)) drop-shadow(0 16px 26px rgba(20, 10, 0, .35)); }
+
+.photo-frame.ornate .pf-inner { inset: 8.37% 11.14%; border-radius: 3px; }
+.flip.is-flipped .flip-hint { top: auto; bottom: -36px; right: 50%; margin-right: -70px; }
+
+.photo-frame.ornate .pf-inner { inset: 4.94% 6.57%; border-radius: 3px; }
