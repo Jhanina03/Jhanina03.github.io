@@ -47,6 +47,11 @@
   .sec-proj span, .sec-cert span { padding: 8px 10px; display: grid; gap: 2px; } .sec-proj b, .sec-cert b { font: 700 .85rem Fraunces, serif; color: var(--ink); }
   .sec-proj small, .sec-cert small { font-size: .7rem; color: var(--purple); }
   .sec-seal { display: grid !important; place-items: center; aspect-ratio: 16 / 9; font-size: 34px; background: linear-gradient(135deg, #F6F1FF, #FFE3F1); }
+  .sec-certs { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; text-align: left; margin: 8px 0; }
+  .sec-chip { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 12px; background: #FBF8FF; border: 1px solid #E4DAFF; text-decoration: none; color: inherit; transition: transform .2s, border-color .2s; }
+  .sec-chip:hover { transform: translateY(-2px); border-color: #FF9ACB; }
+  .sec-chip b { font: 700 .82rem Fraunces, serif; color: var(--ink); } .sec-chip small { font: 700 .68rem "DM Sans"; color: var(--purple); }
+  :root[data-theme="dark"] .sec-chip { background: #2E2450; border-color: #3A2E5C; }
   .sec-qa { display: flex; gap: 14px; align-items: center; text-align: left; } .sec-qa p { margin: 0; font-size: .92rem; }
   .sec-bug { flex: none; width: 84px; height: 84px; border-radius: 20px; display: grid; place-items: center; font: 700 1rem "DM Sans"; background: linear-gradient(135deg, #FFE3F1, #F6F1FF); border: 1px dashed #FF9ACB; }
   .sec-time { list-style: none; margin: 8px 0; padding: 0; text-align: left; position: relative; }
@@ -510,7 +515,7 @@
       // experience: a mini timeline with icons
       () => `<ol class="sec-time">${EXPERIENCE.map((x) => `<li><span class="sec-ico">${x.icon || "✦"}</span><div><b>${pk(x.role)}</b><small>${pk(x.when)} · ${pk(x.org)}</small></div></li>`).join("")}</ol>`,
       // certificates: thumbnails of the real certificates
-      () => `<div class="sec-grid">${CERTS.map((c) => `<a class="sec-cert" href="${c.url || "#"}" target="_blank" rel="noopener">${c.img ? `<img src="${c.img}" alt="">` : `<span class="sec-seal">🏅</span>`}<span><b>${pk(c.title)}</b><small>${c.year}</small></span></a>`).join("")}</div>`,
+      () => `<div class="sec-certs">${CERTS.map((c) => `<a class="sec-chip" href="${c.url || "#"}" target="_blank" rel="noopener"><span>🏅</span><b>${pk(c.title)}</b><small>${c.year}</small></a>`).join("")}</div>`,
       // contact: photo and action buttons
       () => `<div class="sec-about"><img class="sec-photo" src="assets/img/jhanina-pro.jpg" alt="Jhanina"><p>${t("contact.lead")}</p></div>
         <div class="sec-actions">${link("mailto:" + PROFILE.email, "✉️ Email", "primary")}${link(PROFILE.linkedin, "LinkedIn")}${link(PROFILE.github, "GitHub")}${link("cv.html", "CV")}</div>`,
