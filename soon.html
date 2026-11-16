@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jhanina Conterón · Software Engineer</title>
+  <meta name="description" content="Jhanina Conterón · Software Engineer · Frontend, Databases, QA. Portfolio coming soon.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1C1430">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg1: #F4ECFB; --bg2: #EADFF7; --ink: #2B2140; --ink2: #5A5076; --purple: #7B5CD6; --pink: #FF5C9A; --glass: rgba(255, 255, 255, .55); --rim: rgba(183, 156, 255, .4); }
+    @media (prefers-color-scheme: dark) { :root { --bg1: #1C1430; --bg2: #2A1D48; --ink: #F3EEFF; --ink2: #CFC5EC; --purple: #B79CFF; --pink: #FF9ACB; --glass: rgba(40, 30, 72, .5); --rim: rgba(214, 196, 255, .22); } }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; font-family: "DM Sans", system-ui, sans-serif; color: var(--ink);
+      background: radial-gradient(ellipse at 20% 10%, rgba(183, 156, 255, .35), transparent 55%), radial-gradient(ellipse at 85% 90%, rgba(255, 154, 203, .3), transparent 55%), linear-gradient(160deg, var(--bg1), var(--bg2)); }
+    /* a vertical zipper down the middle, like the portfolio intro */
+    body::before { content: ""; position: fixed; top: 0; bottom: 0; left: 50%; width: 10px; margin-left: -5px; opacity: .35; z-index: 0;
+      background: repeating-linear-gradient(180deg, var(--purple) 0 3px, transparent 3px 7px); }
+    .card { position: relative; z-index: 1; width: min(560px, 100%); text-align: center; padding: 34px 26px 28px; border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .25), var(--glass)); backdrop-filter: blur(18px) saturate(170%); -webkit-backdrop-filter: blur(18px) saturate(170%);
+      box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, .7), inset 0 0 0 1px var(--rim), 0 30px 60px -30px rgba(43, 33, 64, .55); }
+    .card::after { content: ""; position: absolute; left: 18px; right: 18px; top: 3px; height: 10%; border-radius: 24px; pointer-events: none; background: linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, 0)); }
+    .hello { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .4em; text-transform: uppercase; color: var(--pink); }
+    svg.name { width: 100%; height: auto; display: block; overflow: visible; margin: -6px 0 -10px; }
+    .name text { font-family: Caveat, cursive; font-weight: 700; font-size: 120px; }
+    .outline { fill: none; stroke: var(--purple); stroke-width: 2; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.6s ease-in-out .2s forwards; }
+    .fill { fill: url(#g); opacity: 0; animation: in .5s ease 1.6s forwards; }
+    .stitch { fill: none; stroke: #fff; stroke-width: 1.4; stroke-dasharray: 6 5; opacity: 0; animation: in .4s ease 1.9s forwards; }
+    .thread { fill: none; stroke: var(--pink); stroke-width: 2.4; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 1.6s ease-in-out .1s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } } @keyframes in { to { opacity: 1; } }
+    .surname { margin: 0; font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 26px; color: var(--purple); }
+    .role { margin: 10px 0 0; font-size: 14px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; }
+    .sub { margin: 4px 0 0; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--purple); }
+    .soon { margin: 22px auto 0; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; font-weight: 700; font-size: 14px; color: #fff;
+      background: linear-gradient(135deg, #7B5CD6, #FF7AB8); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 10px 24px -10px rgba(255, 122, 184, .8); }
+    .soon i { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: pulse 1.6s ease-in-out infinite; }
+    @keyframes pulse { 50% { opacity: .3; } }
+    .msg { margin: 14px 0 0; color: var(--ink2); font-size: 15px; line-height: 1.55; }
+    .links { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .links a { text-decoration: none; font-weight: 700; font-size: 14px; padding: 9px 16px; border-radius: 999px; color: var(--purple); background: rgba(255, 255, 255, .35); box-shadow: inset 0 0 0 1.5px var(--rim); }
+    .links a:hover { background: rgba(183, 156, 255, .2); }
+    .lang { position: fixed; top: 16px; right: 16px; z-index: 2; display: flex; padding: 3px; border-radius: 999px; background: var(--glass); box-shadow: inset 0 0 0 1px var(--rim); backdrop-filter: blur(10px); }
+    .lang button { border: 0; background: none; color: var(--ink2); font: 700 12px "DM Sans"; padding: 6px 10px; border-radius: 999px; cursor: pointer; }
+    .lang button[aria-pressed="true"] { background: var(--purple); color: #fff; }
+    @media (prefers-reduced-motion: reduce) { .outline, .thread { stroke-dashoffset: 0; animation: none; } .fill, .stitch { opacity: 1; animation: none; } }
+  </style>
+</head>
+<body>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en">EN</button><button type="button" data-l="es">ES</button></div>
+  <main class="card">
+    <p class="hello" data-t="hello">Hello, I'm</p>
+    <svg class="name" viewBox="0 0 560 210" role="img" aria-label="Jhanina">
+      <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#B79CFF"/><stop offset=".55" stop-color="#7FB6FF"/><stop offset="1" stop-color="#FF9ACB"/></linearGradient></defs>
+      <path class="thread" d="M-10 182C70 150 120 200 200 178S340 140 420 174 520 160 580 140" pathLength="1000"/>
+      <text class="outline" x="280" y="130" text-anchor="middle">Jhanina</text>
+      <text class="fill" x="280" y="130" text-anchor="middle">Jhanina</text>
+      <text class="stitch" x="280" y="130" text-anchor="middle">Jhanina</text>
+    </svg>
+    <p class="surname">Conterón</p>
+    <p class="role">Software Engineer</p>
+    <p class="sub">Frontend · Databases · QA</p>
+    <span class="soon"><i></i> <span data-t="soon">Portfolio coming soon</span> ✂</span>
+    <p class="msg" data-t="msg">I'm putting the finishing stitches on my new portfolio. In the meantime, let's talk!</p>
+    <div class="links">
+      <a href="mailto:jhaninaconteron03@gmail.com">✉️ Email</a>
+      <a href="https://www.linkedin.com/in/jhanina-conteron/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Jhanina03" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var T = {
+        en: { hello: "Hello, I'm", soon: "Portfolio coming soon", msg: "I'm putting the finishing stitches on my new portfolio. In the meantime, let's talk!" },
+        es: { hello: "Hola, soy", soon: "Portafolio muy pronto", msg: "Estoy dando las últimas puntadas a mi nuevo portafolio. Mientras tanto, ¡hablemos!" },
+      };
+      var lang = "en";
+      try { lang = new URLSearchParams(location.search).get("lang") || localStorage.getItem("jc-lang") || "en"; } catch (e) {}
+      function set(l) {
+        lang = T[l] ? l : "en"; document.documentElement.lang = lang;
+        document.querySelectorAll("[data-t]").forEach(function (el) { el.textContent = T[lang][el.dataset.t]; });
+        document.querySelectorAll(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.l === lang)); });
+        try { localStorage.setItem("jc-lang", lang); } catch (e) {}
+      }
+      document.querySelectorAll(".lang button").forEach(function (b) { b.onclick = function () { set(b.dataset.l); }; });
+      set(lang);
+    })();
+  </script>
+</body>
+</html>
