@@ -214,10 +214,11 @@
       <div class="tag-wrap reveal" style="--c:${c.color};--d:${i * 0.07}s">
         <div class="tag">
           <span class="postmark" aria-hidden="true">✓ VERIFIED</span>
+          ${c.img ? `<a class="tag-thumb" href="${esc(c.url)}" target="_blank" rel="noopener" aria-label="${esc(pk(c.title))}"><img src="${esc(c.img)}" alt="" loading="lazy"></a>` : ""}
           <span class="tag-year">${esc(c.year)}</span>
           <h3>${esc(pk(c.title))}</h3>
           <p>${esc(pk(c.issuer))}</p>
-          ${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${t("certs.view")} ↗</a>` : ""}
+          <div class="tag-links">${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${t("certs.view")} ↗</a>` : ""}${c.verify ? `<a href="${esc(c.verify)}" target="_blank" rel="noopener">${t("certs.verify")} ↗</a>` : ""}</div>
         </div>
       </div>`).join("");
   }

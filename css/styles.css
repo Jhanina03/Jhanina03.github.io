@@ -1138,3 +1138,9 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
   .run-node { transform: none; filter: none; opacity: 1; }
   .run.current .run-node::after, .run.on .run-card li { animation: none; }
 }
+
+/* certificates: a preview of the real certificate on the tag */
+.tag-thumb { display: block; margin: 4px 0 10px; border-radius: 8px; overflow: hidden; border: 1.5px solid var(--line); background: #fff; box-shadow: var(--shadow); transition: transform .3s; }
+.tag-thumb img { display: block; width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; object-position: top center; }
+.tag-thumb:hover { transform: scale(1.03); }
+.tag-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }

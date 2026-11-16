@@ -315,17 +315,17 @@ window.CERTS = [
   {
     title: { en: "Quality Assurance Certification · freeCodeCamp", es: "Quality Assurance Certification · freeCodeCamp" },
     issuer: { en: "freeCodeCamp", es: "freeCodeCamp" },
-    year: "2026", url: "https://www.freecodecamp.org/certification/Jhanina03/quality-assurance-v7", color: "#8EE3E0",
+    year: "2026", url: "assets/certs/fcc-quality-assurance.pdf", img: "assets/certs/fcc-quality-assurance.jpg", verify: "https://freecodecamp.org/certification/fcc30de7d1c-44b5-4b23-9bc7-1e8bd08ad453/quality-assurance-v7", color: "#8EE3E0",
   },
   {
     title: { en: "CSEI 2024 · Participation", es: "CSEI 2024 · Participación" },
     issuer: { en: "Computer Science, Electronics & Industrial Engineering Congress · UTA", es: "Congreso de Ciencias de la Computación, Electrónica e Ingeniería Industrial · UTA" },
-    year: "2024", url: "assets/certs/csei-2024-participation.pdf", color: "#B79CFF",
+    year: "2024", url: "assets/certs/csei-2024-participation.pdf", img: "assets/certs/csei-2024-participation.jpg", color: "#B79CFF",
   },
   {
     title: { en: "CSEI 2024 · Approval", es: "CSEI 2024 · Aprobación" },
     issuer: { en: "Computer Science, Electronics & Industrial Engineering Congress · UTA", es: "Congreso de Ciencias de la Computación, Electrónica e Ingeniería Industrial · UTA" },
-    year: "2024", url: "assets/certs/csei-2024-approval.pdf", color: "#FF9ACB",
+    year: "2024", url: "assets/certs/csei-2024-approval.pdf", img: "assets/certs/csei-2024-approval.jpg", color: "#FF9ACB",
   },
   {
     title: { en: "GitHub achievements", es: "Logros de GitHub" },
