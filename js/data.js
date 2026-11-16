@@ -61,7 +61,8 @@ window.PROJECTS = [
       es: "Recomendador de confort para prendas: inferencia difusa Mamdani evalúa el confort por zona del cuerpo y un algoritmo genético busca las medidas óptimas del patrón (pecho, cintura, cadera).",
     },
     stack: ["Python", "Fuzzy logic", "Genetic algorithms"],
-    tags: ["ai", "fashion"], repo: "", demo: "",
+    img: "assets/img/projects/fashionia.jpg",
+    tags: ["ai", "fashion"], repo: "https://github.com/Jhanina03/FashionIA", demo: "",
   },
   {
     id: "chat", featured: true, year: 2026, swatch: "#A8D8FF",
@@ -72,6 +73,7 @@ window.PROJECTS = [
       es: "Chat en tiempo real con videollamadas y sin login. Cubierto con pruebas unitarias, de integración, concurrencia e interfaz, reportes de cobertura, lint con SonarJS y pruebas de mutación.",
     },
     stack: ["Node.js", "Socket.IO", "WebRTC", "SQLite", "Stryker"],
+    img: "assets/img/projects/chat.jpg",
     tags: ["back", "qa"], repo: "https://github.com/Jhanina03/chat-basico", demo: "https://chat-basico.onrender.com",
   },
   {
@@ -83,6 +85,7 @@ window.PROJECTS = [
       es: "Detecta placas vehiculares en imágenes y lee sus caracteres, combinando procesamiento de imágenes con un modelo de reconocimiento entrenado.",
     },
     stack: ["Python", "OpenCV", "Neural networks"],
+    img: "assets/img/projects/plates.svg",
     tags: ["ai"], repo: "", demo: "",
   },
   {
@@ -94,6 +97,7 @@ window.PROJECTS = [
       es: "Desarrollado en mis prácticas preprofesionales: un programa que cruza saldos de cuentas y marca diferencias, convirtiendo una tarea manual lenta en un reporte rápido y confiable.",
     },
     stack: ["SQL", ".NET", "Reporting"],
+    img: "assets/img/projects/recon.svg",
     tags: ["data", "back"], repo: "", demo: "",
   },
   {
@@ -105,10 +109,11 @@ window.PROJECTS = [
       es: "Sitios de reservas y módulos personalizados en Odoo: habitaciones, disponibilidad, reservas y gestión de clientes, todo dentro del ERP.",
     },
     stack: ["Odoo", "Python", "PostgreSQL"],
+    img: "assets/img/projects/odoo.svg",
     tags: ["back", "data", "front"], repo: "", demo: "",
   },
   {
-    id: "gpis", featured: true, year: 2025, swatch: "#B79CFF",
+    id: "gpis", year: 2025, swatch: "#B79CFF",
     title: "APE7 · GPIS",
     kicker: { en: "Microservices + CI", es: "Microservicios + CI" },
     desc: {
@@ -127,10 +132,11 @@ window.PROJECTS = [
       es: "Clasificador de dígitos manuscritos con una red neuronal y un KNN de referencia, con curvas de aprendizaje, matriz de confusión y predicciones visuales.",
     },
     stack: ["Python", "Neural networks", "KNN"],
+    img: "assets/img/projects/mnist.jpg",
     tags: ["ai"], repo: "https://github.com/Jhanina03/mnist", demo: "",
   },
   {
-    id: "booking", year: 2025, swatch: "#FFB3D9",
+    id: "booking", featured: true, year: 2025, swatch: "#FFB3D9",
     title: "BookingView",
     kicker: { en: "Airbnb / Booking style", es: "Estilo Airbnb / Booking" },
     desc: {
@@ -138,6 +144,7 @@ window.PROJECTS = [
       es: "Plataforma de reservas de alojamiento con usuarios, anuncios, reservas y disponibilidad, sobre una API REST.",
     },
     stack: ["Node.js", "MongoDB", "REST"],
+    img: "assets/img/projects/booking.jpg",
     tags: ["front", "back", "data"], repo: "https://github.com/Jhanina03/BookingView", demo: "",
   },
   {
@@ -182,6 +189,7 @@ window.PROJECTS = [
       es: "“¿Llegará FeriaAuto a la meta?” Un pequeño juego web sobre la ruta hacia la legalidad, hecho para un proyecto de clase.",
     },
     stack: ["JavaScript", "HTML", "CSS"],
+    img: "assets/img/projects/feriauto.jpg",
     tags: ["game", "front"], repo: "https://github.com/Jhanina03/feriauto-juego", demo: "https://feriauto-juego.vercel.app",
   },
   {
@@ -319,5 +327,55 @@ window.CERTS = [
     title: { en: "Technical high-school diploma with honours", es: "Bachillerato técnico con honores" },
     issuer: { en: "Electrical installations & machinery · U.E. Ramón Barba Naranjo", es: "Instalaciones, equipos y máquinas eléctricas · U.E. Ramón Barba Naranjo" },
     year: "2022", url: "", color: "#8EE3E0",
+  },
+];
+
+/* Team projects I contributed to in other people's / organisations' repositories */
+window.COLLABS = [
+  {
+    id: "kaphiy", title: "Kaphiy", org: "Arkasys-GDP", commits: 12, img: "assets/img/projects/kaphiy.jpg",
+    desc: { en: "QR ordering system for Praliné Coffee House: customers scan a code, browse the menu and order from their phone; baristas manage orders from a kitchen panel.",
+            es: "Sistema de pedidos por QR para Praliné Coffee House: el cliente escanea un código, ve el menú y pide desde su celular; los baristas gestionan los pedidos en un panel de cocina." },
+    part: { en: "Customer frontend, menu and order flow, product images, messages and system tests.",
+            es: "Frontend del cliente, menú y flujo de pedidos, imágenes de productos, mensajes y pruebas de sistema." },
+    stack: ["TypeScript", "PostgreSQL", "PWA"], repo: "https://github.com/Arkasys-GDP/Kaphiy", demo: "https://kaphiy.vercel.app",
+  },
+  {
+    id: "fuel", title: "Fuel System", org: "Application-Distributed-Gasoline-System", commits: 4, img: "assets/img/projects/gasoline.jpg",
+    desc: { en: "Distributed fuel-management system built as microservices behind an API Gateway, designed for distributed databases.",
+            es: "Sistema distribuido de gestión de combustible con microservicios detrás de una API Gateway, pensado para bases de datos distribuidas." },
+    part: { en: "Built the vehicles microservice and wired it into the API Gateway.",
+            es: "Desarrollé el microservicio de vehículos y lo integré en la API Gateway." },
+    stack: ["TypeScript", "Microservices", "API Gateway"], repo: "https://github.com/Application-Distributed-Gasoline-System/Backend", demo: "https://gasolinesystem.vercel.app",
+  },
+  {
+    id: "water", title: { en: "Water board e-invoicing", es: "Facturación de la Junta de Agua" }, org: "junta-agua-uta", commits: 5, img: "assets/img/projects/water.svg",
+    desc: { en: "Electronic invoicing system for a community water board: users, customers and invoices, with a React frontend and a NestJS backend.",
+            es: "Sistema de facturación electrónica para una junta de agua: usuarios, clientes y facturas, con frontend en React y backend en NestJS." },
+    part: { en: "Accounting tab, accounting periods, fiscal years and filters.",
+            es: "Pestaña de contabilidad, periodos contables, años fiscales y filtros." },
+    stack: ["React", "TypeScript", "NestJS"], repo: "https://github.com/junta-agua-uta/ja-facturacion-front", demo: "",
+  },
+  {
+    id: "electoral", title: { en: "Electoral process platform", es: "Plataforma de procesos electorales" }, org: "seby10", commits: 20,
+    desc: { en: "Web platform to explore candidates, their proposals and events during an election.",
+            es: "Plataforma web para explorar candidatos, sus propuestas y eventos durante un proceso electoral." },
+    part: { en: "Suggestions management, filters and states, and session-based voting with cookies.",
+            es: "Gestión de sugerencias, filtros y estados, y votos por sesión con cookies." },
+    stack: ["JavaScript", "HTML", "SCSS"], repo: "https://github.com/seby10/MCSProject", demo: "",
+  },
+  {
+    id: "assets", title: { en: "Asset management", es: "Gestión de activos" }, org: "seby10", commits: 12,
+    desc: { en: "System to register, maintain and purchase an organisation's assets.",
+            es: "Sistema para registrar, dar mantenimiento y comprar los activos de una organización." },
+    part: { en: "Bulk and single asset upload, maintenance updates, purchase process and Excel import fixes.",
+            es: "Carga de activos por lotes e individual, actualización de mantenimientos, proceso de compra y arreglos de importación en Excel." },
+    stack: ["JavaScript", "HTML"], repo: "https://github.com/seby10/GestionActivos", demo: "",
+  },
+  {
+    id: "nesttests", title: { en: "NestJS backend · tests", es: "Backend NestJS · pruebas" }, org: "PabloAML1", commits: 3,
+    desc: { en: "Team NestJS backend.", es: "Backend en NestJS del equipo." },
+    part: { en: "Implemented the unit tests.", es: "Implementé las pruebas unitarias." },
+    stack: ["NestJS", "TypeScript", "Unit tests"], repo: "https://github.com/PabloAML1/nest-backend", demo: "",
   },
 ];

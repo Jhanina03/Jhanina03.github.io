@@ -148,6 +148,7 @@
       <article class="pattern reveal" data-tags="${p.tags.join(" ")}" style="--c:${p.swatch};--d:${(i % 3) * 0.08}s;--i:${i}">
         <span class="scissors" aria-hidden="true">✂</span>
         <span class="pin" aria-hidden="true"></span>
+        ${p.img ? `<div class="pattern-shot"><img src="${esc(p.img)}" alt="" loading="lazy" width="800" height="450"></div>` : ""}
         <div class="pattern-top">
           <span class="swatch" aria-hidden="true"></span>
           <span class="kicker">${esc(pk(p.kicker))}</span>

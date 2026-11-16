@@ -167,6 +167,19 @@
   /* ---------- projects ---------- */
   function renderProjects() {
     $("#featured").innerHTML = PROJECTS.filter((p) => p.featured).map((p, i) => JC.projectCard(p, i)).join("");
+    const pk = (v) => i18n.pick(v), t = (k) => i18n.t(k);
+    $("#collabs").innerHTML = (window.COLLABS || []).map((c, i) => `
+      <article class="collab reveal" style="--d:${(i % 3) * 0.08}s">
+        ${c.img ? `<div class="collab-shot"><img src="${JC.esc(c.img)}" alt="" loading="lazy" width="800" height="450"></div>` : ""}
+        <div class="collab-body">
+          <p class="collab-org"><span>@${JC.esc(c.org)}</span><b>${c.commits} ${t("collab.commits")}</b></p>
+          <h4>${JC.esc(pk(c.title))}</h4>
+          <p>${JC.esc(pk(c.desc))}</p>
+          <p class="collab-part"><strong>${t("collab.part")}</strong> ${JC.esc(pk(c.part))}</p>
+          <ul class="chips">${c.stack.map((x) => `<li>${JC.esc(x)}</li>`).join("")}</ul>
+          <div class="pattern-links">${c.demo ? `<a href="${JC.esc(c.demo)}" target="_blank" rel="noopener">${t("projects.demo")} ↗</a>` : ""}<a href="${JC.esc(c.repo)}" target="_blank" rel="noopener">${t("projects.code")} ↗</a></div>
+        </div>
+      </article>`).join("");
   }
 
   /* ---------- experience ---------- */
@@ -324,7 +337,7 @@
   /* ---------- render + re-render on language change ---------- */
   function renderAll() {
     renderSkills(); renderProjects(); renderRunway(); renderTags(); renderRack(); renderThreadButtons();
-    document.querySelectorAll("#spools .reveal, #featured .reveal, #runway .reveal, #tags .reveal").forEach(JC.reveal);
+    document.querySelectorAll("#spools .reveal, #featured .reveal, #collabs .reveal, #runway .reveal, #tags .reveal").forEach(JC.reveal);
   }
   renderAll();
   document.addEventListener("langchange", () => {

@@ -1069,3 +1069,27 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .flip.is-flipped .flip-hint { top: auto; bottom: -36px; right: 50%; margin-right: -70px; }
 
 .photo-frame.ornate .pf-inner { inset: 4.94% 6.57%; border-radius: 3px; }
+
+/* project images: a reference screenshot or illustration on top of each card */
+.pattern-shot { position: relative; z-index: 1; margin: -12px -10px 6px; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; border: 1.5px solid var(--line); background: #1C1430; }
+.pattern-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .6s ease; }
+.pattern:hover .pattern-shot img { transform: scale(1.05); }
+/* team projects & collaborations */
+.collabs-head { margin: 64px 0 22px; text-align: center; }
+.collabs-head h3 { font-family: var(--serif); font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin: 0; }
+.collabs-head .hand { margin: 4px 0 0; color: var(--muted); }
+.collabs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 20px; }
+.collab { display: flex; flex-direction: column; background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); transition: transform .3s, box-shadow .3s; }
+.collab:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.collab-shot { aspect-ratio: 16 / 9; overflow: hidden; background: #1C1430; border-bottom: 1.5px solid var(--line); }
+.collab-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .6s; }
+.collab:hover .collab-shot img { transform: scale(1.05); }
+.collab-body { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px; flex: 1; }
+.collab-org { display: flex; justify-content: space-between; gap: 8px; margin: 0; font: 600 .78rem var(--sans); color: var(--purple); }
+.collab-org b { font-family: var(--pixel); font-size: .62rem; letter-spacing: .06em; color: var(--muted); align-self: center; }
+.collab h4 { margin: 0; font-family: var(--serif); font-size: 1.2rem; }
+.collab p { margin: 0; color: var(--ink2); font-size: .92rem; }
+.collab .collab-part { font-size: .88rem; padding: 8px 10px; border-radius: 10px; background: color-mix(in srgb, var(--lilac) 14%, transparent); }
+.collab .collab-part strong { color: var(--purple); }
+.collab .chips li { font-size: .72rem; }
+.collab .pattern-links { margin-top: auto; }
