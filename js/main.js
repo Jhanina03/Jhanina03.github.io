@@ -177,15 +177,36 @@
   /* ---------- experience ---------- */
   function renderRunway() {
     $("#runway").innerHTML = EXPERIENCE.map((x, i) => `
-      <li class="run reveal" style="--d:${i * 0.05}s">
+      <li class="run reveal${x.current ? " current" : ""}" style="--d:${i * 0.05}s">
+        <span class="run-node" aria-hidden="true">${x.icon || "✦"}</span>
         <div class="run-card">
-          <span class="run-when">${esc(pk(x.when))}</span>
+          <div class="run-top"><span class="run-when">${esc(pk(x.when))}</span>${x.tag ? `<span class="run-tag">${esc(pk(x.tag))}</span>` : ""}</div>
           <h3>${esc(pk(x.role))}</h3>
           <p class="run-org">${esc(pk(x.org))}</p>
           <ul>${pk(x.points).map((pt) => `<li>${esc(pt)}</li>`).join("")}</ul>
+          ${x.stack ? `<ul class="chips run-chips">${x.stack.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
         </div>
       </li>`).join("");
   }
+
+  /* timeline: the thread is sewn down the middle as you scroll and each stop lights up when the thread reaches it */
+  (function () {
+    const wrap = document.querySelector(".runway-wrap");
+    if (!wrap) return;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const r = wrap.getBoundingClientRect(), line = innerHeight * 0.62;
+      const prog = Math.min(1, Math.max(0, (line - r.top) / r.height));
+      wrap.style.setProperty("--p", prog.toFixed(4));
+      wrap.querySelectorAll(".run").forEach((li) => li.classList.toggle("on", li.getBoundingClientRect().top + 30 < line));
+    };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    addEventListener("scroll", onScroll, { passive: true });
+    addEventListener("resize", onScroll);
+    document.addEventListener("langchange", () => setTimeout(update, 50));
+    setTimeout(update, 300);
+  })();
 
   /* ---------- certificates ---------- */
   function renderTags() {

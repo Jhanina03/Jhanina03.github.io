@@ -264,6 +264,7 @@ window.PROJECTS = [
 window.EXPERIENCE = [
   {
     when: { en: "2025", es: "2025" },
+    icon: "🏦", tag: { en: "Internship", es: "Prácticas" }, stack: ["SQL", ".NET", "Reports", "Testing"],
     role: { en: "Pre-professional intern · Developer", es: "Practicante preprofesional · Desarrolladora" },
     org: { en: "Financial institution · Ecuador", es: "Institución financiera · Ecuador" },
     points: {
@@ -273,6 +274,7 @@ window.EXPERIENCE = [
   },
   {
     when: { en: "Mar – Jul 2024", es: "Mar – Jul 2024" },
+    icon: "🚗", tag: { en: "Remote · USA", es: "Remoto · EE. UU." }, stack: ["Frontend", "Components", "REST APIs", "Code review"],
     role: { en: "Front-End Developer", es: "Desarrolladora Front-End" },
     org: { en: "Apollo S.A. · Remote (San Francisco, USA)", es: "Apollo S.A. · Remoto (San Francisco, EE. UU.)" },
     points: {
@@ -282,6 +284,7 @@ window.EXPERIENCE = [
   },
   {
     when: { en: "2023", es: "2023" },
+    icon: "🔑", tag: { en: "Junior", es: "Junior" }, stack: ["JavaScript", "HTML", "CSS", "Node.js"],
     role: { en: "Junior Web Developer", es: "Desarrolladora Web Junior" },
     org: { en: "Car-rental company", es: "Empresa de alquiler de autos" },
     points: {
@@ -291,6 +294,7 @@ window.EXPERIENCE = [
   },
   {
     when: { en: "2022 – today", es: "2022 – hoy" },
+    icon: "🎓", current: true, tag: { en: "Education · in progress", es: "Educación · en curso" }, stack: ["Web & mobile", "Microservices", "AI", "Testing"],
     role: { en: "B.Sc. Software Engineering · 8th semester", es: "Ingeniería de Software · 8.º semestre" },
     org: { en: "Universidad Técnica de Ambato", es: "Universidad Técnica de Ambato" },
     points: {

@@ -1096,3 +1096,45 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 
 /* team projects reuse the project card grid */
 .collabs { grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 24px; }
+
+/* timeline v2: a thread sewn down the middle as you scroll, glowing stops, cards that slide in from their side */
+.runway-wrap { position: relative; max-width: 980px; margin: 0 auto; --p: 0; }
+.runway::before { display: none; }
+.runway-wrap::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 0; border-left: 2px dashed var(--line); transform: translateX(-1px); }
+.run-thread { position: absolute; left: 50%; top: 0; width: 4px; margin-left: -2px; height: calc(var(--p) * 100%); border-radius: 2px;
+  background: linear-gradient(180deg, var(--lilac), var(--pink)); box-shadow: 0 0 12px rgba(255, 154, 203, .6); }
+.run-needle { position: absolute; left: 50%; top: calc(var(--p) * 100%); font-size: 26px; transform: translate(-50%, -60%) rotate(135deg); filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .3)); pointer-events: none; transition: top .08s linear; }
+.run::before { display: none; }
+.run-node { position: absolute; top: 14px; z-index: 2; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-size: 21px;
+  background: var(--paper); border: 2px solid var(--line); box-shadow: 0 0 0 6px var(--bg); transform: scale(.8); filter: grayscale(.8); opacity: .7;
+  transition: transform .45s cubic-bezier(.3, 1.6, .5, 1), border-color .3s, box-shadow .3s, filter .3s, opacity .3s; }
+.run:nth-child(odd) .run-node { right: -23px; } .run:nth-child(even) .run-node { left: -23px; }
+.run.on .run-node { transform: scale(1); filter: none; opacity: 1; border-color: var(--pink); box-shadow: 0 0 0 6px var(--bg), 0 0 22px rgba(255, 154, 203, .75); }
+.run.current .run-node::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--pink); animation: run-pulse 2s ease-out infinite; }
+@keyframes run-pulse { from { transform: scale(.9); opacity: .9; } to { transform: scale(1.5); opacity: 0; } }
+.run .run-card { opacity: 0; transform: translateX(-34px); transition: opacity .6s ease, transform .6s cubic-bezier(.2, .9, .3, 1), box-shadow .3s; }
+.run:nth-child(even) .run-card { transform: translateX(34px); }
+.run.on .run-card { opacity: 1; transform: none; }
+.run.on .run-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.run-card { position: relative; overflow: hidden; }
+.run-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, var(--lilac), var(--pink)); }
+.run-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.run-tag { font: 700 .72rem/1 var(--sans); padding: 5px 10px; border-radius: 999px; color: var(--purple); background: color-mix(in srgb, var(--lilac) 18%, transparent); }
+.run.current .run-tag { color: #1E8A6A; background: rgba(61, 220, 151, .16); }
+.run-chips { margin-top: 12px !important; padding: 0 !important; }
+.run-chips li { font-size: .72rem; }
+.run-chips li::marker { content: none; }
+.run.on .run-card li { animation: run-li .5s ease both; }
+.run.on .run-card ul:not(.run-chips) li:nth-child(2) { animation-delay: .12s; } .run.on .run-card ul:not(.run-chips) li:nth-child(3) { animation-delay: .24s; } .run.on .run-card ul:not(.run-chips) li:nth-child(4) { animation-delay: .36s; }
+@keyframes run-li { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (max-width: 900px) {
+  .runway-wrap::before, .run-thread, .run-needle { left: 23px; }
+  .run:nth-child(odd) .run-node, .run:nth-child(even) .run-node { left: 0; right: auto; }
+  .run, .run:nth-child(odd), .run:nth-child(even) { padding-left: 64px; }
+  .run .run-card, .run:nth-child(even) .run-card { transform: translateX(24px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .run .run-card, .run:nth-child(even) .run-card { opacity: 1; transform: none; transition: none; }
+  .run-node { transform: none; filter: none; opacity: 1; }
+  .run.current .run-node::after, .run.on .run-card li { animation: none; }
+}
