@@ -1093,3 +1093,6 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .collab .collab-part strong { color: var(--purple); }
 .collab .chips li { font-size: .72rem; }
 .collab .pattern-links { margin-top: auto; }
+
+/* team projects reuse the project card grid */
+.collabs { grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 24px; }

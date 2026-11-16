@@ -304,6 +304,11 @@ window.EXPERIENCE = [
    Add new ones here: { title, issuer, year, url }            */
 window.CERTS = [
   {
+    title: { en: "Grok Bot Ambato Meetup · Mini Hackathon", es: "Grok Bot Ambato Meetup · Mini Hackathon" },
+    issuer: { en: "SpaceXSI · UTA FISEI · from idea to prototype with Supabase, UI/UX and AI", es: "SpaceXSI · UTA FISEI · de la idea al prototipo con Supabase, UI/UX e IA" },
+    year: "2026", url: "https://luma.com/grokbotambatomeetup", color: "#FFD66B",
+  },
+  {
     title: { en: "Quality Assurance Certification · freeCodeCamp", es: "Quality Assurance Certification · freeCodeCamp" },
     issuer: { en: "freeCodeCamp", es: "freeCodeCamp" },
     year: "2026", url: "https://www.freecodecamp.org/certification/Jhanina03/quality-assurance-v7", color: "#8EE3E0",
@@ -333,7 +338,7 @@ window.CERTS = [
 /* Team projects I contributed to in other people's / organisations' repositories */
 window.COLLABS = [
   {
-    id: "kaphiy", title: "Kaphiy", org: "Arkasys-GDP", commits: 12, img: "assets/img/projects/kaphiy.jpg",
+    id: "kaphiy", team: 4, year: 2026, swatch: "#FFD3E8", title: "Kaphiy", org: "Arkasys-GDP", commits: 12, img: "assets/img/projects/kaphiy.jpg",
     desc: { en: "QR ordering system for Praliné Coffee House: customers scan a code, browse the menu and order from their phone; baristas manage orders from a kitchen panel.",
             es: "Sistema de pedidos por QR para Praliné Coffee House: el cliente escanea un código, ve el menú y pide desde su celular; los baristas gestionan los pedidos en un panel de cocina." },
     part: { en: "Customer frontend, menu and order flow, product images, messages and system tests.",
@@ -341,7 +346,7 @@ window.COLLABS = [
     stack: ["TypeScript", "PostgreSQL", "PWA"], repo: "https://github.com/Arkasys-GDP/Kaphiy", demo: "https://kaphiy.vercel.app",
   },
   {
-    id: "fuel", title: "Fuel System", org: "Application-Distributed-Gasoline-System", commits: 4, img: "assets/img/projects/gasoline.jpg",
+    id: "fuel", team: 4, year: 2025, swatch: "#A8D8FF", title: "Fuel System", org: "Application-Distributed-Gasoline-System", commits: 4, img: "assets/img/projects/gasoline.jpg",
     desc: { en: "Distributed fuel-management system built as microservices behind an API Gateway, designed for distributed databases.",
             es: "Sistema distribuido de gestión de combustible con microservicios detrás de una API Gateway, pensado para bases de datos distribuidas." },
     part: { en: "Built the vehicles microservice and wired it into the API Gateway.",
@@ -349,7 +354,7 @@ window.COLLABS = [
     stack: ["TypeScript", "Microservices", "API Gateway"], repo: "https://github.com/Application-Distributed-Gasoline-System/Backend", demo: "https://gasolinesystem.vercel.app",
   },
   {
-    id: "water", title: { en: "Water board e-invoicing", es: "Facturación de la Junta de Agua" }, org: "junta-agua-uta", commits: 5, img: "assets/img/projects/water.svg",
+    id: "water", team: 17, year: 2026, swatch: "#8EE3E0", title: { en: "Water board e-invoicing", es: "Facturación de la Junta de Agua" }, org: "junta-agua-uta", commits: 5, img: "assets/img/projects/water.svg",
     desc: { en: "Electronic invoicing system for a community water board: users, customers and invoices, with a React frontend and a NestJS backend.",
             es: "Sistema de facturación electrónica para una junta de agua: usuarios, clientes y facturas, con frontend en React y backend en NestJS." },
     part: { en: "Accounting tab, accounting periods, fiscal years and filters.",
@@ -357,7 +362,7 @@ window.COLLABS = [
     stack: ["React", "TypeScript", "NestJS"], repo: "https://github.com/junta-agua-uta/ja-facturacion-front", demo: "",
   },
   {
-    id: "electoral", title: { en: "Electoral process platform", es: "Plataforma de procesos electorales" }, org: "seby10", commits: 20,
+    id: "electoral", team: 4, year: 2025, swatch: "#C9B8FF", title: { en: "Electoral process platform", es: "Plataforma de procesos electorales" }, org: "seby10", commits: 20,
     desc: { en: "Web platform to explore candidates, their proposals and events during an election.",
             es: "Plataforma web para explorar candidatos, sus propuestas y eventos durante un proceso electoral." },
     part: { en: "Suggestions management, filters and states, and session-based voting with cookies.",
@@ -365,7 +370,7 @@ window.COLLABS = [
     stack: ["JavaScript", "HTML", "SCSS"], repo: "https://github.com/seby10/MCSProject", demo: "",
   },
   {
-    id: "assets", title: { en: "Asset management", es: "Gestión de activos" }, org: "seby10", commits: 12,
+    id: "assets", team: 3, year: 2025, swatch: "#FFB3D9", title: { en: "Asset management", es: "Gestión de activos" }, org: "seby10", commits: 12,
     desc: { en: "System to register, maintain and purchase an organisation's assets.",
             es: "Sistema para registrar, dar mantenimiento y comprar los activos de una organización." },
     part: { en: "Bulk and single asset upload, maintenance updates, purchase process and Excel import fixes.",
@@ -373,8 +378,8 @@ window.COLLABS = [
     stack: ["JavaScript", "HTML"], repo: "https://github.com/seby10/GestionActivos", demo: "",
   },
   {
-    id: "nesttests", title: { en: "NestJS backend · tests", es: "Backend NestJS · pruebas" }, org: "PabloAML1", commits: 3,
-    desc: { en: "Team NestJS backend.", es: "Backend en NestJS del equipo." },
+    id: "nesttests", team: 4, year: 2025, swatch: "#DCD0FF", title: { en: "NestJS backend · tests", es: "Backend NestJS · pruebas" }, org: "PabloAML1", commits: 3,
+    desc: { en: "Team REST backend built with NestJS and covered by unit tests.", es: "Backend REST del equipo hecho con NestJS y cubierto con pruebas unitarias." },
     part: { en: "Implemented the unit tests.", es: "Implementé las pruebas unitarias." },
     stack: ["NestJS", "TypeScript", "Unit tests"], repo: "https://github.com/PabloAML1/nest-backend", demo: "",
   },
