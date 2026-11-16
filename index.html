@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@500;700&family=Silkscreen&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261116j">
+  <link rel="stylesheet" href="css/styles.css?v=20261116m">
 <noscript><style>.loader { display: none !important; }</style></noscript>
 </head>
 <body data-title-key="meta.title">
@@ -101,8 +101,8 @@
       <div class="glass-ctl">
         <button class="glass-btn" type="button" aria-expanded="false" aria-controls="glass-pop" data-i18n-aria="glass.label" aria-label="Glass transparency"><span aria-hidden="true">◐</span></button>
         <div class="glass-pop" id="glass-pop" hidden>
-          <label for="glass-range"><span data-i18n="glass.label">Glass transparency</span> <b id="glass-val">18%</b></label>
-          <input type="range" id="glass-range" min="0" max="60" step="2" value="18">
+          <label for="glass-range"><span data-i18n="glass.label">Glass transparency</span> <b id="glass-val">42%</b></label>
+          <input type="range" id="glass-range" min="0" max="70" step="2" value="42">
           <div class="glass-ends"><span data-i18n="glass.solid">Solid</span><span data-i18n="glass.clear">Glassy</span></div>
         </div>
       </div>
@@ -352,16 +352,27 @@
   </footer>
 
   <!-- Floating avatar buddy -->
-  <div class="buddy" aria-hidden="true">
-    <div class="bubble" id="bubble"></div>
-    <div class="avatar-slot" id="buddy-avatar"></div>
+  <div class="buddy">
+    <div class="bubble" id="bubble" aria-hidden="true"></div>
+    <div class="avatar-slot" id="buddy-avatar" role="button" tabindex="0" data-i18n-aria="chat.open" aria-label="Chat with me"></div>
+    <span class="chat-dot" aria-hidden="true">💬</span>
   </div>
+  <!-- mini chat with preset questions (visitors pick a question, no typing) -->
+  <section class="mini-chat" id="mini-chat" hidden aria-label="Chat">
+    <header class="mc-head">
+      <span class="mc-avatar"><img src="assets/img/jhanina-pro.jpg" alt=""></span>
+      <span class="mc-who"><b>Jhanina</b><small><i></i> <span data-i18n="chat.online">online</span></small></span>
+      <button class="mc-close" type="button" data-i18n-aria="chat.close" aria-label="Close chat">✕</button>
+    </header>
+    <div class="mc-log" id="mc-log" aria-live="polite"></div>
+    <div class="mc-qs" id="mc-qs"></div>
+  </section>
   <div class="toasts" aria-live="polite"></div>
 
-  <script src="js/i18n.js?v=20261116j"></script>
-  <script src="js/data.js?v=20261116j"></script>
-  <script src="js/avatar.js?v=20261116j"></script>
-  <script src="js/common.js?v=20261116j"></script>
-  <script src="js/main.js?v=20261116j"></script>
+  <script src="js/i18n.js?v=20261116m"></script>
+  <script src="js/data.js?v=20261116m"></script>
+  <script src="js/avatar.js?v=20261116m"></script>
+  <script src="js/common.js?v=20261116m"></script>
+  <script src="js/main.js?v=20261116m"></script>
 </body>
 </html>

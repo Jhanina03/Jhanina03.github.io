@@ -376,3 +376,59 @@
     if ((e.key === "Enter" || e.key === " ") && !e.target.closest("a")) { e.preventDefault(); flip(); }
   });
 })();
+
+/* mini chat: the floating avatar answers preset questions (no free typing); the per-section bubbles stay as they are */
+(function () {
+  const box = document.getElementById("mini-chat"), log = document.getElementById("mc-log"), qs = document.getElementById("mc-qs");
+  const av = document.getElementById("buddy-avatar");
+  if (!box || !av) return;
+  const P = window.PROFILE || {};
+  const A = (href, label) => `<a href="${href}" target="_blank" rel="noopener">${label}</a>`;
+  const CHAT = {
+    en: [
+      ["What's your name?", "I'm <b>Jhanina Conterón</b>, a Software Engineer from Ambato, Ecuador 👋"],
+      ["What do you study?", "I'm in the <b>8th semester of Software Engineering</b> at Universidad Técnica de Ambato 🎓"],
+      ["What do you specialise in?", "<b>Frontend</b> (Angular + TypeScript), <b>databases</b> (SQL Server, PostgreSQL, MongoDB) and <b>QA</b> with automated tests 🧪"],
+      ["Do you have experience?", "Yes! An internship at a financial institution (2025), front-end work for a US ride-hailing company (2024) and a junior web role (2023) 💼"],
+      ["Favourite project?", "<b>FashionIA</b> 👗: an AI that finds the most comfortable pattern measurements for a garment, mixing my two passions."],
+      ["Are you available?", "Yes ✨ I'm open to <b>internships, junior roles and remote work</b>."],
+      ["What do you like?", "Fashion and design, video games on Steam 🎮, lilac playlists and a good coffee ☕"],
+      ["How can I contact you?", () => `Write to me at ${A("mailto:" + (P.email || ""), P.email || "email")} or on ${A(P.linkedin || "#", "LinkedIn")}. You can also see my ${A("cv.html", "CV")} 💌`],
+    ],
+    es: [
+      ["¿Cómo te llamas?", "Soy <b>Jhanina Conterón</b>, Ingeniera de Software de Ambato, Ecuador 👋"],
+      ["¿Qué estudias?", "Estoy en <b>8.º semestre de Ingeniería de Software</b> en la Universidad Técnica de Ambato 🎓"],
+      ["¿En qué te especializas?", "<b>Frontend</b> (Angular + TypeScript), <b>bases de datos</b> (SQL Server, PostgreSQL, MongoDB) y <b>QA</b> con pruebas automatizadas 🧪"],
+      ["¿Tienes experiencia?", "¡Sí! Prácticas en una institución financiera (2025), frontend para una empresa de transporte de EE. UU. (2024) y un puesto web junior (2023) 💼"],
+      ["¿Tu proyecto favorito?", "<b>FashionIA</b> 👗: una IA que encuentra las medidas de patrón más cómodas para una prenda; mezcla mis dos pasiones."],
+      ["¿Estás disponible?", "Sí ✨ Estoy disponible para <b>prácticas, puestos junior y trabajo remoto</b>."],
+      ["¿Qué te gusta?", "La moda y el diseño, los videojuegos en Steam 🎮, las playlists color lila y un buen café ☕"],
+      ["¿Cómo te contacto?", () => `Escríbeme a ${A("mailto:" + (P.email || ""), P.email || "correo")} o por ${A(P.linkedin || "#", "LinkedIn")}. También puedes ver mi ${A("cv.html", "CV")} 💌`],
+    ],
+  };
+  const list = () => CHAT[i18n.lang] || CHAT.en;
+  const asked = new Set();
+  const add = (cls, html) => { const d = document.createElement("div"); d.className = "mc-msg " + cls; d.innerHTML = html; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; };
+  const renderQs = () => {
+    qs.innerHTML = list().map(([q], i) => `<button type="button" class="mc-q${asked.has(i) ? " done" : ""}" data-i="${i}">${q}</button>`).join("");
+  };
+  let busy = false;
+  qs.addEventListener("click", (e) => {
+    const b = e.target.closest(".mc-q"); if (!b || busy) return;
+    const i = +b.dataset.i, [q, a] = list()[i];
+    busy = true; asked.add(i); add("me", q); renderQs();
+    const typing = add("her typing", "<i></i><i></i><i></i>");
+    setTimeout(() => { typing.remove(); add("her", typeof a === "function" ? a() : a); busy = false; }, JC.reduced ? 150 : 650 + Math.random() * 450);
+  });
+  const open = () => {
+    box.hidden = false; document.body.classList.add("chat-open");
+    if (!log.children.length) add("her", i18n.t("chat.hi"));
+    renderQs();
+  };
+  const close = () => { box.hidden = true; document.body.classList.remove("chat-open"); };
+  av.addEventListener("click", () => (box.hidden ? open() : close()));
+  av.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); box.hidden ? open() : close(); } });
+  box.querySelector(".mc-close").addEventListener("click", close);
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !box.hidden) close(); });
+  document.addEventListener("langchange", () => { log.innerHTML = ""; asked.clear(); if (!box.hidden) open(); });
+})();

@@ -191,7 +191,7 @@
   const apply = (t) => document.documentElement.style.setProperty("--glass-alpha", (1 - t / 100).toFixed(2));
   let saved = null;
   try { saved = localStorage.getItem("jc-glass"); } catch (e) {}
-  const start = saved !== null && !isNaN(+saved) ? +saved : 18;
+  const start = saved !== null && !isNaN(+saved) ? +saved : 42;
   apply(start);
   const init = () => {
     const btn = document.querySelector(".glass-btn"), pop = document.getElementById("glass-pop"), range = document.getElementById("glass-range"), val = document.getElementById("glass-val");
