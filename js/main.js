@@ -167,10 +167,10 @@
   /* ---------- projects ---------- */
   function renderProjects() {
     $("#featured").innerHTML = PROJECTS.filter((p) => p.featured).map((p, i) => JC.projectCard(p, i)).join("");
-    // team projects use the same card as my own projects: who built it and how many of us
+    // team projects use the same card as my own projects, labelled with the repository owner
     $("#collabs").innerHTML = (window.COLLABS || []).map((c, i) => JC.projectCard({
       ...c, tags: [],
-      kicker: { en: `Team of ${c.team} · @${c.org}`, es: `Equipo de ${c.team} · @${c.org}` },
+      kicker: `@${c.org}`,
     }, i)).join("");
   }
 
