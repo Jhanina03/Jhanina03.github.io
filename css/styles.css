@@ -1168,3 +1168,27 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
   :root:not([data-theme="light"]) .hud .hud-stat, :root:not([data-theme="light"]) .hud .lang-toggle, :root:not([data-theme="light"]) .hud .theme-toggle, :root:not([data-theme="light"]) .hud .menu-toggle { background: rgba(36, 28, 58, .45); border-color: rgba(201, 184, 255, .25); }
 }
 @media (max-width: 900px) { .hud { border-radius: 22px; margin: 14px 10px 0; top: 14px; } }
+
+/* liquid glass, part 2: flip hint, hero buttons, wardrobe and the floating buddy */
+:root { --lg-bg: linear-gradient(135deg, rgba(255, 255, 255, .64), rgba(255, 255, 255, .24)); --lg-edge: rgba(255, 255, 255, .75);
+  --lg-shadow: 0 14px 32px -18px rgba(43, 33, 64, .45); --lg-shine: linear-gradient(180deg, rgba(255, 255, 255, .6), rgba(255, 255, 255, 0)); }
+:root[data-theme="dark"] { --lg-bg: linear-gradient(135deg, rgba(58, 44, 98, .6), rgba(28, 20, 50, .32)); --lg-edge: rgba(214, 196, 255, .3);
+  --lg-shadow: 0 16px 34px -18px rgba(0, 0, 0, .75); --lg-shine: linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, 0)); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --lg-bg: linear-gradient(135deg, rgba(58, 44, 98, .6), rgba(28, 20, 50, .32)); --lg-edge: rgba(214, 196, 255, .3);
+  --lg-shadow: 0 16px 34px -18px rgba(0, 0, 0, .75); --lg-shine: linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, 0)); } }
+
+.flip-hint, .hero-cta .btn-ghost, .rack, .bubble {
+  background: var(--lg-bg) !important; backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: inset 0 1px 0 var(--lg-edge), inset 0 0 0 1px var(--lg-edge), var(--lg-shadow) !important; }
+.rack, .bubble { border-color: transparent !important; }
+.rack { position: relative; overflow: hidden; }
+.rack::after, .flip-hint::after { content: ""; position: absolute; left: 8%; right: 30%; top: 1px; height: 38%; border-radius: 999px; background: var(--lg-shine); pointer-events: none; }
+.flip-hint { position: absolute; overflow: hidden; }
+.hero-cta .btn-ghost { border-style: dashed; border-color: rgba(123, 92, 214, .7); }
+.hero-cta .btn-primary { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(123, 92, 214, .92), rgba(91, 141, 239, .88));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .55), inset 0 0 0 1px rgba(255, 255, 255, .25), 0 12px 26px -12px rgba(91, 92, 214, .85); }
+.hero-cta .btn-primary::after { content: ""; position: absolute; left: 10%; right: 10%; top: 1px; height: 45%; border-radius: 999px; background: linear-gradient(180deg, rgba(255, 255, 255, .45), rgba(255, 255, 255, 0)); pointer-events: none; }
+/* the floating buddy sits on a little glass disc */
+.buddy::before { content: ""; position: absolute; bottom: 2px; width: 92px; height: 92px; border-radius: 50%; z-index: -1;
+  background: var(--lg-bg); backdrop-filter: blur(12px) saturate(170%); -webkit-backdrop-filter: blur(12px) saturate(170%);
+  box-shadow: inset 0 1px 0 var(--lg-edge), inset 0 0 0 1px var(--lg-edge), var(--lg-shadow); }
