@@ -185,3 +185,27 @@
   const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 })();
+
+/* glass transparency: a slider in the top bar sets --glass-alpha for every glass surface, remembered per visitor */
+(function () {
+  const apply = (t) => document.documentElement.style.setProperty("--glass-alpha", (1 - t / 100).toFixed(2));
+  let saved = null;
+  try { saved = localStorage.getItem("jc-glass"); } catch (e) {}
+  const start = saved !== null && !isNaN(+saved) ? +saved : 18;
+  apply(start);
+  const init = () => {
+    const btn = document.querySelector(".glass-btn"), pop = document.getElementById("glass-pop"), range = document.getElementById("glass-range"), val = document.getElementById("glass-val");
+    if (!btn || !pop || !range) return;
+    range.value = start; if (val) val.textContent = start + "%";
+    range.addEventListener("input", () => {
+      apply(+range.value); if (val) val.textContent = range.value + "%";
+      try { localStorage.setItem("jc-glass", range.value); } catch (e) {}
+    });
+    const close = () => { pop.hidden = true; btn.setAttribute("aria-expanded", "false"); };
+    btn.addEventListener("click", (e) => { e.stopPropagation(); const open = pop.hidden; pop.hidden = !open; btn.setAttribute("aria-expanded", String(open)); });
+    pop.addEventListener("click", (e) => e.stopPropagation());
+    document.addEventListener("click", close);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();
