@@ -1287,3 +1287,25 @@ em { font-family: var(--serif); font-style: italic; color: var(--purple); }
 .mini-chat, .glass-pop { background: linear-gradient(145deg, rgba(255, 255, 255, .96), rgba(255, 255, 255, .84)) !important; }
 :root[data-theme="dark"] :is(.mini-chat, .glass-pop) { background: linear-gradient(145deg, rgba(62, 48, 108, .94), rgba(26, 18, 46, .92)) !important; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.mini-chat, .glass-pop) { background: linear-gradient(145deg, rgba(62, 48, 108, .94), rgba(26, 18, 46, .92)) !important; } }
+
+/* glass relief: the same rounded inner shine as the "Explore my work" button, on every glass piece */
+.hud .hud-stat, .hud .lang-toggle, .hud .theme-toggle, .glass-btn, .hero-cta .btn-ghost { position: relative; overflow: hidden; }
+.hud::after, .flip-hint::after, .rack::after { display: block !important; }
+.hud::after, .hud .hud-stat::after, .hud .lang-toggle::after, .hud .theme-toggle::after, .glass-btn::after, .hero-cta .btn-ghost::after, .flip-hint::after {
+  content: "" !important; position: absolute; left: 4px; right: 4px; top: 2px; height: 48%; border-radius: 999px; pointer-events: none; z-index: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .55), rgba(255, 255, 255, .06)) !important; }
+.hud::after { left: 10px; right: 10px; top: 3px; height: 46%; z-index: -1; }
+.rack::after { content: "" !important; position: absolute; left: 6px; right: 6px; top: 3px; height: 22%; border-radius: 16px; pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0)) !important; }
+.hud .hud-stat > *, .hud .lang-toggle > *, .hud .theme-toggle > *, .glass-btn > *, .hero-cta .btn-ghost > *, .flip-hint > * { position: relative; z-index: 1; }
+/* a light bottom glow gives the glass its thickness */
+.hud, .hero-cta .btn-ghost, .flip-hint, .glass-btn { box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, .95), inset 0 0 0 1px rgba(255, 255, 255, .55), inset 0 -8px 14px -8px rgba(123, 92, 214, .35), 0 12px 28px -16px rgba(43, 33, 64, .45) !important; }
+:root[data-theme="dark"] :is(.hud, .hud .hud-stat, .hud .lang-toggle, .hud .theme-toggle, .glass-btn, .hero-cta .btn-ghost, .flip-hint)::after { background: linear-gradient(180deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, .02)) !important; }
+:root[data-theme="dark"] .rack::after { background: linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, 0)) !important; }
+:root[data-theme="dark"] :is(.hud, .hero-cta .btn-ghost, .flip-hint, .glass-btn) { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), inset 0 0 0 1px rgba(214, 196, 255, .22), inset 0 -8px 14px -8px rgba(0, 0, 0, .5), 0 14px 30px -16px rgba(0, 0, 0, .7) !important; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) :is(.hud, .hud .hud-stat, .hud .lang-toggle, .hud .theme-toggle, .glass-btn, .hero-cta .btn-ghost, .flip-hint)::after { background: linear-gradient(180deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, .02)) !important; }
+  :root:not([data-theme="light"]) .rack::after { background: linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, 0)) !important; }
+  :root:not([data-theme="light"]) :is(.hud, .hero-cta .btn-ghost, .flip-hint, .glass-btn) { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), inset 0 0 0 1px rgba(214, 196, 255, .22), inset 0 -8px 14px -8px rgba(0, 0, 0, .5), 0 14px 30px -16px rgba(0, 0, 0, .7) !important; }
+}
+.hero-cta .btn-primary::after { opacity: 1; }
