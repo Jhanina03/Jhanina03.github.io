@@ -30,6 +30,68 @@
   .pick small .lvl { color: #F2B84B; letter-spacing: 1px; }
   .dress .part { fill: none; stroke: #C9B8FF; stroke-width: 2; stroke-dasharray: 5 4; transition: fill .5s, stroke .5s; }
   .dress .part.done { fill: url(#dot); stroke: #FF5C9A; stroke-dasharray: 0; }
+
+  /* rich section cards */
+  .card { width: min(640px, 100%); }
+  .sec-about { display: flex; gap: 16px; align-items: center; text-align: left; margin: 6px 0 10px; }
+  .sec-about p { margin: 0; font-size: .92rem; }
+  .sec-photo { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; object-position: 50% 22%; flex: none; border: 3px solid #C9B8FF; box-shadow: 0 8px 18px -8px rgba(91,92,214,.6); }
+  .sec-facts { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+  .sec-facts span { font: 600 .8rem "DM Sans"; padding: 6px 12px; border-radius: 999px; background: #F6F1FF; border: 1px solid #E4DAFF; }
+  .sec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; text-align: left; margin: 8px 0; }
+  .sec-skill { padding: 10px 12px; border-radius: 14px; background: #FBF8FF; border: 1px solid #E4DAFF; border-top: 4px solid var(--c); }
+  .sec-skill b { font: 700 .9rem Fraunces, serif; } .sec-skill .chips { justify-content: flex-start !important; margin: 6px 0 0 !important; } .sec-skill .chips span { font-size: .7rem !important; }
+  .sec-proj, .sec-cert { display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; background: #FBF8FF; border: 1px solid #E4DAFF; text-decoration: none; color: inherit; transition: transform .25s, box-shadow .25s; }
+  .sec-proj:hover, .sec-cert:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -12px rgba(91,92,214,.55); }
+  .sec-proj img, .sec-cert img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; display: block; background: #1C1430; }
+  .sec-proj span, .sec-cert span { padding: 8px 10px; display: grid; gap: 2px; } .sec-proj b, .sec-cert b { font: 700 .85rem Fraunces, serif; color: var(--ink); }
+  .sec-proj small, .sec-cert small { font-size: .7rem; color: var(--purple); }
+  .sec-seal { display: grid !important; place-items: center; aspect-ratio: 16 / 9; font-size: 34px; background: linear-gradient(135deg, #F6F1FF, #FFE3F1); }
+  .sec-qa { display: flex; gap: 14px; align-items: center; text-align: left; } .sec-qa p { margin: 0; font-size: .92rem; }
+  .sec-bug { flex: none; width: 84px; height: 84px; border-radius: 20px; display: grid; place-items: center; font: 700 1rem "DM Sans"; background: linear-gradient(135deg, #FFE3F1, #F6F1FF); border: 1px dashed #FF9ACB; }
+  .sec-time { list-style: none; margin: 8px 0; padding: 0; text-align: left; position: relative; }
+  .sec-time::before { content: ""; position: absolute; left: 19px; top: 8px; bottom: 8px; border-left: 2px dashed #FF9ACB; }
+  .sec-time li { display: flex; gap: 12px; align-items: center; padding: 6px 0; position: relative; animation: secIn .45s ease both; }
+  .sec-time li:nth-child(2) { animation-delay: .1s; } .sec-time li:nth-child(3) { animation-delay: .2s; } .sec-time li:nth-child(4) { animation-delay: .3s; }
+  .sec-time b { font: 700 .9rem Fraunces, serif; display: block; } .sec-time small { font-size: .75rem; color: var(--ink2); }
+  .sec-ico { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; flex: none; background: #fff; border: 2px solid #FF9ACB; font-size: 18px; position: relative; z-index: 1; }
+  @keyframes secIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: none; } }
+  .sec-actions { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+  .sec-btn { padding: 8px 16px; border-radius: 999px; font: 700 .85rem "DM Sans"; text-decoration: none; color: #7B5CD6; border: 1.5px solid #C9B8FF; background: #fff; }
+  .sec-btn.primary { background: linear-gradient(135deg, #7B5CD6, #5B8DEF); color: #fff; border-color: transparent; }
+  :root[data-theme="dark"] .sec-facts span, :root[data-theme="dark"] .sec-skill, :root[data-theme="dark"] .sec-proj, :root[data-theme="dark"] .sec-cert { background: #2E2450; border-color: #3A2E5C; }
+  :root[data-theme="dark"] .sec-ico, :root[data-theme="dark"] .sec-btn:not(.primary) { background: #241C3A; }
+  :root[data-theme="dark"] .sec-seal { background: linear-gradient(135deg, #2E2450, #3A2350); }
+  :root[data-theme="dark"] .sec-bug { background: linear-gradient(135deg, #3A2350, #2E2450); }
+  @media (max-width: 520px) { .sec-about, .sec-qa { flex-direction: column; text-align: center; } }
+
+  /* liquid-glass bubbles that float beside the fabric while sewing */
+  #bubbles { position: fixed; inset: 0; z-index: 6; pointer-events: none; overflow: hidden; }
+  .lg-bubble { position: absolute; bottom: -120px; width: 92px; height: 92px; border-radius: 50%; pointer-events: auto; cursor: pointer; border: 0; padding: 0; color: #2B2140;
+    display: grid; place-items: center; text-align: center; font: 700 .68rem/1.15 "DM Sans";
+    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.75), rgba(255,255,255,.12) 38%, rgba(255,255,255,.06) 62%), radial-gradient(circle at 70% 80%, rgba(255,154,203,.35), transparent 55%), radial-gradient(circle at 20% 80%, rgba(140,200,255,.35), transparent 55%);
+    backdrop-filter: blur(8px) saturate(170%); -webkit-backdrop-filter: blur(8px) saturate(170%);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.55), inset 0 -10px 22px rgba(123,92,214,.25), 0 14px 30px -12px rgba(43,33,64,.45);
+    animation: lgRise var(--dur, 15s) linear forwards, lgSway 3.6s ease-in-out infinite alternate; }
+  .lg-bubble::after { content: ""; position: absolute; inset: 0; border-radius: 50%; padding: 1.5px; background: conic-gradient(from 0deg, #C9B8FF, #8CC8FF, #FF9ACB, #FFE7A8, #C9B8FF);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: .8; }
+  .lg-bubble i { font-style: normal; font-size: 24px; display: block; margin-bottom: 2px; }
+  .lg-bubble:hover { transform: scale(1.08); }
+  #bubbles.paused .lg-bubble { animation-play-state: paused; }
+  @keyframes lgRise { to { bottom: calc(100% + 120px); } }
+  @keyframes lgSway { from { margin-left: -10px; } to { margin-left: 10px; } }
+  :root[data-theme="dark"] .lg-bubble { color: #F3EEFF; background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.45), rgba(255,255,255,.08) 38%, rgba(255,255,255,.03) 62%), radial-gradient(circle at 70% 80%, rgba(255,154,203,.3), transparent 55%), radial-gradient(circle at 20% 80%, rgba(140,200,255,.3), transparent 55%); }
+  .lg-pop { position: fixed; inset: 0; z-index: 25; display: none; place-items: center; padding: 20px; background: rgba(28,20,48,.25); }
+  .lg-pop.open { display: grid; }
+  .lg-pop-card { width: min(380px, 100%); padding: 26px 24px 20px; border-radius: 28px; text-align: center; color: #2B2140; position: relative;
+    background: linear-gradient(145deg, rgba(255,255,255,.72), rgba(255,255,255,.35)); backdrop-filter: blur(18px) saturate(180%); -webkit-backdrop-filter: blur(18px) saturate(180%);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 30px 60px -20px rgba(43,33,64,.55); animation: lgPop .45s cubic-bezier(.3,1.5,.5,1); }
+  .lg-pop-card .lg-ico { font-size: 40px; } .lg-pop-card h3 { margin: 6px 0; font: 700 1.25rem Fraunces, serif; } .lg-pop-card p { margin: 0 0 12px; font-size: .92rem; }
+  .lg-pop-card img { width: 100%; border-radius: 14px; margin: 4px 0 12px; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; }
+  .lg-pop-card .lg-close { position: absolute; top: 10px; right: 12px; border: 0; background: rgba(255,255,255,.6); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 16px; }
+  :root[data-theme="dark"] .lg-pop-card { color: #F3EEFF; background: linear-gradient(145deg, rgba(46,36,80,.78), rgba(36,28,58,.5)); box-shadow: inset 0 0 0 1px rgba(201,184,255,.35), 0 30px 60px -20px rgba(0,0,0,.7); }
+  @keyframes lgPop { from { transform: scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .lg-bubble { animation-duration: 40s, 0s; } }
   /* modals: tag-style cards */
   .modal { position: fixed; inset: 0; z-index: 20; display: none; place-items: center; background: rgba(43,33,64,.35); backdrop-filter: blur(4px); padding: 24px 16px; overflow-y: auto; }
   .modal.open { display: grid; }
@@ -80,6 +142,8 @@
   <small id="dressLbl">YOUR OUTFIT</small>
 </div>
 <div class="console" aria-live="polite"><div class="console-head"><i></i><i></i><i></i><span>atelier — console</span></div><pre id="log"></pre></div>
+<div id="bubbles" aria-hidden="false"></div>
+<div class="lg-pop" id="lgPop" role="dialog" aria-modal="true"><div class="lg-pop-card" id="lgCard"></div></div>
 <div class="modal open" id="modal"><div class="card" id="card"></div></div>
 <style>
   .console { position: fixed; left: 14px; bottom: 14px; z-index: 5; width: min(330px, calc(100vw - 150px)); background: rgba(28,21,48,.92); border-radius: 12px; overflow: hidden;
@@ -281,6 +345,53 @@
 
   /* ---------- flow ---------- */
   const modal = document.getElementById("modal"), card = document.getElementById("card");
+  /* liquid-glass bubbles: little facts about me float beside the fabric; tapping one pauses the game and opens it */
+  const BUBBLES = () => {
+    const P = (id) => PROJECTS.find((x) => x.id === id), C = (id) => (window.COLLABS || []).find((x) => x.id === id);
+    const proj = (id, icon) => { const x = P(id); return x && { icon, label: pk(x.title), title: pk(x.title), text: pk(x.desc), img: x.img, href: x.repo || x.demo }; };
+    const es = L() === "es";
+    return [
+      { icon: "🎓", label: es ? "8.º semestre" : "8th semester", title: pk(EXPERIENCE[3].role), text: pk(EXPERIENCE[3].points)[0] },
+      { icon: EXPERIENCE[0].icon, label: pk(EXPERIENCE[0].tag), title: pk(EXPERIENCE[0].role), text: pk(EXPERIENCE[0].points)[0] },
+      { icon: EXPERIENCE[1].icon, label: pk(EXPERIENCE[1].tag), title: pk(EXPERIENCE[1].org), text: pk(EXPERIENCE[1].points)[0] },
+      { icon: "🧪", label: "QA", title: pk(CERTS[1].title), text: es ? "Unas 300 horas de pruebas unitarias y funcionales." : "About 300 hours of unit and functional testing.", img: CERTS[1].img, href: CERTS[1].verify || CERTS[1].url },
+      proj("fashionia", "👗"), proj("chat", "💬"), proj("booking", "🏨"), proj("plates", "🚗"),
+      (() => { const c = C("kaphiy"); return c && { icon: "☕", label: "Kaphiy", title: "Kaphiy", text: pk(c.desc), img: c.img, href: c.demo }; })(),
+      { icon: "⚡", label: "Angular · TS", title: pk(SKILLS[0].title), text: SKILLS[0].items.join(" · ") },
+      { icon: "🗄️", label: "SQL", title: pk(SKILLS[2].title), text: SKILLS[2].items.join(" · ") },
+      { icon: "📍", label: "Ambato", title: "Ambato, Ecuador", text: t("hero.where") },
+      { icon: "🤖", label: "Grok", title: pk(CERTS[0].title), text: pk(CERTS[0].issuer), href: CERTS[0].url },
+    ].filter(Boolean);
+  };
+  const bubbleLayer = document.getElementById("bubbles"), lgPop = document.getElementById("lgPop"), lgCard = document.getElementById("lgCard");
+  let bubbleTimer = 0, bubbleN = 0, beforeBubble = null;
+  function spawnBubble() {
+    const list = BUBBLES(), info = list[bubbleN++ % list.length];
+    const stripHalf = Math.min(W - 40, 560) / 2, room = W / 2 - stripHalf - 24;
+    if (room < 96) return; // phones: the fabric fills the screen, so no bubbles
+    const side = bubbleN % 2, x = side ? W / 2 + stripHalf + 24 + Math.random() * (room - 96) : 24 + Math.random() * (room - 96);
+    const b = document.createElement("button");
+    b.className = "lg-bubble"; b.type = "button"; b.style.left = x + "px"; b.style.setProperty("--dur", (13 + Math.random() * 5) + "s");
+    b.innerHTML = `<span><i>${info.icon}</i>${info.label}</span>`;
+    b.onpointerdown = (e) => e.stopPropagation();
+    b.onclick = (e) => { e.stopPropagation(); openBubble(info); };
+    b.addEventListener("animationend", (e) => { if (e.animationName === "lgRise") b.remove(); });
+    bubbleLayer.appendChild(b);
+  }
+  function openBubble(info) {
+    if (state !== "sew") return;
+    beforeBubble = state; state = "bubble"; bubbleLayer.classList.add("paused");
+    lgCard.innerHTML = `<button class="lg-close" type="button" aria-label="Close">✕</button><div class="lg-ico">${info.icon}</div><h3>${info.title}</h3>${info.img ? `<img src="${info.img}" alt="">` : ""}<p>${info.text}</p>
+      ${info.href ? `<a class="sec-btn primary" href="${info.href}" target="_blank" rel="noopener">${L() === "es" ? "Ver más ↗" : "See more ↗"}</a> ` : ""}<button class="sec-btn" type="button" data-close>${L() === "es" ? "Seguir cosiendo ✂" : "Keep sewing ✂"}</button>`;
+    lgPop.classList.add("open");
+    lgCard.querySelectorAll(".lg-close, [data-close]").forEach((x) => x.onclick = closeBubble);
+  }
+  function closeBubble() {
+    lgPop.classList.remove("open"); bubbleLayer.classList.remove("paused");
+    if (state === "bubble") { state = beforeBubble || "sew"; targetX = needleX; }
+  }
+  lgPop.addEventListener("click", (e) => { if (e.target === lgPop) closeBubble(); });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && lgPop.classList.contains("open")) closeBubble(); });
   function show(html) { card.innerHTML = `<div class="btnhole"></div>${html}`; modal.classList.add("open"); modal.scrollTop = 0; }
   function hide() { modal.classList.remove("open"); }
   function pick() {
@@ -373,7 +484,7 @@
       glyphs.push({ t: GLYPHS[i % GLYPHS.length], x: W / 2, y: H * .45, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 60, life: 1.4, c: [thread()[1], "#B79CFF", "#FF9ACB", "#8CC8FF"][i % 4] }); }
   }
   function finishPiece() {
-    state = "card";
+    state = "card"; bubbleLayer.innerHTML = "";
     const acc = total ? Math.round((good / total) * 100) : 0, p = piece();
     if (acc < 55) log(`✗ ${slug(p.name)}: ${acc}% < 55% · ${L() === "es" ? "reintentar" : "retry"}`, "c-bad");
     else { log(`✓ ${slug(p.name)}: ${L() === "es" ? "costura alineada" : "seam aligned"} (${acc}%) → ${p.section.toLowerCase()} 🔓`, "c-ok");
@@ -384,14 +495,25 @@
       document.getElementById("go").onclick = () => { hide(); begin(); };
       return;
     }
+    const link = (href, label, cls = "") => `<a class="sec-btn ${cls}" href="${href}" target="_blank" rel="noopener">${label}</a>`;
     const body = [
-      () => `<p>${t("about.p1")}</p><p>${t("about.p2")}</p>`,
-      () => SKILLS.map((s) => `<p style="text-align:center;margin:10px 0 2px"><b>${pk(s.title)}</b></p><div class="chips">${s.items.map((i) => `<span>${i}</span>`).join("")}</div>`).join(""),
-      () => PROJECTS.filter((x) => x.featured).map((x) => `<div class="mini"><b>${pk(x.title)}</b> · ${pk(x.kicker)}<br>${pk(x.desc)}</div>`).join(""),
-      () => `<p>${t("qa.lead")}</p>`,
-      () => EXPERIENCE.map((x) => `<div class="mini"><b>${pk(x.role)}</b> · ${pk(x.when)}<br>${pk(x.org)}</div>`).join(""),
-      () => CERTS.map((x) => `<div class="mini"><b>${pk(x.title)}</b> · ${x.year}<br>${pk(x.issuer)}</div>`).join(""),
-      () => `<p>${t("contact.lead")}</p><p style="text-align:center"><a href="mailto:${PROFILE.email}"><b>${PROFILE.email}</b></a><br><a href="${PROFILE.linkedin}" target="_blank">LinkedIn</a> · <a href="${PROFILE.github}" target="_blank">GitHub</a> · <a href="${PROFILE.instagram}" target="_blank">Instagram</a></p>`,
+      // about: photo, short bio and three quick facts
+      () => `<div class="sec-about"><img class="sec-photo" src="assets/img/jhanina-pro.jpg" alt="Jhanina"><p>${t("about.p1")}</p></div>
+        <div class="sec-facts"><span>${t("flip.f1")}</span><span>${t("flip.f2")}</span><span>${t("flip.f3")}</span></div>`,
+      // skills: one coloured card per group
+      () => `<div class="sec-grid">${SKILLS.map((g) => `<div class="sec-skill" style="--c:${g.color}"><b>${pk(g.title)}</b><div class="chips">${g.items.map((i) => `<span>${i}</span>`).join("")}</div></div>`).join("")}</div>`,
+      // projects: mini cards with the real image
+      () => `<div class="sec-grid">${PROJECTS.filter((x) => x.featured).map((x) => `<a class="sec-proj" href="${x.repo || x.demo || "index.html#projects"}" target="_blank" rel="noopener">
+        ${x.img ? `<img src="${x.img}" alt="">` : ""}<span><b>${pk(x.title)}</b><small>${pk(x.kicker)}</small></span></a>`).join("")}</div>`,
+      // QA: the bug hunt waiting in the portfolio
+      () => `<div class="sec-qa"><div class="sec-bug">🐞 × 5</div><p>${t("qa.lead")}</p></div>${link("index.html?nointro#qa", L() === "es" ? "Buscar los bugs ↗" : "Hunt the bugs ↗", "primary")}`,
+      // experience: a mini timeline with icons
+      () => `<ol class="sec-time">${EXPERIENCE.map((x) => `<li><span class="sec-ico">${x.icon || "✦"}</span><div><b>${pk(x.role)}</b><small>${pk(x.when)} · ${pk(x.org)}</small></div></li>`).join("")}</ol>`,
+      // certificates: thumbnails of the real certificates
+      () => `<div class="sec-grid">${CERTS.map((c) => `<a class="sec-cert" href="${c.url || "#"}" target="_blank" rel="noopener">${c.img ? `<img src="${c.img}" alt="">` : `<span class="sec-seal">🏅</span>`}<span><b>${pk(c.title)}</b><small>${c.year}</small></span></a>`).join("")}</div>`,
+      // contact: photo and action buttons
+      () => `<div class="sec-about"><img class="sec-photo" src="assets/img/jhanina-pro.jpg" alt="Jhanina"><p>${t("contact.lead")}</p></div>
+        <div class="sec-actions">${link("mailto:" + PROFILE.email, "✉️ Email", "primary")}${link(PROFILE.linkedin, "LinkedIn")}${link(PROFILE.github, "GitHub")}${link("cv.html", "CV")}</div>`,
     ][sectionIdx(idx)]();
     const last = idx === COUNT() - 1;
     idx++; setProgress(); idx--;
@@ -416,6 +538,7 @@
     const dt = Math.min(.05, (now - last) / 1000); last = now;
     const p = piece(), ny = NEEDLE_Y();
     if (state === "sew") {
+      bubbleTimer -= dt; if (bubbleTimer <= 0) { bubbleTimer = 2.4 + Math.random() * 1.4; spawnBubble(); }
       if (keys.has("ArrowLeft") || keys.has("a")) targetX -= 320 * dt;
       if (keys.has("ArrowRight") || keys.has("d")) targetX += 320 * dt;
       targetX = Math.max(30, Math.min(W - 30, targetX));
@@ -456,7 +579,7 @@
     const stripHalf = Math.min(W - 40, 560) / 2;
     badges.forEach((b) => {
       const room = Math.max(0, W / 2 - stripHalf - 20); if (room < 60 && state !== "pick" && state !== "how" && state !== "design") return;
-      const x = state === "sew" || state === "card" || state === "end" ? (b.side ? W / 2 + stripHalf + 10 + b.x * room : W / 2 - stripHalf - 10 - b.x * room) : b.x * W;
+      const x = state === "sew" || state === "bubble" || state === "card" || state === "end" ? (b.side ? W / 2 + stripHalf + 10 + b.x * room : W / 2 - stripHalf - 10 - b.x * room) : b.x * W;
       const y = b.y * H, w = g.measureText(b.text).width + 18;
       g.globalAlpha = .55; g.fillStyle = D ? "rgba(36,28,58,.9)" : "rgba(255,255,255,.75)"; roundRect(x - w / 2, y - 11, w, 22, 11); g.fill();
       g.strokeStyle = D ? "rgba(201,184,255,.35)" : "rgba(123,92,214,.3)"; g.lineWidth = 1; g.setLineDash([3, 3]); g.stroke(); g.setLineDash([]);
