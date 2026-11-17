@@ -318,6 +318,11 @@ window.CERTS = [
     year: "2026", url: "assets/certs/fcc-quality-assurance.pdf", img: "assets/certs/fcc-quality-assurance.jpg", verify: "https://freecodecamp.org/certification/fcc30de7d1c-44b5-4b23-9bc7-1e8bd08ad453/quality-assurance-v7", color: "#8EE3E0",
   },
   {
+    title: { en: "Information Security Certification · freeCodeCamp", es: "Information Security Certification · freeCodeCamp" },
+    issuer: { en: "freeCodeCamp · about 300 hours", es: "freeCodeCamp · unas 300 horas" },
+    year: "2026", url: "assets/certs/fcc-information-security.jpg", img: "assets/certs/fcc-information-security.jpg", verify: "https://www.freecodecamp.org/certification/fcc30de7d1c-44b5-4b23-9bc7-1e8bd08ad453/information-security-v7", color: "#B79CFF",
+  },
+  {
     title: { en: "CSEI 2024 · Participation", es: "CSEI 2024 · Participación" },
     issuer: { en: "Computer Science, Electronics & Industrial Engineering Congress · UTA", es: "Congreso de Ciencias de la Computación, Electrónica e Ingeniería Industrial · UTA" },
     year: "2024", url: "assets/certs/csei-2024-participation.pdf", img: "assets/certs/csei-2024-participation.jpg", color: "#B79CFF",
